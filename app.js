@@ -124,3 +124,8 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 		return dist;
 	}
 }
+
+window.onresize = function() {
+    document.body.height = window.innerHeight;
+}
+window.onresize(); // called to initially set the height.
