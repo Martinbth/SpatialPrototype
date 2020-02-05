@@ -12,14 +12,25 @@ var plane = new Howl({
   volume: 1
 });
 var tank = new Howl({
+<<<<<<< HEAD
    src: ['./sounds/tankfiring.mp3'],
    autoplay: true,
    loop: true,
    volume: 1
+=======
+  src: ['./sounds/tankfiring.mp3'],
+   autoplay: true,
+  loop: true,
+  volume: 1
+>>>>>>> 56f13837f300c343d3d9b560ba5b83662310996a
 });
 tank.pos(-20,0,5);
 plane.pos(-50,0,-100);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 56f13837f300c343d3d9b560ba5b83662310996a
 function adjustVolume(distTank,distPlane){
   var newVolTank = 1-distTank;
   var newVolPlane = 1-distPlane;
@@ -46,10 +57,13 @@ function degreesToRadians(degrees) {
   return degrees * (Math.PI / 180);
 }
 
+<<<<<<< HEAD
 document.getElementById("goToOnboarding").addEventListener("click", function(){
 
 });
 
+=======
+>>>>>>> 56f13837f300c343d3d9b560ba5b83662310996a
 
 
 
@@ -93,6 +107,7 @@ document.getElementById("goToOnboarding").addEventListener("click", function(){
     adjustVolume(distTank,distPlane);
 });
 
+<<<<<<< HEAD
 var options = {
   enableHighAccuracy: true,
   timeout: 5000,
@@ -102,6 +117,9 @@ var options = {
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
 }
+=======
+
+>>>>>>> 56f13837f300c343d3d9b560ba5b83662310996a
 
 function distance(lat1, lon1, lat2, lon2, unit) {
 	if ((lat1 == lat2) && (lon1 == lon2)) {
