@@ -13,10 +13,16 @@ body,p,a,ul,li{
   padding: 0;
   text-decoration: none;
 }
+
+a h3{
+  color:black;
+}
+
 /*base styles */
 body{
   background-color: black;
-
+  background-image: url("/img/welcome.png");
+  background-size: cover;
   overflow-x:hidden;
 }
 
@@ -26,12 +32,12 @@ font-size: 9em;
 }
 
 .myButton{
-  background-color:#19c767;
-	border-radius:15px;
+  background-color:white;
+	border-radius:45px;
 	border:0px solid #18ab29;
 	display:inline-block;
 	cursor:pointer;
-	color:white;
+	color:black;
 	font-size:2.5em;
   width:100%;
 	padding:35px 335px;
@@ -57,12 +63,6 @@ font-size: 9em;
   font-size: 2.1em;
 }
 
-.welcome-img{
- background-image: url(./img/girldholdingphone.png);
- background-repeat: no-repeat;
- background-attachment: fixed;
- background-position: center;
-}
 
 .footer{
   align-items: center;
