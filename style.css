@@ -21,7 +21,7 @@ a h3{
 /*base styles */
 body{
   background-color: black;
-  background-image: url(/img/welcome.png);
+  background-image: url(../img/welcome.png);
   background-size: cover;
   overflow-x:hidden;
 }
