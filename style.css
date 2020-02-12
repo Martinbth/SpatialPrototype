@@ -8,7 +8,7 @@
 body,p,a,ul,li{
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
- -webkit-touch-callout: none;
+  -webkit-touch-callout: none;
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -19,16 +19,23 @@ a h3{
 }
 
 /*base styles */
-body{
-  background-color: black;
+.imgWelcome{
   background-image: url(./img/welcome.png);
   background-size: cover;
   overflow-x:hidden;
+  height: 100vh;
+}
+
+.imgMissionOne{
+  background-image: url(./img/mission1.png);
+  background-size: cover;
+  overflow-x:hidden;
+  height: 100vh;
 }
 
 .welcome-text h1{
-font-weight: lighter;
-font-size: 9em;
+  font-weight: lighter;
+  font-size: 9em;
 }
 
 .myButton{
@@ -49,9 +56,6 @@ font-size: 9em;
   padding: 0 90px 90px 90px;
 }
 
-.welcome-text{
-
-}
 #big-thin{
     height:30vh;
     padding-top: 150px;
@@ -63,11 +67,19 @@ font-size: 9em;
   font-size: 2.1em;
 }
 
-
 .footer{
   align-items: center;
   text-align: center;
   position: absolute;
   padding-bottom: 30px;
+  bottom: 0;
+}
+
+.footerNoBUtton{
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  padding-bottom: 30px;
+  padding:35px 310px;
   bottom: 0;
 }

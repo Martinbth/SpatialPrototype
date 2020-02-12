@@ -37,7 +37,6 @@ function handleOrientation(event) {
   output.innerHTML  = "beta : " + x + "\n";
   output.innerHTML += "gamma: " + y + "\n";
   output.innerHTML += "alpha: " + z + "\n";
-
 }
 
 window.addEventListener('deviceorientation', handleOrientation);
