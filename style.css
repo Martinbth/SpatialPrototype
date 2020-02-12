@@ -33,6 +33,13 @@ a h3{
   height: 100vh;
 }
 
+.imgCompleted{
+  background-image: url(./img/completed.png);
+  background-size: cover;
+  overflow-x:hidden;
+  height: 100vh;
+}
+
 .welcome-text h1{
   font-weight: lighter;
   font-size: 9em;
@@ -40,16 +47,22 @@ a h3{
 
 .myButton{
   background-color:white;
+  display:inline;
 	border-radius:45px;
 	border:0px solid #18ab29;
-	display:inline-block;
 	cursor:pointer;
 	color:black;
 	font-size:2.5em;
   width:100%;
-	padding:35px 335px;
+
 	text-decoration:none;
   font-weight: bold;
+  word-wrap: break-word;
+  width: 100px; // only for IE8
+  max-width: 100%;
+
+
+
 }
 
 #welcome{
@@ -73,6 +86,7 @@ a h3{
   position: absolute;
   padding-bottom: 30px;
   bottom: 0;
+  	padding:35px 335px;
 }
 
 .footerNoBUtton{
