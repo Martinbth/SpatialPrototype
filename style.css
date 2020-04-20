@@ -17,83 +17,80 @@ body,p,a,ul,li{
 a h3{
   color:black;
 }
-
+.grid{
+  display:grid;
+}
 /*base styles */
 .imgWelcome{
-  background-image: url(./img/welcome.png);
+  background-image: url(./img/.png);
   background-size: cover;
   overflow-x:hidden;
   height: 100vh;
 }
 
 .imgMissionOne{
-  background-image: url(./img/mission1.png);
+  background-image: url(./img/.png);
   background-size: cover;
   overflow-x:hidden;
   height: 100vh;
 }
 
 .imgCompleted{
-  background-image: url(./img/completed.png);
+  background-image: url(./img/.png);
   background-size: cover;
   overflow-x:hidden;
   height: 100vh;
 }
 
 .welcome-text h1{
-  font-weight: lighter;
   font-size: 9em;
+  font-weight: lighter;
 }
 
-.myButton{
-  background-color:white;
-  display:inline;
-	border-radius:45px;
-	border:0px solid #18ab29;
-	cursor:pointer;
-	color:black;
-	font-size:2.5em;
-  width:100%;
-
-	text-decoration:none;
-  font-weight: bold;
-  word-wrap: break-word;
-  width: 100px; // only for IE8
-  max-width: 100%;
-
-
-
-}
-
-#welcome{
-  padding: 0 90px 90px 90px;
-}
-
-#big-thin{
-    height:30vh;
-    padding-top: 150px;
+.welcome-text {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  color:black;
 }
 
 .leading{
-  height:30vh;
-  padding: 0 0px 0px 0px;
+  grid-row-start: 2;
+  grid-row-end: 9;
   font-size: 2.1em;
 }
 
 .footer{
-  align-items: center;
+
   text-align: center;
-  position: absolute;
-  padding-bottom: 30px;
-  bottom: 0;
-  	padding:35px 335px;
+  grid-row-start: 9;
+  grid-row-end: 10;
 }
 
-.footerNoBUtton{
+.button1 {
+  color: #494949 !important;
+  font-size: 2.7em;
+  font-weight: bold;
+  background:yellow;
+  width: 100%;
+  height: 120px;
+  padding: 25px;
+  border: 4px solid #494949 !important;
+  display: flex;
   align-items: center;
-  text-align: center;
-  position: absolute;
-  padding-bottom: 30px;
-  padding:35px 310px;
-  bottom: 0;
+  justify-content: center;
+  transition: all 0.4s ease 0s;
+}
+
+.button1:hover {
+  color: #ffffff !important;
+  background: #f6b93b;
+  border-color: #f6b93b !important;
+  transition: all 0.4s ease 0s;
+}
+
+
+#context{
+  position: relative;
+  padding: 150px 90px 0px 90px;
+  height:100%;
 }
