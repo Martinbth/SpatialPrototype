@@ -16,7 +16,7 @@ var plane = new Howl({
 
 var tank = new Howl({
    src: ['./sounds/tankfiring.mp3'],
-   autoplay: false,
+   autoplay: true,
    loop: true,
    volume: 1
 });
@@ -26,7 +26,7 @@ plane.pos(-50,0,-100);
 document.getElementById("demo").addEventListener("click", playSound);
 var volume = 1;
 function playSound() {
-tank.volume(volume - 0.2);
+tank.volume(0.5);
 tank.play();
 }
 
