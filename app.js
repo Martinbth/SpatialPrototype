@@ -83,12 +83,12 @@ document.getElementById("goToOnboarding").addEventListener("click", function(){
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
   var watchID = navigator.geolocation.watchPosition(function(position) {
-    geo.innerHTML += "latitude:"+ position.coords.latitude + "\n";
-    geo.innerHTML += "longitude:"+ position.coords.longitude + "\n";
-    var distTank = distance(position.coords.latitude,position.coords.longitude, 59.574858,17.850841)
-    var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554)
-    geo.innerHTML += "distance to Tank:"+ distTank + "\n";
-    geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
+    // geo.innerHTML += "latitude:"+ position.coords.latitude + "\n";
+    // geo.innerHTML += "longitude:"+ position.coords.longitude + "\n";
+    var distTank = distance(position.coords.latitude,position.coords.longitude, 59.574858,17.850841);
+    var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
+    // geo.innerHTML += "distance to Tank:"+ distTank + "\n";
+    // geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
     adjustVolume(distTank,distPlane);
 });
 
@@ -100,7 +100,7 @@ var options = {
 
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
-}
+}>
 
 function distance(lat1, lon1, lat2, lon2, unit) {
 	if ((lat1 == lat2) && (lon1 == lon2)) {
