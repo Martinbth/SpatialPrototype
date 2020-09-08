@@ -45,9 +45,9 @@ function degreesToRadians(degrees) {
   return degrees * (Math.PI / 180);
 }
 
-document.getElementById("goToOnboarding").addEventListener("click", function(){
-
-});
+// document.getElementById("goToOnboarding").addEventListener("click", function(){
+//
+// });
 
 
 
@@ -100,7 +100,7 @@ var options = {
 
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
-}>
+}
 
 function distance(lat1, lon1, lat2, lon2, unit) {
 	if ((lat1 == lat2) && (lon1 == lon2)) {
@@ -123,8 +123,3 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 		return dist;
 	}
 }
-
-window.onresize = function() {
-    document.body.height = window.innerHeight;
-}
-window.onresize(); // called to initially set the height.
