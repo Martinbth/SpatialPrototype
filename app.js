@@ -1,16 +1,19 @@
 var output = document.querySelector('.output');
 var geo = document.querySelector('.geo');
+document.getElementById("demo").addEventListener("click", playSound);
 
 const planeLat = 59.574054;
 const planeLong = 17.839554;
 const tankLat = 59.574858;
 const tankLong = 17.850841;
+
 var plane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
-   autoplay: true,
+  autoplay: true,
   volume: 1
 });
+
 var tank = new Howl({
    src: ['./sounds/tankfiring.mp3'],
    autoplay: true,
@@ -19,6 +22,13 @@ var tank = new Howl({
 });
 tank.pos(-20,0,5);
 plane.pos(-50,0,-100);
+
+document.getElementById("demo").addEventListener("click", playSound);
+
+function playSound() {
+
+tank.play();
+}
 
 function adjustVolume(distTank,distPlane){
   var newVolTank = 1-distTank;
