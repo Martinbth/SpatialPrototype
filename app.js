@@ -10,13 +10,13 @@ const tankLong = 17.840553;
 var plane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
-  autoplay: true,
+  autoplay: false,
   volume: 1
 });
 
 var tank = new Howl({
    src: ['./sounds/tankfiring.mp3'],
-   autoplay: true,
+   autoplay: false,
    loop: true,
    volume: 1
 });
@@ -24,10 +24,10 @@ tank.pos(-20,0,5);
 plane.pos(-50,0,-100);
 
 document.getElementById("demo").addEventListener("click", playSound);
-
+var volume = 1;
 function playSound() {
-
 tank.play();
+tank.volume(volume - 0.2);
 }
 
 function adjustVolume(distTank,distPlane){
