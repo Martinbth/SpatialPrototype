@@ -18,15 +18,16 @@ var tank = new Howl({
    src: ['./sounds/tankfiring.mp3'],
    autoplay: true,
    loop: true,
-   volume: 1
+   volume: 0.1,
 });
 tank.pos(-20,0,5);
 plane.pos(-50,0,-100);
 
 document.getElementById("demo").addEventListener("click", playSound);
-var volume = 1;
+var volnew= 1
 function playSound() {
-tank.volume(0.5);
+tank.stop();
+tank.volume(tank.volume+0.3);
 tank.play();
 }
 
