@@ -26,8 +26,8 @@ plane.pos(-50,0,-100);
 document.getElementById("demo").addEventListener("click", playSound);
 var volume = 1;
 function playSound() {
-tank.play();
 tank.volume(volume - 0.2);
+tank.play();
 }
 
 function adjustVolume(distTank,distPlane){
