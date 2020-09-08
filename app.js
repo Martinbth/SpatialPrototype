@@ -4,8 +4,8 @@ document.getElementById("demo").addEventListener("click", playSound);
 
 const planeLat = 59.574054;
 const planeLong = 17.839554;
-const tankLat = 59.574858;
-const tankLong = 17.850841;
+const tankLat = 59.5745646;
+const tankLong = 17.840553;
 
 var plane = new Howl({
   src: ['./sounds/airplane.mp3'],
@@ -95,7 +95,7 @@ function degreesToRadians(degrees) {
   var watchID = navigator.geolocation.watchPosition(function(position) {
     // geo.innerHTML += "latitude:"+ position.coords.latitude + "\n";
     // geo.innerHTML += "longitude:"+ position.coords.longitude + "\n";
-    var distTank = distance(position.coords.latitude,position.coords.longitude, 59.574858,17.850841);
+    var distTank = distance(position.coords.latitude,position.coords.longitude, 59.5745646,17.840553);
     var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
     // geo.innerHTML += "distance to Tank:"+ distTank + "\n";
     // geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
