@@ -23,13 +23,21 @@ var tank = new Howl({
 tank.pos(-20,0,5);
 plane.pos(-50,0,-100);
 
-document.getElementById("soundTest").addEventListener("click", playSound);
-var volnew= 1;
-function playSound() {
-tank.stop();
-tank.volume(tank.volume+0.3);
+document.getElementById("soundTest").addEventListener("click", updateVolume);
+updateVolume = function(value) {
+  console.log('before update volume:', sound.volume());
+  sound.volume(0.7);
+  console.log('after update volume:', sound.volume());
+}
+
+
+document.getElementById("soundStop").addEventListener("click", stopSound);
+
+function stopSound() {
+
 tank.play();
 }
+
 
 
 //
