@@ -28,7 +28,12 @@
 </a-scene>
 <div class="centered">
     <button data-action="change"></button>
-    <p id="demo">sound</p>
+    <button onclick="sound.play()">
+  Play
+</button>
+<button onclick="updateVolume(0.15)">
+  Change volume to 0.15
+</button>
 </div>
 
 <script src="app.js"></script>
