@@ -1,6 +1,6 @@
 var output = document.querySelector('.output');
 var geo = document.querySelector('.geo');
-document.getElementById("demo").addEventListener("click", playSound);
+
 
 const planeLat = 59.574054;
 const planeLong = 17.839554;
@@ -23,7 +23,7 @@ var tank = new Howl({
 tank.pos(-20,0,5);
 plane.pos(-50,0,-100);
 
-document.getElementById("demo").addEventListener("click", playSound);
+document.getElementById("soundTest").addEventListener("click", playSound);
 var volnew= 1;
 function playSound() {
 tank.stop();
@@ -31,20 +31,16 @@ tank.volume(tank.volume+0.3);
 tank.play();
 }
 
-function updateVolume = function(value) {
-  console.log('before update volume:', sound.volume());
-  tank.volume(value);
-  console.log('after update volume:', sound.volume());
-}
 
-function adjustVolume(distTank,distPlane){
-  var newVolTank = 1-distTank;
-  var newVolPlane = 1-distPlane;
+//
+// function adjustVolume(distTank,distPlane){
+//   var newVolTank = 1-distTank;
+//   var newVolPlane = 1-distPlane;
+//
+// tank.volume(newVolTank);
+// plane.volume(newVolPlane);
+// }
 
-tank.volume(newVolTank);
-plane.volume(newVolPlane);
-
-}
 function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
   var y = degreesToRadians(event.gamma);
@@ -62,9 +58,7 @@ function degreesToRadians(degrees) {
   return degrees * (Math.PI / 180);
 }
 
-// document.getElementById("goToOnboarding").addEventListener("click", function(){
-//
-// });
+
 
 
 
