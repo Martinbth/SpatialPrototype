@@ -16,14 +16,16 @@ var plane = new Howl({
 
 var tank = new Howl({
    src: ['./sounds/tankfiring.mp3'],
-   autoplay: true,
+   autoplay: false,
    loop: true,
-   volume: 0.1,
+   volume: 1,
 });
 tank.pos(-20,0,5);
 plane.pos(-50,0,-100);
 
-document.getElementById("soundTest").addEventListener("click", updateVolume);
+document.getElementById("soundPlay").addEventListener("click", playSound);
+document.getElementById("soundStop").addEventListener("click", stopSound);
+document.getElementById("soundChange").addEventListener("click", changeSound);
 updateVolume = function(value) {
   console.log('before update volume:', sound.volume());
   sound.volume(0.7);
@@ -31,11 +33,16 @@ updateVolume = function(value) {
 }
 
 
-document.getElementById("soundStop").addEventListener("click", stopSound);
 
+
+function playSound(){
+  tank.play();
+}
 function stopSound() {
-tank.fade(0,1);
-tank.play();
+  tank.stop();
+}
+function changeSound() {
+  tank.volume(0.5);
 }
 
 
