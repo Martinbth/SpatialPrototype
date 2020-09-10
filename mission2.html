@@ -24,9 +24,11 @@
         vr-mode-ui='enabled: false'
         embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: true;'>
-         <a-sound src="./sounds/tankfiring.mp3" autoplay="true" position="0 2 5"></a-sound>
+         <!-- <a-sound src="./sounds/tankfiring.mp3"; autoplay="true" position="0 2 5"></a-sound> -->
          <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
+    <a-entity id="river" geometry="primitive: plane" material="color: blue"
+          position="-10 0 0" sound="src: url(./sounds/tankfiring.mp3); autoplay: true"></a-entity>
 <div class="centered">
     <button data-action="change"></button>
     <button id="soundTest">start</button>
