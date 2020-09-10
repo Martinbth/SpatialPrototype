@@ -34,7 +34,7 @@ updateVolume = function(value) {
 document.getElementById("soundStop").addEventListener("click", stopSound);
 
 function stopSound() {
-
+tank.fade(0,1);
 tank.play();
 }
 
