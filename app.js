@@ -1,5 +1,5 @@
-var output = document.querySelector('#showData');
-var geo = document.querySelector('#geo');
+// var output = document.querySelector('#showData');
+const geo = document.querySelector('#geo');
 const playSound =document.querySelector('#playSound');
 const stopSound =document.querySelector('#stopSound');
 const changeSound =document.querySelector('#changeSound');
@@ -59,9 +59,9 @@ function handleOrientation(event) {
   var z = degreesToRadians(event.alpha);
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
 
-  output.innerHTML  = "beta : " + x + "\n";
-  output.innerHTML += "gamma: " + y + "\n";
-  output.innerHTML += "alpha: " + z + "\n";
+  // output.innerHTML  = 'beta : ' + x + '\n';
+  // output.innerHTML += 'gamma: ' + y + '\n';
+  // output.innerHTML += 'alpha: ' + z + '\n';
 }
 
 window.addEventListener('deviceorientation', handleOrientation);
@@ -106,13 +106,13 @@ function degreesToRadians(degrees) {
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
   var watchID = navigator.geolocation.watchPosition(function(position) {
-    // geo.innerHTML += "latitude:"+ position.coords.latitude + "\n";
-    // geo.innerHTML += "longitude:"+ position.coords.longitude + "\n";
+    geo.innerHTML += 'latitude:'+ position.coords.latitude + '\n';
+    geo.innerHTML += 'longitude:'+ position.coords.longitude + '\n';
     var distTank = distance(position.coords.latitude,position.coords.longitude, 59.5745646,17.840553);
-    var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
-    // geo.innerHTML += "distance to Tank:"+ distTank + "\n";
+    // var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
+    geo.innerHTML += 'distance to Tank:'+ distTank + '\n';
     // geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
-    adjustVolume(distTank,distPlane);
+    // adjustVolume(distTank,distPlane);
 });
 
 var options = {
