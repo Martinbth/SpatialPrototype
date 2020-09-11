@@ -1,6 +1,8 @@
 var output = document.querySelector('.output');
 var geo = document.querySelector('.geo');
-
+const playSound =document.querySelector('#playSound');
+const stopSound =document.querySelector('#stopSound');
+const changeSound =document.querySelector('#changeSound');
 
 const planeLat = 59.574054;
 const planeLong = 17.839554;
@@ -16,7 +18,7 @@ var plane = new Howl({
 
 var tank = new Howl({
    src: ['./sounds/tankfiring.mp3'],
-   autoplay: true,
+   autoplay: false,
    loop: true,
    volume: 1,
 });
@@ -24,21 +26,21 @@ tank.pos(-20,0,5);
 plane.pos(-50,0,-100);
 
 
-updateVolume = function(value) {
-  console.log('before update volume:', sound.volume());
-  sound.volume(0.7);
-  console.log('after update volume:', sound.volume());
-}
 
-playSound(){
-  tank.play();
-}
-stopSound() {
-  tank.stop();
-}
-changeSound() {
-  tank.volume(0.5);
-}
+playSound.addEventListener('click', () => {
+   tank.play();
+});
+
+stopSound.addEventListener('click', () => {
+   tank.stop();
+});
+
+changeSound.addEventListener('click', () => {
+   tank.volume(0.3);
+});
+
+
+
 
 
 
@@ -123,7 +125,7 @@ function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
 }
 
-function distance(lat1, lon1, lat2, lon2, unit) {
+function distance(lat1, lon1, lat2, lon2, M) {
 	if ((lat1 == lat2) && (lon1 == lon2)) {
 		return 0;
 	}
