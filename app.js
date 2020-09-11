@@ -1,10 +1,10 @@
 // var output = document.querySelector('#showData');
-window.onload = function() {
-    var geo = document.getElementById('geo');
+
+    var geo = document.querySelector('#geo');
     const playSound =document.querySelector('#playSound');
     const stopSound =document.querySelector('#stopSound');
     const changeSound =document.querySelector('#changeSound');
-}
+
 
 
 const planeLat = 59.574054;
@@ -109,11 +109,11 @@ function degreesToRadians(degrees) {
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
   var watchID = navigator.geolocation.watchPosition(function(position) {
-    geo.innerHTML += 'latitude:'+ position.coords.latitude + '\n';
-    geo.innerHTML += 'longitude:'+ position.coords.longitude + '\n';
+    // geo.innerHTML += 'latitude:'+ position.coords.latitude + '\n';
+    // geo.innerHTML += 'longitude:'+ position.coords.longitude + '\n';
     var distTank = distance(position.coords.latitude,position.coords.longitude, 59.5745646,17.840553);
     // var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
-    geo.innerHTML += 'distance to Tank:'+ distTank + '\n';
+    geo.innerHTML += distTank ;
     alert("im in");
     // geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
     // adjustVolume(distTank,distPlane);
