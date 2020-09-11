@@ -1,5 +1,5 @@
-var output = document.querySelector('.output');
-var geo = document.querySelector('.geo');
+var output = document.querySelector('#showData');
+var geo = document.querySelector('#geo');
 const playSound =document.querySelector('#playSound');
 const stopSound =document.querySelector('#stopSound');
 const changeSound =document.querySelector('#changeSound');
