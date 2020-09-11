@@ -25,7 +25,7 @@ var tank = new Howl({
    loop: true,
    volume: 1,
 });
-tank.pos(-1000,0,0);
+tank.pos(100,0,0);
 plane.pos(-50,0,-100);
 
 
