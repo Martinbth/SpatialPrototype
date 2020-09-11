@@ -25,7 +25,7 @@ var tank = new Howl({
    loop: true,
    volume: 1,
 });
-tank.pos(-20,0,5);
+tank.pos(-1000,0,0);
 plane.pos(-50,0,-100);
 
 
@@ -62,9 +62,9 @@ function handleOrientation(event) {
   var z = degreesToRadians(event.alpha);
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
 
-  geo.innerHTML  = x;
-  geo.innerHTML +=y;
-  geo.innerHTML +=z;
+  geo.innerHTML = "hej";
+  // geo.innerHTML +=y;
+  // geo.innerHTML +=z;
 }
 window.addEventListener('deviceorientation', handleOrientation);
 
