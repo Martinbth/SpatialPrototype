@@ -36,7 +36,7 @@ stopSound.addEventListener('click', () => {
 });
 
 changeSound.addEventListener('click', () => {
-   tank.volume(0.3);
+   tank.volume(Math.random());
 });
 
 
