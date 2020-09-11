@@ -56,18 +56,17 @@ changeSound.addEventListener('click', () => {
 // plane.volume(newVolPlane);
 // }
 
-function handleOrientation(event) {
-  var x = degreesToRadians(event.beta);
-  var y = degreesToRadians(event.gamma);
-  var z = degreesToRadians(event.alpha);
-  Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
-
-  // output.innerHTML  = 'beta : ' + x + '\n';
-  // output.innerHTML += 'gamma: ' + y + '\n';
-  // output.innerHTML += 'alpha: ' + z + '\n';
-}
-
-window.addEventListener('deviceorientation', handleOrientation);
+// function handleOrientation(event) {
+//   var x = degreesToRadians(event.beta);
+//   var y = degreesToRadians(event.gamma);
+//   var z = degreesToRadians(event.alpha);
+//   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
+//
+//   // output.innerHTML  = 'beta : ' + x + '\n';
+//   // output.innerHTML += 'gamma: ' + y + '\n';
+//   // output.innerHTML += 'alpha: ' + z + '\n';
+// }
+// window.addEventListener('deviceorientation', handleOrientation);
 
 function degreesToRadians(degrees) {
   return degrees * (Math.PI / 180);
