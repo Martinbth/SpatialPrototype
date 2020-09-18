@@ -107,45 +107,61 @@ function degreesToRadians(degrees) {
 //:::                                                                         :::
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-  var watchID = navigator.geolocation.watchPosition(function(position) {
-    // geo.innerHTML += 'latitude:'+ position.coords.latitude + '\n';
-    // geo.innerHTML += 'longitude:'+ position.coords.longitude + '\n';
-    var distTank = distance(position.coords.latitude,position.coords.longitude, 59.5745646,17.840553);
-    // var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
-    geo.innerHTML += distTank ;
-    alert("im in");
-    // geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
-    // adjustVolume(distTank,distPlane);
-});
-
-var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
-
-function error(err) {
-  console.warn('ERROR(' + err.code + '): ' + err.message);
+//   var watchID = navigator.geolocation.watchPosition(function(position) {
+//     // geo.innerHTML += 'latitude:'+ position.coords.latitude + '\n';
+//     // geo.innerHTML += 'longitude:'+ position.coords.longitude + '\n';
+//     var distTank = distance(position.coords.latitude,position.coords.longitude, 59.5745646,17.840553);
+//     // var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
+//     // geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
+//     // adjustVolume(distTank,distPlane);
+// });
+//
+// var options = {
+//   enableHighAccuracy: true,
+//   timeout: 5000,
+//   maximumAge: 0
+// };
+//
+// function error(err) {
+//   console.warn('ERROR(' + err.code + '): ' + err.message);
+// }
+//
+// function distance(lat1, lon1, lat2, lon2, M) {
+// 	if ((lat1 == lat2) && (lon1 == lon2)) {
+// 		return 0;
+// 	}
+// 	else {
+// 		var radlat1 = Math.PI * lat1/180;
+// 		var radlat2 = Math.PI * lat2/180;
+// 		var theta = lon1-lon2;
+// 		var radtheta = Math.PI * theta/180;
+// 		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+// 		if (dist > 1) {
+// 			dist = 1;
+// 		}
+// 		dist = Math.acos(dist);
+// 		dist = dist * 180/Math.PI;
+// 		dist = dist * 60 * 1.1515;
+// 		if (unit=="K") { dist = dist * 1.609344 }
+// 		if (unit=="N") { dist = dist * 0.8684 }
+// 		return dist;
+// 	}
+// }
+google.maps.LatLng.prototype.distanceFrom = function(latlng) {
+  var lat = [this.lat(), latlng.lat()]
+  var lng = [this.lng(), latlng.lng()]
+  var R = 6378137;
+  var dLat = (lat[1]-lat[0]) * Math.PI / 180;
+  var dLng = (lng[1]-lng[0]) * Math.PI / 180;
+  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+  Math.cos(lat[0] * Math.PI / 180 ) * Math.cos(lat[1] * Math.PI / 180 ) *
+  Math.sin(dLng/2) * Math.sin(dLng/2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  var d = R * c;
+  return Math.round(d);
 }
 
-function distance(lat1, lon1, lat2, lon2, M) {
-	if ((lat1 == lat2) && (lon1 == lon2)) {
-		return 0;
-	}
-	else {
-		var radlat1 = Math.PI * lat1/180;
-		var radlat2 = Math.PI * lat2/180;
-		var theta = lon1-lon2;
-		var radtheta = Math.PI * theta/180;
-		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-		if (dist > 1) {
-			dist = 1;
-		}
-		dist = Math.acos(dist);
-		dist = dist * 180/Math.PI;
-		dist = dist * 60 * 1.1515;
-		if (unit=="K") { dist = dist * 1.609344 }
-		if (unit=="N") { dist = dist * 0.8684 }
-		return dist;
-	}
-}
+var loc1 = new GLatLng(52.5773139, 1.3712427);
+var loc2 = new GLatLng(52.4788314, 1.7577444);
+var dist = loc2.distanceFrom(loc1);
+alert(dist/1000);
