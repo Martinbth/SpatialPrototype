@@ -1,43 +1,40 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>GeoAR.js demo</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.3/howler.min.js"></script>
-    <script defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHTiERTMkb2098OhmpFEOWS4Hyc74m7Mg&callback=initMap">
-        </script>
-    <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
-    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script>
-        THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-    </script>
-    <script src="./script.js"></script>
-    <link rel="stylesheet" type="text/css" href="./arStyle.css"/>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>GeoAR.js demo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.3/howler.min.js"></script>
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHTiERTMkb2098OhmpFEOWS4Hyc74m7Mg&callback=initMap">
+  </script>
+  <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+  <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  <script>
+    THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
+  </script>
+  <script src="./script.js"></script>
+  <link rel="stylesheet" type="text/css" href="./arStyle.css" />
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
-    <div class="centered instructions"></div>
-    <div class="centered" id="geo"></div>
-    <a-scene
-        vr-mode-ui='enabled: false'
-        embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-         <a-camera gps-camera rotation-reader></a-camera>
-    </a-scene>
+  <div class="centered instructions"></div>
+  <div class="centered" id="geo"></div>
+    <div class="centered" id="output"></div>
 
-<div class="centered">
+  <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+    <a-camera gps-camera rotation-reader></a-camera>
+  </a-scene>
+
+  <div class="centered">
     <button data-action="change"></button>
     <button id="playSound">P</button>
     <button id="stopSound">S</button>
     <button id="changeSound">C</button>
-</div>
+  </div>
 
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 <html>
 
