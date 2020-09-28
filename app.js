@@ -1,9 +1,9 @@
 // var output = document.querySelector('#showData');
 
-    var geo = document.querySelector('#geo');
-    const playSound =document.querySelector('#playSound');
-    const stopSound =document.querySelector('#stopSound');
-    const changeSound =document.querySelector('#changeSound');
+var geo = document.querySelector('#geo');
+const playSound = document.querySelector('#playSound');
+const stopSound = document.querySelector('#stopSound');
+const changeSound = document.querySelector('#changeSound');
 
 
 
@@ -147,21 +147,62 @@ function degreesToRadians(degrees) {
 // 		return dist;
 // 	}
 // }
-google.maps.LatLng.prototype.distanceFrom = function(latlng) {
-  var lat = [this.lat(), latlng.lat()]
-  var lng = [this.lng(), latlng.lng()]
-  var R = 6378137;
-  var dLat = (lat[1]-lat[0]) * Math.PI / 180;
-  var dLng = (lng[1]-lng[0]) * Math.PI / 180;
-  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-  Math.cos(lat[0] * Math.PI / 180 ) * Math.cos(lat[1] * Math.PI / 180 ) *
-  Math.sin(dLng/2) * Math.sin(dLng/2);
-  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-  var d = R * c;
-  return Math.round(d);
-}
+function initMap() {
+        var bounds = new google.maps.LatLngBounds;
 
-var loc1 = new GLatLng(52.5773139, 1.3712427);
-var loc2 = new GLatLng(52.4788314, 1.7577444);
-var dist = loc2.distanceFrom(loc1);
-alert(dist/1000);
+
+        var origin1 = {lat: 55.93, lng: -3.118};
+
+
+        var destinationB = {lat: 50.087, lng: 14.421};
+
+
+        var geocoder = new google.maps.Geocoder;
+
+        var service = new google.maps.DistanceMatrixService;
+        service.getDistanceMatrix({
+          origins: [origin1, origin2],
+
+          unitSystem: google.maps.UnitSystem.METRIC,
+
+        }, function(response, status) {
+          if (status !== 'OK') {
+            alert('Error was: ' + status);
+          } else {
+            var originList = response.originAddresses;
+            var destinationList = response.destinationAddresses;
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '';
+            deleteMarkers(markersArray);
+
+            var showGeocodedAddressOnMap = function(asDestination) {
+              var icon = asDestination ? destinationIcon : originIcon;
+              return function(results, status) {
+                if (status === 'OK') {
+                  map.fitBounds(bounds.extend(results[0].geometry.location));
+                  markersArray.push(new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                    icon: icon
+                  }));
+                } else {
+                  alert('Geocode was not successful due to: ' + status);
+                }
+              };
+            };
+
+            for (var i = 0; i < originList.length; i++) {
+              var results = response.rows[i].elements;
+              geocoder.geocode({'address': originList[i]},
+                  showGeocodedAddressOnMap(false));
+              for (var j = 0; j < results.length; j++) {
+                geocoder.geocode({'address': destinationList[j]},
+                    showGeocodedAddressOnMap(true));
+                outputDiv.innerHTML += originList[i] + ' to ' + destinationList[j] +
+                    ': ' + results[j].distance.text + ' in ' +
+                    results[j].duration.text + '<br>';
+              }
+            }
+          }
+        });
+      }
