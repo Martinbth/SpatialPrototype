@@ -110,6 +110,7 @@ function degreesToRadians(degrees) {
   var watchID = navigator.geolocation.watchPosition(function(position) {
     geo.innerHTML += 'latitude:'+ position.coords.latitude + '\n';
     geo.innerHTML += 'longitude:'+ position.coords.longitude + '\n';
+    geo.innerHTML += 43;
     // var distTank = distance(position.coords.latitude,position.coords.longitude, 59.5745646,17.840553);
     // var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
     // geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
