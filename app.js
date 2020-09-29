@@ -106,102 +106,44 @@ function degreesToRadians(degrees) {
 //:::                                                                         :::
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-//   var watchID = navigator.geolocation.watchPosition(function(position) {
-//     // geo.innerHTML += 'latitude:'+ position.coords.latitude + '\n';
-//     // geo.innerHTML += 'longitude:'+ position.coords.longitude + '\n';
-//     var distTank = distance(position.coords.latitude,position.coords.longitude, 59.5745646,17.840553);
-//     // var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
-//     // geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
-//     // adjustVolume(distTank,distPlane);
-// });
-//
-// var options = {
-//   enableHighAccuracy: true,
-//   timeout: 5000,
-//   maximumAge: 0
-// };
-//
-// function error(err) {
-//   console.warn('ERROR(' + err.code + '): ' + err.message);
-// }
-//
-// function distance(lat1, lon1, lat2, lon2, M) {
-// 	if ((lat1 == lat2) && (lon1 == lon2)) {
-// 		return 0;
-// 	}
-// 	else {
-// 		var radlat1 = Math.PI * lat1/180;
-// 		var radlat2 = Math.PI * lat2/180;
-// 		var theta = lon1-lon2;
-// 		var radtheta = Math.PI * theta/180;
-// 		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-// 		if (dist > 1) {
-// 			dist = 1;
-// 		}
-// 		dist = Math.acos(dist);
-// 		dist = dist * 180/Math.PI;
-// 		dist = dist * 60 * 1.1515;
-// 		if (unit=="K") { dist = dist * 1.609344 }
-// 		if (unit=="N") { dist = dist * 0.8684 }
-// 		return dist;
-// 	}
-// }
-function initMap() {
-        var bounds = new google.maps.LatLngBounds;
 
+  var watchID = navigator.geolocation.watchPosition(function(position) {
+    geo.innerHTML += 'latitude:'+ position.coords.latitude + '\n';
+    geo.innerHTML += 'longitude:'+ position.coords.longitude + '\n';
+    // var distTank = distance(position.coords.latitude,position.coords.longitude, 59.5745646,17.840553);
+    // var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
+    // geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
+    // adjustVolume(distTank,distPlane);
+});
 
-        var origin1 = {lat: 55.93, lng: -3.118};
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
 
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+}
 
-        var destinationB = {lat: 50.087, lng: 14.421};
-
-
-        var geocoder = new google.maps.Geocoder;
-
-        var service = new google.maps.DistanceMatrixService;
-        service.getDistanceMatrix({
-          origins: [origin1, origin2],
-
-          unitSystem: google.maps.UnitSystem.METRIC,
-
-        }, function(response, status) {
-          if (status !== 'OK') {
-            alert('Error was: ' + status);
-          } else {
-            var originList = response.originAddresses;
-            var destinationList = response.destinationAddresses;
-            var outputDiv = document.getElementById('output');
-            outputDiv.innerHTML = '';
-            deleteMarkers(markersArray);
-
-            var showGeocodedAddressOnMap = function(asDestination) {
-              var icon = asDestination ? destinationIcon : originIcon;
-              return function(results, status) {
-                if (status === 'OK') {
-                  map.fitBounds(bounds.extend(results[0].geometry.location));
-                  markersArray.push(new google.maps.Marker({
-                    map: map,
-                    position: results[0].geometry.location,
-                    icon: icon
-                  }));
-                } else {
-                  alert('Geocode was not successful due to: ' + status);
-                }
-              };
-            };
-
-            for (var i = 0; i < originList.length; i++) {
-              var results = response.rows[i].elements;
-              geocoder.geocode({'address': originList[i]},
-                  showGeocodedAddressOnMap(false));
-              for (var j = 0; j < results.length; j++) {
-                geocoder.geocode({'address': destinationList[j]},
-                    showGeocodedAddressOnMap(true));
-                outputDiv.innerHTML += originList[i] + ' to ' + destinationList[j] +
-                    ': ' + results[j].distance.text + ' in ' +
-                    results[j].duration.text + '<br>';
-              }
-            }
-          }
-        });
-      }
+function distance(lat1, lon1, lat2, lon2, M) {
+	if ((lat1 == lat2) && (lon1 == lon2)) {
+		return 0;
+	}
+	else {
+		var radlat1 = Math.PI * lat1/180;
+		var radlat2 = Math.PI * lat2/180;
+		var theta = lon1-lon2;
+		var radtheta = Math.PI * theta/180;
+		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+		if (dist > 1) {
+			dist = 1;
+		}
+		dist = Math.acos(dist);
+		dist = dist * 180/Math.PI;
+		dist = dist * 60 * 1.1515;
+		if (unit=="K") { dist = dist * 1.609344 }
+		if (unit=="N") { dist = dist * 0.8684 }
+		return dist;
+	}
+}
