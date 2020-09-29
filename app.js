@@ -67,8 +67,8 @@ function handleOrientation(event) {
   var z = degreesToRadians(event.alpha);
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
 
-  geo.innerHTML +=y;
-  geo.innerHTML +=z;
+  // geo.innerHTML +=y;
+  // geo.innerHTML +=z;
 }
 window.addEventListener('deviceorientation', handleOrientation);
 
@@ -164,7 +164,7 @@ function geolocate() {
 
 function onGeolocateSuccess(coordinates) {
   const { latitude, longitude } = coordinates.coords;
-  geo.innerHTML += 'victory';
+  geo.innerHTML += 111;
 
 }
 
