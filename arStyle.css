@@ -33,14 +33,13 @@ button {
     color: white;
     z-index: 999999;
 }
-
-.output{
-  color:white;
-  justify-content: left;
-  left:0;
-  top:0;
-  margin: 0px auto;
-  background-color: black;
-
+.position {
+    position: fixed;
+    top: 10%;
+    font-size: 1.25em;
+    color: white;
+    z-index: 999999;
 }
+
+
 #demo{font:40px;}
