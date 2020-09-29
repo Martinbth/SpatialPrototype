@@ -157,6 +157,7 @@ function degreesToRadians(degrees) {
 
 
 function geolocate() {
+  geo.innerHTML += 111;
   if (window.navigator && window.navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(onGeolocateSuccess, onGeolocateError);
   }
@@ -164,7 +165,7 @@ function geolocate() {
 
 function onGeolocateSuccess(coordinates) {
   const { latitude, longitude } = coordinates.coords;
-  geo.innerHTML += 111;
+  geo.innerHTML += 222;
 
 }
 
