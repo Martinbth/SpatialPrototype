@@ -35,8 +35,12 @@ button {
 }
 
 .output{
-  margin: 5px;
-  background-color: black;
   color:white;
+  justify-content: left;
+  left:0;
+  top:0;
+  margin: 0px auto;
+  background-color: black;
+
 }
 #demo{font:40px;}
