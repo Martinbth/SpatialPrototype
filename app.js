@@ -4,7 +4,7 @@ var geo = document.querySelector('#geo');
 const playSound = document.querySelector('#playSound');
 const stopSound = document.querySelector('#stopSound');
 const changeSound = document.querySelector('#changeSound');
-
+const geolocateButton = document.querySelector('#geolocation-button');
 
 
 const planeLat = 59.574054;
@@ -29,7 +29,7 @@ tank.pos(100,0,0);
 plane.pos(-50,0,-100);
 
 
-
+// Buttons
 playSound.addEventListener('click', () => {
    tank.play();
 });
@@ -41,6 +41,11 @@ stopSound.addEventListener('click', () => {
 changeSound.addEventListener('click', () => {
    tank.volume(Math.random());
 });
+
+geolocateButton.addEventListener('click', () => {
+   geolocate();
+});
+
 
 
 
@@ -107,44 +112,70 @@ function degreesToRadians(degrees) {
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-  var watchID = navigator.geolocation.watchPosition(function(position) {
-    geo.innerHTML += 'latitude:'+ position.coords.latitude + '\n';
-    geo.innerHTML += 'longitude:'+ position.coords.longitude + '\n';
-    geo.innerHTML += 43;
-    // var distTank = distance(position.coords.latitude,position.coords.longitude, 59.5745646,17.840553);
-    // var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
-    // geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
-    // adjustVolume(distTank,distPlane);
-});
+//   var watchID = navigator.geolocation.watchPosition(function(position) {
+//     geo.innerHTML += 'latitude:'+ position.coords.latitude + '\n';
+//     geo.innerHTML += 'longitude:'+ position.coords.longitude + '\n';
+//     geo.innerHTML += 43;
+//     // var distTank = distance(position.coords.latitude,position.coords.longitude, 59.5745646,17.840553);
+//     // var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
+//     // geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
+//     // adjustVolume(distTank,distPlane);
+// });
+//
+// var options = {
+//   enableHighAccuracy: true,
+//   timeout: 5000,
+//   maximumAge: 0
+// };
+//
+// function error(err) {
+//   console.warn('ERROR(' + err.code + '): ' + err.message);
+// }
+//
+// function distance(lat1, lon1, lat2, lon2, M) {
+// 	if ((lat1 == lat2) && (lon1 == lon2)) {
+// 		return 0;
+// 	}
+// 	else {
+// 		var radlat1 = Math.PI * lat1/180;
+// 		var radlat2 = Math.PI * lat2/180;
+// 		var theta = lon1-lon2;
+// 		var radtheta = Math.PI * theta/180;
+// 		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+// 		if (dist > 1) {
+// 			dist = 1;
+// 		}
+// 		dist = Math.acos(dist);
+// 		dist = dist * 180/Math.PI;
+// 		dist = dist * 60 * 1.1515;
+// 		if (unit=="K") { dist = dist * 1.609344 }
+// 		if (unit=="N") { dist = dist * 0.8684 }
+// 		return dist;
+// 	}
+// }
 
-var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
 
-function error(err) {
-  console.warn('ERROR(' + err.code + '): ' + err.message);
+
+function geolocate() {
+  if (window.navigator && window.navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(onGeolocateSuccess, onGeolocateError);
+  }
 }
 
-function distance(lat1, lon1, lat2, lon2, M) {
-	if ((lat1 == lat2) && (lon1 == lon2)) {
-		return 0;
-	}
-	else {
-		var radlat1 = Math.PI * lat1/180;
-		var radlat2 = Math.PI * lat2/180;
-		var theta = lon1-lon2;
-		var radtheta = Math.PI * theta/180;
-		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-		if (dist > 1) {
-			dist = 1;
-		}
-		dist = Math.acos(dist);
-		dist = dist * 180/Math.PI;
-		dist = dist * 60 * 1.1515;
-		if (unit=="K") { dist = dist * 1.609344 }
-		if (unit=="N") { dist = dist * 0.8684 }
-		return dist;
-	}
+function onGeolocateSuccess(coordinates) {
+  const { latitude, longitude } = coordinates.coords;
+  geo.innerHTML += 'victory';
+
+}
+
+function onGeolocateError(error) {
+  console.warn(error.code, error.message);
+
+  if (error.code === 1) {
+    // they said no
+  } else if (error.code === 2) {
+    // position unavailable
+  } else if (error.code === 3) {
+    // timeout
+  }
 }
