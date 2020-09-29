@@ -33,4 +33,10 @@ button {
     color: white;
     z-index: 999999;
 }
+
+.output{
+  margin: 5px;
+  background-color: black;
+  color:white;
+}
 #demo{font:40px;}
