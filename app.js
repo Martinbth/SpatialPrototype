@@ -43,8 +43,8 @@ plane.pos(-50,0,-100);
 // });
 
 geolocationbutton.addEventListener('click', () => {
-  console.log("im in");
-   geo.innerHTML += 33;
+  console.log("inside");
+  
 });
 
 
