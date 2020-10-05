@@ -1,6 +1,5 @@
 // var output = document.querySelector('#showData');
-
-var geo = document.querySelector('#geo');
+var geo = document.getElementById("geo")
 const playSound = document.querySelector('#playSound');
 const stopSound = document.querySelector('#stopSound');
 const changeSound = document.querySelector('#changeSound');
@@ -43,7 +42,7 @@ changeSound.addEventListener('click', () => {
 });
 
 geolocateButton.addEventListener('click', () => {
-   geo.innerHTML += 'Im in geo';
+   geo.innerHTML += "Im in geo";
 });
 
 
