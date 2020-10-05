@@ -1,5 +1,6 @@
 // var output = document.querySelector('#showData');
 var geo = document.getElementById('geo');
+console.log("outside");
 const playSound = document.querySelector('#playSound');
 const stopSound = document.querySelector('#stopSound');
 const changeSound = document.querySelector('#changeSound');
