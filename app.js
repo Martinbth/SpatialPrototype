@@ -4,7 +4,7 @@ console.log("outside");
 const playSound = document.querySelector('#playSound');
 const stopSound = document.querySelector('#stopSound');
 const changeSound = document.querySelector('#changeSound');
-const geolocateButton = document.querySelector('#geolocation-button');
+const geolocateButton = document.querySelector('#geolocationbutton');
 
 
 const planeLat = 59.574054;
@@ -30,19 +30,19 @@ plane.pos(-50,0,-100);
 
 
 // Buttons
-playSound.addEventListener('click', () => {
-   tank.play();
-});
+// playSound.addEventListener('click', () => {
+//    tank.play();
+// });
+//
+// stopSound.addEventListener('click', () => {
+//    tank.stop();
+// });
+//
+// changeSound.addEventListener('click', () => {
+//    tank.volume(Math.random());
+// });
 
-stopSound.addEventListener('click', () => {
-   tank.stop();
-});
-
-changeSound.addEventListener('click', () => {
-   tank.volume(Math.random());
-});
-
-geolocateButton.addEventListener('click', () => {
+geolocationbutton.addEventListener('click', () => {
   console.log("im in");
    geo.innerHTML += 33;
 });
