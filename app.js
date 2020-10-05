@@ -43,7 +43,7 @@ changeSound.addEventListener('click', () => {
 });
 
 geolocateButton.addEventListener('click', () => {
-   geolocate();
+   geo.innerHTML += 'Im in geo';
 });
 
 
