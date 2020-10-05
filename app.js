@@ -42,8 +42,8 @@ changeSound.addEventListener('click', () => {
 });
 
 geolocateButton.addEventListener('click', () => {
-  console.log('im in');
-   geo.innerHTML += 'Im in geo';
+  console.log("im in");
+   geo.innerHTML += 33;
 });
 
 
@@ -67,8 +67,8 @@ function handleOrientation(event) {
   var z = degreesToRadians(event.alpha);
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
 
-  geo.innerHTML +=y;
-  geo.innerHTML +=z;
+  // geo.innerHTML +=y;
+  // geo.innerHTML +=z;
 }
 window.addEventListener('deviceorientation', handleOrientation);
 
