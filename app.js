@@ -44,7 +44,7 @@ plane.pos(-50,0,-100);
 
 geolocationbutton.addEventListener('click', () => {
   console.log("inside");
-   geo.innerHTML += 33;
+   geo.innerHTML += 'hello moto';
 });
 
 
