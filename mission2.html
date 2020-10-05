@@ -11,6 +11,8 @@
   <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
   <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
   <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  <script src="https://rawgit.com/bestiejs/platform.js/master/platform.js"></script>
+ <script src="https://rawgit.com/protyze/aframe-always-fullscreen-component/master/dist/aframe-always-fullscreen-component.min.js"></script>
   <script>
     THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
   </script>
@@ -23,7 +25,7 @@
   <!-- <div class="centered position" id="geo"></div> -->
     <div class="centered" id="geo">hej</div>
 
-  <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+  <a-scene  vr-mode-ui='enabled: false' embedded always-fullscreen arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
     <a-camera gps-camera rotation-reader></a-camera>
   </a-scene>
 
