@@ -42,8 +42,8 @@ changeSound.addEventListener('click', () => {
 });
 
 geolocateButton.addEventListener('click', () => {
-  alert("i got in");
-   geo.innerHTML += "Im in geo";
+  console.log('im in');
+   geo.innerHTML += 'Im in geo';
 });
 
 
