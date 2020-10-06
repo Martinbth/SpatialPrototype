@@ -163,11 +163,15 @@ function geolocate() {
   if (window.navigator && window.navigator.geolocation) {
     // geo.innerHTML += 'nav = true/';
     navigator.geolocation.getCurrentPosition(onGeolocateSuccess, onGeolocateError);
+    // navigator.geolocation.watchPosition(onGeolocateSuccess, onGeolocateError);
+
   }
 }
 
 function onGeolocateSuccess(coordinates) {
-  const { latitude, longitude } = coordinates.coords;
+  geo.innerHTML ='';
+  const latitude  = position.coords.latitude;
+  const longitude = position.coords.longitude;
   geo.innerHTML += 'lat:' + latitude ', long: ' + longitude;
 }
 
