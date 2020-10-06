@@ -169,7 +169,7 @@ function geolocate() {
 }
 
 function onGeolocateSuccess(coordinates) {
-  geo.innerHTML ='';
+  geo.innerHTML +='success';
   const latitude  = position.coords.latitude;
   const longitude = position.coords.longitude;
   geo.innerHTML += 'lat:' + latitude ', long: ' + longitude;
