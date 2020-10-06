@@ -43,8 +43,9 @@ plane.pos(-50,0,-100);
 // });
 
 geolocationbutton.addEventListener('click', () => {
-  console.log("inside");
-   geo.innerHTML += 'hello moto';
+
+  geo.innerHTML += 'click/';
+    geolocate();
 });
 
 
@@ -158,26 +159,26 @@ function degreesToRadians(degrees) {
 
 
 function geolocate() {
-  geo.innerHTML += 111;
+
   if (window.navigator && window.navigator.geolocation) {
+    geo.innerHTML += 'nav = true/';
     navigator.geolocation.getCurrentPosition(onGeolocateSuccess, onGeolocateError);
   }
 }
 
 function onGeolocateSuccess(coordinates) {
   const { latitude, longitude } = coordinates.coords;
-  geo.innerHTML += 222;
-
+  geo.innerHTML += 'success to get cords';
 }
 
 function onGeolocateError(error) {
   console.warn(error.code, error.message);
-
+  geo.innerHTML += error.message;
   if (error.code === 1) {
-    // they said no
+    geo.innerHTML += 'said no';
   } else if (error.code === 2) {
-    // position unavailable
+    geo.innerHTML += 'position unavailable';
   } else if (error.code === 3) {
-    // timeout
+    geo.innerHTML += 'timeout';
   }
 }
