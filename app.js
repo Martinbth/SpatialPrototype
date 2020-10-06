@@ -44,7 +44,7 @@ plane.pos(-50,0,-100);
 
 geolocationbutton.addEventListener('click', () => {
 
-  geo.innerHTML += 'click/';
+  // geo.innerHTML += 'click/';
     geolocate();
 });
 
@@ -161,14 +161,14 @@ function degreesToRadians(degrees) {
 function geolocate() {
 
   if (window.navigator && window.navigator.geolocation) {
-    geo.innerHTML += 'nav = true/';
+    // geo.innerHTML += 'nav = true/';
     navigator.geolocation.getCurrentPosition(onGeolocateSuccess, onGeolocateError);
   }
 }
 
 function onGeolocateSuccess(coordinates) {
   const { latitude, longitude } = coordinates.coords;
-  geo.innerHTML += 'success to get cords';
+  geo.innerHTML += 'lat:' + latitude ', long: ' + longitude;
 }
 
 function onGeolocateError(error) {
