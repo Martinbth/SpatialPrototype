@@ -1,7 +1,4 @@
-
-window.onload = function() {
-  geoFindMe();
-}
+window.addEventListener('DOMContentLoaded', geoFindMe);
 
 function geoFindMe() {
   const status = document.querySelector('#status');
