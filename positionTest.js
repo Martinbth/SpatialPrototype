@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', geoFindMe);
-const tankLat = 59.5745646;
-const tankLong = 17.8405535;
+const tankLat = 59.574564698765438;
+const tankLong = 17.574564698765438;
 
 function geoFindMe() {
   const status = document.querySelector('#status');
@@ -41,7 +41,8 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
           Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
           Math.sin(dLon / 2) * Math.sin(dLon / 2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  var d = R * c;
+  var d = (R * c) / 1000;
+
   return d;
 }
 Number.prototype.toRad = function() {
