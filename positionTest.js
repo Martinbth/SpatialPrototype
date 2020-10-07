@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', geoFindMe);
 const tankLat = 59.5745646;
-const tankLong = 17.840553;
+const tankLong = 17.8405535;
+
 function geoFindMe() {
   const status = document.querySelector('#status');
   const distance = document.querySelector('#distance');
