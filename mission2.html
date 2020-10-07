@@ -21,9 +21,12 @@
 <body style='margin: 0; overflow: hidden;'>
   <div class="centered instructions"></div>
   <!-- <div class="centered position" id="geo"></div> -->
-  <p id = "status"></p>
-  <a id = "map-link" target="_blank"></a>
-  <p id = "distance"></p>
+  <div class="centered test">
+    <p id = "status"></p>
+    <a id = "map-link" target="_blank"></a>
+    <p id = "distance"></p>
+  </div>
+  
   <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
     <a-camera gps-camera rotation-reader></a-camera>
   </a-scene>
