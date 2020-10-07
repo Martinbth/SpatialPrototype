@@ -3,7 +3,7 @@ const tankLat = 59.5745646;
 const tankLong = 17.840553;
 function geoFindMe() {
   const status = document.querySelector('#status');
-  const status = document.querySelector('#distance');
+  const distance = document.querySelector('#distance');
   const mapLink = document.querySelector('#map-link');
 
   mapLink.href = '';
@@ -12,11 +12,11 @@ function geoFindMe() {
   function success(position) {
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
-const distance = calculateDistance(latitude,tankLat,longitude,tankLong);
+    const distanceInM = calculateDistance(latitude,tankLat,longitude,tankLong);
     status.textContent = '';
     mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
     mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-    distance.textContent= `distance to tank is ${distance}m`;
+    distance.textContent= `distance to tank is ${distanceInM}m`;
   }
 
   function error() {
