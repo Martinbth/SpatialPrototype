@@ -170,10 +170,10 @@ function geolocate() {
 
 function onGeolocateSuccess(coordinates) {
   geo.innerHTML +='success!';
-  // const latitude  = position.coords.latitude;
-  //   const longitude = position.coords.longitude;
-   // geo.innerHTML += 'lat:' + latitude + ', long: ' + longitude;
-    geo.innerHTML += coordinates.coords.latitude;
+  const latitude  = position.coords.latitude;
+  const longitude = position.coords.longitude;
+
+  geo.innerHTML += latitude;
 }
 
 function onGeolocateError(error) {
