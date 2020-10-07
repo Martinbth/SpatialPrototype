@@ -48,12 +48,6 @@ geolocationbutton.addEventListener('click', () => {
     geolocate();
 });
 
-
-
-
-
-
-
 //
 // function adjustVolume(distTank,distPlane){
 //   var newVolTank = 1-distTank;
@@ -79,111 +73,54 @@ function degreesToRadians(degrees) {
 }
 
 
+// Geolocation / distance
+window.addEventListener('DOMContentLoaded', geoFindMe);
+const tankLat = 59.574564698765438;
+const tankLong = 17.574564698765438;
 
+function geoFindMe() {
+  const status = document.querySelector('#status');
+  const distance = document.querySelector('#distance');
+  const mapLink = document.querySelector('#map-link');
 
+  mapLink.href = '';
+  mapLink.textContent = '';
 
-
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-//:::                                                                         :::
-//:::  This routine calculates the distance between two points (given the     :::
-//:::  latitude/longitude of those points). It is being used to calculate     :::
-//:::  the distance between two locations using GeoDataSource (TM) prodducts  :::
-//:::                                                                         :::
-//:::  Definitions:                                                           :::
-//:::    South latitudes are negative, east longitudes are positive           :::
-//:::                                                                         :::
-//:::  Passed to function:                                                    :::
-//:::    lat1, lon1 = Latitude and Longitude of point 1 (in decimal degrees)  :::
-//:::    lat2, lon2 = Latitude and Longitude of point 2 (in decimal degrees)  :::
-//:::    unit = the unit you desire for results                               :::
-//:::           where: 'M' is statute miles (default)                         :::
-//:::                  'K' is kilometers                                      :::
-//:::                  'N' is nautical miles                                  :::
-//:::                                                                         :::
-//:::  Worldwide cities and other features databases with latitude longitude  :::
-//:::  are available at https://www.geodatasource.com                         :::
-//:::                                                                         :::
-//:::  For enquiries, please contact sales@geodatasource.com                  :::
-//:::                                                                         :::
-//:::  Official Web site: https://www.geodatasource.com                       :::
-//:::                                                                         :::
-//:::               GeoDataSource.com (C) All Rights Reserved 2018            :::
-//:::                                                                         :::
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-//   var watchID = navigator.geolocation.watchPosition(function(position) {
-//     geo.innerHTML += 'latitude:'+ position.coords.latitude + '\n';
-//     geo.innerHTML += 'longitude:'+ position.coords.longitude + '\n';
-//     geo.innerHTML += 43;
-//     // var distTank = distance(position.coords.latitude,position.coords.longitude, 59.5745646,17.840553);
-//     // var distPlane = distance(position.coords.latitude,position.coords.longitude, 59.574054,17.839554);
-//     // geo.innerHTML += "distance to Plane:"+ distPlane + "\n";
-//     // adjustVolume(distTank,distPlane);
-// });
-//
-// var options = {
-//   enableHighAccuracy: true,
-//   timeout: 5000,
-//   maximumAge: 0
-// };
-//
-// function error(err) {
-//   console.warn('ERROR(' + err.code + '): ' + err.message);
-// }
-//
-// function distance(lat1, lon1, lat2, lon2, M) {
-// 	if ((lat1 == lat2) && (lon1 == lon2)) {
-// 		return 0;
-// 	}
-// 	else {
-// 		var radlat1 = Math.PI * lat1/180;
-// 		var radlat2 = Math.PI * lat2/180;
-// 		var theta = lon1-lon2;
-// 		var radtheta = Math.PI * theta/180;
-// 		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-// 		if (dist > 1) {
-// 			dist = 1;
-// 		}
-// 		dist = Math.acos(dist);
-// 		dist = dist * 180/Math.PI;
-// 		dist = dist * 60 * 1.1515;
-// 		if (unit=="K") { dist = dist * 1.609344 }
-// 		if (unit=="N") { dist = dist * 0.8684 }
-// 		return dist;
-// 	}
-// }
-
-
-
-function geolocate() {
-
-  if (window.navigator && window.navigator.geolocation) {
-    geo.innerHTML += 'nav = true/';
-    navigator.geolocation.getCurrentPosition(onGeolocateSuccess, onGeolocateError);
-    // navigator.geolocation.watchPosition(onGeolocateSuccess, onGeolocateError);
-
+  function success(position) {
+    const latitude  = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    const distanceInM = calculateDistance(latitude,tankLat,longitude,tankLong);
+    status.textContent = '';
+    mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+    mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+    distance.textContent= `distance to tank is ${distanceInM}m`;
   }
+
+  function error() {
+    status.textContent = 'Unable to retrieve your location';
+  }
+
+  if(!navigator.geolocation) {
+    status.textContent = 'Geolocation is not supported by your browser';
+  } else {
+    status.textContent = 'Locating…';
+    navigator.geolocation.watchPosition(success, error);
+  }
+
 }
 
-function onGeolocateSuccess(coordinates) {
-  geo.innerHTML +='success!';
-  const latitude  = position.coords.latitude;
-  const longitude = position.coords.longitude;
+function calculateDistance(lat1, lon1, lat2, lon2) {
+  var R = 6371; // km
+  var dLat = (lat2 - lat1).toRad();
+  var dLon = (lon2 - lon1).toRad();
+  var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
+          Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = (R * c) / 1000;
 
-  geo.innerHTML += latitude;
+  return d;
 }
-
-function onGeolocateError(error) {
-  console.warn(error.code, error.message);
-  geo.innerHTML += error.message;
-  if (error.code === 1) {
-    geo.innerHTML += 'said no';
-  } else if (error.code === 2) {
-    geo.innerHTML += 'position unavailable';
-  } else if (error.code === 3) {
-    geo.innerHTML += 'timeout';
-  }
+Number.prototype.toRad = function() {
+  return this * Math.PI / 180;
 }
