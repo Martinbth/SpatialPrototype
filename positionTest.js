@@ -1,4 +1,6 @@
 document.querySelector('#find-me').addEventListener('click', geoFindMe);
+
+
 function geoFindMe() {
 
   const status = document.querySelector('#status');
@@ -24,7 +26,6 @@ function geoFindMe() {
     status.textContent = 'Geolocation is not supported by your browser';
   } else {
     status.textContent = 'Locating…';
-    navigator.geolocation.getCurrentPosition(success, error);
+    navigator.geolocation.watchPosition(success, error);
   }
-
 }
