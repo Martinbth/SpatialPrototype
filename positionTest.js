@@ -1,17 +1,9 @@
 
-
-// check for Geolocation support
-if (navigator.geolocation) {
-  console.log('Geolocation is supported!');
-}
-else {
-  console.log('Geolocation is not supported for this Browser/OS version yet.');
-
-}
-
-
 window.onload = function() {
+  geoFindMe();
+}
 
+function geoFindMe() {
   const status = document.querySelector('#status');
   const mapLink = document.querySelector('#map-link');
 
@@ -35,6 +27,7 @@ window.onload = function() {
     status.textContent = 'Geolocation is not supported by your browser';
   } else {
     status.textContent = 'Locating…';
-    navigator.geolocation.watchPosition((success, error));
+    navigator.geolocation.watchPosition(success, error);
   }
+
 }
