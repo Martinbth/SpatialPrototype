@@ -1,7 +1,16 @@
-document.querySelector('#find-me').addEventListener('click', geoFindMe);
 
 
-function geoFindMe() {
+// check for Geolocation support
+if (navigator.geolocation) {
+  console.log('Geolocation is supported!');
+}
+else {
+  console.log('Geolocation is not supported for this Browser/OS version yet.');
+
+}
+
+
+window.onload = function() {
 
   const status = document.querySelector('#status');
   const mapLink = document.querySelector('#map-link');
@@ -26,6 +35,6 @@ function geoFindMe() {
     status.textContent = 'Geolocation is not supported by your browser';
   } else {
     status.textContent = 'Locating…';
-    navigator.geolocation.watchPosition(success, error);
+    navigator.geolocation.watchPosition((success, error);
   }
 }
