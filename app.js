@@ -1,16 +1,14 @@
 // var output = document.querySelector('#showData');
-var geo = document.getElementById('geo');
 console.log("outside");
-const playSound = document.querySelector('#playSound');
-const stopSound = document.querySelector('#stopSound');
-const changeSound = document.querySelector('#changeSound');
-const geolocateButton = document.querySelector('#geolocationbutton');
+// const playSound = document.querySelector('#playSound');
+// const stopSound = document.querySelector('#stopSound');
+// const changeSound = document.querySelector('#changeSound');
+
 
 
 const planeLat = 59.574054;
 const planeLong = 17.839554;
-const tankLat = 59.5745646;
-const tankLong = 17.840553;
+
 
 var plane = new Howl({
   src: ['./sounds/airplane.mp3'],
@@ -123,4 +121,17 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 }
 Number.prototype.toRad = function() {
   return this * Math.PI / 180;
+}
+
+
+// change volume
+function regulateVolume(object,dist){
+  if(dist>100){
+    object.volume(0);
+  }
+  if(dist<0){
+    object.volume(1);
+  }else{
+    object.volume(dist/100);
+  }
 }
