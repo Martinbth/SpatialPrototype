@@ -173,7 +173,7 @@ function onGeolocateSuccess(coordinates) {
   // const latitude  = position.coords.latitude;
   //   const longitude = position.coords.longitude;
    // geo.innerHTML += 'lat:' + latitude + ', long: ' + longitude;
-    geo.innerHTML += position.coords.latitude;
+    geo.innerHTML += coordinates.coords.latitude;
 }
 
 function onGeolocateError(error) {
