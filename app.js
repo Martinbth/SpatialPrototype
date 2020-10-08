@@ -88,7 +88,7 @@ function geoFindMe() {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     status.textContent = 'success';
-    const distanceInM = calculateDistance(59.575341, 17.843545, latitude, Longitude);
+    const distanceInM = calculateDistance(59.575341, 17.843545, latitude, longitude);
     // const distanceInM = calculateDistance(latitude,tankLat,longitude,tankLong);
     status.textContent = '';
     mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
