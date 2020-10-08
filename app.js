@@ -18,13 +18,13 @@ var plane = new Howl({
 });
 
 var tank = new Howl({
-   src: ['./sounds/tankfiring.mp3'],
-   autoplay: false,
-   loop: true,
-   volume: 1,
+  src: ['./sounds/tankfiring.mp3'],
+  autoplay: false,
+  loop: true,
+  volume: 1,
 });
-tank.pos(100,0,0);
-plane.pos(-50,0,-100);
+tank.pos(100, 0, 0);
+plane.pos(-50, 0, -100);
 
 
 // Buttons
@@ -43,7 +43,7 @@ plane.pos(-50,0,-100);
 geolocationbutton.addEventListener('click', () => {
 
   geo.innerHTML += 'click/';
-    geolocate();
+  geolocate();
 });
 
 //
@@ -85,15 +85,15 @@ function geoFindMe() {
   mapLink.textContent = '';
 
   function success(position) {
-    const latitude  = position.coords.latitude;
+    const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-
-    const distanceInM = calculateDistance(59.575341,17.843545,latitude,Longitude);
+    status.textContent = 'success';
+    const distanceInM = calculateDistance(59.575341, 17.843545, latitude, Longitude);
     // const distanceInM = calculateDistance(latitude,tankLat,longitude,tankLong);
     status.textContent = '';
     mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
     mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-    distance.textContent= `distance to tank is ${distanceInM}m`;
+    distance.textContent = `distance to tank is ${distanceInM}m`;
 
 
     // regulateVolume(tank,distanceInM);
@@ -103,7 +103,7 @@ function geoFindMe() {
     status.textContent = 'Unable to retrieve your location';
   }
 
-  if(!navigator.geolocation) {
+  if (!navigator.geolocation) {
     status.textContent = 'Geolocation is not supported by your browser';
   } else {
     status.textContent = 'Locating…';
@@ -113,12 +113,13 @@ function geoFindMe() {
 }
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
+  status.textContent = 'calculateDistance';
   var R = 6371000; // km
   var dLat = (lat2 - lat1).toRad();
   var dLon = (lon2 - lon1).toRad();
   var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-          Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
-          Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   var d = (R * c);
   return d;
@@ -129,17 +130,17 @@ Number.prototype.toRad = function() {
 
 
 // change volume
-function regulateVolume(object,dist){
-  if(dist>100){
+function regulateVolume(object, dist) {
+  if (dist > 100) {
     // object.volume(0);
-    distance.textContent= `distance to tank is ${distanceInM}m and vol set to ${v}`;
+    distance.textContent = `distance to tank is ${distanceInM}m and vol set to ${v}`;
   }
-  if(dist<0){
+  if (dist < 0) {
     // object.volume(1);
-    distance.textContent= `distance to tank is ${distanceInM}m and vol set to ${v}`;
-  }else{
-    const v = 1-(dist/100);
-    distance.textContent= `distance to tank is ${distanceInM}m and vol set to ${v}`;
+    distance.textContent = `distance to tank is ${distanceInM}m and vol set to ${v}`;
+  } else {
+    const v = 1 - (dist / 100);
+    distance.textContent = `distance to tank is ${distanceInM}m and vol set to ${v}`;
     // object.volume(v);
   }
 }
