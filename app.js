@@ -113,7 +113,7 @@ function geoFindMe() {
 }
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
-  var R = 637100; // km
+  var R = 63710; // km
   var dLat = (lat2 - lat1).toRad();
   var dLon = (lon2 - lon1).toRad();
   var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
