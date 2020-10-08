@@ -87,11 +87,15 @@ function geoFindMe() {
   function success(position) {
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
-    const distanceInM = calculateDistance(latitude,tankLat,longitude,tankLong);
+
+    const distanceInM = calculateDistance(59.574483,17.844211,59.574516,17.840303);
+    // const distanceInM = calculateDistance(latitude,tankLat,longitude,tankLong);
     status.textContent = '';
     mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
     mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
     distance.textContent= `distance to tank is ${distanceInM}m`;
+
+
     // regulateVolume(tank,distanceInM);
   }
 
@@ -116,7 +120,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
           Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
           Math.sin(dLon / 2) * Math.sin(dLon / 2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  var d = (R * c)-57273 ;
+  var d = (R * c);
   return d;
 }
 Number.prototype.toRad = function() {
