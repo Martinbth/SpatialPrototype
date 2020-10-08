@@ -93,10 +93,10 @@ function geoFindMe() {
     status.textContent = '';
     mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
     mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-    distance.textContent = `distance to tank is ${distanceInM}m`;
+    // distance.textContent = `distance to tank is ${distanceInM}m`;
 
 
-    // regulateVolume(tank,distanceInM);
+    regulateVolume(tank,distanceInM);
   }
 
   function error() {
@@ -132,7 +132,7 @@ Number.prototype.toRad = function() {
 // change volume
 function regulateVolume(object, dist) {
   if (dist > 100) {
-    // object.volume(0);
+    object.volume(0.1);
     distance.textContent = `distance to tank is ${distanceInM}m and vol set to ${v}`;
   }
   if (dist < 0) {
