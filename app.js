@@ -92,7 +92,7 @@ function geoFindMe() {
     mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
     mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
     distance.textContent= `distance to tank is ${distanceInM}m`;
-    regulateVolume(tank,distanceInM);
+    // regulateVolume(tank,distanceInM);
   }
 
   function error() {
@@ -109,15 +109,14 @@ function geoFindMe() {
 }
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
-  var R = 6371; // km
+  var R = 637100; // km
   var dLat = (lat2 - lat1).toRad();
   var dLon = (lon2 - lon1).toRad();
   var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
           Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
           Math.sin(dLon / 2) * Math.sin(dLon / 2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  var d = (R * c) / 1000;
-
+  var d = (R * c) ;
   return d;
 }
 Number.prototype.toRad = function() {
@@ -129,9 +128,11 @@ Number.prototype.toRad = function() {
 function regulateVolume(object,dist){
   if(dist>100){
     // object.volume(0);
+    distance.textContent= `distance to tank is ${distanceInM}m and vol set to ${v}`;
   }
   if(dist<0){
     // object.volume(1);
+    distance.textContent= `distance to tank is ${distanceInM}m and vol set to ${v}`;
   }else{
     const v = 1-(dist/100);
     distance.textContent= `distance to tank is ${distanceInM}m and vol set to ${v}`;
