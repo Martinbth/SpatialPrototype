@@ -131,9 +131,10 @@ Number.prototype.toRad = function() {
 
 // change volume
 function regulateVolume(object, dist) {
+  distance.textContent = 'object:'+dist + 'dist:' + dist;
   if (dist > 100) {
     object.volume(0.1);
-    distance.textContent = `distance to tank is ${distanceInM}m and vol set to ${v}`;
+
   }
   if (dist < 0) {
     // object.volume(1);
