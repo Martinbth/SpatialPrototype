@@ -86,9 +86,13 @@ function geoFindMe() {
     const planeDistance = calculateDistance(planeLat, planeLong, userLat, userLong);
     // mapLink.href = `https://www.openstreetmap.org/#map=18/${userLat}/${userLong}`;
     // mapLink.textContent = `Latitude: ${userLat} °, Longitude: ${userLong} °`;
-    tankStatus.textContent = ''
+    tankStatus.textContent = '';
     const tankV = regulateVolume(tankDistance);
     tankStatus.textContent ='tank vol: ' + tankV;
+
+    planeStatus.textContent = '';
+    const planeV = regulateVolume(planeDistance);
+    planeStatus.textContent ='tank vol: ' + planeV;
     // tank.volume(tankV);
     //
     // plane.volume(regulateVolume(planeDistance));
