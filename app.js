@@ -5,7 +5,7 @@
 var plane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
-  autoplay: false,
+  autoplay: true,
   volume: 1
 });
 
@@ -86,10 +86,12 @@ function geoFindMe() {
     const planeDistance = calculateDistance(planeLat, planeLong, userLat, userLong);
     // mapLink.href = `https://www.openstreetmap.org/#map=18/${userLat}/${userLong}`;
     // mapLink.textContent = `Latitude: ${userLat} °, Longitude: ${userLong} °`;
-
-    // tank.volume(regulateVolume(tankDistance));
+    tankStatus.textContent = ''
+    const tankV = regulateVolume(tankDistance);
+    tankStatus.textContent ='tank vol: ' tankV;
+    // tank.volume(tankV);
     //
-    plane.volume(regulateVolume(planeDistance));
+    // plane.volume(regulateVolume(planeDistance));
   ;
   }
 
@@ -129,6 +131,7 @@ Number.prototype.toRad = function() {
 function regulateVolume(dist) {
 
   distance.textContent +='dist: ' + dist;
+
   if (dist > 100) {
       distance.textContent += 'dist > 100';
       return 0.1;
