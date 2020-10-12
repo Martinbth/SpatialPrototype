@@ -88,7 +88,7 @@ function geoFindMe() {
     // mapLink.textContent = `Latitude: ${userLat} °, Longitude: ${userLong} °`;
     tankStatus.textContent = ''
     const tankV = regulateVolume(tankDistance);
-    tankStatus.textContent ='tank vol: ' tankV;
+    tankStatus.textContent ='tank vol: ' + tankV;
     // tank.volume(tankV);
     //
     // plane.volume(regulateVolume(planeDistance));
