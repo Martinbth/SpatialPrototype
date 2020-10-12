@@ -1,13 +1,7 @@
 // var output = document.querySelector('#showData');
-console.log("outside");
 // const playSound = document.querySelector('#playSound');
 // const stopSound = document.querySelector('#stopSound');
 // const changeSound = document.querySelector('#changeSound');
-
-
-
-
-
 var plane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
@@ -38,11 +32,8 @@ plane.pos(-50, 0, -100);
 //    tank.volume(Math.random());
 // });
 
-geolocationbutton.addEventListener('click', () => {
-
-  geo.innerHTML += 'click/';
-  geolocate();
-});
+// geolocationbutton.addEventListener('click', () => {
+// });
 
 //
 // function adjustVolume(distTank,distPlane){
@@ -58,10 +49,10 @@ function handleOrientation(event) {
   var y = degreesToRadians(event.gamma);
   var z = degreesToRadians(event.alpha);
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
-
   // geo.innerHTML +=y;
   // geo.innerHTML +=z;
 }
+
 window.addEventListener('deviceorientation', handleOrientation);
 
 function degreesToRadians(degrees) {
@@ -75,24 +66,24 @@ const tankLat = 59.572636;
 const tankLong = 17.845729;
 const planeLat = 59.574168;
 const planeLong = 17.841993;
+const status = document.querySelector('#status');
+const distance = document.querySelector('#distance');
+const mapLink = document.querySelector('#map-link');
 
 function geoFindMe() {
-  const status = document.querySelector('#status');
-  const distance = document.querySelector('#distance');
-  const mapLink = document.querySelector('#map-link');
-
   mapLink.href = '';
   mapLink.textContent = '';
 
   function success(position) {
     const userLat = position.coords.latitude;
-    const userLong= position.coords.longitude;
+    const userLong = position.coords.longitude;
     status.textContent = 'success';
-    const tankDistance = calculateDistance(tankLat, tankLong, userLat, userLong);
+
     status.textContent = '';
-    mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-    mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-    tank.volume(regulateVolume(tankDistance));
+    const tankDistance = calculateDistance(tankLat, tankLong, userLat, userLong);
+    mapLink.href = `https://www.openstreetmap.org/#map=18/${userLat}/${userLong}`;
+    mapLink.textContent = `Latitude: ${userLat} °, Longitude: ${userLong} °`;
+    // tank.volume(regulateVolume(tankDistance));
 
   }
 
