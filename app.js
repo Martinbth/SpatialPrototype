@@ -6,8 +6,6 @@ console.log("outside");
 
 
 
-const planeLat = 59.574054;
-const planeLong = 17.839554;
 
 
 var plane = new Howl({
@@ -91,7 +89,7 @@ function geoFindMe() {
     const userLong= position.coords.longitude;
     status.textContent = 'success';
     const tankDistance = calculateDistance(tankLat, tankLong, userLat, userLong);
-    // status.textContent = '';
+    status.textContent = '';
     // mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
     // mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
     tank.volume(regulateVolume(distanceInM));
