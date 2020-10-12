@@ -11,7 +11,7 @@ var plane = new Howl({
 
 var tank = new Howl({
   src: ['./sounds/tankfiring.mp3'],
-  autoplay: false,
+  autoplay: true,
   loop: true,
   volume: 1,
 });
@@ -64,8 +64,8 @@ function degreesToRadians(degrees) {
 window.addEventListener('DOMContentLoaded', geoFindMe);
 const planeLat = 59.572636;
 const planeLong = 17.845729;
-const tankLat = 59.574168;
-const tankLong = 17.841993;
+const tankLat = 59.574581;
+const tankLong = 17.840469;
 const status = document.querySelector('#status');
 const distance = document.querySelector('#distance');
 const mapLink = document.querySelector('#map-link');
