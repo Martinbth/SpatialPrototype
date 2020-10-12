@@ -84,9 +84,9 @@ function geoFindMe() {
     const planeDistance = calculateDistance(planeLat, planeLong, userLat, userLong);
     // mapLink.href = `https://www.openstreetmap.org/#map=18/${userLat}/${userLong}`;
     // mapLink.textContent = `Latitude: ${userLat} °, Longitude: ${userLong} °`;
-    distance.textContent ='tank:';
+    distance.textContent +='tank:';
     tank.volume(regulateVolume(tankDistance));
-    distance.textContent ='plane:';
+    distance.textContent +='plane:';
     plane.volume(regulateVolume(planeDistance));
 
   }
@@ -126,7 +126,7 @@ Number.prototype.toRad = function() {
 
 function regulateVolume(dist) {
 
-  distance.textContent ='dist: ' + dist;
+  distance.textContent +='dist: ' + dist;
   if (dist > 100) {
       distance.textContent += 'dist > 100';
       return 0.1;
@@ -136,7 +136,7 @@ function regulateVolume(dist) {
   }else {
       distance.textContent += 'else:';
       const v = 1-(dist/100);
-      distance.textContent ='vol set to:' + v;
+      distance.textContent +='vol set to:' + v;
       return v;
   }
 }
