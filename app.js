@@ -81,9 +81,9 @@ function geoFindMe() {
 
     status.textContent = '';
     const tankDistance = calculateDistance(tankLat, tankLong, userLat, userLong);
-    mapLink.href = `https://www.openstreetmap.org/#map=18/${userLat}/${userLong}`;
-    mapLink.textContent = `Latitude: ${userLat} °, Longitude: ${userLong} °`;
-    // tank.volume(regulateVolume(tankDistance));
+    // mapLink.href = `https://www.openstreetmap.org/#map=18/${userLat}/${userLong}`;
+    // mapLink.textContent = `Latitude: ${userLat} °, Longitude: ${userLong} °`;
+    tank.volume(regulateVolume(tankDistance));
 
   }
 
@@ -101,7 +101,6 @@ function geoFindMe() {
 }
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
-  status.textContent = 'calculateDistance';
   var R = 6371000; // km
   var dLat = (lat2 - lat1).toRad();
   var dLon = (lon2 - lon1).toRad();
