@@ -134,18 +134,18 @@ Number.prototype.toRad = function() {
 
 function regulateVolume(dist) {
 
-  distance.textContent +='dist: ' + dist;
+  // distance.textContent +='dist: ' + dist;
 
   if (dist > 100) {
-      distance.textContent += 'dist > 100';
+      // distance.textContent += 'dist > 100';
       return 0.1;
   }else if (dist < 0) {
-      distance.textContent += 'dist < 0';
+      // distance.textContent += 'dist < 0';
       return 1;
   }else {
-      distance.textContent += 'else:';
+      // distance.textContent += 'else:';
       const v = 1-(dist/100);
-      distance.textContent +='vol set to:' + v;
+      // distance.textContent +='vol set to:' + v;
       return v;
   }
 }
