@@ -69,6 +69,8 @@ const planeLong = 17.841993;
 const status = document.querySelector('#status');
 const distance = document.querySelector('#distance');
 const mapLink = document.querySelector('#map-link');
+const planeStatus = document.querySelector('#plane');
+const tankStatus = document.querySelector('#tank');
 
 function geoFindMe() {
   mapLink.href = '';
@@ -84,11 +86,11 @@ function geoFindMe() {
     const planeDistance = calculateDistance(planeLat, planeLong, userLat, userLong);
     // mapLink.href = `https://www.openstreetmap.org/#map=18/${userLat}/${userLong}`;
     // mapLink.textContent = `Latitude: ${userLat} °, Longitude: ${userLong} °`;
-    distance.textContent +='tank:';
-    tank.volume(regulateVolume(tankDistance));
-    distance.textContent +='plane:';
-    plane.volume(regulateVolume(planeDistance));
 
+    // tank.volume(regulateVolume(tankDistance));
+    //
+    // plane.volume(regulateVolume(planeDistance));
+    planeStatus.textContent = 'plane volume is: 'regulateVolume(planeDistance);
   }
 
   function error() {
