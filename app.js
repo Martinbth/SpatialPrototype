@@ -89,8 +89,8 @@ function geoFindMe() {
 
     // tank.volume(regulateVolume(tankDistance));
     //
-    // plane.volume(regulateVolume(planeDistance));
-    planeStatus.textContent = 'plane volume is: 'regulateVolume(planeDistance);
+    plane.volume(regulateVolume(planeDistance));
+  ;
   }
 
   function error() {
