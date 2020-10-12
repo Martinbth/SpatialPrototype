@@ -62,10 +62,10 @@ function degreesToRadians(degrees) {
 
 // Geolocation / distance
 window.addEventListener('DOMContentLoaded', geoFindMe);
-const tankLat = 59.572636;
-const tankLong = 17.845729;
-const planeLat = 59.574168;
-const planeLong = 17.841993;
+const planeLat = 59.572636;
+const planeLong = 17.845729;
+const tankLat = 59.574168;
+const tankLong = 17.841993;
 const status = document.querySelector('#status');
 const distance = document.querySelector('#distance');
 const mapLink = document.querySelector('#map-link');
@@ -75,24 +75,33 @@ const tankStatus = document.querySelector('#tank');
 function geoFindMe() {
   mapLink.href = '';
   mapLink.textContent = '';
+  var userLat;
+  var userLong;
+  var tankDistance;
+  var planeDistance;
+  var tankV;
+  var planeV;
+
 
   function success(position) {
-    const userLat = position.coords.latitude;
-    const userLong = position.coords.longitude;
+    userLat = position.coords.latitude;
+    userLong = position.coords.longitude;
     status.textContent = 'success';
-
     status.textContent = '';
-    const tankDistance = calculateDistance(tankLat, tankLong, userLat, userLong);
-    const planeDistance = calculateDistance(planeLat, planeLong, userLat, userLong);
+
+    tankDistance = calculateDistance(tankLat, tankLong, userLat, userLong);
+    planeDistance = calculateDistance(planeLat, planeLong, userLat, userLong);
     // mapLink.href = `https://www.openstreetmap.org/#map=18/${userLat}/${userLong}`;
     // mapLink.textContent = `Latitude: ${userLat} °, Longitude: ${userLong} °`;
+
+    tankV = regulateVolume(tankDistance);
     tankStatus.textContent = '';
-    const tankV = regulateVolume(tankDistance);
     tankStatus.textContent ='tank vol: ' + tankV;
 
+
+    planeV = regulateVolume(planeDistance);
     planeStatus.textContent = '';
-    const planeV = regulateVolume(planeDistance);
-    planeStatus.textContent ='plane vol: ' + planeV;
+    planeStatus.textContent ='\b plane vol: ' + planeV;
     // tank.volume(tankV);
     //
     // plane.volume(regulateVolume(planeDistance));
@@ -133,19 +142,19 @@ Number.prototype.toRad = function() {
 // 80-0m
 
 function regulateVolume(dist) {
-
+  var v;
   // distance.textContent +='dist: ' + dist;
 
   if (dist > 100) {
       // distance.textContent += 'dist > 100';
-      return 0.1;
+      v = 0.1;
   }else if (dist < 0) {
       // distance.textContent += 'dist < 0';
-      return 1;
+      v = 1;
   }else {
       // distance.textContent += 'else:';
-      const v = 1-(dist/100);
+      v = 1-(dist/100);
       // distance.textContent +='vol set to:' + v;
-      return v;
   }
+  return v;
 }
