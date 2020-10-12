@@ -73,8 +73,10 @@ function degreesToRadians(degrees) {
 
 // Geolocation / distance
 window.addEventListener('DOMContentLoaded', geoFindMe);
-const tankLat = 59.574564698765438;
-const tankLong = 17.574564698765438;
+const tankLat = 59.572636;
+const tankLong = 17.845729;
+const planeLat = 59.574168;
+const planeLong = 17.841993;
 
 function geoFindMe() {
   const status = document.querySelector('#status');
@@ -85,16 +87,14 @@ function geoFindMe() {
   mapLink.textContent = '';
 
   function success(position) {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
+    const userLat = position.coords.latitude;
+    const userLong= position.coords.longitude;
     status.textContent = 'success';
-    const distanceInM = calculateDistance(59.575341, 17.843545, latitude, longitude);
-    // const distanceInM = calculateDistance(latitude,tankLat,longitude,tankLong);
-    status.textContent = '';
-    mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-    mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-    // distance.textContent = `distance to tank is ${distanceInM}m`;
-
+    const tankDistance = calculateDistance(tankLat, tankLong, userLat, userLong);
+    // status.textContent = '';
+    // mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+    // mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+    tank.volume(regulateVolume(distanceInM));
 
     regulateVolume(tank,distanceInM);
   }
@@ -130,19 +130,20 @@ Number.prototype.toRad = function() {
 
 
 // change volume
-function regulateVolume(object, dist) {
-  distance.textContent = 'object: '+ object + 'dist: ' + dist;
-  if (dist > 100) {
-    object.volume(0.1);
-    distance.textContent += 'dist > 100';
-  }
-  if (dist < 0) {
-    // object.volume(1);
-      distance.textContent += 'dist < 0';
+// 100-0m = 1000*0.001 = 0.1  (75m / 100) - 1 = 0.25
+// 80-0m
 
-  } else {
-    const v = 1 - (dist / 100);
-      distance.textContent += 'else: v = ' + v;
-    // object.volume(v);
+function regulateVolume(dist) {
+
+  distance.textContent ='dist: ' + dist;
+  if (dist > 100) {
+      distance.textContent += 'dist > 100';
+      return 0.1;
+  }else if (dist < 0) {
+      distance.textContent += 'dist < 0';
+      return 1;
+  }else {
+      distance.textContent += 'else
+      return 1-(dist/100);
   }
 }
