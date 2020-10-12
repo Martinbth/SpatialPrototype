@@ -87,7 +87,7 @@ function geoFindMe() {
     distance.textContent ='tank:';
     tank.volume(regulateVolume(tankDistance));
     distance.textContent ='plane:';
-    plane.volume(regulateVolume(tankDistance));
+    plane.volume(regulateVolume(planeDistance));
 
   }
 
