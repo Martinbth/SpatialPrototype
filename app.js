@@ -102,7 +102,8 @@ function geoFindMe() {
     planeV = regulateVolume(planeDistance);
     planeStatus.textContent = '';
     planeStatus.textContent ='\b plane vol: ' + planeV;
-    // tank.volume(tankV);
+    tank.volume(tankV);
+    plane.volume(planeV);
     //
     // plane.volume(regulateVolume(planeDistance));
   ;
