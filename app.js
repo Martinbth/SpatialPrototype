@@ -131,17 +131,18 @@ Number.prototype.toRad = function() {
 
 // change volume
 function regulateVolume(object, dist) {
-  distance.textContent = 'object:'+dist + 'dist:' + dist;
+  distance.textContent = 'object: '+ object + 'dist: ' + dist;
   if (dist > 100) {
     object.volume(0.1);
-
+    distance.textContent += 'dist > 100';
   }
   if (dist < 0) {
     // object.volume(1);
-    distance.textContent = `distance to tank is ${distanceInM}m and vol set to ${v}`;
+      distance.textContent += 'dist < 0';
+
   } else {
     const v = 1 - (dist / 100);
-    distance.textContent = `distance to tank is ${distanceInM}m and vol set to ${v}`;
+      distance.textContent += 'else: v = ' + v;
     // object.volume(v);
   }
 }
