@@ -5,14 +5,27 @@ window.onload = () => {
     let places = staticLoadPlaces();
     renderPlaces(places);
 };
-
+// const tankLat = 59.572636;
+// const tankLong = 17.845729;
+// const planeLat = 59.574581;
+// const planeLong = 17.840469;
 function staticLoadPlaces() {
     return [
         {
             name: 'Pokèmon',
             location: {
-              lat:59.5745646,
-              lng:17.840553,
+              lat:59.572636,
+              lng:17.845729,
+                // decomment the following and add coordinates:
+                // lat: <your-latitude>,
+                // lng: <your-longitude>,
+            },
+        },
+        {
+            name: 'Pokèmonn',
+            location: {
+              lat:59.574581,
+              lng:17.840469,
                 // decomment the following and add coordinates:
                 // lat: <your-latitude>,
                 // lng: <your-longitude>,
