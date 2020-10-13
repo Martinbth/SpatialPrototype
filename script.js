@@ -1,10 +1,14 @@
 window.onload = () => {
+    const renderModels = document.querySelector('#renderModels');
+
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
-
+    //put all models locations in a vector
     let places = staticLoadPlaces();
-    renderPlaces(places);
 };
+changeSound.addEventListener('click', () => {
+    renderPlaces(places);
+});
 // const tankLat = 59.572636;
 // const tankLong = 17.845729;
 // const planeLat = 59.574581;
