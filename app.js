@@ -62,10 +62,10 @@ function degreesToRadians(degrees) {
 
 // Geolocation / distance
 window.addEventListener('DOMContentLoaded', geoFindMe);
-const tankLat = 59.572636;
-const tankLong = 17.845729;
-const planeLat = 59.574581;
-const planeLong = 17.840469;
+const tankLat = 59.574560;
+const tankLong = 17.840493;
+const planeLat = 59.574063;
+const planeLong = 17.840166;
 const status = document.querySelector('#status');
 const distance = document.querySelector('#distance');
 const mapLink = document.querySelector('#map-link');
@@ -145,6 +145,7 @@ Number.prototype.toRad = function() {
 function regulateVolume(dist) {
 
   var v;
+  distance.textContent = '';
   distance.textContent +='dist: ' + dist;
 
   if (dist > 100) {
