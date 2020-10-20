@@ -6,11 +6,6 @@ window.onload = () => {
       renderPlaces(places);
     });
 
-    document.querySelector('#changeModel').addEventListener("click", function() {
-      //put all models locations in a vector
-      let places = staticLoadPlaces();
-      renderPlaces(places);
-    });
 
     button.innerText = '﹖';
 };
