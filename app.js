@@ -28,21 +28,22 @@ plane.pos(-50, 0, -100);
 //    tank.stop();
 // });
 //
-const i=0;
+let i;
 changeSound.addEventListener('click', () => {
 
-  if(i=0){
+  if(i=1){
     plane.stop();
+    tank.stop();
     tank.play();
-    i=1;
+    i=2;
   }else{
     tank.stop();
+    plane.stop();
     plane.play();
-    i=0;
+    i=1;
   }
-
-
 });
+
 
 // geolocationbutton.addEventListener('click', () => {
 // });
