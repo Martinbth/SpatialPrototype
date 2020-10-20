@@ -28,15 +28,18 @@ plane.pos(-50, 0, -100);
 //    tank.stop();
 // });
 //
-let i;
+var i = 0;
 changeSound.addEventListener('click', () => {
 
-  if(i=1){
+console.log(i);
+  if(i==1){
+    console.log("in 1");
     plane.stop();
     tank.stop();
     tank.play();
     i=2;
   }else{
+    console.log("in else");
     tank.stop();
     plane.stop();
     plane.play();
