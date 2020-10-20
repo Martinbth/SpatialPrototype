@@ -28,7 +28,7 @@ plane.pos(-50, 0, -100);
 //    tank.stop();
 // });
 //
-var i=0;
+const i=0;
 changeSound.addEventListener('click', () => {
 
   if(i=0){

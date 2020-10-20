@@ -10,8 +10,6 @@ window.onload = () => {
     button.innerText = '﹖';
 };
 
-
-
 // const tankLat = 59.572636;
 // const tankLong = 17.845729;
 // const planeLat = 59.574581;
