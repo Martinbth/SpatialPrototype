@@ -1,7 +1,7 @@
 // var output = document.querySelector('#showData');
 // const playSound = document.querySelector('#playSound');
 // const stopSound = document.querySelector('#stopSound');
-// const changeSound = document.querySelector('#changeSound');
+const changeSound = document.querySelector('#changeSound');
 var plane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
@@ -28,9 +28,9 @@ plane.pos(-50, 0, -100);
 //    tank.stop();
 // });
 //
-// changeSound.addEventListener('click', () => {
-//    tank.volume(Math.random());
-// });
+changeSound.addEventListener('click', () => {
+   tank.stop();
+});
 
 // geolocationbutton.addEventListener('click', () => {
 // });

@@ -1,14 +1,22 @@
 window.onload = () => {
-    const renderModels = document.querySelector('#renderModels');
-
     const button = document.querySelector('button[data-action="change"]');
+    document.querySelector('#loadModels').addEventListener("click", function() {
+      //put all models locations in a vector
+      let places = staticLoadPlaces();
+      renderPlaces(places);
+    });
+
+    document.querySelector('#changeModel').addEventListener("click", function() {
+      //put all models locations in a vector
+      let places = staticLoadPlaces();
+      renderPlaces(places);
+    });
+
     button.innerText = '﹖';
-    //put all models locations in a vector
-    let places = staticLoadPlaces();
 };
-changeSound.addEventListener('click', () => {
-    renderPlaces(places);
-});
+
+
+
 // const tankLat = 59.572636;
 // const tankLong = 17.845729;
 // const planeLat = 59.574581;
