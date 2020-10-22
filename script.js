@@ -26,16 +26,16 @@ function staticLoadPlaces() {
                 // lng: <your-longitude>,
             },
         },
-        {
-            name: 'Pokèmonn',
-            location: {
-              lat:59.574063,
-              lng:17.840166,
-                // decomment the following and add coordinates:
-                // lat: <your-latitude>,
-                // lng: <your-longitude>,
-            },
-        },
+        // {
+        //     name: 'Pokèmonn',
+        //     location: {
+        //       lat:59.574063,
+        //       lng:17.840166,
+        //         // decomment the following and add coordinates:
+        //         // lat: <your-latitude>,
+        //         // lng: <your-longitude>,
+        //     },
+        // },
     ];
 }
 
