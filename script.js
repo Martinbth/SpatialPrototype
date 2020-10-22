@@ -41,8 +41,8 @@ function staticLoadPlaces() {
 
 var models = [
     {
-        url: './assets/ballons/scene.gltf',
-        scale: '0.5 0.5 0.5',
+        url: './assets/redballoon/redballon.glb',
+        scale: '0.2 0.2 0.2',
         info: 'Good Job!',
         rotation: '0 180 0',
     },
@@ -55,14 +55,14 @@ var models = [
     {
         url: './assets/articuno/scene.gltf',
         scale: '0.1 0.1 0.1',
-        rotation: '0 180 0',
         info: 'Articuno, Lv. 80, HP 100/100',
+        rotation: '0 180 0',
     },
     {
         url: './assets/dragonite/scene.gltf',
         scale: '0.03 0.03 0.03',
-        rotation: '0 180 0',
         info: 'Dragonite, Lv. 99, HP 150/150',
+        rotation: '0 180 0',
     },
 ];
 
