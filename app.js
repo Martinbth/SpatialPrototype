@@ -2,6 +2,14 @@
 // const playSound = document.querySelector('#playSound');
 // const stopSound = document.querySelector('#stopSound');
 const changeSound = document.querySelector('#changeSound');
+
+var party = new Howl({
+  src: ['./sounds/partyblow.mp3'],
+  autoplay: true,
+  loop: true,
+  volume: 1,
+});
+
 var plane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
