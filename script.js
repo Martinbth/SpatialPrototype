@@ -44,7 +44,7 @@ var models = [
         url: './assets/redballoon/redballon.glb',
         scale: '6 6 6',
         info: 'Good Job!',
-        rotation: '0 180 0',
+        rotation: '90 0 0',
     },
     {
         url: './assets/magnemite/scene.gltf',
