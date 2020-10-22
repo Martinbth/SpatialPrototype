@@ -42,7 +42,7 @@ function staticLoadPlaces() {
 var models = [
     {
         url: './assets/redballoon/redballon.glb',
-        scale: '0.2 0.2 0.2',
+        scale: '1 1 1',
         info: 'Good Job!',
         rotation: '0 180 0',
     },
