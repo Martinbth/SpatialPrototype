@@ -6,7 +6,7 @@ const changeSound = document.querySelector('#changeSound');
 var party = new Howl({
   src: ['./sounds/partyblow.mp3'],
   autoplay: false,
-  loop: true,
+  loop: false,
   volume: 1,
 });
 
