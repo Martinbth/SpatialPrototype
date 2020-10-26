@@ -75,8 +75,8 @@ function handleOrientation(event) {
   var y = degreesToRadians(event.gamma);
   var z = degreesToRadians(event.alpha);
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
-  xData.textContent = "x: " + event.beta;
-  yData.textContent = "y: " + event.gamma;
+  // xData.textContent = "x: " + event.beta;
+  // yData.textContent = "y: " + event.gamma;
   zData.textContent = "z: " + event.alpha;
   // geo.innerHTML +=y;
   // geo.innerHTML +=z;
