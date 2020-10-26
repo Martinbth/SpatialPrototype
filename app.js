@@ -5,7 +5,7 @@ const changeSound = document.querySelector('#changeSound');
 
 var party = new Howl({
   src: ['./sounds/partyblow.mp3'],
-  autoplay: true,
+  autoplay: false,
   loop: true,
   volume: 1,
 });
@@ -13,13 +13,13 @@ var party = new Howl({
 var plane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
-  autoplay: true,
-  volume: 1
+  autoplay: false,
+  volume: 1,
 });
 
 var tank = new Howl({
   src: ['./sounds/tankfiring.mp3'],
-  autoplay: true,
+  autoplay: false,
   loop: true,
   volume: 1,
 });
@@ -67,12 +67,17 @@ console.log(i);
 // tank.volume(newVolTank);
 // plane.volume(newVolPlane);
 // }
-
+const xData = document.querySelector('#xData');
+const yData = document.querySelector('#yData');
+const zData = document.querySelector('#zData');
 function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
   var y = degreesToRadians(event.gamma);
   var z = degreesToRadians(event.alpha);
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
+  xData.textContent = "x: " + x;
+  yData.textContent = "y: " + y;
+  zData.textContent = "z: " + z;
   // geo.innerHTML +=y;
   // geo.innerHTML +=z;
 }
