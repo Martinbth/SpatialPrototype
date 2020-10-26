@@ -9,6 +9,8 @@ window.onload = () => {
 
     button.innerText = '﹖';
 };
+const balloonLat = 59.574467;
+const balloonLong = 17.840332;
 
 // const tankLat = 59.572636;
 // const tankLong = 17.845729;
@@ -19,8 +21,8 @@ function staticLoadPlaces() {
         {
             name: 'Pokèmon',
             location: {
-              lat:59.574560,
-              lng:17.840493,
+              lat:59.574467,
+              lng:17.840332,
                 // decomment the following and add coordinates:
                 // lat: <your-latitude>,
                 // lng: <your-longitude>,
