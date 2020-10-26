@@ -80,6 +80,11 @@ function handleOrientation(event) {
   zData.textContent = "z: " + event.alpha;
   // geo.innerHTML +=y;
   // geo.innerHTML +=z;
+  if(event.alpha>160 && event.alpha<200){
+    party.play();
+  }else{
+    party.stop();
+  }
 }
 
 window.addEventListener('deviceorientation', handleOrientation);
