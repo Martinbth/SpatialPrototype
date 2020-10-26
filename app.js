@@ -102,8 +102,8 @@ const planeStatus = document.querySelector('#plane');
 const tankStatus = document.querySelector('#tank');
 
 function geoFindMe() {
-  mapLink.href = '';
-  mapLink.textContent = '';
+  // mapLink.href = '';
+  // mapLink.textContent = '';
   var userLat;
   var userLong;
   var tankDistance;
@@ -124,13 +124,13 @@ function geoFindMe() {
     // mapLink.textContent = `Latitude: ${userLat} °, Longitude: ${userLong} °`;
 
     tankV = regulateVolume(tankDistance);
-    tankStatus.textContent = '';
-    tankStatus.textContent ='tank vol: ' + tankV;
+    // tankStatus.textContent = '';
+    // tankStatus.textContent ='tank vol: ' + tankV;
 
 
     planeV = regulateVolume(planeDistance);
-    planeStatus.textContent = '';
-    planeStatus.textContent ='\b plane vol: ' + planeV;
+    // planeStatus.textContent = '';
+    // planeStatus.textContent ='plane vol: ' + planeV;
     tank.volume(tankV);
     plane.volume(planeV);
     //
@@ -174,8 +174,8 @@ Number.prototype.toRad = function() {
 function regulateVolume(dist) {
 
   var v;
-  distance.textContent = '';
-  distance.textContent +='dist: ' + dist;
+  // distance.textContent = '';
+  // distance.textContent +='dist: ' + dist;
 
   if (dist > 100) {
       // distance.textContent += 'dist > 100';
