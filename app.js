@@ -70,6 +70,7 @@ console.log(i);
 const xData = document.querySelector('#xData');
 const yData = document.querySelector('#yData');
 const zData = document.querySelector('#zData');
+var visited = new Boolean(false);
 function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
   var y = degreesToRadians(event.gamma);
@@ -80,8 +81,10 @@ function handleOrientation(event) {
   zData.textContent = "z: " + event.alpha;
   // geo.innerHTML +=y;
   // geo.innerHTML +=z;
-  if(event.alpha>160 && event.alpha<200){
+
+  if(event.alpha>160 && event.alpha<200 && !visited){
     party.play();
+    visited = true;
   }else{
     party.stop();
   }
