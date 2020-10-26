@@ -70,8 +70,9 @@ console.log(i);
 const xData = document.querySelector('#xData');
 const yData = document.querySelector('#yData');
 const zData = document.querySelector('#zData');
-var visited = 0;
+var visited=1;
 function handleOrientation(event) {
+
   var x = degreesToRadians(event.beta);
   var y = degreesToRadians(event.gamma);
   var z = degreesToRadians(event.alpha);
@@ -81,14 +82,14 @@ function handleOrientation(event) {
   zData.textContent = "z: " + event.alpha;
   // geo.innerHTML +=y;
   // geo.innerHTML +=z;
-
-  if(event.alpha>160 && event.alpha<200 && visited == 0){
+if(visited==1){
+  if(event.alpha>160 && event.alpha<200 ){
     party.play();
-    visited = 1;
-  }else{
-    party.stop();
+    visited=0;
   }
 }
+}
+
 
 window.addEventListener('deviceorientation', handleOrientation);
 
