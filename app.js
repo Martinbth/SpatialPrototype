@@ -68,7 +68,7 @@ function handleOrientation(event) {
 }
 
 function mission1Completed() {
-  typewriter.deleteAll();
+  typewriter.deleteAll(0.2);
   nextB.style.display = "block";
   typewriter.typeString('Good Job!')
   .start();
@@ -176,6 +176,7 @@ function regulateVolume(dist) {
 }
 
 var infoText = document.getElementById('infoText');
+
 
 var typewriter = new Typewriter(infoText, {
   loop: false,
