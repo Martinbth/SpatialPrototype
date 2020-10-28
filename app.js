@@ -22,11 +22,12 @@ var tank = new Howl({
 });
 tank.pos(100, 0, 0);
 plane.pos(-50, 0, -100);
-
+var nextB = document.getElementById("next");
+nextB.style.display = "none";
 var i = 0;
 changeSound.addEventListener('click', () => {
-var nextB = document.getElementById("nextB");
-nextB.style.display = "none";
+
+
 console.log(i);
   if(i==1){
     console.log("in 1");
@@ -35,7 +36,7 @@ console.log(i);
     tank.play();
     i=2;
 
-  
+
       nextB.style.display = "block";
 
   }else{

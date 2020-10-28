@@ -80,5 +80,12 @@ button {
     z-index: 999999;
 }
 
+.hide{
+display:none;
+}
+
+.show{
+display:block;
+}
 
 #demo{font:40px;}
