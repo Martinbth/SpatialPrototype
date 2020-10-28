@@ -79,7 +79,7 @@ function handleOrientation(event) {
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
   // xData.textContent = "x: " + event.beta;
   // yData.textContent = "y: " + event.gamma;
-  zData.textContent = "z: " + event.alpha;
+  // zData.textContent = "z: " + event.alpha;
   // geo.innerHTML +=y;
   // geo.innerHTML +=z;
 if(visited==1){
