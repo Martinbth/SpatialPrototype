@@ -22,23 +22,18 @@ var tank = new Howl({
 });
 tank.pos(100, 0, 0);
 plane.pos(-50, 0, -100);
-var nextB = document.getElementById("next");
-nextB.style.display = "none";
+
 var i = 0;
 changeSound.addEventListener('click', () => {
 
 
-console.log(i);
+  console.log(i);
   if(i==1){
     console.log("in 1");
     plane.stop();
     tank.stop();
     tank.play();
     i=2;
-
-
-      nextB.style.display = "block";
-
   }else{
     console.log("in else");
     tank.stop();
@@ -52,6 +47,9 @@ const xData = document.querySelector('#xData');
 const yData = document.querySelector('#yData');
 const zData = document.querySelector('#zData');
 var visited=1;
+var nextB = document.getElementById("next");
+nextB.style.display = "none";
+
 function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
   var y = degreesToRadians(event.gamma);
@@ -64,6 +62,7 @@ function handleOrientation(event) {
     if(event.alpha>160 && event.alpha<200 ){
       party.play();
       visited=0;
+      nextB.style.display = "block";
     }
   }
 }
