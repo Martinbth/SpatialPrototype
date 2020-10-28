@@ -62,9 +62,14 @@ function handleOrientation(event) {
     if(event.alpha>160 && event.alpha<200 ){
       party.play();
       visited=0;
-      nextB.style.display = "block";
+
     }
   }
+}
+function mission1Completed(){
+  nextB.style.display = "block";
+  typewriter.typeString('Good Job!')
+
 }
 
 window.addEventListener('deviceorientation', handleOrientation);
