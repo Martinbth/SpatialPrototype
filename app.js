@@ -199,3 +199,15 @@ function regulateVolume(dist) {
   }
   return v;
 }
+
+var infoText = document.getElementById('infoText');
+
+var typewriter = new Typewriter(infoText, {
+    loop: false,
+    delay: 0.2,
+    cursor:''
+});
+
+typewriter.typeString('Move the <strong>Camera</strong> to find the balloon.')
+
+    .start();

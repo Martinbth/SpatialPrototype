@@ -5,6 +5,7 @@
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>GeoAR.js demo</title>
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.3/howler.min.js"></script>
   <!-- <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHTiERTMkb2098OhmpFEOWS4Hyc74m7Mg&callback=initMap">
   </script> -->
@@ -19,23 +20,26 @@
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
-  <div class=" instructions"></div>
+  <div class="instructions"></div>
   <!-- <div class="centered position" id="geo"></div> -->
 
-  <div class="centered info">
+  <!-- <div class="centered info">
     <p id = "status"></p>
     <a id = "map-link" target="_blank"></a>
     <p id = "distance"></p>
     <p id = "plane"></p>
-    <br>
     <p id = "tank"></p>
-
     <p id = "xData"></p>
-    </br>
     <p id = "yData"></p>
-    </br>
     <p id = "zData"></p>
-  </div>
+    <button id="loadModels">load</button>
+  </div> -->
+
+<div class="centered info">
+  <div id="infoText"></div>
+
+  <button id="loadModels">&#xE5C8;</button>
+</div>
 
   <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
     <a-camera gps-camera rotation-reader></a-camera>
@@ -47,7 +51,6 @@
     <button id="stopSound">S</button>
     <button id="changeSound">C</button> -->
     <button id="loadModels">load</button>
-
   </div>
 
   <script src="app.js"></script>

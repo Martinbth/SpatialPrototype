@@ -1,6 +1,10 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1em;
+}
 .centered {
-    height: 20%;
-    justify-content: center;
+    height: 15%;
+    padding: 15px;
     position: fixed;
     bottom: 0%;
     display: flex;
@@ -9,10 +13,29 @@
     margin: 0px auto;
     left: 0;
     right: 0;
+    justify-content: space-between;
 }
-.info{
+.info {
+  border-radius: 50px;
   background-color:black;
   opacity: 0.9;
+  width: 90%;
+  bottom:2%;
+  color:white;
+}
+.info button {
+align-self: right;
+top:10px;
+align-self: end;
+
+}
+
+.infoText{
+  justify
+}
+
+.nextButton{
+  float:right;
 }
 .test{
   background-color: black;
