@@ -28,25 +28,25 @@ changeSound.addEventListener('click', () => {
 
 
   console.log(i);
-  if(i==1){
+  if (i == 1) {
     console.log("in 1");
     plane.stop();
     tank.stop();
     tank.play();
-    i=2;
-  }else{
+    i = 2;
+  } else {
     console.log("in else");
     tank.stop();
     plane.stop();
     plane.play();
-    i=1;
+    i = 1;
   }
 });
 
 const xData = document.querySelector('#xData');
 const yData = document.querySelector('#yData');
 const zData = document.querySelector('#zData');
-var visited=1;
+var visited = 1;
 var nextB = document.getElementById("next");
 nextB.style.display = "none";
 
@@ -58,18 +58,19 @@ function handleOrientation(event) {
   // xData.textContent = "x: " + event.beta;
   // yData.textContent = "y: " + event.gamma;
   // zData.textContent = "z: " + event.alpha;
-  if(visited==1){
-    if(event.alpha>160 && event.alpha<200 ){
+  if (visited == 1) {
+    if (event.alpha > 160 && event.alpha < 200) {
       party.play();
-      visited=0;
-mission1Completed();
+      visited = 0;
+      mission1Completed();
     }
   }
 }
-function mission1Completed(){
+
+function mission1Completed() {
   nextB.style.display = "block";
   typewriter.typeString('Good Job!')
-
+  .start();
 }
 
 window.addEventListener('deviceorientation', handleOrientation);
@@ -122,7 +123,7 @@ function geoFindMe() {
     plane.volume(planeV);
     //
     // plane.volume(regulateVolume(planeDistance));
-  ;
+    ;
   }
 
   function error() {
@@ -160,15 +161,15 @@ function regulateVolume(dist) {
   // distance.textContent +='dist: ' + dist;
 
   if (dist > 100) {
-      // distance.textContent += 'dist > 100';
-      v = 0.1;
-  }else if (dist < 0) {
-      // distance.textContent += 'dist < 0';
-      v = 1;
-  }else {
-      // distance.textContent += 'else:';
-      v = 1-(dist/100);
-      // distance.textContent +='vol set to:' + v;
+    // distance.textContent += 'dist > 100';
+    v = 0.1;
+  } else if (dist < 0) {
+    // distance.textContent += 'dist < 0';
+    v = 1;
+  } else {
+    // distance.textContent += 'else:';
+    v = 1 - (dist / 100);
+    // distance.textContent +='vol set to:' + v;
   }
   return v;
 }
@@ -176,11 +177,10 @@ function regulateVolume(dist) {
 var infoText = document.getElementById('infoText');
 
 var typewriter = new Typewriter(infoText, {
-    loop: false,
-    delay: 0.2,
-    cursor:''
+  loop: false,
+  delay: 0.2,
+  cursor: ''
 });
 
 typewriter.typeString('Move the <strong>Camera</strong> to find the balloon.')
-
-    .start();
+.start();
