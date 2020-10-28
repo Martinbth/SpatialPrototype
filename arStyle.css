@@ -5,6 +5,7 @@
 .centered {
     height: 15%;
     padding: 15px;
+    margin: 15px;
     position: fixed;
     bottom: 0%;
     display: flex;
@@ -18,7 +19,7 @@
 .info {
   border-radius: 50px;
   background-color:black;
-  opacity: 0.9;
+  opacity: 0.7;
   width: 90%;
   bottom:2%;
   color:white;
@@ -31,7 +32,7 @@ align-self: end;
 }
 
 .infoText{
-  justify
+  padding-top: 20px;
 }
 
 .nextButton{
@@ -53,11 +54,11 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid white;
+    border: 1px solid white;
     background-color: transparent;
     width: 2em;
     height: 2em;
-    border-radius: 100%;
+    border-radius: 40%;
     font-size: 2em;
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
