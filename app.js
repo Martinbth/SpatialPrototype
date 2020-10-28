@@ -68,7 +68,7 @@ function handleOrientation(event) {
 }
 
 function mission1Completed() {
-  deleteAll();
+  typewriter.deleteAll();
   nextB.style.display = "block";
   typewriter.typeString('Good Job!')
   .start();
