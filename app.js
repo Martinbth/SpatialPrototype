@@ -62,7 +62,7 @@ function handleOrientation(event) {
     if(event.alpha>160 && event.alpha<200 ){
       party.play();
       visited=0;
-
+mission1Completed();
     }
   }
 }
