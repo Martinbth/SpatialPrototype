@@ -47,7 +47,7 @@ const xData = document.querySelector('#xData');
 const yData = document.querySelector('#yData');
 const zData = document.querySelector('#zData');
 var visited = 1;
-var nextB = document.getElementById("next");
+var nextB = document.getElementById("nextB");
 nextB.style.display = "none";
 
 function handleOrientation(event) {

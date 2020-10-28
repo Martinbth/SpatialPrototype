@@ -50,19 +50,20 @@ align-self: center;
   margin: 0px auto;
 
 }
+
 button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   border-color: transparent;
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-    font-size: 2em;
-    background-color: blue;
-    color: white;
-    outline: none;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  font-size: 2em;
+  background-color: blue;
+  color: rgba(0, 0, 0, 1);
+  outline: none;
 }
 
 .instructions {
