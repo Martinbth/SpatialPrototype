@@ -60,7 +60,7 @@ button {
     height: 2em;
     border-radius: 50%;
     font-size: 2em;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: blue;
     color: white;
     outline: none;
 }
