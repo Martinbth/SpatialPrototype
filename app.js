@@ -1,6 +1,3 @@
-// var output = document.querySelector('#showData');
-// const playSound = document.querySelector('#playSound');
-// const stopSound = document.querySelector('#stopSound');
 const changeSound = document.querySelector('#changeSound');
 
 var party = new Howl({
@@ -26,19 +23,10 @@ var tank = new Howl({
 tank.pos(100, 0, 0);
 plane.pos(-50, 0, -100);
 
-
-// Buttons
-// playSound.addEventListener('click', () => {
-//    tank.play();
-// });
-//
-// stopSound.addEventListener('click', () => {
-//    tank.stop();
-// });
-//
 var i = 0;
 changeSound.addEventListener('click', () => {
-
+var nextB = document.getElementById("nextB");
+nextB.style.display = "none";
 console.log(i);
   if(i==1){
     console.log("in 1");
@@ -46,6 +34,10 @@ console.log(i);
     tank.stop();
     tank.play();
     i=2;
+
+  
+      nextB.style.display = "block";
+
   }else{
     console.log("in else");
     tank.stop();
@@ -55,24 +47,11 @@ console.log(i);
   }
 });
 
-
-// geolocationbutton.addEventListener('click', () => {
-// });
-
-//
-// function adjustVolume(distTank,distPlane){
-//   var newVolTank = 1-distTank;
-//   var newVolPlane = 1-distPlane;
-//
-// tank.volume(newVolTank);
-// plane.volume(newVolPlane);
-// }
 const xData = document.querySelector('#xData');
 const yData = document.querySelector('#yData');
 const zData = document.querySelector('#zData');
 var visited=1;
 function handleOrientation(event) {
-
   var x = degreesToRadians(event.beta);
   var y = degreesToRadians(event.gamma);
   var z = degreesToRadians(event.alpha);
@@ -80,23 +59,19 @@ function handleOrientation(event) {
   // xData.textContent = "x: " + event.beta;
   // yData.textContent = "y: " + event.gamma;
   // zData.textContent = "z: " + event.alpha;
-  // geo.innerHTML +=y;
-  // geo.innerHTML +=z;
-if(visited==1){
-  if(event.alpha>160 && event.alpha<200 ){
-    party.play();
-    visited=0;
+  if(visited==1){
+    if(event.alpha>160 && event.alpha<200 ){
+      party.play();
+      visited=0;
+    }
   }
 }
-}
-
 
 window.addEventListener('deviceorientation', handleOrientation);
 
 function degreesToRadians(degrees) {
   return degrees * (Math.PI / 180);
 }
-
 
 // Geolocation / distance
 window.addEventListener('DOMContentLoaded', geoFindMe);
@@ -111,8 +86,6 @@ const planeStatus = document.querySelector('#plane');
 const tankStatus = document.querySelector('#tank');
 
 function geoFindMe() {
-  // mapLink.href = '';
-  // mapLink.textContent = '';
   var userLat;
   var userLong;
   var tankDistance;
@@ -174,11 +147,6 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 Number.prototype.toRad = function() {
   return this * Math.PI / 180;
 }
-
-
-// change volume
-// 100-0m = 1000*0.001 = 0.1  (75m / 100) - 1 = 0.25
-// 80-0m
 
 function regulateVolume(dist) {
 
