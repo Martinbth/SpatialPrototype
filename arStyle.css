@@ -37,6 +37,10 @@ button {
   outline: none;
 }
 
+.changeSound {
+color:black;
+}
+
 .hide{
 display:none;
 }
