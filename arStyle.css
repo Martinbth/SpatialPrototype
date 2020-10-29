@@ -25,7 +25,10 @@
   color:white;
   font-size: 1em;
 }
-
+.info button{
+justify-content: center;
+align-self: center;
+}
 
 .infoText{
 
@@ -52,8 +55,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-color: transparent;
+  opacity:1;
   width: 2em;
   height: 2em;
   border-radius: 50%;
