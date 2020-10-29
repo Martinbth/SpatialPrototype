@@ -28,6 +28,7 @@
 .info button{
 justify-content: center;
 align-self: center;
+font-size: 1em;
 }
 
 .infoText{
