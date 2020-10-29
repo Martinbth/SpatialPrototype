@@ -23,14 +23,9 @@
   width: 85%;
   bottom:2%;
   color:white;
-  font-size: 1.5em;
+  font-size: 1em;
 }
-.info button {
-align-self: right;
-top:10px;
-align-self: center;
 
-}
 
 .infoText{
 
@@ -59,8 +54,8 @@ button {
   justify-content: center;
 
   border-color: transparent;
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
   font-size: 2em;
   background-color: #2b6cb0;
