@@ -13,6 +13,8 @@
     left: 0;
     right: 0;
     justify-content: space-between;
+    align-items: center;
+
 }
 .info {
   border-radius: 15px;
@@ -23,17 +25,17 @@
 }
 
 button {
-  /* display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   border-color: transparent;
-  width: 2em;
-  height: 2em;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  font-size: 1.5em;
+  font-size: 1.2em;
   background-color: #2b6cb0;
   color: white;
-  outline: none; */
+  outline: none;
 }
 
 img{
@@ -41,7 +43,7 @@ img{
   bottom: 30%;
   display: flex;
   flex-direction: row;
-  width: 40%;
+  width: 50%;
 
   margin: 0px auto;
   left: 0;
