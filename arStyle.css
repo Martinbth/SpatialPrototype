@@ -70,14 +70,6 @@ display:none;
 display: flex;
 align-items: center;
 justify-content: center;
-border-color: transparent;
-width: 2em;
-height: 2em;
-border-radius: 50%;
-font-size: 2em;
-background-color: #2b6cb0;
-color: white;
-outline: none;
 }
 
 .instructions {
