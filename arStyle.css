@@ -27,8 +27,8 @@ button {
   align-items: center;
   justify-content: center;
   border-color: transparent;
-  width: 1em;
-  height: 1em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
   font-size: 1em;
   background-color: #2b6cb0;
@@ -38,9 +38,12 @@ button {
 
 img{
   position: fixed;
+  left: 0;
+  right: 0;
   width:50%;
   height:50%;
-  margin: 0px auto;
+
+
 }
 
 .changeSound {
