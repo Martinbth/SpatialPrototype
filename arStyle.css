@@ -8,16 +8,15 @@
     bottom: 0%;
     display: flex;
     flex-direction: row;
-    width: 85%;
+    width: 75%;
     margin: 0px auto;
     left: 0;
     right: 0;
     justify-content: space-between;
 }
 .info {
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  width: 85%;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.7);
   bottom:4%;
   color:white;
   font-size: 1.2em;
@@ -28,13 +27,20 @@ button {
   align-items: center;
   justify-content: center;
   border-color: transparent;
-  width: 2em;
-  height: 2em;
+  width: 1em;
+  height: 1em;
   border-radius: 50%;
-  font-size: 2em;
+  font-size: 1em;
   background-color: #2b6cb0;
   color: white;
   outline: none;
+}
+
+img{
+  position: fixed;
+  width:50%;
+  height:50%;
+  margin: 0px auto;
 }
 
 .changeSound {
