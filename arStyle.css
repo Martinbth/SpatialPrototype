@@ -30,7 +30,7 @@ button {
   width: 2em;
   height: 2em;
   border-radius: 50%;
-  font-size: 1em;
+  font-size: 1.5em;
   background-color: #2b6cb0;
   color: white;
   outline: none;
@@ -38,7 +38,7 @@ button {
 
 img{
   position: fixed;
-  bottom: 25%;
+  bottom: 30%;
   display: flex;
   flex-direction: row;
   width: 75%;
@@ -65,16 +65,7 @@ display:none;
 .show{
 /* display:block; */
 display: flex;
-align-items: center;
-justify-content: center;
-border-color: transparent;
-width: 2em;
-height: 2em;
-border-radius: 50%;
-font-size: 1.5em;
-background-color: #2b6cb0;
-color: white;
-outline: none;
+
 }
 
 .instructions {
