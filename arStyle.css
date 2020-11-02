@@ -38,10 +38,20 @@ button {
 
 img{
   position: fixed;
+  bottom: 0%;
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  margin: 0px auto;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+
+  /* position: fixed;
   left: 0;
   right: 0;
   top:25%;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .changeSound {
@@ -54,6 +64,17 @@ display:none;
 
 .show{
 display:block;
+display: flex;
+align-items: center;
+justify-content: center;
+border-color: transparent;
+width: 2em;
+height: 2em;
+border-radius: 50%;
+font-size: 1em;
+background-color: #2b6cb0;
+color: white;
+outline: none;
 }
 
 .instructions {
