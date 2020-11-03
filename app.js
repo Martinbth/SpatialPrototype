@@ -47,7 +47,7 @@ const xData = document.querySelector('#xData');
 const yData = document.querySelector('#yData');
 const zData = document.querySelector('#zData');
 var visited = 1;
-var nextB = document.getElementById("nextB");
+const nextB = document.getElementById("nextB");
 nextB.style.display = "none";
 
 function handleOrientation(event) {
@@ -75,6 +75,7 @@ function mission1Completed() {
 }
 
 nextB.addEventListener('click', () => {
+console.log('yo');
   nextB.style.display = "none";
   typewriter.deleteAll(0.2);
   typewriter.typeString('Move your phone to the direction that the sound is coming from')
