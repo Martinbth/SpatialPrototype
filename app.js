@@ -75,12 +75,16 @@ function mission1Completed() {
 }
 
 nextB.addEventListener('click', () => {
-console.log('yo');
   nextB.style.display = "none";
+  changeImage("img/rotateSound.png");
   typewriter.deleteAll(0.2);
   typewriter.typeString('Move your phone to the direction that the sound is coming from')
   .start();
 });
+
+function changeImage(a) {
+       document.getElementById("img").src=a;
+}
 
 window.addEventListener('deviceorientation', handleOrientation);
 
