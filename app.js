@@ -74,7 +74,7 @@ function mission1Completed() {
   .start();
 }
 
-changeSound.addEventListener('click', () => {
+nextB.addEventListener('click', () => {
   nextB.style.display = "none";
   typewriter.deleteAll(0.2);
   typewriter.typeString('Move your phone to the direction that the sound is coming from')
