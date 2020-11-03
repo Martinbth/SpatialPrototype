@@ -68,9 +68,16 @@ function handleOrientation(event) {
 }
 
 function mission1Completed() {
-  typewriter.deleteAll(0.2);
   nextB.style.display = "block";
+  typewriter.deleteAll(0.2);
   typewriter.typeString('Good Job!')
+  .start();
+}
+
+changeSound.addEventListener('click', () => {
+  nextB.style.display = "none";
+  typewriter.deleteAll(0.2);
+  typewriter.typeString('Move your phone to the direction that the sound is coming from')
   .start();
 }
 
