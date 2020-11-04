@@ -68,7 +68,7 @@ var models = [
     },
     {
         url: './assets/duck/Duck.glb',
-        scale: '10 10 10',
+        scale: '40 40 40',
         info: 'Dragonite, Lv. 99, HP 150/150',
         rotation: '0 180 0',
     },
