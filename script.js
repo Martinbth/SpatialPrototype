@@ -66,6 +66,13 @@ var models = [
         info: 'Dragonite, Lv. 99, HP 150/150',
         rotation: '0 180 0',
     },
+    {
+        url: './assets/duck/Duck.glb',
+        scale: '10 10 10',
+        info: 'Dragonite, Lv. 99, HP 150/150',
+        rotation: '0 180 0',
+    },
+
 ];
 
 var modelIndex = 0;
