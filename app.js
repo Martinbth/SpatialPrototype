@@ -36,20 +36,20 @@ var i = 0;
 changeSound.addEventListener('click', () => {
 
 
-  console.log(i);
-  if (i == 1) {
-    console.log("in 1");
-    plane.stop();
-    tank.stop();
-    tank.play();
-    i = 2;
-  } else {
-    console.log("in else");
-    tank.stop();
-    plane.stop();
-    plane.play();
-    i = 1;
-  }
+  // console.log(i);
+  // if (i == 1) {
+  //   console.log("in 1");
+  //   plane.stop();
+  //   tank.stop();
+  //   tank.play();
+  //   i = 2;
+  // } else {
+  //   console.log("in else");
+  //   tank.stop();
+  //   plane.stop();
+  //   plane.play();
+  //   i = 1;
+  // }
 });
 
 const xData = document.querySelector('#xData');
