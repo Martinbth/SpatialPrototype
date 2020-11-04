@@ -7,12 +7,20 @@ var party = new Howl({
   volume: 1,
 });
 
+var quack = new Howl({
+  src: ['./sounds/quack.mp3'],
+  loop: true,
+  autoplay: false,
+  volume: 1,
+});
+
 var plane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
   autoplay: false,
   volume: 1,
 });
+
 
 var tank = new Howl({
   src: ['./sounds/tankfiring.mp3'],
@@ -22,6 +30,7 @@ var tank = new Howl({
 });
 tank.pos(100, 0, 0);
 plane.pos(-50, 0, -100);
+quack.pos(-50, 0, -100);
 
 var i = 0;
 changeSound.addEventListener('click', () => {
@@ -81,6 +90,7 @@ nextB.addEventListener('click', () => {
   typewriter.deleteAll(0.2);
   typewriter.typeString('Move your phone to the direction that the sound is coming from.')
   .start();
+  quack.play();
 });
 
 function changeImage(a) {

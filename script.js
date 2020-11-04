@@ -63,13 +63,13 @@ var models = [
     // {
     //     url: './assets/dragonite/scene.gltf',
     //     scale: '0.03 0.03 0.03',
-    //     info: 'Dragonite, Lv. 99, HP 150/150',
+    //     info: 'Duck',
     //     rotation: '0 180 0',
     // },
     {
         url: './assets/duck/Duck.glb',
-        scale: '40 40 40',
-        info: 'Dragonite, Lv. 99, HP 150/150',
+        scale: '60 60 60',
+        info: 'Duck',
         rotation: '0 180 0',
     },
 
