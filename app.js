@@ -71,7 +71,7 @@ function mission1Completed() {
   nextB.style.display = "block";
   typewriter.deleteAll(0.2);
   typewriter.typeString('Good Job!')
-  changeImage("");
+  changeImage("img/invisible.png");
   .start();
 }
 
