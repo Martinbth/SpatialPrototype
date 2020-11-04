@@ -40,6 +40,10 @@ button{
   z-index: 999999;
 }
 
+.testButtons{
+  bottom: 50%;
+}
+
 img{
   position: fixed;
   bottom: 40%;
