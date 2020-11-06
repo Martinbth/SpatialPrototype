@@ -69,9 +69,9 @@ var models = [
     {
         url: './assets/duck/Duck.glb',
         scale: '80 80 80',
-        info: 'Duck',
+        info: 'Nice worky',
         rotation: '0 180 0',
-    },
+    }
 
 ];
 

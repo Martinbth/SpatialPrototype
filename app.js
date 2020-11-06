@@ -85,6 +85,7 @@ function mission1Completed() {
 }
 
 nextB.addEventListener('click', () => {
+  quack.play();
   nextB.style.display = "none";
   changeImage("img/rotateSound.png");
   typewriter.deleteAll(0.2);
