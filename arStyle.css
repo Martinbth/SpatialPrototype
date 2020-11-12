@@ -3,7 +3,7 @@
       font-family: 'Signika', sans-serif;
 }
 .centered {
-    height: 35%;
+    height: 32%;
     padding-top: 20px;
     position: fixed;
     bottom: 0%;
@@ -18,7 +18,7 @@
 .info {
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
-  margin-top:20px;
+  margin-top:10px;
   text-align: center;
   /* background: rgba(1, 1, 1, 1); */
   background:#145e98;
@@ -28,8 +28,9 @@
   font-weight: 200;
 }
 
-h2{
-  line-height: 0.2em;
+h1{
+  margin:inherit;
+  line-height: 1em;
   letter-spacing: 0.04em;
 }
 
