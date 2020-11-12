@@ -1,9 +1,10 @@
 * {
-  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
+      font-family: 'Signika', sans-serif;
 }
 .centered {
-    height: 30%;
-    padding-top: 10px;
+    height: 35%;
+    padding-top: 20px;
     position: fixed;
     bottom: 0%;
     display: flex;
@@ -12,30 +13,30 @@
     margin: 0px auto;
     left: 0;
     right: 0;
-
     align-items: center;
 }
 .info {
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
-
   margin-top:20px;
   text-align: center;
   /* background: rgba(1, 1, 1, 1); */
   background:#145e98;
   color:#dad0c0;
-  font-size: 1em;
+  font-size: 1.2em;
   z-index: 1;
+  font-weight: 200;
 }
 
-.infor h1{
-  line-height: 0.6;
+h2{
+  line-height: 0.2em;
+  letter-spacing: 0.04em;
 }
 
 button{
-bottom: 0;
+  bottom: 0;
   width: 85%;
-  height: 3px;
+  height: 5px;
   padding: 20px;
   border-radius: 10px;
   display: flex;
