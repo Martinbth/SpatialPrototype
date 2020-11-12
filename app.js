@@ -208,5 +208,5 @@ var typewriter = new Typewriter(infoText, {
   cursor: ''
 });
 
-typewriter.typeString('Move the <strong>Camera</strong> to find the balloon.')
+typewriter.typeString('Move the camera to find the balloon.')
 .start();
