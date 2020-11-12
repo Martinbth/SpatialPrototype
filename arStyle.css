@@ -20,26 +20,29 @@
   border-top-left-radius: 25px;
   line-height: 0.6;
   margin-top:20px;
-    text-align: center;
+  text-align: center;
   /* background: rgba(1, 1, 1, 1); */
-  background:#2C91DA;
+  background:#145e98;
 
-  color:white;
+  color:#dad0c0;
   font-size: 1em;
   z-index: 1;
 }
 
 button{
+
+  width: 85%;
+  height: 3px;
+  padding: 20px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-color: transparent;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  border-color: inherit;
+  font-weight: bold;
   font-size: 1.2em;
-  background-color: #2b6cb0;
-  color: white;
+  background-color: #dad0c0;
+  color: #145e98;
   outline: none;
   z-index: 999999;
 }
@@ -89,6 +92,8 @@ justify-content: center;
     color: white;
     z-index: 999999;
 }
+
+
 
 
 
