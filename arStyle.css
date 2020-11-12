@@ -18,19 +18,22 @@
 .info {
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
-  line-height: 0.6;
+
   margin-top:20px;
   text-align: center;
   /* background: rgba(1, 1, 1, 1); */
   background:#145e98;
-
   color:#dad0c0;
   font-size: 1em;
   z-index: 1;
 }
 
-button{
+.infor h1{
+  line-height: 0.6;
+}
 
+button{
+bottom: 0;
   width: 85%;
   height: 3px;
   padding: 20px;
