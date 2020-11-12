@@ -23,7 +23,7 @@
   /* background: rgba(1, 1, 1, 1); */
   background:#145e98;
   color:#dad0c0;
-  font-size: 1.2em;
+  font-size: 1.3em;
   z-index: 1;
   font-weight: 200;
 }
@@ -34,16 +34,17 @@ h2{
 }
 
 button{
-  bottom: 0;
-  width: 85%;
-  height: 5px;
-  padding: 20px;
-  border-radius: 10px;
+margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-color: inherit;
   font-weight: bold;
+
+  width: 85%;
+  height: 5px;
+  padding: 20px;
+  border-radius: 10px;
   font-size: 1.2em;
   background-color: #dad0c0;
   color: #145e98;
