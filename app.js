@@ -79,9 +79,11 @@ function handleOrientation(event) {
 function mission1Completed() {
   changeImage("img/invisible.png");
   nextB.style.display = "block";
-  typewriter.deleteAll(0.2);
-  bigTypeWriter.deleteAll(0.2);
-  bigTypeWriter.typeString('Good Job!')
+  typewriter.deleteAll();
+  typewriter.typeString('')
+  start();
+  bigTypeWriter.deleteAll();
+  bigTypeWriter.typeString('Good Job!!')
   .start();
 }
 
@@ -90,7 +92,10 @@ nextB.addEventListener('click', () => {
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
   typewriter.deleteAll(0.2);
+  bigTypeWriter.deleteAll(0.2);
   typewriter.typeString('Move your phone to the direction that the sound is coming from.')
+  .start();
+  bigTypeWriter.typeString('Sound')
   .start();
   quack.play();
 });
