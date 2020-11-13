@@ -80,7 +80,8 @@ function mission1Completed() {
   changeImage("img/invisible.png");
   nextB.style.display = "block";
   typewriter.deleteAll(0.2);
-  typewriter.typeString('Good Job!')
+  bigTypeWriter.deleteAll(0.2);
+  bigTypeWriter.typeString('Good Job!')
   .start();
 }
 
@@ -200,6 +201,7 @@ function regulateVolume(dist) {
 }
 
 var infoText = document.getElementById('infoText');
+var bigText = document.getElementById('big-txt');
 
 
 var typewriter = new Typewriter(infoText, {
@@ -208,5 +210,13 @@ var typewriter = new Typewriter(infoText, {
   cursor: ''
 });
 
+var bigTypeWriter = new Typewriter(bigText, {
+  loop: false,
+  delay: 0.2,
+  cursor: ''
+});
+
 typewriter.typeString('Move the camera to find the balloon.')
+.start();
+bigTypeWriter.typeString('Rotate')
 .start();
