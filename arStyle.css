@@ -28,8 +28,9 @@
   font-weight: 200;
 }
 
-.infoText{
-  width:85%;
+.normal-txt{
+margin-left: 15px;
+margin-right: 15px;
 }
 
 h1{
