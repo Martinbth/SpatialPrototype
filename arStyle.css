@@ -32,7 +32,7 @@
   width:85%;
 }
 
-h2{
+h1{
   margin:inherit;
   line-height: 1em;
   letter-spacing: 0.04em;
@@ -44,11 +44,9 @@ button{
   align-items: center;
   justify-content: center;
   border-color: inherit;
-  font-weight: bold;
-
+  font-weight:normal;
   width: 85%;
   height: 45px;
-
   border-radius: 10px;
   font-size: 1.2em;
   background-color: #dad0c0;
