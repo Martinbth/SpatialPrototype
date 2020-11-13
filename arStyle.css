@@ -28,14 +28,14 @@
   font-weight: 200;
 }
 
-h1{
+h2{
   margin:inherit;
   line-height: 1em;
   letter-spacing: 0.04em;
 }
 
 button{
-margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,8 +43,8 @@ margin-top: 20px;
   font-weight: bold;
 
   width: 85%;
-  height: 5px;
-  padding: 20px;
+  height: 45px;
+
   border-radius: 10px;
   font-size: 1.2em;
   background-color: #dad0c0;
