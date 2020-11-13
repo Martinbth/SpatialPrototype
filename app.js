@@ -80,9 +80,10 @@ function mission1Completed() {
   changeImage("img/invisible.png");
   nextB.style.display = "block";
   bigTypeWriter.deleteAll(0.2);
+  typewriter.deleteAll(0.2);
   bigTypeWriter.typeString('Good Job!!')
   .start();
-  typewriter.deleteAll(0.2);
+  
   typewriter.typeString('')
   start();
 

@@ -29,7 +29,7 @@
 }
 
 .normal-txt{
-width:80%;
+width:90%;
 }
 
 h1{
@@ -39,7 +39,7 @@ h1{
 }
 
 button{
-  margin-top: 55px;
+  margin-top: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +56,7 @@ button{
 }
 
 .testButtons{
-  bottom: 50%;
+  bottom: 0%;
 }
 
 img{
