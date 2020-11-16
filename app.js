@@ -70,10 +70,18 @@ function handleOrientation(event) {
   if (visited == 1) {
     if (event.alpha > 160 && event.alpha < 200) {
       party.play();
-      visited = 0;
+      visited = 2;
       mission1Completed();
     }
   }
+  if (visited == 2) {
+    if (event.alpha > 30 && event.alpha < 0) {
+      party.play();
+      visited = 0;
+      mission2Completed();
+    }
+  }
+
 }
 
 function mission1Completed() {
