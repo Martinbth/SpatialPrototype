@@ -57,6 +57,7 @@ const yData = document.querySelector('#yData');
 const zData = document.querySelector('#zData');
 var visited = 1;
 const nextB = document.getElementById("nextB");
+const info = document.getElementById("info");
 nextB.style.display = "none";
 
 function handleOrientation(event) {
@@ -131,6 +132,10 @@ nextB.addEventListener('click', () => {
     .start();
     bigTypeWriter.typeString('Done')
     .start();
+  }else if(visited == 5){
+    visited = 6;
+    nextB.style.display = "none";
+    info.style.display = "none";
   }
 });
 
