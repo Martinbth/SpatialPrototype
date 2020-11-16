@@ -79,14 +79,27 @@ function handleOrientation(event) {
 function mission1Completed() {
   changeImage("img/invisible.png");
   nextB.style.display = "block";
-  bigTypeWriter.deleteAll(0.2);
   typewriter.deleteAll(0.2);
+  typewriter.typeString('')
+  .start();
+  bigTypeWriter.deleteAll(0.2);
   bigTypeWriter.typeString('Good Job!!')
   .start();
-  
   typewriter.typeString('')
   start();
+}
 
+function mission2Completed() {
+  changeImage("img/invisible.png");
+  nextB.style.display = "block";
+  typewriter.deleteAll(0.2);
+  typewriter.typeString('')
+  .start();
+  bigTypeWriter.deleteAll(0.2);
+  bigTypeWriter.typeString('NiceOne')
+  .start();
+  typewriter.typeString('')
+  start();
 }
 
 nextB.addEventListener('click', () => {
