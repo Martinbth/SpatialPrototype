@@ -69,12 +69,14 @@ function handleOrientation(event) {
   // zData.textContent = "z: " + event.alpha;
   if (visited == 1) {
     if (event.alpha > 160 && event.alpha < 200) {
+      visited = 2;
       party.play();
       mission1Completed();
     }
   }
-  else if (visited == 2) {
+  else if (visited == 3) {
     if (event.alpha > 60 && event.alpha < 100) {
+      visited = 4;
       party.play();
       mission2Completed();
     }
@@ -108,8 +110,7 @@ function mission2Completed() {
   start();
 }
 nextB.addEventListener('click', () => {
-  if(visited == 1){
-
+  if(visited == 2){
   quack.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
@@ -119,10 +120,10 @@ nextB.addEventListener('click', () => {
   .start();
   bigTypeWriter.typeString('Sound')
   .start();
-  visited = 2;
+  visited = 3;
   }
-  else if(visited == 2){
-    visited = 3;
+  else if(visited == 4){
+    visited = 5;
     nextB.style.display = "block";
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
