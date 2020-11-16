@@ -124,6 +124,7 @@ nextB.addEventListener('click', () => {
   visited = 3;
   }
   else if(visited == 4){
+    quack.stop();
     visited = 5;
     nextB.style.display = "block";
     typewriter.deleteAll(0.2);
