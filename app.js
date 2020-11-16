@@ -70,14 +70,12 @@ function handleOrientation(event) {
   if (visited == 1) {
     if (event.alpha > 160 && event.alpha < 200) {
       party.play();
-      visited = 2;
       mission1Completed();
     }
   }
   else if (visited == 2) {
     if (event.alpha > 60 && event.alpha < 100) {
       party.play();
-      visited = 3;
       mission2Completed();
     }
   }
@@ -109,9 +107,9 @@ function mission2Completed() {
   typewriter.typeString('You can navigate to objects by follow their sound')
   start();
 }
-
 nextB.addEventListener('click', () => {
   if(visited == 1){
+  visited = 2;
   quack.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
@@ -122,7 +120,8 @@ nextB.addEventListener('click', () => {
   bigTypeWriter.typeString('Sound')
   .start();
   }
-  else if(visited == 3){
+  else if(visited == 2){
+    visited = 3;
     nextB.style.display = "block";
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
