@@ -74,7 +74,7 @@ function handleOrientation(event) {
       mission1Completed();
     }
   }
-  if (visited == 2) {
+  else if (visited == 2) {
     if (event.alpha > 60 && event.alpha < 100) {
       party.play();
       visited = 0;
