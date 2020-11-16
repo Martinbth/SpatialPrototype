@@ -109,7 +109,7 @@ function mission2Completed() {
 }
 nextB.addEventListener('click', () => {
   if(visited == 1){
-  visited = 2;
+
   quack.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
@@ -119,6 +119,7 @@ nextB.addEventListener('click', () => {
   .start();
   bigTypeWriter.typeString('Sound')
   .start();
+  visited = 2;
   }
   else if(visited == 2){
     visited = 3;
