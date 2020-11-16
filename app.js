@@ -77,7 +77,7 @@ function handleOrientation(event) {
   else if (visited == 2) {
     if (event.alpha > 60 && event.alpha < 100) {
       party.play();
-      visited = 0;
+      visited = 3;
       mission2Completed();
     }
   }
@@ -91,7 +91,7 @@ function mission1Completed() {
   typewriter.typeString('')
   .start();
   bigTypeWriter.deleteAll(0.2);
-  bigTypeWriter.typeString('Good Job!!')
+  bigTypeWriter.typeString('Good Job!')
   .start();
   typewriter.typeString('')
   start();
@@ -104,13 +104,14 @@ function mission2Completed() {
   typewriter.typeString('')
   .start();
   bigTypeWriter.deleteAll(0.2);
-  bigTypeWriter.typeString('NiceOne')
+  bigTypeWriter.typeString('Quack!')
   .start();
-  typewriter.typeString('')
+  typewriter.typeString('You can navigate to objects by follow their sound')
   start();
 }
 
 nextB.addEventListener('click', () => {
+  if(visited == 1){
   quack.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
@@ -120,6 +121,16 @@ nextB.addEventListener('click', () => {
   .start();
   bigTypeWriter.typeString('Sound')
   .start();
+  }
+  else if(visited == 3){
+    nextB.style.display = "block";
+    typewriter.deleteAll(0.2);
+    bigTypeWriter.deleteAll(0.2);
+    typewriter.typeString('You can now explore the area on your own')
+    .start();
+    bigTypeWriter.typeString('Done')
+    .start();
+  }
 });
 
 function changeImage(a) {
