@@ -75,7 +75,7 @@ function handleOrientation(event) {
     }
   }
   if (visited == 2) {
-    if (event.alpha > 30 && event.alpha < 0) {
+    if (event.alpha > 60 && event.alpha < 100) {
       party.play();
       visited = 0;
       mission2Completed();
@@ -120,7 +120,6 @@ nextB.addEventListener('click', () => {
   .start();
   bigTypeWriter.typeString('Sound')
   .start();
-  quack.play();
 });
 
 function changeImage(a) {
