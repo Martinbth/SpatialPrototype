@@ -12,7 +12,7 @@ var quack = new Howl({
   loop: true,
   autoplay: false,
   volume: 1,
-  rate:0.5,
+  rate:2,
 });
 
 var plane = new Howl({
