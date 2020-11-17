@@ -8,11 +8,10 @@ var party = new Howl({
 });
 
 var quack = new Howl({
-  src: ['./sounds/quack.mp3'],
+  src: ['./sounds/dog.mp3'],
   loop: true,
   autoplay: false,
   volume: 1,
-  duration:0.5,
 });
 
 var plane = new Howl({
