@@ -43,10 +43,10 @@ function staticLoadPlaces() {
 
 var models = [
   {
-      url: './assets/duck/doggo.glb',
+      url: './assets/dog/dingo.gltf',
       scale: '10 10 10',
       info: 'Nice worky',
-      rotation: '0 180 0',
+      rotation: '0 0 0',
   },
     {
         url: './assets/redballoon/redballon.glb',
