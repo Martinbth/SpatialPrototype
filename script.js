@@ -67,7 +67,7 @@ var models = [
     //     rotation: '0 180 0',
     // },
     {
-        url: './assets/duck/Duck.glb',
+        url: './assets/duck/doggo.gltf',
         scale: '80 80 80',
         info: 'Nice worky',
         rotation: '0 0 0',
