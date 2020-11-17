@@ -70,7 +70,7 @@ var models = [
         url: './assets/duck/Duck.glb',
         scale: '80 80 80',
         info: 'Nice worky',
-        rotation: '0 0 100',
+        rotation: '0 0 0',
     }
 
 ];
