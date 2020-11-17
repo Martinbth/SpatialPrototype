@@ -4,7 +4,7 @@ var party = new Howl({
   src: ['./sounds/partyblow.mp3'],
   autoplay: false,
   loop: false,
-  volume: 0.4,
+  volume: 0.3,
 });
 
 var quack = new Howl({
@@ -12,7 +12,7 @@ var quack = new Howl({
   loop: true,
   autoplay: false,
   volume: 1,
-  rate:1.3,
+  duration:0.5,
 });
 
 var plane = new Howl({
@@ -122,7 +122,7 @@ nextB.addEventListener('click', () => {
   bigTypeWriter.typeString('Sound')
   .start();
   visited = 3;
-  quack.play();
+
   }
   else if(visited == 4){
     quack.stop();
