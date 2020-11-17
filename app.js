@@ -4,7 +4,7 @@ var party = new Howl({
   src: ['./sounds/partyblow.mp3'],
   autoplay: false,
   loop: false,
-  volume: 1,
+  volume: 0.6,
 });
 
 var quack = new Howl({
@@ -30,7 +30,7 @@ var tank = new Howl({
 });
 tank.pos(100, 0, 0);
 plane.pos(-50, 0, -100);
-quack.pos(-50, 0, -100);
+quack.pos(50, 0, 10);
 
 var i = 0;
 changeSound.addEventListener('click', () => {
