@@ -4,7 +4,7 @@ var party = new Howl({
   src: ['./sounds/partyblow.mp3'],
   autoplay: false,
   loop: false,
-  volume: 0.6,
+  volume: 0.4,
 });
 
 var quack = new Howl({
@@ -30,7 +30,7 @@ var tank = new Howl({
 });
 tank.pos(100, 0, 0);
 plane.pos(-50, 0, -100);
-quack.pos(50, -50, 1);
+quack.pos(50, -100, 10);
 
 var i = 0;
 changeSound.addEventListener('click', () => {
@@ -78,7 +78,6 @@ function handleOrientation(event) {
   else if (visited == 3) {
     if (event.alpha > 60 && event.alpha < 100) {
       visited = 4;
-      party.play();
       mission2Completed();
     }
   }
@@ -122,6 +121,7 @@ nextB.addEventListener('click', () => {
   bigTypeWriter.typeString('Sound')
   .start();
   visited = 3;
+  quack.play();
   }
   else if(visited == 4){
     quack.stop();
