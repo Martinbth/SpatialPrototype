@@ -1,10 +1,10 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    document.querySelector('#loadModels').addEventListener("click", function() {
+    // document.querySelector('#loadModels').addEventListener("click", function() {
       //put all models locations in a vector
       let places = staticLoadPlaces();
       renderPlaces(places);
-    });
+    // });
 
 
     button.innerText = '﹖';

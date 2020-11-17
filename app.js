@@ -30,7 +30,7 @@ var tank = new Howl({
 });
 tank.pos(100, 0, 0);
 plane.pos(-50, 0, -100);
-quack.pos(50, 0, 10);
+quack.pos(50, -50, 1);
 
 var i = 0;
 changeSound.addEventListener('click', () => {
