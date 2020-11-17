@@ -42,6 +42,12 @@ function staticLoadPlaces() {
 }
 
 var models = [
+  {
+      url: './assets/duck/doggo.glb',
+      scale: '10 10 10',
+      info: 'Nice worky',
+      rotation: '0 180 0',
+  },
     {
         url: './assets/redballoon/redballon.glb',
         scale: '10 10 10',
@@ -66,12 +72,7 @@ var models = [
     //     info: 'Duck',
     //     rotation: '0 180 0',
     // },
-    {
-        url: './assets/duck/doggo.glb',
-        scale: '10 10 10',
-        info: 'Nice worky',
-        rotation: '0 180 0',
-    }
+
 
 ];
 
