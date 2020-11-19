@@ -43,7 +43,7 @@ function staticLoadPlaces() {
 
 var models = [
   {
-      url: './assets/dog/dingo.gltf',
+      url: './assets/dog/scene.gltf',
       scale: '10 10 10',
       info: 'Nice worky',
       rotation: '0 0 0',
