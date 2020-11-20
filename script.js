@@ -43,23 +43,18 @@ function staticLoadPlaces() {
 
 var models = [
   {
+      url: './assets/balloon/scene.gltf',
+      scale: '10 10 10',
+      info: 'Good Job!',
+      rotation: '0 180 0',
+  },
+  {
       url: './assets/dog/scene.gltf',
       scale: '0.5 0.5 0.5',
       info: 'Nice worky',
       rotation: '0 180 0',
   },
-    {
-        url: './assets/redballoon/redballon.glb',
-        scale: '10 10 10',
-        info: 'Good Job!',
-        rotation: '0 180 0',
-    },
-    {
-        url: './assets/dog/Dog.usdz',
-        scale: '0.5 0.5 0.5',
-        info: 'Nice worky',
-        rotation: '0 180 0',
-    },
+    
     {
         url: './assets/magnemite/scene.gltf',
         scale: '0.5 0.5 0.5',
