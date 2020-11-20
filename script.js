@@ -44,7 +44,7 @@ function staticLoadPlaces() {
 var models = [
   {
       url: './assets/balloon/scene.gltf',
-      scale: '10 10 10',
+      scale: '0.5 0.5 0.5',
       info: 'Good Job!',
       rotation: '0 180 0',
   },
