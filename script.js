@@ -43,24 +43,24 @@ function staticLoadPlaces() {
 
 var models = [
   {
-      url: './assets/balloon/scene.gltf',
+      url: './assets/dog3/doggo.usdz',
       scale: '0.5 0.5 0.5',
       info: 'Good Job!',
       rotation: '0 0 0',
   },
-  {
-      url: './assets/dog2/scene.gltf',
-      scale: '0.5 0.5 0.5',
-      info: 'Nice worky',
-      rotation: '0 180 0',
-  },
-
-    {
-        url: './assets/magnemite/scene.gltf',
-        scale: '0.5 0.5 0.5',
-        info: 'Magnemite, Lv. 5, HP 10/10',
-        rotation: '0 180 0',
-    },
+  // {
+  //     url: './assets/dog2/scene.gltf',
+  //     scale: '0.5 0.5 0.5',
+  //     info: 'Nice worky',
+  //     rotation: '0 180 0',
+  // },
+  //
+  //   {
+  //       url: './assets/magnemite/scene.gltf',
+  //       scale: '0.5 0.5 0.5',
+  //       info: 'Magnemite, Lv. 5, HP 10/10',
+  //       rotation: '0 180 0',
+  //   },
     // {
     //     url: './assets/articuno/scene.gltf',
     //     scale: '0.1 0.1 0.1',
