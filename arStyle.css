@@ -21,8 +21,8 @@
   margin-top:10px;
   text-align: center;
   /* background: rgba(1, 1, 1, 1); */
-  background:#145e98;
-  color:#dad0c0;
+  background:#082761;
+  color:#E8F0C5;
   font-size: 1.3em;
   z-index: 1;
   font-weight: 200;
@@ -47,7 +47,7 @@ button{
   align-items: center;
   justify-content: center;
   border-color: inherit;
-  font-weight:normal;
+  font-weight:bold;
   width: 85%;
   height: 45px;
   border-radius: 10px;

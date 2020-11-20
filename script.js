@@ -52,7 +52,7 @@ var models = [
       url: './assets/dog2/scene.gltf',
       scale: '0.5 0.5 0.5',
       info: 'Nice worky',
-      rotation: '0 0 0',
+      rotation: '0 180 0',
   },
 
     {
