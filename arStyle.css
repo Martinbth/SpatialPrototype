@@ -52,8 +52,8 @@ button{
   height: 45px;
   border-radius: 10px;
   font-size: 1.2em;
-  background-color: #dad0c0;
-  color: #145e98;
+  background-color: #E8F0C5;
+  color: #082761;
   outline: none;
   z-index: 999999;
 }
@@ -67,7 +67,7 @@ img{
   bottom: 40%;
   display: flex;
   flex-direction: row;
-  width: 50%;
+  width: 60%;
   margin: 0px auto;
   left: 0;
   right: 0;
