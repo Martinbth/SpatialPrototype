@@ -55,6 +55,12 @@ var models = [
       info: 'Good Job!',
       rotation: '0 0 0',
   },
+  {
+      url: './assets/plane/scene.gltf',
+      scale: '0.5 0.5 0.5',
+      info: 'Good Job!',
+      rotation: '0 0 0',
+  },
   // {
   //     url: './assets/dog2/scene.gltf',
   //     scale: '0.5 0.5 0.5',
