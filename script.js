@@ -7,7 +7,7 @@ window.onload = () => {
     // });
 
 
-    button.innerText = '﹖';
+    button.innerText = 'New destination';
 };
 const balloonLat = 59.574467;
 const balloonLong = 17.840332;

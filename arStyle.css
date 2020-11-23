@@ -74,8 +74,9 @@ img{
   justify-content: space-between;
 }
 
-.changeSound {
-color:black;
+#changeSound {
+  background-color: #082761;
+  color:#E8F0C5;
 }
 
 .hide{
