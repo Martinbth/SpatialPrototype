@@ -42,9 +42,16 @@ function staticLoadPlaces() {
 }
 
 var models = [
+
   {
       url: './assets/dog4/scene.gltf',
       scale: '10 10 10',
+      info: 'Good Job!',
+      rotation: '0 0 0',
+  },
+  {
+      url: './assets/balloon/scene.gltf',
+      scale: '0.5 0.5 0.5',
       info: 'Good Job!',
       rotation: '0 0 0',
   },
