@@ -42,7 +42,6 @@ h1{
 button{
     position: fixed;
     bottom:35px;
-  /* margin-top: 35px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +50,7 @@ button{
   width: 85%;
   height: 45px;
   border-radius: 10px;
-  border-color: inherit;
+  border-color: #E8F0C5;
   font-size: 1.2em;
   background-color: #E8F0C5;
   color: #082761;
