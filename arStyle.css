@@ -51,6 +51,7 @@ button{
   width: 85%;
   height: 45px;
   border-radius: 10px;
+  border-color: inherit;
   font-size: 1.2em;
   background-color: #E8F0C5;
   color: #082761;
