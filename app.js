@@ -1,5 +1,3 @@
-const changeSound = document.querySelector('#changeSound');
-
 var party = new Howl({
   src: ['./sounds/partyblow.mp3'],
   autoplay: false,
@@ -32,25 +30,7 @@ tank.pos(100, 0, 0);
 plane.pos(-50, 0, -100);
 quack.pos(140, 200, -100);
 
-var i = 0;
-changeSound.addEventListener('click', () => {
 
-
-  // console.log(i);
-  // if (i == 1) {
-  //   console.log("in 1");
-  //   plane.stop();
-  //   tank.stop();
-  //   tank.play();
-  //   i = 2;
-  // } else {
-  //   console.log("in else");
-  //   tank.stop();
-  //   plane.stop();
-  //   plane.play();
-  //   i = 1;
-  // }
-});
 
 const xData = document.querySelector('#xData');
 const yData = document.querySelector('#yData');

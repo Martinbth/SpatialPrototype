@@ -56,10 +56,11 @@ button{
   color: #082761;
   outline: none;
   z-index: 999999;
+    bottom: 0%;
 }
 
 .testButtons{
-  bottom: 0%;
+
   border-color: #E8F0C5 !important;
 }
 
