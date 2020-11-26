@@ -114,10 +114,11 @@ nextB.addEventListener('click', () => {
     .start();
     bigTypeWriter.typeString('Done')
     .start();
+    nextB.innerText = 'Done';
   }else if(visited == 5){
     visited = 6;
-    nextB.style.display = "none";
     info.style.display = "none";
+    nextB.innerText = 'Byt';
   }
 });
 
