@@ -38,7 +38,7 @@ const zData = document.querySelector('#zData');
 var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
-nextB.style.display = "none";
+// nextB.style.display = "none";
 
 function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
