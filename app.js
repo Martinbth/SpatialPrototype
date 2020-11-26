@@ -38,7 +38,8 @@ const zData = document.querySelector('#zData');
 var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
-// nextB.style.display = "none";
+nextB.style.display = "none";
+nextB.innerText = 'Next';
 
 function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
@@ -64,7 +65,6 @@ function handleOrientation(event) {
 }
 
 function mission1Completed() {
-  button.innerText = 'Next';
   changeImage("img/invisible.png");
   nextB.style.display = "block";
   typewriter.deleteAll(0.2);
@@ -78,7 +78,7 @@ function mission1Completed() {
 }
 
 function mission2Completed() {
-  button.innerText = 'lets go';
+  nextB.innerText = 'lets go';
   changeImage("img/invisible.png");
   nextB.style.display = "block";
   typewriter.deleteAll(0.2);
@@ -102,8 +102,8 @@ nextB.addEventListener('click', () => {
   bigTypeWriter.typeString('Sound')
   .start();
   visited = 3;
-
   }
+
   else if(visited == 4){
     quack.stop();
     visited = 5;
@@ -122,7 +122,7 @@ nextB.addEventListener('click', () => {
 });
 
 function changeImage(a) {
-       document.getElementById("img").src=a;
+  document.getElementById("img").src=a;
 }
 
 window.addEventListener('deviceorientation', handleOrientation);

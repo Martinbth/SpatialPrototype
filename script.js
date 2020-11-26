@@ -7,7 +7,7 @@ window.onload = () => {
     // });
 
 
-    
+
 };
 const balloonLat = 59.574467;
 const balloonLong = 17.840332;
@@ -52,7 +52,7 @@ var models = [
       url: './assets/dog4/scene.gltf',
       scale: '10 10 10',
       info: 'Good Job!',
-      rotation: '0 90 0',
+      rotation: '0 50 0',
   },
   {
       url: './assets/plane/scene.gltf',
