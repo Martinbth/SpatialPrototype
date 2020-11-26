@@ -50,7 +50,6 @@ button{
   width: 85%;
   height: 45px;
   border-radius: 10px;
-  border-color: #E8F0C5;
   font-size: 1.2em;
   background-color: #E8F0C5;
   color: #082761;
@@ -60,6 +59,7 @@ button{
 
 .testButtons{
   bottom: 0%;
+  border-color: #E8F0C5 !important;
 }
 
 img{
