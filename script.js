@@ -7,7 +7,7 @@ window.onload = () => {
     // });
 
 
-    button.innerText = 'Next';
+    
 };
 const balloonLat = 59.574467;
 const balloonLong = 17.840332;

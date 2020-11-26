@@ -61,10 +61,10 @@ function handleOrientation(event) {
       mission2Completed();
     }
   }
-
 }
 
 function mission1Completed() {
+  button.innerText = 'Next';
   changeImage("img/invisible.png");
   nextB.style.display = "block";
   typewriter.deleteAll(0.2);
@@ -78,6 +78,7 @@ function mission1Completed() {
 }
 
 function mission2Completed() {
+  button.innerText = 'lets go';
   changeImage("img/invisible.png");
   nextB.style.display = "block";
   typewriter.deleteAll(0.2);
