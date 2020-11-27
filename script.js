@@ -136,7 +136,6 @@ function renderPlaces(places) {
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-
         setModel(models[modelIndex], model);
 
         model.setAttribute('animation-mixer', '');
@@ -145,7 +144,7 @@ function renderPlaces(places) {
             var entity = document.querySelector('[gps-entity-place]');
             modelIndex++;
             var newIndex = modelIndex % models.length;
-            // model.setAttribute('gps-entity-place', `latitude: 59.574063; longitude: 17.840166;`);
+            model.setAttribute('gps-entity-place', `latitude: 59.574063; longitude: 17.840166;`);
             setModel(models[newIndex], entity);
         });
 
