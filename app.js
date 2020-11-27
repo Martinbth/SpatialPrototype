@@ -117,7 +117,7 @@ nextB.addEventListener('click', () => {
     nextB.innerText = 'Done';
   }else if(visited == 5){
     visited = 6;
-    info.style.display = "none";
+    info.style.backgroundColor = "transparent";
     nextB.innerText = 'Byt';
     nextB.style.display = "block";
   }
