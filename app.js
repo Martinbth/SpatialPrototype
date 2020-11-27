@@ -119,6 +119,7 @@ nextB.addEventListener('click', () => {
     visited = 6;
     info.style.display = "none";
     nextB.innerText = 'Byt';
+    nextB.style.display = "block";
   }
 });
 
