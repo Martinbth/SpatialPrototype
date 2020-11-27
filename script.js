@@ -142,9 +142,9 @@ function renderPlaces(places) {
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
             var entity = document.querySelector('[gps-entity-place]');
+            entity.setAttribute('gps-entity-place', `latitude: 59.574063; longitude: 17.840166;`);
             modelIndex++;
             var newIndex = modelIndex % models.length;
-            model.setAttribute('gps-entity-place', `latitude: 59.574063; longitude: 17.840166;`);
             setModel(models[newIndex], entity);
         });
 
