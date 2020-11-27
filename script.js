@@ -127,10 +127,8 @@ function renderPlace(place){
   });
 }
 
-
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
-
 
     places.forEach((place) => {
         let latitude = place.location.lat;
@@ -147,9 +145,15 @@ function renderPlaces(places) {
             var entity = document.querySelector('[gps-entity-place]');
             modelIndex++;
             var newIndex = modelIndex % models.length;
+            model.setAttribute('gps-entity-place', `latitude: 59.574063; longitude: 17.840166;`);
             setModel(models[newIndex], entity);
+
         });
 
         scene.appendChild(model);
     });
+}
+
+function changePosition(){
+
 }
