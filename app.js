@@ -117,6 +117,12 @@ nextB.addEventListener('click', () => {
     nextB.innerText = 'Done';
   }else if(visited == 5){
     visited = 6;
+    typewriter.deleteAll(0.2);
+    bigTypeWriter.deleteAll(0.2);
+    typewriter.typeString('')
+    .start();
+    bigTypeWriter.typeString('')
+    .start();
     info.style.backgroundColor = "transparent";
     nextB.innerText = 'Byt';
     nextB.style.display = "block";
