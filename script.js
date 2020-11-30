@@ -47,21 +47,21 @@ var models = [
       scale: '0.05 0.05 0.05',
       info: 'Good Job!',
       rotation: '0 0 0',
-location:'gps-entity-place, latitude: 59.474467; longitude: 17.840332',
+      location:'latitude: 59.474467; longitude: 17.840332',
   },
   {
       url: './assets/dog4/scene.gltf',
       scale: '10 10 10',
       info: 'Good Job!',
       rotation: '0 220 0',
-      location:'gps-entity-place, latitude: 59.274063; longitude: 17.540166',
+      location:'latitude: 59.274063; longitude: 17.540166',
   },
   {
       url: './assets/plane/scene.gltf',
       scale: '0.5 0.5 0.5',
       info: 'Good Job!',
       rotation: '0 180 0',
-      location:'gps-entity-place, latitude: 59.574467; longitude: 17.340332',
+      location:'latitude: 59.574467; longitude: 17.340332',
   },
   // {
   //     url: './assets/dog2/scene.gltf',
@@ -121,13 +121,14 @@ var setModel = function (model, entity) {
 
 var i=1;
 function renderPlaces(places) {
-    let scene = document.querySelector('a-scene');
+    let scene = document.querySelector('a-scene'); //   <a-scene>
 
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
 
-        let model = document.createElement('a-entity');
+        let model = document.createElement('a-entity'); // <a-entity>
+        model.setAttribute('gps-entity-place');
         // model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         setModel(models[modelIndex], model);
 
@@ -141,7 +142,7 @@ function renderPlaces(places) {
             setModel(models[newIndex], entity);
         });
 
-        scene.appendChild(model);
+        scene.appendChild(model); // </a-entity></a-scene>
     });
 }
 
