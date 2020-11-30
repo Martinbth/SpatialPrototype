@@ -2,7 +2,7 @@ var party = new Howl({
   src: ['./sounds/partyblow.mp3'],
   autoplay: false,
   loop: false,
-  volume: 0.3,
+  volume: 0.1,
 });
 
 var quack = new Howl({

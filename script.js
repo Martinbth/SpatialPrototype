@@ -47,19 +47,20 @@ var models = [
       scale: '0.05 0.05 0.05',
       info: 'Good Job!',
       rotation: '0 0 0',
+
   },
   {
       url: './assets/dog4/scene.gltf',
       scale: '10 10 10',
       info: 'Good Job!',
       rotation: '0 220 0',
+      location:'latitude: 59.574063; longitude: 17.840166',
   },
   {
       url: './assets/plane/scene.gltf',
       scale: '0.5 0.5 0.5',
       info: 'Good Job!',
       rotation: '0 180 0',
-      position: '3 0 0',
   },
   // {
   //     url: './assets/dog2/scene.gltf',
@@ -92,6 +93,10 @@ var models = [
 
 var modelIndex = 0;
 var setModel = function (model, entity) {
+    if (model.location) {
+          entity.setAttribute('location', model.location);
+    }
+
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
