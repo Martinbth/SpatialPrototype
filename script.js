@@ -125,9 +125,10 @@ function renderPlaces(places) {
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
-        let latitude2 = 59.574267;
-        let longitude2 = 17.340152;
+        let latitude2 = 59.572636;
+        let longitude2 = 17.845729;
 
+        
         let model = document.createElement('a-entity'); // <a-entity>
         // model.setAttribute('gps-entity-place', '');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
