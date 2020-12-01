@@ -47,21 +47,24 @@ var models = [
       scale: '0.05 0.05 0.05',
       info: 'Good Job!',
       rotation: '0 0 0',
-      location:'latitude: 59.474467; longitude: 17.840332',
+      position:'0 0 0',
+
   },
   {
       url: './assets/dog4/scene.gltf',
       scale: '10 10 10',
       info: 'Good Job!',
       rotation: '0 220 0',
-      location:'latitude: 59.274063; longitude: 17.540166',
+      position:'0 -80 0',
+
   },
   {
       url: './assets/plane/scene.gltf',
       scale: '0.5 0.5 0.5',
       info: 'Good Job!',
       rotation: '0 180 0',
-      location:'latitude: 59.574467; longitude: 17.340332',
+      position:'0 200 0',
+
   },
   // {
   //     url: './assets/dog2/scene.gltf',
