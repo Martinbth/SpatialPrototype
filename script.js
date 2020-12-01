@@ -124,11 +124,11 @@ function renderPlaces(places) {
     let scene = document.querySelector('a-scene'); //   <a-scene>
 
     places.forEach((place) => {
-        let latitude = place.location.lat;
-        let longitude = place.location.lng;
+        // let latitude = place.location.lat;
+        // let longitude = place.location.lng;
 
         let model = document.createElement('a-entity'); // <a-entity>
-        model.setAttribute('gps-entity-place');
+        model.setAttribute('gps-entity-place', '');
         // model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         setModel(models[modelIndex], model);
 
