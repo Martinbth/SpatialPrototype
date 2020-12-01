@@ -122,7 +122,7 @@ function renderPlaces(places) {
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
-        let latitude2 = place.59.574467;
+        let latitude2 = 59.574467;
         let longitude2 = 17.340332;
 
         let model = document.createElement('a-entity'); // <a-entity>
