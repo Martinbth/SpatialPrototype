@@ -134,7 +134,7 @@ function renderPlaces(places) {
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
             var entity = document.querySelector('[gps-entity-place]');
-            entity.removeAttribute('gps-entity-place');
+
             entity.setAttribute('gps-entity-place', `latitude: ${latitude2}; longitude: ${longitude2};`);
             modelIndex++;
             var newIndex = modelIndex % models.length;
