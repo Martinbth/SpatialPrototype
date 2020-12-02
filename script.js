@@ -143,7 +143,7 @@ function renderPlaces(places) {
             modelIndex++;
             var newIndex = modelIndex % models.length;
             setModel(models[newIndex], entity);
-            // scene.appendChild(entity); 
+            scene.appendChild(entity);
         });
 
         scene.appendChild(model); // </a-entity></a-scene>
