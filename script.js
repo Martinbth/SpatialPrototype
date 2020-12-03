@@ -151,8 +151,8 @@ var setModel = function (model, entity) {
 function render(){
     let latitude1 = 59.574467;
     let longitude1 = 17.840332;
-    let latitude2 = 59.574476;
-    let longitude2 = 17.840145;
+    let latitude2 = 59.574628;
+    let longitude2 = 17.840424;
     let scene = document.querySelector('a-scene');
     let model = document.createElement('a-entity');
     model.setAttribute('gps-entity-place', `latitude: ${latitude1}; longitude: ${longitude1};`);
