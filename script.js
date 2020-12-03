@@ -161,11 +161,11 @@ function render(){
 
     document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     scene.removeChild(model);
-    let model = document.createElement('a-entity');
-    model.setAttribute('gps-entity-place', `latitude: ${latitude2}; longitude: ${longitude2};`);
-    setModel(models[1], model);
-    model.setAttribute('animation-mixer', '');
-    scene.appendChild(model);
+    let model1 = document.createElement('a-entity');
+    model1.setAttribute('gps-entity-place', `latitude: ${latitude2}; longitude: ${longitude2};`);
+    setModel(models[1], model1);
+    model1.setAttribute('animation-mixer', '');
+    scene.appendChild(model1);
     });
     scene.appendChild(model); // </a-entity></a-scene>
 }
