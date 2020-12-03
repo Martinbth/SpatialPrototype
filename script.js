@@ -2,8 +2,8 @@ window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     // document.querySelector('#loadModels').addEventListener("click", function() {
       //put all models locations in a vector
-      let places = staticLoadPlaces();
-      renderPlaces(places);
+      // let places = staticLoadPlaces();
+      render();
     // });
 
 
@@ -118,37 +118,82 @@ var setModel = function (model, entity) {
 
 
 
-var i=1;
-function renderPlaces(places) {
-    let scene = document.querySelector('a-scene'); //   <a-scene>
+// var i=1;
+// function renderPlaces(places) {
+//     let scene = document.querySelector('a-scene'); //   <a-scene>
+//     places.forEach((place) => {
+//         let latitude = place.location.lat;
+//         let longitude = place.location.lng;
+//         let latitude2 = 59.572636;
+//         let longitude2 = 17.845729;
+//           let model = document.createElement('a-entity'); // <a-entity>
+//         // model.setAttribute('gps-entity-place', '');
+//         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+//         setModel(models[modelIndex], model);
+//
+//         model.setAttribute('animation-mixer', '');
+//
+//         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+//             model.remove('a-entity');
+//             let model = document.createElement('a-entity');
+//
+//             model.setAttribute('gps-entity-place', 'latitude:59.572636; longitude:17.845729;');
+//             setModel(models[modelIndex], model);
+//             modelIndex++;
+//             var newIndex = modelIndex % models.length;
+//             setModel(models[newIndex], entity);
+//             scene.appendChild(entity);
+//         });
+//         scene.appendChild(model); // </a-entity></a-scene>
+//     });
+// }
 
-    places.forEach((place) => {
-        let latitude = place.location.lat;
-        let longitude = place.location.lng;
-        let latitude2 = 59.572636;
-        let longitude2 = 17.845729;
+function render(){
+    let latitude = 59.574467;
+    let longitude = 17.840332;
+    let scene = document.querySelector('a-scene');
+    let model = document.createElement('a-entity');
+    model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+    setModel(models[modelIndex], model);
+    model.setAttribute('animation-mixer', '');
 
+    document.querySelector('button[data-action="change"]').addEventListener('click', function () {
 
-        let model = document.createElement('a-entity'); // <a-entity>
-        // model.setAttribute('gps-entity-place', '');
-        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        setModel(models[modelIndex], model);
-
-        model.setAttribute('animation-mixer', '');
-
-        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-            var entity = document.querySelector('[gps-entity-place]');
-
-            entity.setAttribute('gps-entity-place', 'latitude:59.572636; longitude:17.845729;');
-            modelIndex++;
-            var newIndex = modelIndex % models.length;
-            setModel(models[newIndex], entity);
-            scene.appendChild(entity);
-        });
-
-        scene.appendChild(model); // </a-entity></a-scene>
     });
+    scene.appendChild(model); // </a-entity></a-scene>
 }
+
+// function renderPlaces(places) {
+//     let scene = document.querySelector('a-scene'); //   <a-scene>
+//
+//     places.forEach((place) => {
+//         let latitude = place.location.lat;
+//         let longitude = place.location.lng;
+//         let latitude2 = 59.572636;
+//         let longitude2 = 17.845729;
+//
+//
+//         let model = document.createElement('a-entity'); // <a-entity>
+//         // model.setAttribute('gps-entity-place', '');
+//         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+//         setModel(models[modelIndex], model);
+//
+//         model.setAttribute('animation-mixer', '');
+//
+//         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+//             var entity = document.querySelector('[gps-entity-place]');
+//
+//             entity.setAttribute('gps-entity-place', 'latitude:59.572636; longitude:17.845729;');
+//             modelIndex++;
+//             var newIndex = modelIndex % models.length;
+//             setModel(models[newIndex], entity);
+//             scene.appendChild(entity);
+//         });
+//
+//         scene.appendChild(model); // </a-entity></a-scene>
+//     });
+// }
+
 // var i=1;
 // function renderPlaces(places) {
 //     let scene = document.querySelector('a-scene');
