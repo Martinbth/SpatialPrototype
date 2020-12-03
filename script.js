@@ -149,16 +149,23 @@ var setModel = function (model, entity) {
 // }
 
 function render(){
-    let latitude = 59.574467;
-    let longitude = 17.840332;
+    let latitude1 = 59.574467;
+    let longitude1 = 17.840332;
+    let latitude2 = 59.572636;
+    let longitude2 = 17.845729;
     let scene = document.querySelector('a-scene');
     let model = document.createElement('a-entity');
-    model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-    setModel(models[modelIndex], model);
+    model.setAttribute('gps-entity-place', `latitude: ${latitude1}; longitude: ${longitude1};`);
+    setModel(models[0], model);
     model.setAttribute('animation-mixer', '');
 
     document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-
+    scene.removeChild(model);
+    let model = document.createElement('a-entity');
+    model.setAttribute('gps-entity-place', `latitude: ${latitude2}; longitude: ${longitude2};`);
+    setModel(models[1], model);
+    model.setAttribute('animation-mixer', '');
+    scene.appendChild(model);
     });
     scene.appendChild(model); // </a-entity></a-scene>
 }
