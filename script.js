@@ -47,7 +47,7 @@ var models = [
       scale: '0.05 0.05 0.05',
       info: 'Good Job!',
       rotation: '0 0 0',
-      position:'0 0 0',
+      // position:'0 0 0',
 
   },
   {
@@ -55,7 +55,7 @@ var models = [
       scale: '10 10 10',
       info: 'Good Job!',
       rotation: '0 220 0',
-      position:'0 -80 0',
+      // position:'0 -80 0',
 
   },
   {
@@ -63,7 +63,7 @@ var models = [
       scale: '0.5 0.5 0.5',
       info: 'Good Job!',
       rotation: '0 180 0',
-      position:'0 200 0',
+      // position:'0 200 0',
 
   },
   // {
@@ -151,8 +151,8 @@ var setModel = function (model, entity) {
 function render(){
     let latitude1 = 59.574467;
     let longitude1 = 17.840332;
-    let latitude2 = 59.572636;
-    let longitude2 = 17.845729;
+    let latitude2 = 59.574476;
+    let longitude2 = 17.840145;
     let scene = document.querySelector('a-scene');
     let model = document.createElement('a-entity');
     model.setAttribute('gps-entity-place', `latitude: ${latitude1}; longitude: ${longitude1};`);
