@@ -165,28 +165,22 @@ function render(){
       if(nrOfClicks == 0){
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
-        try {
-          let model0 = document.createElement('a-entity');
-          model0.setAttribute('gps-entity-place', `latitude: ${latitude2}; longitude: ${longitude2};`);
-          setModel(models[nrOfClicks], model0);
-          model0.setAttribute('animation-mixer', '');
-        } catch (e) {
-          const div = document.querySelector('.instructions');
-          div.innerText = "error";
-        }finally {
-          scene.appendChild(model0);
-        }
-
-
-
-      }else if (nrOfClicks == 1){
-      scene.removeChild(scene.lastChild);
-      let model1 = document.createElement('a-entity');
-      nrOfClicks++;
-      model1.setAttribute('gps-entity-place', `latitude: ${latitude3}; longitude: ${longitude3};`);
-      setModel(models[nrOfClicks], model1);
-      model1.setAttribute('animation-mixer', '');
-      scene.appendChild(model1);
+        let model0 = document.createElement('a-entity');
+        model0.setAttribute('gps-entity-place', `latitude: ${latitude2}; longitude: ${longitude2};`);
+        setModel(models[nrOfClicks], model0);
+        model0.setAttribute('animation-mixer', '');
+        const div = document.querySelector('.instructions');
+        div.innerText = "error";
+        scene.appendChild(model0);
+      }
+      else if (nrOfClicks == 1){
+        scene.removeChild(scene.lastChild);
+        let model1 = document.createElement('a-entity');
+        nrOfClicks++;
+        model1.setAttribute('gps-entity-place', `latitude: ${latitude3}; longitude: ${longitude3};`);
+        setModel(models[nrOfClicks], model1);
+        model1.setAttribute('animation-mixer', '');
+        scene.appendChild(model1);
       }
     });
     scene.appendChild(model); // </a-entity></a-scene>

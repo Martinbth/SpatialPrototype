@@ -78,7 +78,7 @@ function mission1Completed() {
 }
 
 function mission2Completed() {
-  nextB.innerText = 'lets go';
+  nextB.innerText = 'lets g2o';
   changeImage("img/invisible.png");
   nextB.style.display = "block";
   typewriter.deleteAll(0.2);
