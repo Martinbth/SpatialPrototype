@@ -53,7 +53,7 @@ var models = [
       scale: '10 10 10',
       info: 'Good Job!',
       rotation: '0 220 0',
-      position:'0 -80 0',
+      // position:'0 -80 0',
 
   },
   {
@@ -61,7 +61,7 @@ var models = [
       scale: '0.5 0.5 0.5',
       info: 'Good Job!',
       rotation: '0 180 0',
-      position:'0 200 0',
+      // position:'0 200 0',
 
   },
   // {
@@ -156,7 +156,7 @@ function render(){
     let scene = document.querySelector('a-scene');
     let model = document.createElement('a-entity');
     model.setAttribute('gps-entity-place', `latitude: ${latitude1}; longitude: ${longitude1};`);
-    setModel(models[nrOfClicks], model);
+    setModel(models[2], model);
     model.setAttribute('animation-mixer', '');
 
 
@@ -172,7 +172,7 @@ function render(){
           model0.setAttribute('animation-mixer', '');
         } catch (e) {
           const div = document.querySelector('.instructions');
-          div.innerText = 'error';
+          div.innerText = "error";
         }finally {
           scene.appendChild(model0);
         }
