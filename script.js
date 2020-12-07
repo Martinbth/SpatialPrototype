@@ -159,10 +159,12 @@ function render(){
     // setModel(models[0], model);
     // model.setAttribute('animation-mixer', '');
 
-
-   let model0 = makeModel(latitude1,longitude1,0);
-   let model1 = makeModel(latitude2,longitude2,1);
-   let model2 = makeModel(latitude3,longitude3,2);
+   let model0 = document.createElement('a-entity');
+   let model1 = document.createElement('a-entity');
+   let model2 = document.createElement('a-entity');
+   makeModel(latitude1,longitude1,0,model0);
+   makeModel(latitude2,longitude2,1,model0);
+   makeModel(latitude3,longitude3,2,model0);
 
 document.querySelector('button[data-action="change"]').addEventListener('click', function () {
 
@@ -191,12 +193,12 @@ document.querySelector('button[data-action="change"]').addEventListener('click',
     scene.appendChild(model0); // </a-entity></a-scene>
 }
 
-function makeModel(lat,long,indexNr){
-   let model = document.createElement('a-entity');
-   model0.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude: ' + long + ';');
-   setModel(models[indexNr], model);
-   model.setAttribute('animation-mixer', '');
-   return model;
+function makeModel(lat,long,indexNr,modelx){
+
+   modelx.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude: ' + long + ';');
+   setModel(models[indexNr], modelx);
+   modelx.setAttribute('animation-mixer', '');
+   return modelx;
  }
 
 
