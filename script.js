@@ -114,8 +114,7 @@ var models = [
 // };
 var modelIndex = 0;
 var setModel = function (model, entity,lat,long) {
-    entity.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude: ' + long + ';');
-    entity.setAttribute('animation-mixer', '');
+    entity.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude:' + long + ';');
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
@@ -132,7 +131,7 @@ var setModel = function (model, entity,lat,long) {
 
     const div = document.querySelector('.instructions');
     div.innerText = model.info;
-      entity.setAttribute('animation-mixer', '');
+    entity.setAttribute('animation-mixer', '');
 };
 
 
