@@ -193,7 +193,7 @@ document.querySelector('button[data-action="change"]').addEventListener('click',
 
 function makeModel(lat,long,indexNr){
    let model = document.createElement('a-entity');
-     model0.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude: ' + long';');
+   model0.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude: ' + long + ';');
    setModel(models[indexNr], model);
    model.setAttribute('animation-mixer', '');
    return model;
