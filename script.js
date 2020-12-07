@@ -132,6 +132,7 @@ var setModel = function (model, entity,lat,long) {
 
     const div = document.querySelector('.instructions');
     div.innerText = model.info;
+      entity.setAttribute('animation-mixer', '');
 };
 
 
@@ -188,7 +189,7 @@ function render(){
    setModel(models[1],model1,latitude2,longitude2;
    setModel(models[2],model2,latitude3,longitude3);
 
-
+   scene.appendChild(model0); // </a-entity></a-scene>
 document.querySelector('button[data-action="change"]').addEventListener('click', function () {
 
       if(nrOfClicks == 0){
