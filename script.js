@@ -161,14 +161,24 @@ function render(){
 
 
     document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-      scene.removeChild(scene.lastChild);
+
       if(nrOfClicks == 0){
-        let model0 = document.createElement('a-entity');
-        nrOfClicks++;
-        model0.setAttribute('gps-entity-place', `latitude: ${latitude2}; longitude: ${longitude2};`);
-        setModel(models[nrOfClicks], model0);
-        model0.setAttribute('animation-mixer', '');
-        scene.appendChild(model0);
+        scene.removeChild(scene.lastChild);
+        try {
+          let model0 = document.createElement('a-entity');
+          nrOfClicks++;
+          model0.setAttribute('gps-entity-place', `latitude: ${latitude2}; longitude: ${longitude2};`);
+          setModel(models[nrOfClicks], model0);
+          model0.setAttribute('animation-mixer', '');
+        } catch (e) {
+          const div = document.querySelector('.instructions');
+          div.innerText = 'error';
+        }finally {
+          scene.appendChild(model0);
+        }
+
+
+
       }else if (nrOfClicks == 1){
       let model1 = document.createElement('a-entity');
       nrOfClicks++;
