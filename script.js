@@ -93,8 +93,29 @@ var models = [
 
 ];
 
+// var modelIndex = 0;
+// var setModel = function (model, entity, ) {
+//     if (model.scale) {
+//         entity.setAttribute('scale', model.scale);
+//     }
+//
+//     if (model.rotation) {
+//         entity.setAttribute('rotation', model.rotation);
+//     }
+//
+//     if (model.position) {
+//         entity.setAttribute('position', model.position);
+//     }
+//
+//     entity.setAttribute('gltf-model', model.url);
+//
+//     const div = document.querySelector('.instructions');
+//     div.innerText = model.info;
+// };
 var modelIndex = 0;
-var setModel = function (model, entity) {
+var setModel = function (model, entity,lat,long) {
+    entity.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude: ' + long + ';');
+    entity.setAttribute('animation-mixer', '');
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
@@ -145,7 +166,7 @@ var setModel = function (model, entity) {
 //         scene.appendChild(model); // </a-entity></a-scene>
 //     });
 // }
-var nrOfClicks = 0;
+let nrOfClicks = 0;
 function render(){
     let latitude1 = 59.574467;
     let longitude1 = 17.840332;
@@ -162,9 +183,11 @@ function render(){
    let model0 = document.createElement('a-entity');
    let model1 = document.createElement('a-entity');
    let model2 = document.createElement('a-entity');
-   makeModel(latitude1,longitude1,0,model0);
-   makeModel(latitude2,longitude2,1,model0);
-   makeModel(latitude3,longitude3,2,model0);
+
+   setModel(models[0],model0,latitude1,longitude1);
+   setModel(models[1],model1,latitude2,longitude2;
+   setModel(models[2],model2,latitude3,longitude3);
+
 
 document.querySelector('button[data-action="change"]').addEventListener('click', function () {
 
@@ -193,13 +216,7 @@ document.querySelector('button[data-action="change"]').addEventListener('click',
     scene.appendChild(model0); // </a-entity></a-scene>
 }
 
-function makeModel(lat,long,indexNr,modelx){
 
-   modelx.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude: ' + long + ';');
-   setModel(models[indexNr], modelx);
-   modelx.setAttribute('animation-mixer', '');
-   return modelx;
- }
 
 
 
