@@ -45,7 +45,7 @@ var models = [
       scale: '0.05 0.05 0.05',
       info: 'Good Job!',
       rotation: '0 0 0',
-      // position:'0 0 0',
+      position:'0 0 0',
 
   },
   {
@@ -53,7 +53,7 @@ var models = [
       scale: '10 10 10',
       info: 'Good Job!',
       rotation: '0 220 0',
-      // position:'0 -80 0',
+      position:'0 -80 0',
 
   },
   {
@@ -61,7 +61,7 @@ var models = [
       scale: '0.5 0.5 0.5',
       info: 'Good Job!',
       rotation: '0 180 0',
-      // position:'0 200 0',
+      position:'0 200 0',
 
   },
   // {
