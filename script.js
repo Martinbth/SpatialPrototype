@@ -46,22 +46,20 @@ var models = [
       info: 'Good Job!',
       rotation: '0 0 0',
       position:'0 0 0',
-
   },
   {
       url: './assets/dog4/scene.gltf',
       scale: '10 10 10',
       info: 'Good Job!',
-      rotation: '0 220 0',
-      position:'0 -10 0',
-
+      rotation: '0 0 0',
+      position:'0 40 0',
   },
   {
       url: './assets/plane/scene.gltf',
-      scale: '0.5 0.5 0.5',
+      scale: '0.4 0.4 0.4',
       info: 'Good Job!',
-      rotation: '0 180 0',
-      position:'0 30 0',
+      rotation: '0 0 0',
+      position:'0 4 0',
 
   },
   // {
