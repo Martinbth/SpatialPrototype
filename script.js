@@ -185,7 +185,7 @@ function render(){
    let model2 = document.createElement('a-entity');
 
    setModel(models[0],model0,latitude1,longitude1);
-   setModel(models[1],model1,latitude2,longitude2;
+   setModel(models[1],model1,latitude2,longitude2);
    setModel(models[2],model2,latitude3,longitude3);
 
    scene.appendChild(model0); // </a-entity></a-scene>
@@ -213,7 +213,7 @@ document.querySelector('button[data-action="change"]').addEventListener('click',
         scene.appendChild(model2);
       }
     });
-  
+
 }
 
 
