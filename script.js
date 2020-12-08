@@ -113,7 +113,7 @@ var models = [
 //     div.innerText = model.info;
 // };
 var modelIndex = 0;
-var setModel = function (model, entity,lat,long) {
+var setModel = function (model,entity,lat,long) {
     entity.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude:' + long + ';');
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
@@ -213,7 +213,7 @@ document.querySelector('button[data-action="change"]').addEventListener('click',
         scene.appendChild(model2);
       }
     });
-    scene.appendChild(model0); // </a-entity></a-scene>
+  
 }
 
 
