@@ -64,7 +64,7 @@ var models = [
   },
   {
       url: './assets/gun/scene.gltf',
-      scale: '0.4 0.4 0.4',
+      scale: '0.2 0.2 0.2',
       info: 'Good Job!',
       rotation: '0 0 0',
       // position:'0 4 0',
@@ -72,7 +72,7 @@ var models = [
   },
   {
       url: './assets/truck/scene.gltf',
-      scale: '0.4 0.4 0.4',
+      scale: '0.15 0.15 0.15',
       info: 'Good Job!',
       rotation: '0 0 0',
       // position:'0 4 0',
@@ -85,7 +85,7 @@ var models = [
       rotation: '0 0 0',
       // position:'0 4 0',
 
-  }
+  },
 
   // {
   //     url: './assets/dog2/scene.gltf',
