@@ -48,6 +48,14 @@ var models = [
       // position:'0 0 0',
   },
   {
+      url: './assets/radio/scene.gltf',
+      scale: '0.4 0.4 0.4',
+      info: 'Good Job!',
+      rotation: '0 0 0',
+      // position:'0 4 0',
+
+  },
+  {
       url: './assets/dog4/scene.gltf',
       scale: '10 10 10',
       info: 'Good Job!',
@@ -78,14 +86,7 @@ var models = [
       // position:'0 4 0',
 
   },
-  {
-      url: './assets/radio/scene.gltf',
-      scale: '0.4 0.4 0.4',
-      info: 'Good Job!',
-      rotation: '0 0 0',
-      // position:'0 4 0',
 
-  },
 
   // {
   //     url: './assets/dog2/scene.gltf',
