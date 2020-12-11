@@ -55,13 +55,30 @@ var models = [
       position:'0 40 0',
   },
   {
-      url: './assets/plane/scene.gltf',
+      url: './assets/gun/scene.gltf',
       scale: '0.4 0.4 0.4',
       info: 'Good Job!',
       rotation: '0 0 0',
       position:'0 4 0',
 
   },
+  {
+      url: './assets/truck/scene.gltf',
+      scale: '0.4 0.4 0.4',
+      info: 'Good Job!',
+      rotation: '0 0 0',
+      position:'0 4 0',
+
+  },
+  {
+      url: './assets/radio/scene.gltf',
+      scale: '0.4 0.4 0.4',
+      info: 'Good Job!',
+      rotation: '0 0 0',
+      position:'0 4 0',
+
+  },
+
   // {
   //     url: './assets/dog2/scene.gltf',
   //     scale: '0.5 0.5 0.5',
@@ -172,6 +189,12 @@ function render(){
     let longitude2 = 17.840424;
     let latitude3 = 59.574568;
     let longitude3 = 17.840043;
+    let latitude4 = 59.574467;
+    let longitude4 = 17.840332;
+    let latitude5 = 59.574628;
+    let longitude5 = 17.840424;
+    let latitude6 = 59.574568;
+    let longitude6 = 17.840043;
     let scene = document.querySelector('a-scene');
     // let model = document.createElement('a-entity');
     // model.setAttribute('gps-entity-place', `latitude: ${latitude1}; longitude: ${longitude1};`);
@@ -181,13 +204,20 @@ function render(){
    let model0 = document.createElement('a-entity');
    let model1 = document.createElement('a-entity');
    let model2 = document.createElement('a-entity');
+   let model3 = document.createElement('a-entity');
+   let model4 = document.createElement('a-entity');
+   let model5 = document.createElement('a-entity');
+
 
    setModel(models[0],model0,latitude1,longitude1);
    setModel(models[1],model1,latitude2,longitude2);
    setModel(models[2],model2,latitude3,longitude3);
+   setModel(models[3],model3,latitude4,longitude4);
+   setModel(models[4],model3,latitude5,longitude5);
+   setModel(models[5],model4,latitude6,longitude6);
 
    scene.appendChild(model0); // </a-entity></a-scene>
-document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
 
       if(nrOfClicks == 0){
         scene.removeChild(scene.lastChild);
@@ -210,6 +240,22 @@ document.querySelector('button[data-action="change"]').addEventListener('click',
         // model1.setAttribute('animation-mixer', '');
         scene.appendChild(model2);
       }
+      else if (nrOfClicks == 2){
+        scene.removeChild(scene.lastChild);
+        nrOfClicks++;
+        scene.appendChild(model2);
+      }
+      else if (nrOfClicks == 3){
+        scene.removeChild(scene.lastChild);
+        nrOfClicks++;
+        scene.appendChild(model3);
+      }
+      else if (nrOfClicks == 4){
+        scene.removeChild(scene.lastChild);
+        nrOfClicks++;
+        scene.appendChild(model4);
+      }
+
     });
 
 }
