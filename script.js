@@ -52,14 +52,14 @@ var models = [
       scale: '10 10 10',
       info: 'Good Job!',
       rotation: '0 0 0',
-      position:'0 40 0',
+      // position:'0 40 0',
   },
   {
       url: './assets/gun/scene.gltf',
       scale: '0.4 0.4 0.4',
       info: 'Good Job!',
       rotation: '0 0 0',
-      position:'0 4 0',
+      // position:'0 4 0',
 
   },
   {
@@ -67,7 +67,7 @@ var models = [
       scale: '0.4 0.4 0.4',
       info: 'Good Job!',
       rotation: '0 0 0',
-      position:'0 4 0',
+      // position:'0 4 0',
 
   },
   {
@@ -75,9 +75,9 @@ var models = [
       scale: '0.4 0.4 0.4',
       info: 'Good Job!',
       rotation: '0 0 0',
-      position:'0 4 0',
+      // position:'0 4 0',
 
-  },
+  }
 
   // {
   //     url: './assets/dog2/scene.gltf',
@@ -213,8 +213,8 @@ function render(){
    setModel(models[1],model1,latitude2,longitude2);
    setModel(models[2],model2,latitude3,longitude3);
    setModel(models[3],model3,latitude4,longitude4);
-   setModel(models[4],model3,latitude5,longitude5);
-   setModel(models[5],model4,latitude6,longitude6);
+   setModel(models[4],model4,latitude5,longitude5);
+   setModel(models[5],model5,latitude6,longitude6);
 
    scene.appendChild(model0); // </a-entity></a-scene>
    document.querySelector('button[data-action="change"]').addEventListener('click', function () {
@@ -243,17 +243,17 @@ function render(){
       else if (nrOfClicks == 2){
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
-        scene.appendChild(model2);
+        scene.appendChild(model3);
       }
       else if (nrOfClicks == 3){
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
-        scene.appendChild(model3);
+        scene.appendChild(model4);
       }
       else if (nrOfClicks == 4){
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
-        scene.appendChild(model4);
+        scene.appendChild(model5);
       }
 
     });
