@@ -45,7 +45,7 @@ var models = [
       scale: '0.05 0.05 0.05',
       info: 'Good Job!',
       rotation: '0 0 0',
-      position:'0 0 0',
+      // position:'0 0 0',
   },
   {
       url: './assets/dog4/scene.gltf',
@@ -204,17 +204,17 @@ function render(){
    let model0 = document.createElement('a-entity');
    let model1 = document.createElement('a-entity');
    let model2 = document.createElement('a-entity');
-   let model3 = document.createElement('a-entity');
-   let model4 = document.createElement('a-entity');
-   let model5 = document.createElement('a-entity');
+   // let model3 = document.createElement('a-entity');
+   // let model4 = document.createElement('a-entity');
+   // let model5 = document.createElement('a-entity');
 
 
    setModel(models[0],model0,latitude1,longitude1);
    setModel(models[1],model1,latitude2,longitude2);
    setModel(models[2],model2,latitude3,longitude3);
-   setModel(models[3],model3,latitude4,longitude4);
-   setModel(models[4],model4,latitude5,longitude5);
-   setModel(models[5],model5,latitude6,longitude6);
+   // setModel(models[3],model3,latitude4,longitude4);
+   // setModel(models[4],model4,latitude5,longitude5);
+   // setModel(models[5],model5,latitude6,longitude6);
 
    scene.appendChild(model0); // </a-entity></a-scene>
    document.querySelector('button[data-action="change"]').addEventListener('click', function () {
@@ -240,21 +240,21 @@ function render(){
         // model1.setAttribute('animation-mixer', '');
         scene.appendChild(model2);
       }
-      else if (nrOfClicks == 2){
-        scene.removeChild(scene.lastChild);
-        nrOfClicks++;
-        scene.appendChild(model3);
-      }
-      else if (nrOfClicks == 3){
-        scene.removeChild(scene.lastChild);
-        nrOfClicks++;
-        scene.appendChild(model4);
-      }
-      else if (nrOfClicks == 4){
-        scene.removeChild(scene.lastChild);
-        nrOfClicks++;
-        scene.appendChild(model5);
-      }
+      // else if (nrOfClicks == 2){
+      //   scene.removeChild(scene.lastChild);
+      //   nrOfClicks++;
+      //   scene.appendChild(model3);
+      // }
+      // else if (nrOfClicks == 3){
+      //   scene.removeChild(scene.lastChild);
+      //   nrOfClicks++;
+      //   scene.appendChild(model4);
+      // }
+      // else if (nrOfClicks == 4){
+      //   scene.removeChild(scene.lastChild);
+      //   nrOfClicks++;
+      //   scene.appendChild(model5);
+      // }
 
     });
 
