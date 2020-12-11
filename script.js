@@ -219,17 +219,18 @@ function render(){
 
 
    setModel(models[0],model0,latitude1,longitude1);
-   setModel(models[1],model1,latitude2,longitude2);
-   setModel(models[2],model2,latitude3,longitude3);
-   setModel(models[3],model3,latitude4,longitude4);
-   setModel(models[4],model4,latitude5,longitude5);
-   setModel(models[5],model5,latitude6,longitude6);
+
+
+
+
+
 
    scene.appendChild(model0); // </a-entity></a-scene>
    document.querySelector('button[data-action="change"]').addEventListener('click', function () {
 
       if(nrOfClicks == 0){
         scene.removeChild(scene.lastChild);
+           setModel(models[1],model1,latitude2,longitude2);
         nrOfClicks++;
         // let model0 = document.createElement('a-entity');
         // model0.setAttribute('gps-entity-place', `latitude: ${latitude2}; longitude: ${longitude2};`);
@@ -242,6 +243,7 @@ function render(){
       else if (nrOfClicks == 1){
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
+        setModel(models[2],model2,latitude3,longitude3);
         // let model1 = document.createElement('a-entity');
         //
         // model1.setAttribute('gps-entity-place', `latitude: ${latitude3}; longitude: ${longitude3};`);
@@ -252,16 +254,19 @@ function render(){
       else if (nrOfClicks == 2){
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
+           setModel(models[3],model3,latitude4,longitude4);
         scene.appendChild(model3);
       }
       else if (nrOfClicks == 3){
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
+           setModel(models[4],model4,latitude5,longitude5);
         scene.appendChild(model4);
       }
       else if (nrOfClicks == 4){
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
+           setModel(models[5],model5,latitude6,longitude6);
         scene.appendChild(model5);
       }
 
