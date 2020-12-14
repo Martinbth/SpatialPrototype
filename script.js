@@ -78,14 +78,14 @@ var models = [
       // position:'0 4 0',
 
   },
-  {
-      url: './assets/truck/scene.gltf',
-      scale: '0.15 0.15 0.15',
-      info: 'Good Job!',
-      rotation: '0 0 0',
-      // position:'0 4 0',
-
-  },
+  // {
+  //     url: './assets/truck/scene.gltf',
+  //     scale: '0.15 0.15 0.15',
+  //     info: 'Good Job!',
+  //     rotation: '0 0 0',
+  //     // position:'0 4 0',
+  //
+  // },
 
 
   // {
@@ -263,12 +263,12 @@ function render(){
            setModel(models[4],model4,latitude5,longitude5);
         scene.appendChild(model4);
       }
-      else if (nrOfClicks == 4){
-        scene.removeChild(scene.lastChild);
-        nrOfClicks++;
-           setModel(models[5],model5,latitude6,longitude6);
-        scene.appendChild(model5);
-      }
+      // else if (nrOfClicks == 4){
+      //   scene.removeChild(scene.lastChild);
+      //   nrOfClicks++;
+      //      setModel(models[5],model5,latitude6,longitude6);
+      //   scene.appendChild(model5);
+      // }
 
     });
 
