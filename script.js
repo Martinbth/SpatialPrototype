@@ -259,7 +259,7 @@ function render(){
       }
       else if (nrOfClicks == 3){
         scene.removeChild(scene.lastChild);
-        nrOfClicks++;
+        nrOfClicks=1;
            setModel(models[4],model4,latitude5,longitude5);
         scene.appendChild(model4);
       }
