@@ -5,9 +5,6 @@ window.onload = () => {
       // let places = staticLoadPlaces();
       render();
     // });
-
-
-
 };
 
 // const tankLat = 59.572636;
@@ -48,14 +45,6 @@ var models = [
       // position:'0 0 0',
   },
   {
-      url: './assets/radio/scene.gltf',
-      scale: '0.4 0.4 0.4',
-      info: 'Good Job!',
-      rotation: '0 0 0',
-      // position:'0 4 0',
-
-  },
-  {
       url: './assets/dog4/scene.gltf',
       scale: '10 10 10',
       info: 'Good Job!',
@@ -63,7 +52,7 @@ var models = [
       // position:'0 40 0',
   },
   {
-      url: './assets/plane/scene.gltf',
+      url: './assets/radio/scene.gltf',
       scale: '0.4 0.4 0.4',
       info: 'Good Job!',
       rotation: '0 0 0',
@@ -78,6 +67,15 @@ var models = [
       // position:'0 4 0',
 
   },
+  {
+      url: './assets/plane/scene.gltf',
+      scale: '0.4 0.4 0.4',
+      info: 'Good Job!',
+      rotation: '0 0 0',
+      // position:'0 4 0',
+
+  },
+
   // {
   //     url: './assets/truck/scene.gltf',
   //     scale: '0.15 0.15 0.15',
@@ -156,6 +154,8 @@ var setModel = function (model,entity,lat,long) {
     const div = document.querySelector('.instructions');
     div.innerText = model.info;
     entity.setAttribute('animation-mixer', '');
+
+    entity.setAttribute('sound','src: ./sounds/cannon1.mp3');
 };
 
 

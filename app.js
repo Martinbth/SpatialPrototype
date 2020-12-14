@@ -5,7 +5,7 @@ var party = new Howl({
   volume: 0.1,
 });
 
-var quack = new Howl({
+var dog = new Howl({
   src: ['./sounds/dog.mp3'],
   loop: true,
   autoplay: false,
@@ -28,7 +28,7 @@ var tank = new Howl({
 });
 tank.pos(100, 0, 0);
 plane.pos(-50, 0, -100);
-quack.pos(140, 200, -100);
+dog.pos(140, 200, -100);
 
 
 
@@ -92,7 +92,7 @@ function mission2Completed() {
 }
 nextB.addEventListener('click', () => {
   if(visited == 2){
-  quack.play();
+  dog.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
   typewriter.deleteAll(0.2);
@@ -105,7 +105,7 @@ nextB.addEventListener('click', () => {
   }
 
   else if(visited == 4){
-    quack.stop();
+    dog.stop();
     visited = 5;
     nextB.style.display = "block";
     typewriter.deleteAll(0.2);
