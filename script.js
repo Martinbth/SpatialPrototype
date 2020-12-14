@@ -155,7 +155,6 @@ var setModel = function (model,entity,lat,long) {
     div.innerText = model.info;
     entity.setAttribute('animation-mixer', '');
 
-    entity.setAttribute('sound','src: ./sounds/cannon1.mp3');
 };
 
 
@@ -219,6 +218,7 @@ function render(){
 
 
    setModel(models[0],model0,latitude1,longitude1);
+     model0.setAttribute('sound','src: ./sounds/cannon1.mp3;autoplay:true;volume1;');
 
 
 
