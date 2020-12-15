@@ -5,10 +5,8 @@
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>GeoAR.js demo</title>
-  <!-- <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHTiERTMkb2098OhmpFEOWS4Hyc74m7Mg&callback=initMap">
-  </script> -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/577bc010cd.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.3/howler.min.js"></script>
@@ -23,77 +21,16 @@
 </head>
 
 <body style='margin: 0; overflow: hidden;' oncopy="return false" oncut="return false" onpaste="return false">
-  <div class="instructions"></div>
-  <!-- <div class="centered position" id="geo"></div> -->
-  <!-- <div class="centered info">
-    <p id = "status"></p>
-    <a id = "map-link" target="_blank"></a>
-    <p id = "distance"></p>
-    <p id = "plane"></p>
-    <p id = "tank"></p>
-    <p id = "xData"></p>
-    <p id = "yData"></p>
-    <p id = "zData"></p>
-    <button id="loadModels">load</button>
-  </div> -->
   <img  id="img" src="img/rotateDone.png" alt="">
   <div class="centered info" id="info">
     <h1 id="big-txt"></h1>
     <div id="infoText" class="normal-txt"></div>
     <button data-action="change" id="nextB"></button>
-    <!-- <button id="nextB" data-action="change"></button> -->
   </div>
 <!-- rotation-reader -->
   <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
     <a-camera gps-camera rotation-reader></a-camera>
   </a-scene>
-
-  <div class="centered testButtons">
-
-  <!-- <button id="playSound">P</button>
-   <button id="stopSound">S</button>
-   <button id="changeSound">C</button> -->
-  <!-- <button id="loadModels">load</button> -->
-  </div>
-
-
   <script src="app.js"></script>
 </body>
 <html>
-
-
-
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body>
-    <div class="imgMissionTwo">
-      <section id="context" class="grid">
-        <div class="welcome-text">
-          <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
-            aria-valuemin="0" aria-valuemax="100" style="width:80%">
-            <span class="sr-only">80% Complete</span>
-            </div>
-          </div>
-        </br>
-          <h1 id="big-thin"><b>Augmented Reality</b></h1>
-        </div>
-        <p class="leading">Use your camera on the backside of your phone to scan a nearby marker in your surroindings that look like this.</p>
-        <div class="footer">
-          <div class="button_cont">
-            <a class="button1" href="#" rel="nofollow noopener"><i class="fa">&#xf030;</i> Open camera</a>
-          </div>
-          <a href="mission2Completed.html">skip</a>
-        </div>
-        </div>
-      </section>
-    <script src="onboarding.js"></script>
-    </div>
-  </body>
-</html> -->

@@ -46,9 +46,6 @@ function handleOrientation(event) {
   var y = degreesToRadians(event.gamma);
   var z = degreesToRadians(event.alpha);
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
-  // xData.textContent = "x: " + event.beta;
-  // yData.textContent = "y: " + event.gamma;
-  // zData.textContent = "z: " + event.alpha;
   if (visited == 1) {
     if (event.alpha > 160 && event.alpha < 200) {
       visited = 2;
@@ -165,24 +162,12 @@ function geoFindMe() {
     userLong = position.coords.longitude;
     status.textContent = 'success';
     status.textContent = '';
-
     tankDistance = calculateDistance(tankLat, tankLong, userLat, userLong);
     planeDistance = calculateDistance(planeLat, planeLong, userLat, userLong);
-    // mapLink.href = `https://www.openstreetmap.org/#map=18/${userLat}/${userLong}`;
-    // mapLink.textContent = `Latitude: ${userLat} °, Longitude: ${userLong} °`;
-
     tankV = regulateVolume(tankDistance);
-    // tankStatus.textContent = '';
-    // tankStatus.textContent ='tank vol: ' + tankV;
-
-
     planeV = regulateVolume(planeDistance);
-    // planeStatus.textContent = '';
-    // planeStatus.textContent ='plane vol: ' + planeV;
     tank.volume(tankV);
     plane.volume(planeV);
-    //
-    // plane.volume(regulateVolume(planeDistance));
     ;
   }
 
