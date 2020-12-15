@@ -43,11 +43,9 @@ var setModel = function (model,entity,lat,long) {
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
-
     if (model.rotation) {
         entity.setAttribute('rotation', model.rotation);
     }
-
     if (model.position) {
         entity.setAttribute('position', model.position);
     }
@@ -75,12 +73,14 @@ function render(){
   let model2 = document.createElement('a-entity');
   let model3 = document.createElement('a-entity');
   let model4 = document.createElement('a-entity');
-
+try{
   setModel(models[0],model0,latitude1,longitude1);
   setModel(models[1],model1,latitude2,longitude2);
   setModel(models[2],model2,latitude3,longitude3);
   setModel(models[3],model3,latitude4,longitude4);
   setModel(models[4],model4,latitude5,longitude5);
+}
+
   scene.appendChild(model0);
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     if(nrOfClicks == 0){
