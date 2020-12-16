@@ -148,7 +148,6 @@ function geoFindMe() {
   var cannon2V;
   var planeV;
 
-
   function success(position) {
     userLat = position.coords.latitude;
     userLong = position.coords.longitude;

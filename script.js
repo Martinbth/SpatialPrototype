@@ -114,10 +114,10 @@ try{
     else if (nrOfClicks == 3){
       try{
         scene.removeChild(scene.lastChild);
-        nrOfClicks = 1;
       }
       finally{
         scene.appendChild(model4);
+        nrOfClicks = 1;
       }
     }
   });
