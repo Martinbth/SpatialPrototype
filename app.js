@@ -20,21 +20,18 @@ var plane = new Howl({
 });
 
 
-var tank = new Howl({
+var cannon2 = new Howl({
   src: ['./sounds/radio.wav'],
   autoplay: false,
   loop: true,
   volume: 1,
 });
-tank.pos(100, 0, 0);
-plane.pos(-50, 0, -100);
+
 dog.pos(140, 200, -100);
+plane.pos(-50, 0, -100);
+cannon2.pos(100, 0, 0);
 
 
-
-const xData = document.querySelector('#xData');
-const yData = document.querySelector('#yData');
-const zData = document.querySelector('#zData');
 var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
@@ -138,22 +135,17 @@ function degreesToRadians(degrees) {
 
 // Geolocation / distance
 window.addEventListener('DOMContentLoaded', geoFindMe);
-const tankLat = 59.574560;
-const tankLong = 17.840493;
+const cannon2Lat = 59.574560;
+const cannon2Long = 17.840493;
 const planeLat = 59.574063;
 const planeLong = 17.840166;
-const status = document.querySelector('#status');
-const distance = document.querySelector('#distance');
-const mapLink = document.querySelector('#map-link');
-const planeStatus = document.querySelector('#plane');
-const tankStatus = document.querySelector('#tank');
 
 function geoFindMe() {
   var userLat;
   var userLong;
-  var tankDistance;
+  var cannon2Distance;
   var planeDistance;
-  var tankV;
+  var cannon2V;
   var planeV;
 
 
@@ -162,13 +154,12 @@ function geoFindMe() {
     userLong = position.coords.longitude;
     status.textContent = 'success';
     status.textContent = '';
-    tankDistance = calculateDistance(tankLat, tankLong, userLat, userLong);
+    cannon2Distance = calculateDistance(cannon2Lat, cannon2Long, userLat, userLong);
     planeDistance = calculateDistance(planeLat, planeLong, userLat, userLong);
-    tankV = regulateVolume(tankDistance);
+    cannon2V = regulateVolume(cannon2Distance);
     planeV = regulateVolume(planeDistance);
-    tank.volume(tankV);
+    cannon2.volume(cannon2V);
     plane.volume(planeV);
-    ;
   }
 
   function error() {
