@@ -21,7 +21,7 @@ var plane = new Howl({
 
 
 var tank = new Howl({
-  src: ['./sounds/tankfiring.mp3'],
+  src: ['./sounds/radio.wav'],
   autoplay: false,
   loop: true,
   volume: 1,

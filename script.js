@@ -15,7 +15,6 @@ var models = [
     scale: '10 10 10',
     info: 'Good Job!',
     rotation: '0 0 0',
-
   },
   {
     url: './assets/radio/scene.gltf',
@@ -79,29 +78,47 @@ try{
   setModel(models[2],model2,latitude3,longitude3);
   setModel(models[3],model3,latitude4,longitude4);
   setModel(models[4],model4,latitude5,longitude5);
+}finally{
+  scene.appendChild(model0);
 }
 
-  scene.appendChild(model0);
+
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     if(nrOfClicks == 0){
-      scene.removeChild(scene.lastChild);
-      nrOfClicks++;
-      scene.appendChild(model1);
+      try{
+        scene.removeChild(scene.lastChild);
+        nrOfClicks++;
+      }
+      finally{
+        scene.appendChild(model1);
+      }
     }
     else if (nrOfClicks == 1){
-      scene.removeChild(scene.lastChild);
-      nrOfClicks++;
-      scene.appendChild(model2);
+      try{
+        scene.removeChild(scene.lastChild);
+        nrOfClicks++;
+      }
+      finally{
+        scene.appendChild(model2);
+      }
     }
     else if (nrOfClicks == 2){
-      scene.removeChild(scene.lastChild);
-      nrOfClicks++;
-      scene.appendChild(model3);
+      try{
+        scene.removeChild(scene.lastChild);
+        nrOfClicks++;
+      }
+      finally{
+        scene.appendChild(model3);
+      }
     }
     else if (nrOfClicks == 3){
-      scene.removeChild(scene.lastChild);
-      nrOfClicks=1;
-      scene.appendChild(model4);
+      try{
+        scene.removeChild(scene.lastChild);
+        nrOfClicks++;
+      }
+      finally{
+        scene.appendChild(model4);
+      }
     }
   });
 }
