@@ -74,10 +74,7 @@ function render(){
   let model4 = document.createElement('a-entity');
 try{
   setModel(models[0],model0,latitude1,longitude1);
-  setModel(models[1],model1,latitude2,longitude2);
-  setModel(models[2],model2,latitude3,longitude3);
-  setModel(models[3],model3,latitude4,longitude4);
-  setModel(models[4],model4,latitude5,longitude5);
+
 }finally{
   scene.appendChild(model0);
 }
@@ -88,6 +85,7 @@ try{
       try{
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
+        setModel(models[1],model1,latitude2,longitude2);
       }
       finally{
         scene.appendChild(model1);
@@ -97,6 +95,7 @@ try{
       try{
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
+          setModel(models[2],model2,latitude3,longitude3);
       }
       finally{
         scene.appendChild(model2);
@@ -106,6 +105,7 @@ try{
       try{
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
+        setModel(models[3],model3,latitude4,longitude4);
       }
       finally{
         scene.appendChild(model3);
@@ -114,10 +114,12 @@ try{
     else if (nrOfClicks == 3){
       try{
         scene.removeChild(scene.lastChild);
+            nrOfClicks = 1;
+        setModel(models[4],model4,latitude5,longitude5);
       }
       finally{
         scene.appendChild(model4);
-        nrOfClicks = 1;
+
       }
     }
   });
