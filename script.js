@@ -83,7 +83,7 @@ try{
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     if(nrOfClicks == 0){
       try{
-        scene.removeChild(scene.lastChild);
+        scene.removeChild(model0);
         nrOfClicks++;
         setModel(models[1],model1,latitude2,longitude2);
       }
