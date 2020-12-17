@@ -100,6 +100,7 @@ nextB.addEventListener('click', () => {
 
   else if(visited == 4){
     dog.stop();
+    cannon2.play();
     visited = 5;
     nextB.style.display = "block";
     typewriter.deleteAll(0.2);
@@ -153,8 +154,8 @@ function geoFindMe() {
     userLong = position.coords.longitude;
     status.textContent = 'success';
     status.textContent = '';
-    cannon2Distance = calculateDistance(cannon2Lat, cannon2Long, userLat, userLong);
-    planeDistance = calculateDistance(planeLat, planeLong, userLat, userLong);
+    cannon2Distance = calculateDistance(latitude1, longitude1, userLat, userLong);
+    planeDistance = calculateDistance(latitude2, longitude1, userLat, userLong);
     cannon2V = regulateVolume(cannon2Distance);
     planeV = regulateVolume(planeDistance);
     cannon2.volume(cannon2V);
