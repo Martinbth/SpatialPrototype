@@ -86,9 +86,10 @@ function render(){
       }
     }
     else if (nrOfClicks == 1){
-      var model2 = document.createElement('a-entity');
+      scene.removeChild(scene.lastChild);
+
       try{
-        scene.removeChild(scene.lastChild);
+        var model2 = document.createElement('a-entity');
         nrOfClicks++;
         setModel(models[2],model2,latitude3,longitude3);
       }
