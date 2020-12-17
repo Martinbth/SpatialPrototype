@@ -75,7 +75,7 @@ function render(){
   }
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     if(nrOfClicks == 0){
-      let model1 = document.createElement('a-entity');
+      var model1 = document.createElement('a-entity');
       try{
         scene.removeChild(model0);
         nrOfClicks++;
@@ -86,7 +86,7 @@ function render(){
       }
     }
     else if (nrOfClicks == 1){
-      let model2 = document.createElement('a-entity');
+      var model2 = document.createElement('a-entity');
       try{
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
@@ -97,7 +97,7 @@ function render(){
       }
     }
     else if (nrOfClicks == 2){
-      let model3 = document.createElement('a-entity');
+      var model3 = document.createElement('a-entity');
       try{
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
@@ -108,7 +108,7 @@ function render(){
       }
     }
     else if (nrOfClicks == 3){
-      let model4 = document.createElement('a-entity');
+      var model4 = document.createElement('a-entity');
       try{
         scene.removeChild(scene.lastChild);
         nrOfClicks = 1;
