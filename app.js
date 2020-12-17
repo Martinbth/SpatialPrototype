@@ -21,15 +21,15 @@ var plane = new Howl({
 
 
 var cannon2 = new Howl({
-  src: ['./sounds/radio.wav'],
-  autoplay: true,
+  src: ['./sounds/cannon1.mp3'],
   loop: true,
+  autoplay: false,
   volume: 1,
 });
 
 dog.pos(140, 200, -100);
 plane.pos(-50, 0, -100);
-cannon2.pos(0, 0, 0);
+cannon2.pos(140, 200, -100);
 
 
 var visited = 1;
