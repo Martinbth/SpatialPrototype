@@ -22,14 +22,14 @@ var plane = new Howl({
 
 var cannon2 = new Howl({
   src: ['./sounds/radio.wav'],
-  autoplay: false,
+  autoplay: true,
   loop: true,
   volume: 1,
 });
 
 dog.pos(140, 200, -100);
 plane.pos(-50, 0, -100);
-cannon2.pos(100, 0, 0);
+cannon2.pos(0, 0, 0);
 
 
 var visited = 1;
