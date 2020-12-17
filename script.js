@@ -68,22 +68,17 @@ function render(){
   let longitude6 = 17.840043;
   let scene = document.querySelector('a-scene');
   let model0 = document.createElement('a-entity');
-
-
-try{
-  setModel(models[0],model0,latitude1,longitude1);
-
-}finally{
-  scene.appendChild(model0);
-}
-
-
+  try{
+    setModel(models[0],model0,latitude1,longitude1);
+  }finally{
+    scene.appendChild(model0);
+  }
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     if(nrOfClicks == 0){
+      let model1 = document.createElement('a-entity');
       try{
         scene.removeChild(model0);
         nrOfClicks++;
-        let model1 = document.createElement('a-entity');
         setModel(models[1],model1,latitude2,longitude2);
       }
       finally{
@@ -91,10 +86,10 @@ try{
       }
     }
     else if (nrOfClicks == 1){
+      let model2 = document.createElement('a-entity');
       try{
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
-        let model2 = document.createElement('a-entity');
         setModel(models[2],model2,latitude3,longitude3);
       }
       finally{
@@ -102,10 +97,10 @@ try{
       }
     }
     else if (nrOfClicks == 2){
+      let model3 = document.createElement('a-entity');
       try{
         scene.removeChild(scene.lastChild);
         nrOfClicks++;
-        let model3 = document.createElement('a-entity');
         setModel(models[3],model3,latitude4,longitude4);
       }
       finally{
@@ -113,15 +108,14 @@ try{
       }
     }
     else if (nrOfClicks == 3){
+      let model4 = document.createElement('a-entity');
       try{
         scene.removeChild(scene.lastChild);
         nrOfClicks = 1;
-        let model4 = document.createElement('a-entity');
         setModel(models[4],model4,latitude5,longitude5);
       }
       finally{
         scene.appendChild(model4);
-
       }
     }
   });
