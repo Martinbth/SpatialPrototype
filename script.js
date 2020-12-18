@@ -66,25 +66,28 @@ function render(){
   let longitude5 = 17.840424;
   let latitude6 = 59.574568;
   let longitude6 = 17.840043;
-  const scene = document.querySelector('a-scene');
-  const model0 = document.createElement('a-entity');
-  const model1 = document.createElement('a-entity');
-  const model2 = document.createElement('a-entity');
-  const model3 = document.createElement('a-entity');
-  const model4 = document.createElement('a-entity');
+
   try{
-    setModel(models[0],model0,latitude1,longitude1);
+    const scene = document.querySelector('a-scene');
+    const model0 = document.createElement('a-entity');
+    const model1 = document.createElement('a-entity');
+    const model2 = document.createElement('a-entity');
+    const model3 = document.createElement('a-entity');
+    const model4 = document.createElement('a-entity');
   }finally{
+    setModel(models[0],model0,latitude1,longitude1);
+    setModel(models[1],model1,latitude2,longitude2);
+    setModel(models[2],model2,latitude3,longitude3);
+    setModel(models[3],model3,latitude4,longitude4);
+    setModel(models[4],model4,latitude5,longitude5);
     scene.appendChild(model0);
   }
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     if(nrOfClicks == 0){
-    scene.removeChild(model0);
 
+    nrOfClicks++;
       try{
-
-        nrOfClicks++;
-        setModel(models[1],model1,latitude2,longitude2);
+        scene.removeChild(model0);
       }
       finally{
         scene.appendChild(model1);
@@ -92,11 +95,9 @@ function render(){
     }
     else if (nrOfClicks == 1){
 
-      scene.removeChild(scene.lastChild);
-      try{
-
         nrOfClicks++;
-        setModel(models[2],model2,latitude3,longitude3);
+      try{
+        scene.removeChild(scene.lastChild);
       }
       finally{
         scene.appendChild(model2);
@@ -104,11 +105,10 @@ function render(){
     }
     else if (nrOfClicks == 2){
 
-      scene.removeChild(scene.lastChild);
-      try{
 
-        nrOfClicks++;
-        setModel(models[3],model3,latitude4,longitude4);
+      nrOfClicks++;
+      try{
+      scene.removeChild(scene.lastChild);
       }
       finally{
         scene.appendChild(model3);
@@ -116,11 +116,9 @@ function render(){
     }
     else if (nrOfClicks == 3){
 
-      scene.removeChild(scene.lastChild);
-      try{
-
         nrOfClicks = 1;
-        setModel(models[4],model4,latitude5,longitude5);
+      try{
+        scene.removeChild(scene.lastChild);
       }
       finally{
         scene.appendChild(model4);
