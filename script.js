@@ -69,11 +69,11 @@ function render(){
 
   try{
     const scene = document.querySelector('a-scene');
-    const model0 = document.createElement('a-entity');
-    const model1 = document.createElement('a-entity');
-    const model2 = document.createElement('a-entity');
-    const model3 = document.createElement('a-entity');
-    const model4 = document.createElement('a-entity');
+    var model0 = document.createElement('a-entity');
+    var model1 = document.createElement('a-entity');
+    var model2 = document.createElement('a-entity');
+    var model3 = document.createElement('a-entity');
+    var model4 = document.createElement('a-entity');
   }finally{
     setModel(models[0],model0,latitude1,longitude1);
     setModel(models[1],model1,latitude2,longitude2);
