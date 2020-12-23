@@ -75,10 +75,6 @@ function render(){
     var model3 = document.createElement('a-entity');
     var model4 = document.createElement('a-entity');
     setModel(models[0],model0,latitude1,longitude1);
-
-
-
-
   }finally{
     scene.appendChild(model0);
   }
