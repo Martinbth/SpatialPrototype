@@ -75,14 +75,14 @@ function render() {
     let model0 = document.createElement('a-entity');
     setModel(models[0],model0,latitude1,longitude1);
 
-    scene.appendChild(model0);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     if(nrOfClicks == 0){
+      nrOfClicks++;
+      let model1 = document.createElement('a-entity');
       try{
-        nrOfClicks++;
-        scene.removeChild(scene.lastChild);
         setModel(models[1],model1,latitude2,longitude2);
+        scene.removeChild(scene.lastChild);
       }
       finally{
         scene.appendChild(model1);
@@ -90,7 +90,7 @@ function render() {
     }
     else if (nrOfClicks == 1){
       nrOfClicks++;
-      let model1 = document.createElement('a-entity');
+      let model2 = document.createElement('a-entity');
       removeAttribute(model2);
       try{
         setModel(models[2],model2,latitude3,longitude3);
@@ -124,5 +124,6 @@ function render() {
         scene.appendChild(model3);
       }
     }
+      scene.appendChild(model0);
   });
 }
