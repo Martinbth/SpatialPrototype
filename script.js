@@ -71,13 +71,12 @@ function render() {
   let longitude5 = 17.840424;
   let latitude6 = 59.574568;
   let longitude6 = 17.840043;
-  try{
     const scene = document.querySelector('a-scene');
     let model0 = document.createElement('a-entity');
     setModel(models[0],model0,latitude1,longitude1);
-  } finally{
+
     scene.appendChild(model0);
-  }
+
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     if(nrOfClicks == 0){
       try{
