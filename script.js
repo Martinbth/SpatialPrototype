@@ -36,6 +36,11 @@ var models = [
   },
 ];
 
+function removeAttribute(entity){
+  while(elem.attributes.length > 0){
+    entity.removeAttribute(entity.attributes[0].name);
+  }
+}
 var modelIndex = 0;
 var setModel = function (model,entity,lat,long) {
     entity.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude:' + long + ';');
@@ -68,11 +73,7 @@ function render() {
   let longitude6 = 17.840043;
   try{
     const scene = document.querySelector('a-scene');
-    var model0 = document.createElement('a-entity');
-    var model1 = document.createElement('a-entity');
-    var model2 = document.createElement('a-entity');
-    var model3 = document.createElement('a-entity');
-    var model4 = document.createElement('a-entity');
+    let model0 = document.createElement('a-entity');
     setModel(models[0],model0,latitude1,longitude1);
   } finally{
     scene.appendChild(model0);
@@ -89,8 +90,10 @@ function render() {
       }
     }
     else if (nrOfClicks == 1){
+      nrOfClicks++;
+      let model1 = document.createElement('a-entity');
+      removeAttribute(model2);
       try{
-        nrOfClicks++;
         setModel(models[2],model2,latitude3,longitude3);
         scene.removeChild(scene.lastChild);
       }
@@ -99,8 +102,10 @@ function render() {
       }
     }
     else if (nrOfClicks == 2){
+      nrOfClicks++;
+      let model3 = document.createElement('a-entity');
+      removeAttribute(model3);
       try{
-        nrOfClicks++;
         setModel(models[3],model3,latitude4,longitude4);
         scene.removeChild(scene.lastChild);
       }
@@ -109,13 +114,15 @@ function render() {
       }
     }
     else if (nrOfClicks == 3){
-       try{
-        nrOfClicks = 1;
+      nrOfClicks = 1;
+      let model4 = document.createElement('a-entity');
+      removeAttribute(model4);
+      try{
         setModel(models[4],model4,latitude5,longitude5);
         scene.removeChild(scene.lastChild);
       }
       finally{
-        scene.appendChild(model4);
+        scene.appendChild(model3);
       }
     }
   });
