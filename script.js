@@ -74,7 +74,7 @@ function render() {
   const scene = document.querySelector('a-scene');
   var model = document.createElement('a-entity');
 
-  setModel(models[0],model0,latitude1,longitude1);
+  setModel(models[0],model,latitude1,longitude1);
   scene.appendChild(model);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
