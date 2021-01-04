@@ -73,13 +73,17 @@ function render() {
   let longitude6 = 17.840043;
   const scene = document.querySelector('a-scene');
   var model0 = document.createElement('a-entity');
+  var model1 = document.createElement('a-entity');
+  var model2 = document.createElement('a-entity');
+  var model3 = document.createElement('a-entity');
+  var model4 = document.createElement('a-entity');
   setModel(models[0],model0,latitude1,longitude1);
   scene.appendChild(model0);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     if(nrOfClicks == 0){
       nrOfClicks++;
-      var model1 = document.createElement('a-entity');
+
       scene.removeChild(scene.lastChild);
       try{
         setModel(models[1],model1,latitude2,longitude2);
@@ -90,7 +94,7 @@ function render() {
     }
     else if (nrOfClicks == 1){
       nrOfClicks++;
-      var model2 = document.createElement('a-entity');
+
       removeAttribute(model2);
       try{
         setModel(models[2],model2,latitude3,longitude3);
@@ -102,7 +106,7 @@ function render() {
     }
     else if (nrOfClicks == 2){
       nrOfClicks++;
-      var model3 = document.createElement('a-entity');
+
       removeAttribute(model3);
       try{
         setModel(models[3],model3,latitude4,longitude4);
@@ -114,7 +118,7 @@ function render() {
     }
     else if (nrOfClicks == 3){
       nrOfClicks = 1;
-      var model4 = document.createElement('a-entity');
+
       removeAttribute(model4);
       try{
         setModel(models[4],model4,latitude5,longitude5);
