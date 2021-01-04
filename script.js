@@ -121,7 +121,7 @@ function render() {
         scene.removeChild(scene.lastChild);
       }
       finally{
-        scene.appendChild(model3);
+        scene.appendChild(model4);
       }
     }
   });
