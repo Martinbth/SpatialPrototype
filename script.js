@@ -72,13 +72,10 @@ function render() {
   let latitude6 = 59.574568;
   let longitude6 = 17.840043;
   const scene = document.querySelector('a-scene');
-  var model0 = document.createElement('a-entity');
-  var model1 = document.createElement('a-entity');
-  var model2 = document.createElement('a-entity');
-  var model3 = document.createElement('a-entity');
-  var model4 = document.createElement('a-entity');
+  var model = document.createElement('a-entity');
+
   setModel(models[0],model0,latitude1,longitude1);
-  scene.appendChild(model0);
+  scene.appendChild(model);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     if(nrOfClicks == 0){
@@ -86,46 +83,46 @@ function render() {
 
       scene.removeChild(scene.lastChild);
       try{
-        setModel(models[1],model1,latitude2,longitude2);
+        setModel(models[1],model,latitude2,longitude2);
       }
       finally{
-        scene.appendChild(model1);
+        scene.appendChild(model);
       }
     }
     else if (nrOfClicks == 1){
       nrOfClicks++;
 
-      removeAttribute(model2);
+      removeAttribute(model);
       try{
-        setModel(models[2],model2,latitude3,longitude3);
+        setModel(models[2],model,latitude3,longitude3);
         scene.removeChild(scene.lastChild);
       }
       finally{
-        scene.appendChild(model2);
+        scene.appendChild(model);
       }
     }
     else if (nrOfClicks == 2){
       nrOfClicks++;
 
-      removeAttribute(model3);
+      removeAttribute(model);
       try{
-        setModel(models[3],model3,latitude4,longitude4);
+        setModel(models[3],model,latitude4,longitude4);
         scene.removeChild(scene.lastChild);
       }
       finally{
-        scene.appendChild(model3);
+        scene.appendChild(model);
       }
     }
     else if (nrOfClicks == 3){
       nrOfClicks = 1;
 
-      removeAttribute(model4);
+      removeAttribute(model);
       try{
-        setModel(models[4],model4,latitude5,longitude5);
+        setModel(models[4],model,latitude5,longitude5);
         scene.removeChild(scene.lastChild);
       }
       finally{
-        scene.appendChild(model4);
+        scene.appendChild(model);
       }
     }
   });
