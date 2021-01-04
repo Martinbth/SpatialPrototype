@@ -80,9 +80,9 @@ function render() {
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     if(nrOfClicks == 0){
       nrOfClicks++;
-
-      scene.removeChild(scene.lastChild);
       try{
+        scene.removeChild(scene.lastChild);
+        removeAttribute(model);
         setModel(models[1],model,latitude2,longitude2);
       }
       finally{
@@ -91,11 +91,10 @@ function render() {
     }
     else if (nrOfClicks == 1){
       nrOfClicks++;
-
-      removeAttribute(model);
       try{
-        setModel(models[2],model,latitude3,longitude3);
         scene.removeChild(scene.lastChild);
+        removeAttribute(model);
+        setModel(models[2],model,latitude3,longitude3);
       }
       finally{
         scene.appendChild(model);
@@ -104,10 +103,11 @@ function render() {
     else if (nrOfClicks == 2){
       nrOfClicks++;
 
-      removeAttribute(model);
+
       try{
-        setModel(models[3],model,latitude4,longitude4);
         scene.removeChild(scene.lastChild);
+        removeAttribute(model);
+        setModel(models[3],model,latitude4,longitude4);
       }
       finally{
         scene.appendChild(model);
@@ -115,11 +115,10 @@ function render() {
     }
     else if (nrOfClicks == 3){
       nrOfClicks = 1;
-
-      removeAttribute(model);
       try{
-        setModel(models[4],model,latitude5,longitude5);
         scene.removeChild(scene.lastChild);
+        removeAttribute(model);
+        setModel(models[4],model,latitude5,longitude5);
       }
       finally{
         scene.appendChild(model);
