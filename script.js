@@ -37,7 +37,7 @@ var models = [
 ];
 
 function removeAttribute(entity){
-  while(elem.attributes.length > 0){
+  while(entity.attributes.length > 0){
     entity.removeAttribute(entity.attributes[0].name);
   }
 }
