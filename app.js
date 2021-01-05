@@ -21,7 +21,7 @@ var plane = new Howl({
 
 
 var cannon2 = new Howl({
-  src: ['./sounds/cannon1.mp3'],
+  src: ['./sounds/partyblow.mp3'],
   loop: true,
   autoplay: false,
   volume: 1,
