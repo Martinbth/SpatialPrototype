@@ -29,7 +29,7 @@ var cannon2 = new Howl({
 
 dog.pos(10, -70, 0);
 plane.pos(-50, 10, 0);
-cannon2.pos(140, 200, -100);
+cannon2.pos(10, 0, 0);
 
 
 var visited = 1;
@@ -136,10 +136,10 @@ function degreesToRadians(degrees) {
 
 // Geolocation / distance
 window.addEventListener('DOMContentLoaded', geoFindMe);
-const cannon2Lat = 59.574560;
-const cannon2Long = 17.840493;
-const planeLat = 59.574063;
-const planeLong = 17.840166;
+// const cannon2Lat = 59.574560;
+// const cannon2Long = 17.840493;
+// const planeLat = 59.574063;
+// const planeLong = 17.840166;
 
 function geoFindMe() {
   var userLat;
