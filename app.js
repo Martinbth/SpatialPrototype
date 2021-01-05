@@ -44,13 +44,15 @@ function handleOrientation(event) {
   var z = degreesToRadians(event.alpha);
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
   if (visited == 1) {
+     mission1Completed()
     if (event.alpha > 160 && event.alpha < 200) {
       visited = 2;
       party.play();
-      mission1Completed();
+
     }
   }
   else if (visited == 3) {
+    mission2Completed();
     if (event.alpha > 60 && event.alpha < 100) {
       visited = 4;
       mission2Completed();
