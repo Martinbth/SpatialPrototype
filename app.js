@@ -27,7 +27,7 @@ var cannon2 = new Howl({
   volume: 1,
 });
 
-dog.pos(140, 200, -100);
+dog.pos(30, 200, -100);
 plane.pos(-50, 0, -100);
 cannon2.pos(140, 200, -100);
 
@@ -35,7 +35,7 @@ cannon2.pos(140, 200, -100);
 var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
-nextB.style.display = "none";
+nextB.style.display = "block";
 nextB.innerText = 'Next';
 
 function handleOrientation(event) {
@@ -44,16 +44,14 @@ function handleOrientation(event) {
   var z = degreesToRadians(event.alpha);
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
   if (visited == 1) {
-     mission1Completed()
-    if (event.alpha > 160 && event.alpha < 200) {
+    if (event.alpha > 170 && event.alpha < 250) {
       visited = 2;
       party.play();
-
+      mission1Completed();
     }
   }
   else if (visited == 3) {
-    mission2Completed();
-    if (event.alpha > 60 && event.alpha < 100) {
+    if (event.alpha > 0 && event.alpha < 60) {
       visited = 4;
       mission2Completed();
     }
