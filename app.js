@@ -27,7 +27,7 @@ var cannon2 = new Howl({
   volume: 1,
 });
 
-dog.pos(10, 10, 0);
+dog.pos(10, -70, 0);
 plane.pos(-50, 10, 0);
 cannon2.pos(140, 200, -100);
 
