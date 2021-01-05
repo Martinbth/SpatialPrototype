@@ -27,7 +27,7 @@ var cannon2 = new Howl({
   volume: 1,
 });
 
-dog.pos(10, -70, 0);
+dog.pos(20, -70, 0);
 plane.pos(-50, 10, 0);
 cannon2.pos(10, 0, 0);
 
@@ -86,7 +86,7 @@ function mission2Completed() {
 }
 nextB.addEventListener('click', () => {
   if(visited == 2){
-  dog.play();
+  cannon2.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
   typewriter.deleteAll(0.2);
