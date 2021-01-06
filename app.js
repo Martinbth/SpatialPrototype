@@ -33,7 +33,7 @@ var airplane = new Howl({
   volume: 0.2,
 });
 
-dog.pos(400, 0, 0);
+dog.pos(300, 300, 0);
 radio.pos(20, -70, 0);
 cannon.pos(20, -70, 0);
 airplane.pos(20, -70, 0);
