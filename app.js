@@ -16,7 +16,7 @@ var radio = new Howl({
   src: ['./sounds/radio.wav'],
   loop: true,
   autoplay: true,
-  volume: 0.2,
+  volume: 0.7,
 });
 
 var cannon = new Howl({
