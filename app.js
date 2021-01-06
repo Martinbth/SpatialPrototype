@@ -29,7 +29,7 @@ var cannon = new Howl({
 var airplane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
-  autoplay: true,
+  autoplay: false,
   volume: 0.2,
 });
 
@@ -92,7 +92,7 @@ function mission2Completed() {
 }
 nextB.addEventListener('click', () => {
   if(visited == 2){
-  cannon2.play();
+  dog.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
   typewriter.deleteAll(0.2);
@@ -106,7 +106,7 @@ nextB.addEventListener('click', () => {
 
   else if(visited == 4){
     dog.stop();
-    cannon2.play();
+    cannon.play();
     visited = 5;
     nextB.style.display = "block";
     typewriter.deleteAll(0.2);
