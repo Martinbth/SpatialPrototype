@@ -12,30 +12,36 @@ var dog = new Howl({
   volume: 1,
 });
 
-var plane = new Howl({
+var radio = new Howl({
+  src: ['./sounds/radio.wav'],
+  loop: true,
+  autoplay: false,
+  volume: 0.2,
+});
+
+var cannon = new Howl({
+  src: ['./sounds/cannon2.wav'],
+  loop: true,
+  autoplay: false,
+  volume: 0.2,
+});
+
+var airplane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
-  autoplay: false,
-  volume: 1,
+  autoplay: true,
+  volume: 0.2,
 });
 
-
-var cannon2 = new Howl({
-  src: ['./sounds/partyblow.mp3'],
-  loop: true,
-  autoplay: false,
-  volume: 1,
-});
-
-dog.pos(20, -70, 0);
-plane.pos(-50, 10, 0);
-cannon2.pos(10, 0, 0);
-
+dog.pos(0, 0, 0);
+radio.pos(20, -70, 0);
+cannon.pos(20, -70, 0);
+airplane.pos(20, -70, 0);
 
 var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
-nextB.style.display = "block";
+nextB.style.display = "none";
 nextB.innerText = 'Next';
 
 function handleOrientation(event) {
@@ -152,8 +158,8 @@ function geoFindMe() {
   function success(position) {
     userLat = position.coords.latitude;
     userLong = position.coords.longitude;
-    status.textContent = 'success';
-    status.textContent = '';
+    // status.textContent = 'success';
+    // status.textContent = '';
     cannon2Distance = calculateDistance(latitude1, longitude1, userLat, userLong);
     planeDistance = calculateDistance(latitude2, longitude1, userLat, userLong);
     cannon2V = regulateVolume(cannon2Distance);
