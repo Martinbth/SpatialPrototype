@@ -8,14 +8,14 @@ var party = new Howl({
 var dog = new Howl({
   src: ['./sounds/dog.mp3'],
   loop: true,
-  autoplay: true,
+  autoplay: false,
   volume: 1,
 });
 
 var radio = new Howl({
   src: ['./sounds/radio.wav'],
   loop: true,
-  autoplay: true,
+  autoplay: false,
   volume: 1,
 });
 
