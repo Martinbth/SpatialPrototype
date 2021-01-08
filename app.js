@@ -23,20 +23,20 @@ var cannon = new Howl({
   src: ['./sounds/cannon2.wav'],
   loop: true,
   autoplay: false,
-  volume: 0.2,
+  volume: 1,
 });
 
 var airplane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
   autoplay: false,
-  volume: 0.2,
+  volume: 1,
 });
 
-dog.pos(45, 0, -45);
-radio.pos(4, 4, 0);
-cannon.pos(20, -70, 0);
-airplane.pos(20, -70, 0);
+dog.pos(45, 0, 45);
+radio.pos(450, 0, -450);
+cannon.pos(10, 0, 100);
+airplane.pos(60, 0, 60);
 
 var visited = 1;
 const nextB = document.getElementById("nextB");
@@ -106,7 +106,7 @@ nextB.addEventListener('click', () => {
 
   else if(visited == 4){
     dog.stop();
-    cannon.play();
+    radio.play();
     visited = 5;
     nextB.style.display = "block";
     typewriter.deleteAll(0.2);
@@ -117,6 +117,8 @@ nextB.addEventListener('click', () => {
     .start();
     nextB.innerText = 'Done';
   }else if(visited == 5){
+    radio.stop();
+    cannon.play();
     visited = 6;
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
