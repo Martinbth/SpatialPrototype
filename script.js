@@ -90,7 +90,8 @@ function render() {
         setModel(models[1],model,latitude2,longitude2);
       }
       finally{
-        scene.appendChild(model);
+        setTimeout(() => {    scene.appendChild(model); }, 5000);
+
       }
     }
     else if (nrOfClicks == 1){
