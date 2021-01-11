@@ -33,7 +33,7 @@ var airplane = new Howl({
   volume: 1,
 });
 
-dog.pos(45, 0, 45);
+dog.pos(45, 0, -45);
 radio.pos(450, 0, -450);
 cannon.pos(10, 0, 100);
 airplane.pos(60, 0, 60);
@@ -41,7 +41,7 @@ airplane.pos(60, 0, 60);
 var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
-nextB.style.display = "none";
+nextB.style.display = "block";
 nextB.innerText = 'Next';
 
 function handleOrientation(event) {
