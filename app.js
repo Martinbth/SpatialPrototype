@@ -8,7 +8,7 @@ var party = new Howl({
 var dog = new Howl({
   src: ['./sounds/dog.mp3'],
   loop: true,
-  autoplay: false,
+  autoplay: true,
   volume: 1,
 });
 
