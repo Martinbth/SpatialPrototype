@@ -41,7 +41,7 @@ airplane.pos(-45, 0, 45);
 var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
-nextB.style.display = "block";
+nextB.style.display = "none";
 nextB.innerText = 'Next';
 
 function handleOrientation(event) {
@@ -78,7 +78,7 @@ function mission1Completed() {
 }
 
 function mission2Completed() {
-  nextB.innerText = 'lets g2o';
+  nextB.innerText = 'lets go';
   changeImage("img/invisible.png");
   nextB.style.display = "block";
   typewriter.deleteAll(0.2);
@@ -92,7 +92,8 @@ function mission2Completed() {
 }
 nextB.addEventListener('click', () => {
   if(visited == 2){
-  dog.play();
+  // dog.play();
+  radio.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
   typewriter.deleteAll(0.2);
