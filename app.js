@@ -162,11 +162,14 @@ function geoFindMe() {
     userLong = position.coords.longitude;
     // status.textContent = 'success';
     // status.textContent = '';
-    cannon2Distance = calculateDistance(latitude1, longitude1, userLat, userLong);
-    planeDistance = calculateDistance(latitude2, longitude1, userLat, userLong);
-    cannon2V = regulateVolume(cannon2Distance);
+    radioDistance = calculateDistance(latitude1, longitude1, userLat, userLong);
+    cannon2Distance = calculateDistance(latitude2, longitude2, userLat, userLong);
+    planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
+    radioV = regulateVolume(radioDistance);
+    cannonV = regulateVolume(cannon2Distance);
     planeV = regulateVolume(planeDistance);
-    cannon.volume(cannon2V);
+    radio.volume(radioV);
+    cannon.volume(cannonV);
     airplane.volume(planeV);
   }
 

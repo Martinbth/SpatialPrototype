@@ -60,20 +60,20 @@ var setModel = function (model,entity,lat,long) {
 let nrOfClicks = 0;
 function render() {
   //balloon
-  let latitude1 = 59.574348;
-  let longitude1 = 17.840540;
+  let latitude1 = 59.574380;
+  let longitude1 = 17.840580;
   //dog
-  let latitude2 = 59.574410;
-  let longitude2 = 17.840326;
+  let latitude2 = 59.574560;
+  let longitude2 = 17.839984;
   //radio
-  let latitude3 = 59.573894;
-  let longitude3 = 17.839940;
+  let latitude3 = 59.573766;
+  let longitude3 = 17.839355;
   //gun
-  let latitude4 = 59.574736;
-  let longitude4 = 17.839720;
+  let latitude4 = 59.574894;
+  let longitude4 = 17.839200;
   //plane
-  let latitude5 = 59.574935;
-  let longitude5 = 17.84126;
+  let latitude5 = 59.575030;
+  let longitude5 = 17.841263;
 
   const scene = document.querySelector('a-scene');
   var model = document.createElement('a-entity');
