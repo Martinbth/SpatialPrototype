@@ -15,7 +15,7 @@ var dog = new Howl({
 var radio = new Howl({
   src: ['./sounds/radio.wav'],
   loop: true,
-  autoplay: true,
+  autoplay: false,
   volume: 1,
 });
 
@@ -32,12 +32,12 @@ var airplane = new Howl({
   autoplay: false,
   volume: 1,
 });
-
+radio.play();
 dog.pos(45, 0, 45);
 radio.pos(45, 0, -45);
 cannon.pos(45, 0, 45);
 airplane.pos(-45, 0, 45);
-radio.play();
+
 var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
