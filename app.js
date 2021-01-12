@@ -33,10 +33,10 @@ var airplane = new Howl({
   volume: 1,
 });
 
-dog.pos(45, 0, -45);
-radio.pos(450, 0, -450);
-cannon.pos(10, 0, 100);
-airplane.pos(60, 0, 60);
+dog.pos(45, 0, 45);
+radio.pos(45, 0, -45);
+cannon.pos(45, 0, 45);
+airplane.pos(-45, 0, 45);
 
 var visited = 1;
 const nextB = document.getElementById("nextB");
@@ -166,8 +166,8 @@ function geoFindMe() {
     planeDistance = calculateDistance(latitude2, longitude1, userLat, userLong);
     cannon2V = regulateVolume(cannon2Distance);
     planeV = regulateVolume(planeDistance);
-    cannon2.volume(cannon2V);
-    plane.volume(planeV);
+    cannon.volume(cannon2V);
+    airplane.volume(planeV);
   }
 
   function error() {
