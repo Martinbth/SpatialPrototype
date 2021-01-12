@@ -37,7 +37,7 @@ dog.pos(45, 0, 45);
 radio.pos(45, 0, -45);
 cannon.pos(45, 0, 45);
 airplane.pos(-45, 0, 45);
-
+radio.play();
 var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
