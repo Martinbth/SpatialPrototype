@@ -56,24 +56,24 @@ var setModel = function (model,entity,lat,long) {
     entity.setAttribute('gltf-model', model.url);
     entity.setAttribute('animation-mixer', '');
 };
-
+let latitude1 = 59.574380;
+let longitude1 = 17.840580;
+//dog
+let latitude2 = 59.574560;
+let longitude2 = 17.839984;
+//radio
+let latitude3 = 59.573766;
+let longitude3 = 17.839355;
+//gun
+let latitude4 = 59.574894;
+let longitude4 = 17.839200;
+//plane
+let latitude5 = 59.575030;
+let longitude5 = 17.841263;
 let nrOfClicks = 0;
 function render() {
   //balloon
-  let latitude1 = 59.574380;
-  let longitude1 = 17.840580;
-  //dog
-  let latitude2 = 59.574560;
-  let longitude2 = 17.839984;
-  //radio
-  let latitude3 = 59.573766;
-  let longitude3 = 17.839355;
-  //gun
-  let latitude4 = 59.574894;
-  let longitude4 = 17.839200;
-  //plane
-  let latitude5 = 59.575030;
-  let longitude5 = 17.841263;
+
 
   const scene = document.querySelector('a-scene');
   var model = document.createElement('a-entity');
