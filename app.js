@@ -16,7 +16,7 @@ var dog = new Howl({
 var radio = new Howl({
   src: ['./sounds/radio.wav'],
   loop: true,
-  autoplay: false,
+  autoplay: true,
   volume: 1,
 });
 
