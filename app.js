@@ -1,3 +1,4 @@
+
 var party = new Howl({
   src: ['./sounds/partyblow.mp3'],
   autoplay: false,
@@ -15,7 +16,7 @@ var dog = new Howl({
 var radio = new Howl({
   src: ['./sounds/radio.wav'],
   loop: true,
-  autoplay: false,
+  autoplay: true,
   volume: 1,
 });
 
@@ -29,7 +30,7 @@ var cannon = new Howl({
 var airplane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
-  autoplay: true,
+  autoplay: false,
   volume: 1,
 });
 // radio.play();
