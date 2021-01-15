@@ -93,8 +93,7 @@ function mission2Completed() {
 }
 nextB.addEventListener('click', () => {
   if(visited == 2){
-  // dog.play();
-  radio.play();
+  dog.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
   typewriter.deleteAll(0.2);
@@ -121,7 +120,7 @@ nextB.addEventListener('click', () => {
   }else if(visited == 5){
     radio.stop();
     cannon.play();
-    visited = 6;
+    visited = 4;
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
     typewriter.typeString('')
