@@ -16,7 +16,7 @@ var dog = new Howl({
 var radio = new Howl({
   src: ['./sounds/radio.wav'],
   loop: true,
-  autoplay: true,
+  autoplay: false,
   volume: 1,
 });
 
@@ -164,14 +164,14 @@ function geoFindMe() {
     // status.textContent = 'success';
     // status.textContent = '';
     // radioDistance = calculateDistance(latitude1, longitude1, userLat, userLong);
-    cannon2Distance = calculateDistance(latitude2, longitude2, userLat, userLong);
-    planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
+    // cannon2Distance = calculateDistance(latitude2, longitude2, userLat, userLong);
+    // planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
     // radioV = regulateVolume(radioDistance);
-    cannonV = regulateVolume(cannon2Distance);
-    planeV = regulateVolume(planeDistance);
+    // cannonV = regulateVolume(cannon2Distance);
+    // planeV = regulateVolume(planeDistance);
     // radio.volume(radioV);
-    cannon.volume(cannonV);
-    airplane.volume(planeV);
+    // cannon.volume(cannonV);
+    // airplane.volume(planeV);
   }
 
   function error() {
