@@ -5,7 +5,7 @@ var party = new Howl({
   loop: false,
   volume: 0.1,
 });
-
+({ src, format,, html5: true, mute: false, loop: true, webAudio: false, volume: 1, })
 var dog = new Howl({
   src: ['./sounds/dog.mp3'],
   loop: true,
@@ -18,6 +18,9 @@ var radio = new Howl({
   loop: true,
   autoplay: true,
   volume: 1,
+  usingWebAudio: false,
+  html5: true,
+  webAudio: false,
 });
 
 var cannon = new Howl({
