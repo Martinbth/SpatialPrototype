@@ -123,7 +123,7 @@ nextB.addEventListener('click', () => {
   }else if(visited == 5){
     radio.stop();
     cannon.play();
-    visited = 4;
+    visited++;
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
     typewriter.typeString('')
@@ -133,6 +133,11 @@ nextB.addEventListener('click', () => {
     info.style.backgroundColor = "transparent";
     nextB.innerText = 'Byt';
     nextB.style.display = "block";
+  }
+  else if(visited==6){
+    cannon.stop();
+    airplane.play();
+    visited = 4
   }
 });
 
