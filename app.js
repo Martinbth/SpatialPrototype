@@ -17,7 +17,7 @@ var radio = new Howl({
   src: ['./sounds/radio.wav'],
   loop: true,
   autoplay: true,
-  // html5: true,
+  html5: true,
   volume: 1,
 });
 
@@ -25,13 +25,14 @@ var cannon = new Howl({
   src: ['./sounds/cannon2.wav'],
   loop: true,
   autoplay: false,
+    html5: true,
   volume: 1,
 });
 
 var airplane = new Howl({
   src: ['./sounds/airplane.mp3'],
   loop: true,
-  autoplay: true,
+  autoplay: false,
   volume: 1,
 });
 // radio.play();
