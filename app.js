@@ -14,10 +14,10 @@ var dog = new Howl({
 });
 
 var radio = new Howl({
-  src: ['./sounds/radio.wav'],
+  src: ['./sounds/radioMorse.mp3'],
   loop: true,
   autoplay: false,
-  html5: true,
+  // html5: true,
   volume: 1,
 });
 
