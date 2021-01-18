@@ -44,6 +44,7 @@ airplane.pos(-45, 0, 45);
 var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
+const status = document.getElementById("status");
 nextB.style.display = "none";
 nextB.innerText = 'Next';
 
@@ -109,7 +110,7 @@ nextB.addEventListener('click', () => {
 
   else if(visited == 4){
     dog.stop();
-    cannon.stop();
+    airplane.stop();
     radio.play();
     visited = 5;
     nextB.style.display = "block";
@@ -188,6 +189,7 @@ function geoFindMe() {
     radio.volume(radioV);
     cannon.volume(cannonV);
     airplane.volume(planeV);
+    status.innerText = radioV;
   }
 
   function error() {
@@ -212,6 +214,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
     Math.sin(dLon / 2) * Math.sin(dLon / 2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   var d = (R * c);
+
   return d;
 }
 Number.prototype.toRad = function() {
