@@ -30,7 +30,7 @@ var cannon = new Howl({
 });
 
 var airplane = new Howl({
-  src: ['./sounds/airplane.mp3'],
+  src: ['./sounds/plane.mp3'],
   loop: true,
   autoplay: false,
   volume: 1,
