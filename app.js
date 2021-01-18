@@ -165,6 +165,14 @@ function geoFindMe() {
   var planeDistance;
   var cannon2V;
   var planeV;
+  var latitude1 = 59.574380;
+  var longitude1 = 17.840580;
+  //dog
+  var latitude2 = 59.574560;
+  var longitude2 = 17.839984;
+  //radio
+  var latitude3 = 59.573766;
+  var longitude3 = 17.839355;
 
   function success(position) {
     userLat = position.coords.latitude;
