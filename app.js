@@ -37,7 +37,7 @@ var airplane = new Howl({
 });
 // radio.play();
 dog.pos(45, 0, 45);
-radio.pos(45, 0, -45);
+radio.pos(450, 0, -450);
 cannon.pos(45, 0, 45);
 airplane.pos(-45, 0, 45);
 
@@ -166,15 +166,15 @@ function geoFindMe() {
     userLong = position.coords.longitude;
     // status.textContent = 'success';
     // status.textContent = '';
-    // radioDistance = calculateDistance(latitude1, longitude1, userLat, userLong);
-    // cannon2Distance = calculateDistance(latitude2, longitude2, userLat, userLong);
-    // planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
-    // radioV = regulateVolume(radioDistance);
-    // cannonV = regulateVolume(cannon2Distance);
-    // planeV = regulateVolume(planeDistance);
-    // radio.volume(radioV);
-    // cannon.volume(cannonV);
-    // airplane.volume(planeV);
+    radioDistance = calculateDistance(latitude1, longitude1, userLat, userLong);
+    cannon2Distance = calculateDistance(latitude2, longitude2, userLat, userLong);
+    planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
+    radioV = regulateVolume(radioDistance);
+    cannonV = regulateVolume(cannon2Distance);
+    planeV = regulateVolume(planeDistance);
+    radio.volume(radioV);
+    cannon.volume(cannonV);
+    airplane.volume(planeV);
   }
 
   function error() {
