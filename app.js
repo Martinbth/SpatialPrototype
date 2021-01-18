@@ -16,7 +16,7 @@ var dog = new Howl({
 var radio = new Howl({
   src: ['./sounds/radio.wav'],
   loop: true,
-  autoplay: true,
+  autoplay: false,
   html5: true,
   volume: 1,
 });
@@ -109,6 +109,7 @@ nextB.addEventListener('click', () => {
 
   else if(visited == 4){
     dog.stop();
+    cannon.stop();
     radio.play();
     visited = 5;
     nextB.style.display = "block";
