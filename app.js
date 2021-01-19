@@ -55,14 +55,14 @@ function handleOrientation(event) {
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
   if (visited == 1) {
     if (event.alpha > 170 && event.alpha < 250) {
-      visited = 2;
+      visited++;
       party.play();
       mission1Completed();
     }
   }
   else if (visited == 3) {
     if (event.alpha > 0 && event.alpha < 60) {
-      visited = 4;
+      visited++;
       mission2Completed();
     }
   }
@@ -96,6 +96,7 @@ function mission2Completed() {
 }
 nextB.addEventListener('click', () => {
   if(visited == 2){
+  visited++;
   dog.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
@@ -105,14 +106,12 @@ nextB.addEventListener('click', () => {
   .start();
   bigTypeWriter.typeString('Sound')
   .start();
-  visited = 3;
+
   }
 
   else if(visited == 4){
+    visited++;
     dog.stop();
-    airplane.stop();
-    radio.play();
-    visited = 5;
     nextB.style.display = "block";
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
@@ -122,9 +121,9 @@ nextB.addEventListener('click', () => {
     .start();
     nextB.innerText = 'Done';
   }else if(visited == 5){
-    radio.stop();
-    cannon.play();
     visited++;
+    airplane.stop();
+    radio.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
     typewriter.typeString('')
@@ -136,9 +135,14 @@ nextB.addEventListener('click', () => {
     nextB.style.display = "block";
   }
   else if(visited==6){
+    radio.stop();
+    cannon.play();
+    visited++;
+  }
+  else if(visited == 7){
     cannon.stop();
     airplane.play();
-    visited = 4
+    visited = 5;
   }
 });
 
@@ -189,7 +193,7 @@ function geoFindMe() {
     radio.volume(radioV);
     cannon.volume(cannonV);
     airplane.volume(planeV);
-    status.innerText = radio.volume();
+    status.innerText = cannon.volume();
   }
 
   function error() {
