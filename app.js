@@ -189,7 +189,7 @@ function geoFindMe() {
     radio.volume(radioV);
     cannon.volume(cannonV);
     airplane.volume(planeV);
-    status.innerText = radioV;
+    status.innerText = radio.volume();
   }
 
   function error() {
