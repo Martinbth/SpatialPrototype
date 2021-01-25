@@ -132,7 +132,7 @@ nextB.addEventListener('click', () => {
     .start();
     info.style.backgroundColor = "transparent";
     nextB.innerText = 'New poi';
-    nextB.style.display = "´none";
+    nextB.style.display = "none";
   }
   else if(visited==6){
     nextB.style.display = "none";
