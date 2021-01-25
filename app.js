@@ -197,12 +197,12 @@ function geoFindMe() {
         radioScan = false;
         gunScan = true;
     }
-    else if( cannon2Distance > 0.9 && gunScan = true){
+    else if( cannon2Distance > 0.9 && gunScan == true){
         nextB.style.display = "block";
         gunScan = false;
         planeScan = true;
     }
-    else if(planeDistance > 0.9 && planeScan = true){
+    else if(planeDistance > 0.9 && planeScan == true){
         nextB.style.display = "block";
         planeScan = false;
     }
