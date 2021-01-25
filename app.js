@@ -132,10 +132,10 @@ nextB.addEventListener('click', () => {
     .start();
     info.style.backgroundColor = "transparent";
     nextB.innerText = 'New poi';
-    nextB.style.display = "hide";
+    nextB.style.display = "´none";
   }
   else if(visited==6){
-    nextB.style.display = "hide";
+    nextB.style.display = "none";
     radio.stop();
     cannon.play();
     visited++;
