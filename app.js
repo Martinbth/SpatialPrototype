@@ -38,8 +38,8 @@ var airplane = new Howl({
 // radio.play();
 dog.pos(45, 0, 45);
 radio.pos(45, 0, -45);
-cannon.pos(45, 0, 45);
-airplane.pos(-45, 0, 45);
+cannon.pos(0, 0, 0);
+airplane.pos(-50, 0, 0);
 
 var visited = 1;
 const nextB = document.getElementById("nextB");
