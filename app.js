@@ -192,7 +192,7 @@ function geoFindMe() {
     cannon2Distance = calculateDistance(latitude2, longitude2, userLat, userLong);
     planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
     radioV = regulateVolume(radioDistance);
-    if(radioDistance > 0.9 && radioscan == true){
+    if(radioDistance > 0.9 && radioScan == true){
         nextB.style.display = "block";
         radioScan = false;
         gunScan = true;
