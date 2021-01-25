@@ -212,7 +212,7 @@ function geoFindMe() {
     radio.volume(radioV);
     cannon.volume(cannonV);
     airplane.volume(planeV);
-    // status.innerText = 'cannon: ' + cannon.volume() + '\bplane: ' + airplane.volume() + '\bradio: ' + radio.volume();
+    status.innerText = 'cannon: ' + cannon.volume() + '\bplane: ' + airplane.volume() + '\bradio: ' + radio.volume();
   }
 
   function error() {
