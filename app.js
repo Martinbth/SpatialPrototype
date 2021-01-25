@@ -207,7 +207,7 @@ function geoFindMe() {
     //     planeScan = false;
     // }
 
-
+    cannon2V = regulateVolume(cannon2Distance);
     planeV = regulateVolume(planeDistance);
     radio.volume(radioV);
     cannon.volume(cannonV);
