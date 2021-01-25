@@ -94,6 +94,8 @@ function mission2Completed() {
   typewriter.typeString('You can navigate to objects by follow their sound')
   start();
 }
+
+
 nextB.addEventListener('click', () => {
   if(visited == 2){
   visited++;
@@ -106,7 +108,6 @@ nextB.addEventListener('click', () => {
   .start();
   bigTypeWriter.typeString('Sound')
   .start();
-
   }
 
   else if(visited == 4){
@@ -122,7 +123,6 @@ nextB.addEventListener('click', () => {
     nextB.innerText = 'Done';
   }else if(visited == 5){
     visited++;
-    airplane.stop();
     radio.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
@@ -131,10 +131,11 @@ nextB.addEventListener('click', () => {
     bigTypeWriter.typeString('')
     .start();
     info.style.backgroundColor = "transparent";
-    nextB.innerText = 'Byt';
-    nextB.style.display = "block";
+    nextB.innerText = 'New poi';
+    nextB.style.display = "hide";
   }
   else if(visited==6){
+    nextB.style.display = "hide";
     radio.stop();
     cannon.play();
     visited++;
@@ -142,7 +143,7 @@ nextB.addEventListener('click', () => {
   else if(visited == 7){
     cannon.stop();
     airplane.play();
-    visited = 5;
+    nextB.innerText = 'Completed!';
   }
 });
 
@@ -178,22 +179,40 @@ function geoFindMe() {
   //radio
   var latitude3 = 59.573766;
   var longitude3 = 17.839355;
+  var radioScan = false;
+  var gunScan = false;
+  var planeScan = false;
+
+  var visiting = 1;
 
   function success(position) {
     userLat = position.coords.latitude;
     userLong = position.coords.longitude;
-    // status.textContent = 'success';
-    // status.textContent = '';
     radioDistance = calculateDistance(latitude1, longitude1, userLat, userLong);
     cannon2Distance = calculateDistance(latitude2, longitude2, userLat, userLong);
     planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
     radioV = regulateVolume(radioDistance);
+    if(radioDistance > 0.9 && radioscan == true){
+        nextB.style.display = "block";
+        radioScan = false;
+        gunScan = true;
+    }
+    else if( cannon2Distance > 0.9 && gunScan = true){
+        nextB.style.display = "block";
+        gunScan = false;
+        planeScan = true;
+    }
+    else if(planeDistance > 0.9 && planeScan = true){
+        nextB.style.display = "block";
+        planeScan = false;
+    }
+
     cannonV = regulateVolume(cannon2Distance);
     planeV = regulateVolume(planeDistance);
     radio.volume(radioV);
     cannon.volume(cannonV);
     airplane.volume(planeV);
-    status.innerText = 'cannon: ' + cannon.volume() + '\bplane: ' + airplane.volume() + '\bradio: ' + radio.volume();
+    // status.innerText = 'cannon: ' + cannon.volume() + '\bplane: ' + airplane.volume() + '\bradio: ' + radio.volume();
   }
 
   function error() {
@@ -218,7 +237,6 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
     Math.sin(dLon / 2) * Math.sin(dLon / 2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   var d = (R * c);
-
   return d;
 }
 Number.prototype.toRad = function() {
