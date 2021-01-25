@@ -192,22 +192,22 @@ function geoFindMe() {
     cannon2Distance = calculateDistance(latitude2, longitude2, userLat, userLong);
     planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
     radioV = regulateVolume(radioDistance);
-    if(radioDistance > 0.9 && radioScan == true){
-        nextB.style.display = "block";
-        radioScan = false;
-        gunScan = true;
-    }
-    else if( cannon2Distance > 0.9 && gunScan == true){
-        nextB.style.display = "block";
-        gunScan = false;
-        planeScan = true;
-    }
-    else if(planeDistance > 0.9 && planeScan == true){
-        nextB.style.display = "block";
-        planeScan = false;
-    }
+    // if(radioDistance > 0.9 && radioScan == true){
+    //     nextB.style.display = "block";
+    //     radioScan = false;
+    //     gunScan = true;
+    // }
+    // else if( cannon2Distance > 0.9 && gunScan == true){
+    //     nextB.style.display = "block";
+    //     gunScan = false;
+    //     planeScan = true;
+    // }
+    // else if(planeDistance > 0.9 && planeScan == true){
+    //     nextB.style.display = "block";
+    //     planeScan = false;
+    // }
 
-    cannonV = regulateVolume(cannon2Distance);
+
     planeV = regulateVolume(planeDistance);
     radio.volume(radioV);
     cannon.volume(cannonV);
