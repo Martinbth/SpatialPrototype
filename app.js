@@ -194,7 +194,7 @@ function geoFindMe() {
     cannon2Distance = calculateDistance(latitude2, longitude2, userLat, userLong);
     planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
     status.innerText = 'radiodistance:' + radioDistance;
-    // radioV = regulateVolume(radioDistance);
+    radioV = regulateVolume(radioDistance);
     // // if(radioDistance > 0.9 && radioScan == true){
     // //     nextB.style.display = "block";
     // //     radioScan = false;
