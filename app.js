@@ -189,32 +189,33 @@ function geoFindMe() {
   function success(position) {
     userLat = position.coords.latitude;
     userLong = position.coords.longitude;
-    radioDistance = calculateDistance(latitude1, longitude1, userLat, userLong);
-    cannon2Distance = calculateDistance(latitude2, longitude2, userLat, userLong);
-    planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
-    radioV = regulateVolume(radioDistance);
-    // if(radioDistance > 0.9 && radioScan == true){
-    //     nextB.style.display = "block";
-    //     radioScan = false;
-    //     gunScan = true;
-    // }
-    // else if( cannon2Distance > 0.9 && gunScan == true){
-    //     nextB.style.display = "block";
-    //     gunScan = false;
-    //     planeScan = true;
-    // }
-    // else if(planeDistance > 0.9 && planeScan == true){
-    //     nextB.style.display = "block";
-    //     planeScan = false;
-    // }
-    
-    cannon2V = regulateVolume(cannon2Distance);
-    planeV = regulateVolume(planeDistance);
-    radio.volume(radioV);
-    cannon.volume(cannonV);
-    airplane.volume(planeV);
-
-    status.innerText = 'cannon: ' + cannon.volume() + '\bplane: ' + airplane.volume() + '\bradio: ' + radio.volume();
+    status.innerText = 'userLat' + userLat;
+    // radioDistance = calculateDistance(latitude1, longitude1, userLat, userLong);
+    // cannon2Distance = calculateDistance(latitude2, longitude2, userLat, userLong);
+    // planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
+    // radioV = regulateVolume(radioDistance);
+    // // if(radioDistance > 0.9 && radioScan == true){
+    // //     nextB.style.display = "block";
+    // //     radioScan = false;
+    // //     gunScan = true;
+    // // }
+    // // else if( cannon2Distance > 0.9 && gunScan == true){
+    // //     nextB.style.display = "block";
+    // //     gunScan = false;
+    // //     planeScan = true;
+    // // }
+    // // else if(planeDistance > 0.9 && planeScan == true){
+    // //     nextB.style.display = "block";
+    // //     planeScan = false;
+    // // }
+    //
+    // cannon2V = regulateVolume(cannon2Distance);
+    // planeV = regulateVolume(planeDistance);
+    // radio.volume(radioV);
+    // cannon.volume(cannonV);
+    // airplane.volume(planeV);
+    //
+    // status.innerText = 'cannon: ' + cannon.volume() + '\bplane: ' + airplane.volume() + '\bradio: ' + radio.volume();
   }
 
 
