@@ -1,8 +1,8 @@
 
 var party = new Howl({
   src: ['./sounds/partyblow.mp3'],
-  autoplay: false,
-  loop: false,
+  autoplay: true,
+  loop: true,
   volume: 0.1,
 });
 
@@ -178,7 +178,7 @@ function geoFindMe() {
   var longitude2 = 17.839984;
   //radio
   var latitude3 = 59.573766;
-  var longitude3 = 17.839355;
+  var longitude3 = 17.842925;
 
   var radioScan = false;
   var gunScan = false;
@@ -200,20 +200,20 @@ function geoFindMe() {
     radio.volume(radioV);
     cannon.volume(cannon2V);
     airplane.volume(planeV);
-    // // if(radioDistance > 0.9 && radioScan == true){
-    // //     nextB.style.display = "block";
-    // //     radioScan = false;
-    // //     gunScan = true;
-    // // }
-    // // else if( cannon2Distance > 0.9 && gunScan == true){
-    // //     nextB.style.display = "block";
-    // //     gunScan = false;
-    // //     planeScan = true;
-    // // }
-    // // else if(planeDistance > 0.9 && planeScan == true){
-    // //     nextB.style.display = "block";
-    // //     planeScan = false;
-    // // }
+    if(radioDistance > 0.9 && radioScan == true){
+        nextB.style.display = "block";
+        radioScan = false;
+        gunScan = true;
+    }
+    else if(cannon2Distance > 0.9 && gunScan == true){
+        nextB.style.display = "block";
+        gunScan = false;
+        planeScan = true;
+    }
+    else if(planeDistance > 0.9 && planeScan == true){
+        nextB.style.display = "block";
+        planeScan = false;
+    }
     //
     // cannon2V = regulateVolume(cannon2Distance);
     // planeV = regulateVolume(planeDistance);

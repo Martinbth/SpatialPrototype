@@ -57,13 +57,13 @@ var setModel = function (model,entity,lat,long) {
     entity.setAttribute('animation-mixer', '');
 };
 let latitude1 = 59.573677;
-let longitude1 = 17.845126;  
+let longitude1 = 17.845126;
 //dog
 let latitude2 = 59.573810;
 let longitude2 = 17.843293;
 //radio
 let latitude3 = 59.571793;
-let longitude3 = 17.839355;
+let longitude3 = 17.842925;
 //gun
 let latitude4 = 59.574857;
 let longitude4 = 17.840936;
