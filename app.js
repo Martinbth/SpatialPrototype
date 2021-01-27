@@ -1,8 +1,8 @@
 
 var party = new Howl({
   src: ['./sounds/partyblow.mp3'],
-  autoplay: true,
-  loop: true,
+  autoplay: false,
+  loop: false,
   volume: 0.1,
 });
 
