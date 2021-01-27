@@ -195,6 +195,11 @@ function geoFindMe() {
     planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
     status.innerText = 'radiodistance:' + radioDistance;
     radioV = regulateVolume(radioDistance);
+    cannon2V = regulateVolume(cannon2Distance);
+    planeV = regulateVolume(planeDistance);
+    radio.volume(radioV);
+    cannon.volume(cannon2V);
+    airplane.volume(planeV);
     // // if(radioDistance > 0.9 && radioScan == true){
     // //     nextB.style.display = "block";
     // //     radioScan = false;
