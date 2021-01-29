@@ -56,20 +56,20 @@ var setModel = function (model,entity,lat,long) {
     entity.setAttribute('gltf-model', model.url);
     entity.setAttribute('animation-mixer', '');
 };
-let latitude1 = 59.573677;
-let longitude1 = 17.845126;
+let latitude1 = 59.571870;
+let longitude1 = 17.856658;
 //dog
-let latitude2 = 59.573810;
-let longitude2 = 17.843293;
+let latitude2 = 59.572063;
+let longitude2 = 17.856331;
 //radio
-let latitude3 = 59.571793;
-let longitude3 = 17.842925;
+let latitude3 = 59.571561;
+let longitude3 = 17.855619;
 //gun
-let latitude4 = 59.574857;
-let longitude4 = 17.840936;
+let latitude4 = 59.573642;
+let longitude4 = 17.855887;
 //plane
-let latitude5 = 59.576172;
-let longitude5 = 17.846961;
+let latitude5 = 59.575234;
+let longitude5 = 17.857259;
 let nrOfClicks = 0;
 function render() {
   //balloon
@@ -91,9 +91,9 @@ function render() {
       }
       finally{
         setTimeout(() => {    scene.appendChild(model); }, 5000);
-
       }
     }
+    //radio
     else if (nrOfClicks == 1){
       nrOfClicks++;
       try{
@@ -105,10 +105,9 @@ function render() {
         scene.appendChild(model);
       }
     }
+    //gun
     else if (nrOfClicks == 2){
       nrOfClicks++;
-
-
       try{
         scene.removeChild(scene.lastChild);
         removeAttribute(model);
@@ -118,6 +117,7 @@ function render() {
         scene.appendChild(model);
       }
     }
+    //plane
     else if (nrOfClicks == 3){
       nrOfClicks = 1;
       try{

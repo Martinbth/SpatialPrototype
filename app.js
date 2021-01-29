@@ -39,7 +39,7 @@ var airplane = new Howl({
 dog.pos(45, 0, 45);
 radio.pos(45, 0, -45);
 cannon.pos(0, 0, 0);
-airplane.pos(-50, 0, 0);
+airplane.pos(-30, 0, 45);
 
 var visited = 1;
 const nextB = document.getElementById("nextB");
@@ -171,14 +171,15 @@ function geoFindMe() {
   var planeDistance;
   var cannon2V;
   var planeV;
-  var latitude1 = 59.574380;
-  var longitude1 = 17.840580;
-  //dog
-  var latitude2 = 59.574560;
-  var longitude2 = 17.839984;
   //radio
-  var latitude3 = 59.573766;
-  var longitude3 = 17.842925;
+  var latitude1 = 59.571561;
+  var longitude1 = 17.855619;
+  //gun
+  var latitude2 = 59.573642;
+  var longitude2 = 17.855887;
+  //plane
+  var latitude3 = 59.575234;
+  var longitude3 = 17.857259;
 
   var radioScan = false;
   var gunScan = false;
@@ -193,17 +194,21 @@ function geoFindMe() {
     radioDistance = calculateDistance(latitude1, longitude1, userLat, userLong);
     cannon2Distance = calculateDistance(latitude2, longitude2, userLat, userLong);
     planeDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
-    status.innerText = 'radiodistance:' + radioDistance;
+
     radioV = regulateVolume(radioDistance);
     cannon2V = regulateVolume(cannon2Distance);
     planeV = regulateVolume(planeDistance);
+
     radio.volume(radioV);
     cannon.volume(cannon2V);
     airplane.volume(planeV);
+    status.innerText = 'r:' + radio.volume() + 'g:' + cannon2V.volume() 'p:' + planeV.volume() ;
+
     if(radioDistance > 0.9 && radioScan == true){
         nextB.style.display = "block";
         radioScan = false;
         gunScan = true;
+
     }
     else if(cannon2Distance > 0.9 && gunScan == true){
         nextB.style.display = "block";
