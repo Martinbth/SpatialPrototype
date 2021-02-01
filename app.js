@@ -37,15 +37,15 @@ var airplane = new Howl({
 });
 // radio.play();
 dog.pos(45, 0, 45);
-radio.pos(45, 0, 45);
-cannon.pos(0, 0, 40);
-airplane.pos(-40, 0, 0);
+radio.pos(-45, 0, 45);
+cannon.pos(0, 0, -40);
+airplane.pos(40, 0, 0);
 
 var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
 const status = document.getElementById("status");
-nextB.style.display = "none";
+nextB.style.display = "hide";
 nextB.innerText = 'Next';
 
 function handleOrientation(event) {
@@ -100,14 +100,12 @@ nextB.addEventListener('click', () => {
   if(visited == 2){
   visited++;
   dog.play();
-  nextB.style.display = "none";
+  nextB.style.display = "block";
   changeImage("img/soundDone.png");
   typewriter.deleteAll(0.2);
   bigTypeWriter.deleteAll(0.2);
-  typewriter.typeString('Move your phone to the direction that the sound is coming from.')
-  .start();
-  bigTypeWriter.typeString('Sound')
-  .start();
+  typewriter.typeString('Move your phone to the direction that the sound is coming from.').start();
+  bigTypeWriter.typeString('Sound').start();
   }
 
   else if(visited == 4){
@@ -116,20 +114,16 @@ nextB.addEventListener('click', () => {
     nextB.style.display = "block";
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
-    typewriter.typeString('You can now explore the area on your own')
-    .start();
-    bigTypeWriter.typeString('Done')
-    .start();
+    typewriter.typeString('You can now explore the area on your own').start();
+    bigTypeWriter.typeString('Done').start();
     nextB.innerText = 'Done';
   }else if(visited == 5){
     visited++;
     radio.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
-    typewriter.typeString('')
-    .start();
-    bigTypeWriter.typeString('')
-    .start();
+    typewriter.typeString('').start();
+    bigTypeWriter.typeString('').start();
     info.style.backgroundColor = "transparent";
     nextB.innerText = 'New poi';
     nextB.style.display = "none";
@@ -163,7 +157,7 @@ window.addEventListener('DOMContentLoaded', geoFindMe);
 // const cannon2Long = 17.840493;
 // const planeLat = 59.574063;
 // const planeLong = 17.840166;
-
+status.innerText = 'yay' ;
 function geoFindMe() {
   var userLat;
   var userLong;
@@ -172,14 +166,14 @@ function geoFindMe() {
   var cannon2V;
   var planeV;
   //radio
-  let latitude3 = 59.573611;
-  let longitude3 = 17.827230;
+  let latitude3 = 59.574970;
+  let longitude3 = 17.841451;
   //gun
-  let latitude4 = 59.575746;
-  let longitude4 = 17.826919;
+  let latitude4 = 59.573698;
+  let longitude4 = 17.841516;
   //plane
-  let latitude5 = 59.575572;
-  let longitude5 = 17.829546;
+  let latitude5 = 59.573583;
+  let longitude5 = 17.839317;
 
   var radioScan = false;
   var gunScan = false;
@@ -202,7 +196,7 @@ function geoFindMe() {
     radio.volume(radioV);
     cannon.volume(cannon2V);
     airplane.volume(planeV);
-    status.innerText = 'r:' + radio.volume() + 'g:' + cannon2V.volume() + 'p:' + planeV.volume() ;
+     status.innerText = 'r:' + radioV + 'g:' + cannon2V + 'p:' + planeV;
 
     if(radioDistance > 0.9 && radioScan == true){
         nextB.style.display = "block";
@@ -219,14 +213,6 @@ function geoFindMe() {
         nextB.style.display = "block";
         planeScan = false;
     }
-    //
-    // cannon2V = regulateVolume(cannon2Distance);
-    // planeV = regulateVolume(planeDistance);
-    // radio.volume(radioV);
-    // cannon.volume(cannonV);
-    // airplane.volume(planeV);
-    //
-    // status.innerText = 'cannon: ' + cannon.volume() + '\bplane: ' + airplane.volume() + '\bradio: ' + radio.volume();
   }
 
 

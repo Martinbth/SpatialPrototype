@@ -43,7 +43,7 @@ function removeAttribute(entity){
 }
 var modelIndex = 0;
 var setModel = function (model,entity,lat,long) {
-    entity.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude:' + long + ';');  //Unsure
+    entity.setAttrib ute('gps-entity-place', 'latitude:' + lat + '; longitude:' + long + ';');  //Unsure
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
@@ -56,20 +56,20 @@ var setModel = function (model,entity,lat,long) {
     entity.setAttribute('gltf-model', model.url);
     entity.setAttribute('animation-mixer', '');
 };
-let latitude1 = 59.572140;
-let longitude1 = 17.829690;
+let latitude1 = 59.574378;
+let longitude1 = 17.840573;
 //dog
-let latitude2 = 59.571933;
-let longitude2 = 17.830081;
+let latitude2 = 59.574514;
+let longitude2 = 17.840085;
 //radio
-let latitude3 = 59.573611;
-let longitude3 = 17.827230;
+let latitude3 = 59.574970;
+let longitude3 = 17.841451;
 //gun
-let latitude4 = 59.575746;
-let longitude4 = 17.826919;
+let latitude4 = 59.573698;
+let longitude4 = 17.841516;
 //plane
-let latitude5 = 59.575572;
-let longitude5 = 17.829546;
+let latitude5 = 59.573583;
+let longitude5 = 17.839317;
 let nrOfClicks = 0;
 function render() {
   //balloon
