@@ -79,8 +79,8 @@ function render() {
   scene.appendChild(model);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-    if(nrOfClicks == 0){
-      nrOfClicks++;
+    nrOfClicks++;
+    if(nrOfClicks == 1){
       try{
         scene.removeChild(scene.lastChild);
         removeAttribute(model);
@@ -91,8 +91,7 @@ function render() {
       }
     }
     //radio
-    else if (nrOfClicks == 1){
-      nrOfClicks++;
+    else if (nrOfClicks == 3){
       try{
         scene.removeChild(scene.lastChild);
         removeAttribute(model);
@@ -103,8 +102,7 @@ function render() {
       }
     }
     //gun
-    else if (nrOfClicks == 2){
-      nrOfClicks++;
+    else if (nrOfClicks == 4){
       try{
         scene.removeChild(scene.lastChild);
         removeAttribute(model);
@@ -115,8 +113,7 @@ function render() {
       }
     }
     //plane
-    else if (nrOfClicks == 3){
-      nrOfClicks = 1;
+    else if (nrOfClicks == 5){
       try{
         scene.removeChild(scene.lastChild);
         removeAttribute(model);
