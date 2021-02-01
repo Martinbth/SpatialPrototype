@@ -43,7 +43,7 @@ function removeAttribute(entity){
 }
 var modelIndex = 0;
 var setModel = function (model,entity,lat,long) {
-    entity.setAttrib ute('gps-entity-place', 'latitude:' + lat + '; longitude:' + long + ';');  //Unsure
+    entity.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude:' + long + ';');  //Unsure
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
@@ -73,11 +73,8 @@ let longitude5 = 17.839317;
 let nrOfClicks = 0;
 function render() {
   //balloon
-
-
   const scene = document.querySelector('a-scene');
   var model = document.createElement('a-entity');
-
   setModel(models[0],model,latitude1,longitude1);
   scene.appendChild(model);
 
