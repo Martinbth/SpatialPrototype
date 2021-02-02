@@ -113,15 +113,15 @@ function render() {
       }
     }
     //plane
-    else if (nrOfClicks == 5){
-      try{
-        scene.removeChild(scene.lastChild);
-        removeAttribute(model);
-        setModel(models[4],model,latitude5,longitude5);
-      }
-      finally{
-        scene.appendChild(model);
-      }
-    }
+    // else if (nrOfClicks == 5){
+    //   try{
+    //     scene.removeChild(scene.lastChild);
+    //     removeAttribute(model);
+    //     setModel(models[4],model,latitude5,longitude5);
+    //   }
+    //   finally{
+    //     scene.appendChild(model);
+    //   }
+    // }
   });
 }

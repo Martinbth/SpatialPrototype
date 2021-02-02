@@ -212,6 +212,14 @@ function geoFindMe() {
     else if(planeV > 0.8 && planeScan == true){
         nextB.style.display = "block";
         planeScan = false;
+          try{
+            scene.removeChild(scene.lastChild);
+            removeAttribute(model);
+            setModel(models[4],model,latitude5,longitude5);
+          }
+          finally{
+            scene.appendChild(model);
+          }
     }
   }
 
