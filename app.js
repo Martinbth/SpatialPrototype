@@ -45,7 +45,7 @@ var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
 const status = document.getElementById("status");
-nextB.style.display = "hide";
+nextB.style.display = "none";
 nextB.innerText = 'Next';
 
 function handleOrientation(event) {
@@ -137,7 +137,7 @@ nextB.addEventListener('click', () => {
   else if(visited == 7){
     cannon.stop();
     airplane.play();
-    nextB.innerText = 'Completed!';
+    nextB.style.display = "none";
   }
 });
 
@@ -198,18 +198,18 @@ function geoFindMe() {
     airplane.volume(planeV);
      status.innerText = 'r:' + radioV + 'g:' + cannon2V + 'p:' + planeV;
 
-    if(radioDistance > 0.9 && radioScan == true){
+    if(radioV > 0.8 && radioScan == true){
         nextB.style.display = "block";
         radioScan = false;
         gunScan = true;
 
     }
-    else if(cannon2Distance > 0.9 && gunScan == true){
+    else if(cannon2V > 0.8 && gunScan == true){
         nextB.style.display = "block";
         gunScan = false;
         planeScan = true;
     }
-    else if(planeDistance > 0.9 && planeScan == true){
+    else if(planeV > 0.8 && planeScan == true){
         nextB.style.display = "block";
         planeScan = false;
     }
