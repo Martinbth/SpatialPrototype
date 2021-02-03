@@ -1,7 +1,12 @@
+
+import * as app from './app.js';
 window.onload = () => {
   const button = document.querySelector('button[data-action="change"]');
   render();
 };
+
+
+
 
 var models = [
   {
@@ -91,7 +96,7 @@ function render() {
       }
     }
     //radio
-    else if (nrOfClicks == 3){
+    else if (nrOfClicks ==2 && distanceList[0] < 0.8){
       try{
         scene.removeChild(scene.lastChild);
         removeAttribute(model);

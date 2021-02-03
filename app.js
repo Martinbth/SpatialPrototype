@@ -1,4 +1,3 @@
-
 var party = new Howl({
   src: ['./sounds/partyblow.mp3'],
   autoplay: false,
@@ -138,6 +137,8 @@ nextB.addEventListener('click', () => {
     cannon.stop();
     airplane.play();
     nextB.style.display = "none";
+    scene.removeChild(scene.lastChild);
+    removeAttribute(model);
   }
 });
 
@@ -180,6 +181,9 @@ function geoFindMe() {
   var planeScan = false;
 
   var visiting = 1;
+let distanceList = [];
+
+
 
   function success(position) {
     userLat = position.coords.latitude;
@@ -189,40 +193,30 @@ function geoFindMe() {
     cannon2Distance = calculateDistance(latitude4, longitude4, userLat, userLong);
     planeDistance = calculateDistance(latitude5, longitude5, userLat, userLong);
 
-    radioV = regulateVolume(radioDistance);
-    cannon2V = regulateVolume(cannon2Distance);
-    planeV = regulateVolume(planeDistance);
+    distanceList[0] = regulateVolume(radioDistance);
+    distanceList[1] = regulateVolume(cannon2Distance);
+    distanceList[2] = regulateVolume(planeDistance);
 
-    radio.volume(radioV);
-    cannon.volume(cannon2V);
-    airplane.volume(planeV);
-     status.innerText = 'r:' + radioV + 'g:' + cannon2V + 'p:' + planeV;
+    radio.volume(distanceList[0]);
+    cannon.volume(distanceList[1]);
+    airplane.volume(distanceList[2]);
+     status.innerText = 'r:' +   distanceList[0] + 'g:' + distanceList[1] + 'p:' + distanceList[2];
 
-    if(radioV > 0.8 && radioScan == true){
+    if(distanceList[0]< 0.8 && radioScan == true){
         nextB.style.display = "block";
         radioScan = false;
         gunScan = true;
-
     }
-    else if(cannon2V > 0.8 && gunScan == true){
+    else if(distanceList[1] > 0.8 && gunScan == true){
         nextB.style.display = "block";
         gunScan = false;
         planeScan = true;
     }
-    else if(planeV > 0.8 && planeScan == true){
+    else if(distanceList[2]> 0.8 && planeScan == true){
         nextB.style.display = "block";
         planeScan = false;
-          try{
-            scene.removeChild(scene.lastChild);
-            removeAttribute(model);
-            setModel(models[4],model,latitude5,longitude5);
-          }
-          finally{
-            scene.appendChild(model);
-          }
     }
   }
-
 
   function error() {
     status.textContent = 'Unable to retrieve your location';
@@ -234,7 +228,6 @@ function geoFindMe() {
     status.textContent = 'Locating…';
     navigator.geolocation.watchPosition(success, error);
   }
-
 }
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -253,7 +246,6 @@ Number.prototype.toRad = function() {
 }
 
 function regulateVolume(dist) {
-
   var v;
   // distance.textContent = '';
   // distance.textContent +='dist: ' + dist;
@@ -274,7 +266,6 @@ function regulateVolume(dist) {
 
 var infoText = document.getElementById('infoText');
 var bigText = document.getElementById('big-txt');
-
 
 var typewriter = new Typewriter(infoText, {
   loop: false,
