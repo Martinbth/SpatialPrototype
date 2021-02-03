@@ -54,14 +54,12 @@ function handleOrientation(event) {
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
   if (visited == 1) {
     if (event.alpha > 170 && event.alpha < 250) {
-      visited++;
       party.play();
       mission1Completed();
     }
   }
   else if (visited == 2) {
     if (event.alpha > 0 && event.alpha < 60) {
-      visited++;
       mission2Completed();
     }
   }
@@ -96,8 +94,8 @@ function mission2Completed() {
 
 
 nextB.addEventListener('click', () => {
-  if(visited == 2){
   visited++;
+  if(visited == 2){
   dog.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
@@ -108,7 +106,6 @@ nextB.addEventListener('click', () => {
   }
 
   else if(visited == 3){
-    visited++;
     dog.stop();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
@@ -116,7 +113,6 @@ nextB.addEventListener('click', () => {
     bigTypeWriter.typeString('Done').start();
     nextB.innerText = 'Done';
   }else if(visited == 4){
-    visited++;
     radio.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
@@ -130,7 +126,6 @@ nextB.addEventListener('click', () => {
     nextB.style.display = "none";
     radio.stop();
     cannon.play();
-    visited++;
   }
   else if(visited == 7){
     cannon.stop();
