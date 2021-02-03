@@ -181,7 +181,7 @@ function geoFindMe() {
   var planeScan = false;
 
   var visiting = 1;
-let distanceList = [];
+  let distanceList = [];
 
 
 

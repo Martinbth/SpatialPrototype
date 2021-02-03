@@ -92,11 +92,11 @@ function render() {
         setModel(models[1],model,latitude2,longitude2);
       }
       finally{
-        setTimeout(() => {    scene.appendChild(model); }, 5000);
+        setTimeout(() => {scene.appendChild(model); }, 5000);
       }
     }
     //radio
-    else if (nrOfClicks ==2 && distanceList[0] < 0.8){
+    else if (nrOfClicks == 2 && distanceList[0] < 0.8){
       try{
         scene.removeChild(scene.lastChild);
         removeAttribute(model);
@@ -107,7 +107,7 @@ function render() {
       }
     }
     //gun
-    else if (nrOfClicks == 4){
+    else if (nrOfClicks == 4 && distanceList[1] > 0.8){
       try{
         scene.removeChild(scene.lastChild);
         removeAttribute(model);
@@ -117,16 +117,16 @@ function render() {
         scene.appendChild(model);
       }
     }
-    //plane
-    // else if (nrOfClicks == 5){
-    //   try{
-    //     scene.removeChild(scene.lastChild);
-    //     removeAttribute(model);
-    //     setModel(models[4],model,latitude5,longitude5);
-    //   }
-    //   finally{
-    //     scene.appendChild(model);
-    //   }
-    // }
+    // plane
+    else if (nrOfClicks == 5 && distanceList[2] > 0.8){
+      try{
+        scene.removeChild(scene.lastChild);
+        removeAttribute(model);
+        setModel(models[4],model,latitude5,longitude5);
+      }
+      finally{
+        scene.appendChild(model);
+      }
+    }
   });
 }
