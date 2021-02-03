@@ -59,7 +59,7 @@ function handleOrientation(event) {
       mission1Completed();
     }
   }
-  else if (visited == 3) {
+  else if (visited == 2) {
     if (event.alpha > 0 && event.alpha < 60) {
       visited++;
       mission2Completed();
@@ -99,7 +99,7 @@ nextB.addEventListener('click', () => {
   if(visited == 2){
   visited++;
   dog.play();
-  nextB.style.display = "block";
+  nextB.style.display = "none";
   changeImage("img/soundDone.png");
   typewriter.deleteAll(0.2);
   bigTypeWriter.deleteAll(0.2);
@@ -107,16 +107,15 @@ nextB.addEventListener('click', () => {
   bigTypeWriter.typeString('Sound').start();
   }
 
-  else if(visited == 4){
+  else if(visited == 3){
     visited++;
     dog.stop();
-    nextB.style.display = "block";
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
     typewriter.typeString('You can now explore the area on your own').start();
     bigTypeWriter.typeString('Done').start();
     nextB.innerText = 'Done';
-  }else if(visited == 5){
+  }else if(visited == 4){
     visited++;
     radio.play();
     typewriter.deleteAll(0.2);
@@ -199,17 +198,17 @@ function geoFindMe() {
     airplane.volume(localStorage.plane);
      status.innerText = 'r:' +   localStorage.radio + 'g:' + localStorage.gun + 'p:' + localStorage.plane;
 
-    if(localStorage.radio < 0.8 && radioScan == true){
+    if(localStorage.radio > 0.8 && radioScan){
         nextB.style.display = "block";
         radioScan = false;
         gunScan = true;
     }
-    else if(localStorage.gun > 0.8 && gunScan == true){
+    else if(localStorage.gun > 0.8 && gunScan){
         nextB.style.display = "block";
         gunScan = false;
         planeScan = true;
     }
-    else if(localStorage.plane > 0.8 && planeScan == true){
+    else if(localStorage.plane > 0.8 && planeScan){
         nextB.style.display = "block";
         planeScan = false;
     }
