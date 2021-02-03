@@ -61,6 +61,7 @@ var setModel = function (model,entity,lat,long) {
     entity.setAttribute('gltf-model', model.url);
     entity.setAttribute('animation-mixer', '');
 };
+
 let latitude1 = 59.574378;
 let longitude1 = 17.840573;
 //dog
@@ -99,7 +100,8 @@ function render() {
     else if (nrOfClicks == 3){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
-      if(distanceList[0] > 0.8){
+
+      if(localStorage.radio < 0.8){
         try{
           setModel(models[2],model,latitude3,longitude3);
         }
@@ -112,7 +114,7 @@ function render() {
     else if (nrOfClicks == 4){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
-      if(distanceList[1] > 0.8){
+      if(localStorage.gun > 0.8){
         try{
           setModel(models[3],model,latitude4,longitude4);
         }
@@ -125,7 +127,7 @@ function render() {
     else if (nrOfClicks == 5){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
-      if(distanceList[2] > 0.8){
+      if(localStorage.plane > 0.8){
         try{
           setModel(models[4],model,latitude5,longitude5);
         }

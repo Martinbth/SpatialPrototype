@@ -181,7 +181,6 @@ function geoFindMe() {
   var planeScan = false;
 
   var visiting = 1;
-  let distanceList = [];
 
 
 
@@ -192,27 +191,25 @@ function geoFindMe() {
     radioDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
     cannon2Distance = calculateDistance(latitude4, longitude4, userLat, userLong);
     planeDistance = calculateDistance(latitude5, longitude5, userLat, userLong);
+    localStorage.radio = regulateVolume(radioDistance);
+    localStorage.gun = regulateVolume(cannon2Distance);
+    localStorage.plane = regulateVolume(planeDistance);
+    radio.volume(localStorage.radio);
+    cannon.volume(localStorage.gun);
+    airplane.volume(localStorage.plane);
+     status.innerText = 'r:' +   localStorage.radio + 'g:' + localStorage.gun + 'p:' + localStorage.plane;
 
-    distanceList[0] = regulateVolume(radioDistance);
-    distanceList[1] = regulateVolume(cannon2Distance);
-    distanceList[2] = regulateVolume(planeDistance);
-
-    radio.volume(distanceList[0]);
-    cannon.volume(distanceList[1]);
-    airplane.volume(distanceList[2]);
-     status.innerText = 'r:' +   distanceList[0] + 'g:' + distanceList[1] + 'p:' + distanceList[2];
-
-    if(distanceList[0]< 0.8 && radioScan == true){
+    if(localStorage.radio < 0.8 && radioScan == true){
         nextB.style.display = "block";
         radioScan = false;
         gunScan = true;
     }
-    else if(distanceList[1] > 0.8 && gunScan == true){
+    else if(localStorage.gun > 0.8 && gunScan == true){
         nextB.style.display = "block";
         gunScan = false;
         planeScan = true;
     }
-    else if(distanceList[2]> 0.8 && planeScan == true){
+    else if(localStorage.plane > 0.8 && planeScan == true){
         nextB.style.display = "block";
         planeScan = false;
     }
