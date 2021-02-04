@@ -62,6 +62,7 @@ function handleOrientation(event) {
   }
   else if (visited == 3) {
     if (event.alpha > 0 && event.alpha < 60) {
+      visited++;
       mission2Completed();
     }
   }
@@ -97,7 +98,7 @@ function mission2Completed() {
 
 nextB.addEventListener('click', () => {
   visited++;
-  if(visited == 3){
+  if(visited == 4){
   dog.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
@@ -107,14 +108,14 @@ nextB.addEventListener('click', () => {
   bigTypeWriter.typeString('Sound').start();
   }
 
-  else if(visited == 4){
+  else if(visited == 5){
     dog.stop();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
     typewriter.typeString('You can now explore the area on your own').start();
     bigTypeWriter.typeString('Done').start();
     nextB.innerText = 'Done';
-  }else if(visited == 5){
+  }else if(visited == 6){
     radio.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
@@ -124,12 +125,12 @@ nextB.addEventListener('click', () => {
     nextB.innerText = 'New poi';
     nextB.style.display = "none";
   }
-  else if(visited==6){
+  else if(visited==7){
     nextB.style.display = "none";
     radio.stop();
     cannon.play();
   }
-  else if(visited == 7){
+  else if(visited == 8){
     cannon.stop();
     airplane.play();
     nextB.style.display = "none";
