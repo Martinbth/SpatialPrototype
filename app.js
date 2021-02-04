@@ -57,7 +57,6 @@ function handleOrientation(event) {
       visited++;
       party.play();
       mission1Completed();
-
     }
   }
   else if (visited == 3) {
@@ -98,7 +97,7 @@ function mission2Completed() {
 
 nextB.addEventListener('click', () => {
   visited++;
-  if(visited == 4){
+  if(visited == 3){
   dog.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
