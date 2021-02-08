@@ -97,7 +97,7 @@ function render() {
       }
     }
     //radio
-    else if (nrOfClicks == 5){
+    else if (nrOfClicks == 3){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
 
@@ -111,7 +111,7 @@ function render() {
       }
     }
     //gun
-    else if (nrOfClicks == 6){
+    else if (nrOfClicks == 4){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
       if(localStorage.gun > 0.8){
@@ -124,7 +124,7 @@ function render() {
       }
     }
     // plane
-    else if (nrOfClicks == 7){
+    else if (nrOfClicks == 5){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
       if(localStorage.plane > 0.8){
