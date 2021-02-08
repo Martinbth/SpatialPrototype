@@ -101,7 +101,7 @@ function render() {
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
 
-      if(localStorage.radio < 0.8){
+      if(localStorage.radio > 0.8){
         try{
           setModel(models[2],model,latitude3,longitude3);
         }
@@ -114,7 +114,7 @@ function render() {
     else if (nrOfClicks == 6){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
-      if(localStorage.gun < 0.8){
+      if(localStorage.gun > 0.8){
         try{
           setModel(models[3],model,latitude4,longitude4);
         }
@@ -127,7 +127,7 @@ function render() {
     else if (nrOfClicks == 7){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
-      if(localStorage.plane < 0.8){
+      if(localStorage.plane > 0.8){
         try{
           setModel(models[4],model,latitude5,longitude5);
         }
