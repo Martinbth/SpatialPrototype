@@ -77,6 +77,7 @@ let longitude4 = 17.841516;
 let latitude5 = 59.573583;
 let longitude5 = 17.839317;
 let nrOfClicks = 0;
+console.log(localStorage.radio);
 function render() {
   //balloon
   const scene = document.querySelector('a-scene');
@@ -101,7 +102,7 @@ function render() {
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
 
-      if(localStorage.radio > 0.8){
+      if(localStorage.radio == 0.1){
         try{
           setModel(models[2],model,latitude3,longitude3);
         }
