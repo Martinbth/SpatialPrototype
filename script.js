@@ -108,8 +108,7 @@ function render() {
 }
 
 setInterval(function() {
-
-  if (nrOfClicks == 2){
+  if (nrOfClicks == 3){
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
 // localStorage.radio > 0.8
@@ -119,14 +118,13 @@ setInterval(function() {
       }
       finally{
         statusScript.innerText = 'r:' + localStorage.radio + 'nrOfClicks: ' + nrOfClicks;
-
         scene.appendChild(model);
         modelNr++;
       }
     }
   }
   //gun
-  else if (nrOfClicks == 3){
+  else if (nrOfClicks == 4){
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
     if(localStorage.gun > 0.8 && modelNr == 2){
@@ -140,7 +138,7 @@ setInterval(function() {
     }
   }
   // plane
-  else if (nrOfClicks == 4){
+  else if (nrOfClicks == 5){
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
     if(localStorage.plane > 0.8 && modelNr == 3){
