@@ -77,7 +77,9 @@ let longitude4 = 17.841516;
 let latitude5 = 59.573583;
 let longitude5 = 17.839317;
 let nrOfClicks = 0;
-
+let modelNr = 0;
+const info = document.getElementById("statusScript");
+info.innerText = localStorage.radio ;
 function render() {
   //balloon
   const scene = document.querySelector('a-scene');
@@ -94,48 +96,58 @@ function render() {
         setModel(models[1],model,latitude2,longitude2);
       }
       finally{
-        setTimeout(() => {scene.appendChild(model); }, 5000);
+        setTimeout(() => {
+          scene.appendChild(model);
+          modelNr++;
+         }, 5000);
       }
     }
     //radio
-    else if (nrOfClicks == 3){
-      scene.removeChild(scene.lastChild);
-      removeAttribute(model);
+
+  });
+}
+
+setInterval(function() {
+  if (nrOfClicks == 3){
+    scene.removeChild(scene.lastChild);
+    removeAttribute(model);
+
+    if(localStorage.radio > 0.8 && modelNr == 1){
       try{
         setModel(models[2],model,latitude3,longitude3);
       }
       finally{
         scene.appendChild(model);
-      }
-      if(localStorage.radio == 0.1){
-
+        modelNr++;
       }
     }
-    //gun
-    else if (nrOfClicks == 4){
-      scene.removeChild(scene.lastChild);
-      removeAttribute(model);
-      if(localStorage.gun > 0.8){
-        try{
-          setModel(models[3],model,latitude4,longitude4);
-        }
-        finally{
-          scene.appendChild(model);
-        }
+  }
+  //gun
+  else if (nrOfClicks == 4){
+    scene.removeChild(scene.lastChild);
+    removeAttribute(model);
+    if(localStorage.gun > 0.8 && modelNr == 2){
+      try{
+        setModel(models[3],model,latitude4,longitude4);
+      }
+      finally{
+        scene.appendChild(model);
+        modelNr++;
       }
     }
-    // plane
-    else if (nrOfClicks == 5){
-      scene.removeChild(scene.lastChild);
-      removeAttribute(model);
-      if(localStorage.plane > 0.8){
-        try{
-          setModel(models[4],model,latitude5,longitude5);
-        }
-        finally{
-          scene.appendChild(model);
-        }
+  }
+  // plane
+  else if (nrOfClicks == 5){
+    scene.removeChild(scene.lastChild);
+    removeAttribute(model);
+    if(localStorage.plane > 0.8 && modelNr == 3){
+      try{
+        setModel(models[4],model,latitude5,longitude5);
+      }
+      finally{
+        scene.appendChild(model);
+        modelNr++;
       }
     }
-  });
-}
+  }
+}, 5000);
