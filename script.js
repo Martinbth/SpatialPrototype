@@ -108,8 +108,9 @@ function render() {
 }
 
 setInterval(function() {
-  statusScript.innerText = 'r:' + localStorage.radio + 'nrOfClicks: ' + nrOfClicks;
+
   if (nrOfClicks == 2){
+    statusScript.innerText = 'r:' + localStorage.radio + 'nrOfClicks: ' + nrOfClicks;
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
 
