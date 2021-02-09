@@ -79,7 +79,7 @@ let longitude5 = 17.839317;
 let nrOfClicks = 0;
 let modelNr = 0;
 const info = document.getElementById("statusScript");
-info.innerText = localStorage.radio ;
+
 function render() {
   //balloon
   const scene = document.querySelector('a-scene');
@@ -108,7 +108,8 @@ function render() {
 }
 
 setInterval(function() {
-  if (nrOfClicks == 3){
+  statusScript.innerText = 'r:' + localStorage.radio + 'nrOfClicks: ' + nrOfClicks;
+  if (nrOfClicks == 2){
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
 
@@ -123,7 +124,7 @@ setInterval(function() {
     }
   }
   //gun
-  else if (nrOfClicks == 4){
+  else if (nrOfClicks == 3){
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
     if(localStorage.gun > 0.8 && modelNr == 2){
@@ -137,7 +138,7 @@ setInterval(function() {
     }
   }
   // plane
-  else if (nrOfClicks == 5){
+  else if (nrOfClicks == 4){
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
     if(localStorage.plane > 0.8 && modelNr == 3){
