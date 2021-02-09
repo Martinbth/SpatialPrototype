@@ -110,15 +110,16 @@ function render() {
 setInterval(function() {
 
   if (nrOfClicks == 2){
-    statusScript.innerText = 'r:' + localStorage.radio + 'nrOfClicks: ' + nrOfClicks;
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
-
-    if(localStorage.radio > 0.8 && modelNr == 1){
+// localStorage.radio > 0.8
+    if(modelNr == 1){
       try{
         setModel(models[2],model,latitude3,longitude3);
       }
       finally{
+        statusScript.innerText = 'r:' + localStorage.radio + 'nrOfClicks: ' + nrOfClicks;
+
         scene.appendChild(model);
         modelNr++;
       }
