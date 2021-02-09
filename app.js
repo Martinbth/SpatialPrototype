@@ -154,7 +154,7 @@ window.addEventListener('DOMContentLoaded', geoFindMe);
 // const cannon2Long = 17.840493;
 // const planeLat = 59.574063;
 // const planeLong = 17.840166;
-status.innerText = 'yay' ;
+
 function geoFindMe() {
   var userLat;
   var userLong;
@@ -171,19 +171,14 @@ function geoFindMe() {
   //plane
   let latitude5 = 59.573583;
   let longitude5 = 17.839317;
-
   var radioScan = true;
   var gunScan = false;
   var planeScan = false;
-
   var visiting = 1;
-
-
 
   function success(position) {
     userLat = position.coords.latitude;
     userLong = position.coords.longitude;
-
     radioDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
     cannon2Distance = calculateDistance(latitude4, longitude4, userLat, userLong);
     planeDistance = calculateDistance(latitude5, longitude5, userLat, userLong);
@@ -193,7 +188,8 @@ function geoFindMe() {
     radio.volume(localStorage.radio);
     cannon.volume(localStorage.gun);
     airplane.volume(localStorage.plane);
-     // status.innerText = 'r:' +   localStorage.radio + 'g:' + localStorage.gun + 'p:' + localStorage.plane;
+    // status.innerText = 'r:' +   localStorage.radio + 'g:' + localStorage.gun + 'p:' + localStorage.plane;
+    status.innerText = '';
 
     if(localStorage.radio > 0.8 && radioScan){
         nextB.style.display = "block";

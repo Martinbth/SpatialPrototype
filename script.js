@@ -108,6 +108,7 @@ function render() {
 }
 
 setInterval(function() {
+  statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
   if (nrOfClicks == 3){
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
