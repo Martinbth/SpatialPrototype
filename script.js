@@ -147,7 +147,7 @@ function render() {
 
       while(modelNr != 4){
 
-          if(localStorage.radio < 0.8){
+          if(localStorage.radio > 0.8){
             try{
               setModel(models[4],model,latitude3,longitude3);
             }
