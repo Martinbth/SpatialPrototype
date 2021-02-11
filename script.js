@@ -102,20 +102,25 @@ function render() {
          }, 5000);
       }
     }
+    //radio
     else if (nrOfClicks == 3){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
-      try{
-        setModel(models[2],model,latitude3,longitude3);
-      }
-      finally{
-        statusScript.innerText = 'r:' + localStorage.radio + 'nrOfClicks: ' + nrOfClicks;
-        scene.appendChild(model);
-        modelNr++;
+
+      while(modelNr != 2){
+        setTimeout(() => {
+          if(localStorage.radio < 0.8){
+            try{
+              setModel(models[2],model,latitude3,longitude3);
+            }
+            finally{
+              scene.appendChild(model);
+              modelNr++;
+            }
+          }
+        }, 2000);
       }
     }
-    //radio
-
   });
 }
 
