@@ -138,7 +138,7 @@ setInterval(function() {
 //     }
 //   }
   //gun
-  else if (nrOfClicks == 3){
+   if (nrOfClicks == 3){
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
     if(localStorage.gun > 0.8 && modelNr == 2){
