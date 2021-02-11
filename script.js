@@ -119,8 +119,8 @@ function render() {
   });
 }
 
-setInterval(function() {
-  statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
+// setInterval(function() {
+//   statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
 //   if (nrOfClicks == 3){
 //     scene.removeChild(scene.lastChild);
 //     removeAttribute(model);
@@ -137,32 +137,32 @@ setInterval(function() {
 //
 //     }
 //   }
-  //gun
-   if (nrOfClicks == 3){
-    scene.removeChild(scene.lastChild);
-    removeAttribute(model);
-    if(localStorage.gun > 0.8 && modelNr == 2){
-      try{
-        setModel(models[3],model,latitude4,longitude4);
-      }
-      finally{
-        scene.appendChild(model);
-        modelNr++;
-      }
-    }
-  }
-  // plane
-  else if (nrOfClicks == 4){
-    scene.removeChild(scene.lastChild);
-    removeAttribute(model);
-    if(localStorage.plane > 0.8 && modelNr == 3){
-      try{
-        setModel(models[4],model,latitude5,longitude5);
-      }
-      finally{
-        scene.appendChild(model);
-        modelNr++;
-      }
-    }
-  }
-}, 5000);
+//   //gun
+//    if (nrOfClicks == 3){
+//     scene.removeChild(scene.lastChild);
+//     removeAttribute(model);
+//     if(localStorage.gun > 0.8 && modelNr == 2){
+//       try{
+//         setModel(models[3],model,latitude4,longitude4);
+//       }
+//       finally{
+//         scene.appendChild(model);
+//         modelNr++;
+//       }
+//     }
+//   }
+//   // plane
+//   else if (nrOfClicks == 4){
+//     scene.removeChild(scene.lastChild);
+//     removeAttribute(model);
+//     if(localStorage.plane > 0.8 && modelNr == 3){
+//       try{
+//         setModel(models[4],model,latitude5,longitude5);
+//       }
+//       finally{
+//         scene.appendChild(model);
+//         modelNr++;
+//       }
+//     }
+//   }
+// }, 5000);
