@@ -102,6 +102,18 @@ function render() {
          }, 5000);
       }
     }
+    else if (nrOfClicks == 3){
+      scene.removeChild(scene.lastChild);
+      removeAttribute(model);
+      try{
+        setModel(models[2],model,latitude3,longitude3);
+      }
+      finally{
+        statusScript.innerText = 'r:' + localStorage.radio + 'nrOfClicks: ' + nrOfClicks;
+        scene.appendChild(model);
+        modelNr++;
+      }
+    }
     //radio
 
   });
@@ -109,22 +121,22 @@ function render() {
 
 setInterval(function() {
   statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
-  if (nrOfClicks == 3){
-    scene.removeChild(scene.lastChild);
-    removeAttribute(model);
-    try{
-      setModel(models[2],model,latitude3,longitude3);
-    }
-    finally{
-      statusScript.innerText = 'r:' + localStorage.radio + 'nrOfClicks: ' + nrOfClicks;
-      scene.appendChild(model);
-      modelNr++;
-    }
-// localStorage.radio > 0.8
-    if(modelNr == 1){
-
-    }
-  }
+//   if (nrOfClicks == 3){
+//     scene.removeChild(scene.lastChild);
+//     removeAttribute(model);
+//     try{
+//       setModel(models[2],model,latitude3,longitude3);
+//     }
+//     finally{
+//       statusScript.innerText = 'r:' + localStorage.radio + 'nrOfClicks: ' + nrOfClicks;
+//       scene.appendChild(model);
+//       modelNr++;
+//     }
+// // localStorage.radio > 0.8
+//     if(modelNr == 1){
+//
+//     }
+//   }
   //gun
   else if (nrOfClicks == 3){
     scene.removeChild(scene.lastChild);
