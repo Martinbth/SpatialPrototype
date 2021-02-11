@@ -108,7 +108,7 @@ function render() {
       removeAttribute(model);
 
       while(modelNr != 2){
-        setTimeout(() => {
+
           if(localStorage.radio < 0.8){
             try{
               setModel(models[2],model,latitude3,longitude3);
@@ -118,7 +118,7 @@ function render() {
               modelNr++;
             }
           }
-        }, 2000);
+
       }
     }
   });
