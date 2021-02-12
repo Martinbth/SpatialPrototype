@@ -106,18 +106,16 @@ function render() {
     else if (nrOfClicks == 3){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
-
+      setModel(models[2],model,latitude3,longitude3);
       while(modelNr != 2){
+        setTimeout(() => {
 
-          if(localStorage.radio > 0.8){
-            try{
-              setModel(models[2],model,latitude3,longitude3);
-            }
-            finally{
-              scene.appendChild(model);
-              modelNr++;
-            }
+          if(localStorage.radio >= 0.8){
+            scene.appendChild(model);
+            modelNr++;
           }
+          
+         }, 5000);
 
       }
     }
