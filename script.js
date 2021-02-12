@@ -110,11 +110,11 @@ function render() {
       while(modelNr != 2){
         setTimeout(() => {
 
-          if(localStorage.radio >= 0.8){
+          if(localStorage.radio < 0.8){
             scene.appendChild(model);
             modelNr++;
           }
-          
+
          }, 5000);
 
       }
