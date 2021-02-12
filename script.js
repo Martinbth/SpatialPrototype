@@ -107,17 +107,14 @@ function render() {
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
       setModel(models[2],model,latitude3,longitude3);
-      while(modelNr != 2){
-        setTimeout(() => {
-
+      setTimeout(() => {
+        while(modelNr != 2){
           if(localStorage.radio < 0.8){
-            scene.appendChild(model);
-            modelNr++;
+              scene.appendChild(model);
+              modelNr++;
           }
-
-         }, 5000);
-
-      }
+        }
+      }, 1000);
     }
     //gun
     else if (nrOfClicks == 4){
