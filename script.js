@@ -109,7 +109,7 @@ function render() {
       setModel(models[2],model,latitude3,longitude3);
       setTimeout(() => {
         while(modelNr != 2){
-          if(localStorage.radio < 0.8){
+          if(localStorage.radio > 0.8){
               scene.appendChild(model);
               modelNr++;
           }
