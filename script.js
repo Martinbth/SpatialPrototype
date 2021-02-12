@@ -107,22 +107,22 @@ function render() {
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
       setModel(models[2],model,latitude3,longitude3);
-      setTimeout(() => {
-        while(modelNr != 2){
-          if(localStorage.radio > 0.8){
-              scene.appendChild(model);
-              modelNr++;
-          }
-        }
-      }, 1000);
+      lovedogs(scene, model);
+      // setTimeout(() => {
+      //   while(modelNr != 2){
+      //     if(localStorage.radio > 0.8){
+      //         scene.appendChild(model);
+      //         modelNr++;
+      //     }
+      //   }
+      // }, 1000);
     }
+
     //gun
     else if (nrOfClicks == 4){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
-
       while(modelNr != 3){
-
           if(localStorage.radio > 0.8){
             try{
               setModel(models[3],model,latitude3,longitude3);
@@ -132,16 +132,13 @@ function render() {
               modelNr++;
             }
           }
-
       }
     }
     //plane
     else if (nrOfClicks == 5){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
-
       while(modelNr != 4){
-
           if(localStorage.radio > 0.8){
             try{
               setModel(models[4],model,latitude3,longitude3);
@@ -156,7 +153,9 @@ function render() {
     }
   });
 }
-
+function lovedogs(scene, model){
+   scene.appendChild(model);
+};
 // setInterval(function() {
 //   statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
 //   if (nrOfClicks == 3){
