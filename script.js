@@ -89,11 +89,10 @@ function render() {
 
   setInterval(function() {
     // statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
-    statusScript.innerText = 'radio: ' + localStorage.radio;
+    // statusScript.innerText = 'nr of clicks: ' + nrOfCLicks;
     if (nrOfClicks == 3){
-      scene.removeChild(scene.lastChild);
-      removeAttribute(model);
-      if(localStorage.radio > 0.8){
+      if(localStorage.radio > 0.8 && modelNr == 0){
+        statusScript.innerText = 'im in radio';
         try{
           setModel(models[2],model,latitude3,longitude3);
         }
@@ -105,31 +104,29 @@ function render() {
     }
     //gun
     else if (nrOfClicks == 4){
-      scene.removeChild(scene.lastChild);
-      removeAttribute(model);
-          if(localStorage.gun > 0.8){
-            try{
-              setModel(models[3],model,latitude3,longitude3);
-            }
-            finally{
-              scene.appendChild(model);
-              modelNr++;
-            }
-          }
+      if(localStorage.gun > 0.8 && modelNr == 1){
+        statusScript.innerText = 'im in gun';
+        try{
+          setModel(models[3],model,latitude3,longitude3);
+        }
+        finally{
+          scene.appendChild(model);
+          modelNr++;
+        }
+      }
     }
     //plane
     else if (nrOfClicks == 5){
-      scene.removeChild(scene.lastChild);
-      removeAttribute(model);
-          if(localStorage.plane > 0.8){
-            try{
-              setModel(models[4],model,latitude3,longitude3);
-            }
-            finally{
-              scene.appendChild(model);
-              modelNr++;
-            }
-          }
+      if(localStorage.plane > 0.8 && modelNr == 2){
+        statusScript.innerText = 'im in plane';
+        try{
+          setModel(models[4],model,latitude3,longitude3);
+        }
+        finally{
+          scene.appendChild(model);
+          modelNr++;
+        }
+      }
     }
   }, 5000);
 
@@ -147,6 +144,17 @@ function render() {
           modelNr++;
          }, 5000);
       }
+    }else if(nrOfCLicks == 3){
+      scene.removeChild(scene.lastChild);
+      removeAttribute(model);
+    }
+    else if(nrOfCLicks == 4){
+      scene.removeChild(scene.lastChild);
+      removeAttribute(model);
+    }
+    else if(nrOfCLicks == 5){
+      scene.removeChild(scene.lastChild);
+      removeAttribute(model);
     }
 
     // else if (nrOfClicks == 3){
