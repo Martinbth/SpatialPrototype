@@ -88,6 +88,7 @@ function render() {
   scene.appendChild(model);
 
   setInterval(function() {
+      statusScript.innerText = 'nrofclicls:' + nrOfCLicks;
     // statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
     // statusScript.innerText = 'nr of clicks: ' + nrOfCLicks;
     if (nrOfClicks == 3){
@@ -142,7 +143,7 @@ function render() {
          }, 5000);
       }
     }else if(nrOfCLicks == 3){
-      statusScript.innerText = 'remove doggu';
+
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
     }
