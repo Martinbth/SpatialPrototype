@@ -139,7 +139,6 @@ function render() {
       finally{
         setTimeout(() => {
           scene.appendChild(model);
-          modelNr++;
          }, 5000);
       }
     }else if(nrOfCLicks == 3){
