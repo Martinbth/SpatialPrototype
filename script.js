@@ -91,7 +91,7 @@ function render() {
     // statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
     // statusScript.innerText = 'nr of clicks: ' + nrOfCLicks;
     if (nrOfClicks == 3){
-      if(localStorage.radio < 0.8 && modelNr == 0){
+      if(localStorage.radio > 0.8 && modelNr == 0){
         try{
           setModel(models[2],model,latitude3,longitude3);
         }
@@ -103,7 +103,7 @@ function render() {
     }
     //gun
     else if (nrOfClicks == 4){
-      if(localStorage.gun < 0.8 && modelNr == 1){
+      if(localStorage.gun > 0.8 && modelNr == 1){
 
         try{
           setModel(models[3],model,latitude3,longitude3);
