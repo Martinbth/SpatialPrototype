@@ -5,8 +5,25 @@ window.onload = () => {
   render();
 };
 
-
-
+//Balloon
+let latitude1 = 59.574378;
+let longitude1 = 17.840573;
+//dog
+let latitude2 = 59.574514;
+let longitude2 = 17.840085;
+//radio
+let latitude3 = 59.574970;
+let longitude3 = 17.841451;
+//gun
+let latitude4 = 59.573698;
+let longitude4 = 17.841516;
+//plane
+let latitude5 = 59.573583;
+let longitude5 = 17.839317;
+let nrOfClicks = 0;
+let modelNr = 0;
+const info = document.getElementById("statusScript");
+var modelIndex = 0;
 
 var models = [
   {
@@ -46,7 +63,7 @@ function removeAttribute(entity){
     entity.removeAttribute(entity.attributes[0].name);
   }
 }
-var modelIndex = 0;
+
 var setModel = function (model,entity,lat,long) {
     entity.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude:' + long + ';');  //Unsure
     if (model.scale) {
@@ -62,23 +79,6 @@ var setModel = function (model,entity,lat,long) {
     entity.setAttribute('animation-mixer', '');
 };
 
-let latitude1 = 59.574378;
-let longitude1 = 17.840573;
-//dog
-let latitude2 = 59.574514;
-let longitude2 = 17.840085;
-//radio
-let latitude3 = 59.574970;
-let longitude3 = 17.841451;
-//gun
-let latitude4 = 59.573698;
-let longitude4 = 17.841516;
-//plane
-let latitude5 = 59.573583;
-let longitude5 = 17.839317;
-let nrOfClicks = 0;
-let modelNr = 0;
-const info = document.getElementById("statusScript");
 
 function render() {
   //balloon
@@ -86,6 +86,11 @@ function render() {
   var model = document.createElement('a-entity');
   setModel(models[0],model,latitude1,longitude1);
   scene.appendChild(model);
+
+  setInterval(function() {
+    // statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
+    statusScript.innerText = 'radio: ' + localStorage.radio;
+  }, 5000);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     nrOfClicks++;
@@ -148,58 +153,17 @@ function render() {
               modelNr++;
             }
           }
-
       }
     }
   });
 }
+
+
+
 function lovedogs(scene, model){
    scene.appendChild(model);
 };
-// setInterval(function() {
-//   statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
-//   if (nrOfClicks == 3){
-//     scene.removeChild(scene.lastChild);
-//     removeAttribute(model);
-//     try{
-//       setModel(models[2],model,latitude3,longitude3);
-//     }
-//     finally{
-//       statusScript.innerText = 'r:' + localStorage.radio + 'nrOfClicks: ' + nrOfClicks;
-//       scene.appendChild(model);
-//       modelNr++;
-//     }
-// // localStorage.radio > 0.8
-//     if(modelNr == 1){
-//
-//     }
-//   }
-//   //gun
-//    if (nrOfClicks == 3){
-//     scene.removeChild(scene.lastChild);
-//     removeAttribute(model);
-//     if(localStorage.gun > 0.8 && modelNr == 2){
-//       try{
-//         setModel(models[3],model,latitude4,longitude4);
-//       }
-//       finally{
-//         scene.appendChild(model);
-//         modelNr++;
-//       }
-//     }
-//   }
-//   // plane
-//   else if (nrOfClicks == 4){
-//     scene.removeChild(scene.lastChild);
-//     removeAttribute(model);
-//     if(localStorage.plane > 0.8 && modelNr == 3){
-//       try{
-//         setModel(models[4],model,latitude5,longitude5);
-//       }
-//       finally{
-//         scene.appendChild(model);
-//         modelNr++;
-//       }
-//     }
-//   }
-// }, 5000);
+
+setInterval(function() {
+  statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
+}, 5000);
