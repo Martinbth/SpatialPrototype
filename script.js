@@ -88,7 +88,7 @@ function render() {
   scene.appendChild(model);
 
   setInterval(function() {
-      statusScript.innerText = 'nrofclicls:' + nrOfCLicks;
+      statusScript.innerText = 'nrofclicls:' + nrOfClicks;
     // statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
     // statusScript.innerText = 'nr of clicks: ' + nrOfCLicks;
     if (nrOfClicks == 3){
@@ -142,16 +142,15 @@ function render() {
           scene.appendChild(model);
          }, 5000);
       }
-    }else if(nrOfCLicks == 3){
-
+    }else if(nrOfClicks == 3){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
     }
-    else if(nrOfCLicks == 4){
+    else if(nrOfClicks == 4){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
     }
-    else if(nrOfCLicks == 5){
+    else if(nrOfClicks == 5){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
     }
