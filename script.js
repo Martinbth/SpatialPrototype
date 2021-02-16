@@ -18,8 +18,8 @@ let longitude3 = 17.841451;
 let latitude4 = 59.573698;
 let longitude4 = 17.841516;
 //plane
-let latitude5 = 59.573583;
-let longitude5 = 17.839317;
+let latitude5 = 59.573300;
+let longitude5 = 17.839512;
 let nrOfClicks = 0;
 let modelNr = 0;
 const info = document.getElementById("statusScript");
@@ -88,11 +88,11 @@ function render() {
   scene.appendChild(model);
 
   setInterval(function() {
-      statusScript.innerText = 'nrofclicls:' + nrOfClicks;
+    statusScript.innerText = 'nrofclicls:' + nrOfClicks + 'modelNr: ' + modelNr + 'gun:' + localStorage.gun;
     // statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
     // statusScript.innerText = 'nr of clicks: ' + nrOfCLicks;
     if (nrOfClicks == 3){
-      if(localStorage.radio > 0.8 && modelNr == 0){
+      if(localStorage.radio > 0.6 && modelNr == 0){
         try{
           setModel(models[2],model,latitude3,longitude3);
         }
@@ -104,7 +104,7 @@ function render() {
     }
     //gun
     else if (nrOfClicks == 4){
-      if(localStorage.gun > 0.8 && modelNr == 1){
+      if(localStorage.gun > 0.6 && modelNr == 1){
 
         try{
           setModel(models[3],model,latitude3,longitude3);
@@ -117,7 +117,7 @@ function render() {
     }
     //plane
     else if (nrOfClicks == 5){
-      if(localStorage.plane > 0.8 && modelNr == 2){
+      if(localStorage.plane > 0.6 && modelNr == 2){
         try{
           setModel(models[4],model,latitude3,longitude3);
         }

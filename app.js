@@ -169,8 +169,9 @@ function geoFindMe() {
   let latitude4 = 59.573698;
   let longitude4 = 17.841516;
   //plane
-  let latitude5 = 59.573583;
-  let longitude5 = 17.839317;
+  let latitude5 = 59.573300;
+  let longitude5 = 17.839512;
+
   var radioScan = true;
   var gunScan = false;
   var planeScan = false;
