@@ -40,13 +40,13 @@ var models = [
   },
   {
     url: './assets/radio/scene.gltf',
-    scale: '0.4 0.4 0.4',
+    scale: '0.2 0.2 0.2',
     info: 'Good Job!',
     rotation: '0 0 0',
   },
   {
     url: './assets/gun/scene.gltf',
-    scale: '0.2 0.2 0.2',
+    scale: '0.3 0.3 0.3',
     info: 'Good Job!',
     rotation: '0 0 0',
   },
@@ -107,7 +107,7 @@ function render() {
       if(localStorage.gun > 0.6 && modelNr == 1){
 
         try{
-          setModel(models[3],model,latitude3,longitude3);
+          setModel(models[3],model,latitude4,longitude4);
         }
         finally{
           scene.appendChild(model);
@@ -119,7 +119,7 @@ function render() {
     else if (nrOfClicks == 5){
       if(localStorage.plane > 0.6 && modelNr == 2){
         try{
-          setModel(models[4],model,latitude3,longitude3);
+          setModel(models[4],model,latitude5,longitude5);
         }
         finally{
           scene.appendChild(model);
