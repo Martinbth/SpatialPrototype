@@ -40,13 +40,13 @@ var models = [
   },
   {
     url: './assets/radio/scene.gltf',
-    scale: '0.2 0.2 0.2',
+    scale: '0.15 0.15 0.15',
     info: 'Good Job!',
     rotation: '0 0 0',
   },
   {
     url: './assets/gun/scene.gltf',
-    scale: '0.3 0.3 0.3',
+    scale: '0.15 0.15 0.15',
     info: 'Good Job!',
     rotation: '0 0 0',
   },
@@ -127,7 +127,7 @@ function render() {
         }
       }
     }
-  }, 5000);
+  }, 1000);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     nrOfClicks++;

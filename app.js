@@ -40,12 +40,12 @@ radio.pos(-45, 0, 45);
 cannon.pos(0, 0, -40);
 airplane.pos(40, 0, 0);
 
-var visited = 1;
+var visited = 0;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
 const status = document.getElementById("status");
 nextB.style.display = "block";
-nextB.innerText = 'Next';
+nextB.innerText = 'Lets begin:)';
 
 function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
@@ -68,14 +68,14 @@ function handleOrientation(event) {
 }
 
 function mission1() {
-  nextB.innerText = 'camera';
+  nextB.style.display = "none";
   typewriter.deleteAll(0.2);
   typewriter.typeString('')
   .start();
   bigTypeWriter.deleteAll(0.2);
   bigTypeWriter.typeString('Rotate')
   .start();
-  typewriter.typeString('Move the camera to find the balloon.'')
+  typewriter.typeString('Move the camera to find the balloon.')
   start();
 }
 
@@ -119,7 +119,7 @@ nextB.addEventListener('click', () => {
   bigTypeWriter.deleteAll(0.2);
   typewriter.typeString('Move your phone to the direction that the sound is coming from.').start();
   bigTypeWriter.typeString('Sound').start();
-}else if(visited == 6){
+  }else if(visited == 6){
     dog.stop();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
@@ -145,6 +145,16 @@ nextB.addEventListener('click', () => {
     nextB.style.display = "none";
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
+  }else if(visited == 10){
+    visited = 6;
+    // party.play();
+    // typewriter.deleteAll(0.2);
+    // bigTypeWriter.deleteAll(0.2);
+    // typewriter.typeString('You can now explore the area on your own').start();
+    // bigTypeWriter.typeString('Done!').start();
+    // nextB.style.display = "none";
+    // scene.removeChild(scene.lastChild);
+    // removeAttribute(model);
   }
 });
 
@@ -215,6 +225,7 @@ function geoFindMe() {
     else if(localStorage.plane > 0.8 && planeScan){
         nextB.style.display = "block";
         planeScan = false;
+        radioScan = true;
     }
   }
 
