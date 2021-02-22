@@ -91,7 +91,7 @@ function render() {
     statusScript.innerText = 'nrofclicls:' + nrOfClicks + 'modelNr: ' + modelNr + 'gun:' + localStorage.gun;
     // statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
     // statusScript.innerText = 'nr of clicks: ' + nrOfCLicks;
-    if (nrOfClicks == 3){
+    if (nrOfClicks == 4){
       if(localStorage.radio > 0.6 && modelNr == 0){
         try{
           setModel(models[2],model,latitude3,longitude3);
@@ -103,7 +103,7 @@ function render() {
       }
     }
     //gun
-    else if (nrOfClicks == 4){
+    else if (nrOfClicks == 5){
       if(localStorage.gun > 0.6 && modelNr == 1){
 
         try{
@@ -116,7 +116,7 @@ function render() {
       }
     }
     //plane
-    else if (nrOfClicks == 5){
+    else if (nrOfClicks == 6){
       if(localStorage.plane > 0.6 && modelNr == 2){
         try{
           setModel(models[4],model,latitude5,longitude5);
@@ -131,7 +131,7 @@ function render() {
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     nrOfClicks++;
-    if(nrOfClicks == 1){
+    if(nrOfClicks == 2){
       try{
         scene.removeChild(scene.lastChild);
         removeAttribute(model);
@@ -142,15 +142,15 @@ function render() {
           scene.appendChild(model);
          }, 5000);
       }
-    }else if(nrOfClicks == 3){
-      scene.removeChild(scene.lastChild);
-      removeAttribute(model);
-    }
-    else if(nrOfClicks == 4){
+    }else if(nrOfClicks == 4){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
     }
     else if(nrOfClicks == 5){
+      scene.removeChild(scene.lastChild);
+      removeAttribute(model);
+    }
+    else if(nrOfClicks == 6){
       scene.removeChild(scene.lastChild);
       removeAttribute(model);
     }

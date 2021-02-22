@@ -44,7 +44,7 @@ var visited = 1;
 const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
 const status = document.getElementById("status");
-nextB.style.display = "none";
+nextB.style.display = "block";
 nextB.innerText = 'Next';
 
 function handleOrientation(event) {
@@ -52,19 +52,31 @@ function handleOrientation(event) {
   var y = degreesToRadians(event.gamma);
   var z = degreesToRadians(event.alpha);
   Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
-  if (visited == 1) {
+  if (visited == 2) {
     if (event.alpha > 170 && event.alpha < 250) {
       visited++;
       party.play();
       mission1Completed();
     }
   }
-  else if (visited == 3) {
+  else if (visited == 4) {
     if (event.alpha > 0 && event.alpha < 60) {
       visited++;
       mission2Completed();
     }
   }
+}
+
+function mission1() {
+  nextB.innerText = 'camera';
+  typewriter.deleteAll(0.2);
+  typewriter.typeString('')
+  .start();
+  bigTypeWriter.deleteAll(0.2);
+  bigTypeWriter.typeString('Rotate')
+  .start();
+  typewriter.typeString('Move the camera to find the balloon.'')
+  start();
 }
 
 function mission1Completed() {
@@ -97,7 +109,9 @@ function mission2Completed() {
 
 nextB.addEventListener('click', () => {
   visited++;
-  if(visited == 3){
+  if(visited == 1){
+  mission1();
+  }else if(visited == 3){
   dog.play();
   nextB.style.display = "none";
   changeImage("img/soundDone.png");
@@ -105,16 +119,14 @@ nextB.addEventListener('click', () => {
   bigTypeWriter.deleteAll(0.2);
   typewriter.typeString('Move your phone to the direction that the sound is coming from.').start();
   bigTypeWriter.typeString('Sound').start();
-  }
-
-  else if(visited == 5){
+}else if(visited == 6){
     dog.stop();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
     typewriter.typeString('You can now explore the area on your own').start();
     bigTypeWriter.typeString('Done').start();
     nextB.innerText = 'Done';
-  }else if(visited == 6){
+  }else if(visited == 7){
     radio.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
@@ -123,13 +135,11 @@ nextB.addEventListener('click', () => {
     info.style.backgroundColor = "transparent";
     nextB.innerText = 'New poi';
     nextB.style.display = "none";
-  }
-  else if(visited==7){
+  }else if(visited==8){
     nextB.style.display = "none";
     radio.stop();
     cannon.play();
-  }
-  else if(visited == 8){
+  }else if(visited == 9){
     cannon.stop();
     airplane.play();
     nextB.style.display = "none";
@@ -269,7 +279,7 @@ var bigTypeWriter = new Typewriter(bigText, {
   cursor: ''
 });
 
-typewriter.typeString('Move the camera to find the balloon.')
+typewriter.typeString('this is a tutorial')
 .start();
-bigTypeWriter.typeString('Rotate')
+bigTypeWriter.typeString('Welcome!')
 .start();
