@@ -90,10 +90,7 @@ function render() {
     statusScript.innerText = 'nrofclicls:' + nrOfClicks + 'modelNr: ' + modelNr + 'gun:' + localStorage.gun;
     // statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
     // statusScript.innerText = 'nr of clicks: ' + nrOfCLicks;
-    if (nrOfClicks == 1){
-      setModel(models[0],model,latitude1,longitude1);
-      scene.appendChild(model);
-    }else if (nrOfClicks == 4){
+    if (nrOfClicks == 4){
       if(localStorage.radio > 0.6 && modelNr == 0){
         try{
           setModel(models[2],model,latitude3,longitude3);
@@ -133,7 +130,11 @@ function render() {
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     nrOfClicks++;
-    if(nrOfClicks == 2){
+    if (nrOfClicks == 1){
+      setModel(models[0],model,latitude1,longitude1);
+      scene.appendChild(model);
+
+    }else if(nrOfClicks == 2){
       try{
         scene.removeChild(scene.lastChild);
         removeAttribute(model);
