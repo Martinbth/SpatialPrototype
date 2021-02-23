@@ -59,7 +59,7 @@ function handleOrientation(event) {
       mission1Completed();
     }
   }
-  else if (visited == 4) {
+  else if (visited == 3) {
     if (event.alpha > 0 && event.alpha < 60) {
       visited++;
       mission2Completed();
