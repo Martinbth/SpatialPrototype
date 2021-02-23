@@ -131,9 +131,14 @@ function render() {
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     nrOfClicks++;
     if (nrOfClicks == 1){
-      setModel(models[0],model,latitude1,longitude1);
-      scene.appendChild(model);
-
+      try{
+        setModel(models[0],model,latitude1,longitude1);
+      }
+      finally{
+        setTimeout(() => {
+          scene.appendChild(model);
+        }, 3000);
+      }
     }else if(nrOfClicks == 2){
       try{
         scene.removeChild(scene.lastChild);
@@ -143,7 +148,7 @@ function render() {
       finally{
         setTimeout(() => {
           scene.appendChild(model);
-         }, 5000);
+        }, 3000);
       }
     }else if(nrOfClicks == 4){
       scene.removeChild(scene.lastChild);
