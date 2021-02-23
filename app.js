@@ -121,14 +121,14 @@ nextB.addEventListener('click', () => {
   bigTypeWriter.deleteAll(0.2);
   typewriter.typeString('Move your phone to the direction that the sound is coming from.').start();
   bigTypeWriter.typeString('Sound').start();
-  }else if(visited == 6){
+}else if(visited == 5){
     dog.stop();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
     typewriter.typeString('You can now explore the area on your own').start();
     bigTypeWriter.typeString('Done').start();
     nextB.innerText = 'Done';
-  }else if(visited == 7){
+  }else if(visited == 6){
     radio.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
@@ -137,18 +137,18 @@ nextB.addEventListener('click', () => {
     info.style.backgroundColor = "transparent";
     nextB.innerText = 'New poi';
     nextB.style.display = "none";
-  }else if(visited==8){
+  }else if(visited==7){
     nextB.style.display = "none";
     radio.stop();
     cannon.play();
-  }else if(visited == 9){
+  }else if(visited == 8){
     cannon.stop();
     airplane.play();
     nextB.style.display = "none";
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
-  }else if(visited == 10){
-    visited = 6;
+  }else if(visited == 9){
+    visited = 5;
     // party.play();
     // typewriter.deleteAll(0.2);
     // bigTypeWriter.deleteAll(0.2);
