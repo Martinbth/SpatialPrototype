@@ -68,7 +68,9 @@ function handleOrientation(event) {
 }
 
 function mission1() {
+  changeImage("img/rotateDone.png");
   nextB.style.display = "none";
+
   typewriter.deleteAll(0.2);
   typewriter.typeString('')
   .start();

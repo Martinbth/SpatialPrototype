@@ -85,16 +85,15 @@ function render() {
   const scene = document.querySelector('a-scene');
   var model = document.createElement('a-entity');
 
-  if (nrOfClicks == 1){
-    setModel(models[0],model,latitude1,longitude1);
-    scene.appendChild(model);
-  }
 
   setInterval(function() {
     statusScript.innerText = 'nrofclicls:' + nrOfClicks + 'modelNr: ' + modelNr + 'gun:' + localStorage.gun;
     // statusScript.innerText = 'modelNr: ' + modelNr + 'nrOfCLicks' + nrOfClicks;
     // statusScript.innerText = 'nr of clicks: ' + nrOfCLicks;
-    if (nrOfClicks == 4){
+    if (nrOfClicks == 1){
+      setModel(models[0],model,latitude1,longitude1);
+      scene.appendChild(model);
+    }else if (nrOfClicks == 4){
       if(localStorage.radio > 0.6 && modelNr == 0){
         try{
           setModel(models[2],model,latitude3,longitude3);
