@@ -251,7 +251,7 @@ Number.prototype.toRad = function() {
 }
 
 function regulateVolume(dist) {
-  status.innerText = dist;
+  // status.innerText = dist;
   var v;
   if (dist < 0) {
     v = 1;
