@@ -136,27 +136,22 @@ nextB.addEventListener('click', () => {
     bigTypeWriter.typeString('').start();
     info.style.backgroundColor = "transparent";
     nextB.innerText = 'New poi';
-    nextB.style.display = "none";
+    nextB.style.display = "block";
   }else if(visited==7){
-    nextB.style.display = "none";
+    nextB.style.display = "block";
     radio.stop();
     cannon.play();
   }else if(visited == 8){
     cannon.stop();
     airplane.play();
-    nextB.style.display = "none";
+    nextB.style.display = "block";
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
   }else if(visited == 9){
-    visited = 5;
-    // party.play();
-    // typewriter.deleteAll(0.2);
-    // bigTypeWriter.deleteAll(0.2);
-    // typewriter.typeString('You can now explore the area on your own').start();
-    // bigTypeWriter.typeString('Done!').start();
-    // nextB.style.display = "none";
-    // scene.removeChild(scene.lastChild);
-    // removeAttribute(model);
+    airplane.stop();
+    info.style.backgroundColor = "#082761";
+    typewriter.typeString('thanks for trying it out dude).start();
+    bigTypeWriter.typeString('goood booii!').start();
   }
 });
 
@@ -172,10 +167,7 @@ function degreesToRadians(degrees) {
 
 // Geolocation / distance
 window.addEventListener('DOMContentLoaded', geoFindMe);
-// const cannon2Lat = 59.574560;
-// const cannon2Long = 17.840493;
-// const planeLat = 59.574063;
-// const planeLong = 17.840166;
+
 
 function geoFindMe() {
   var userLat;
@@ -211,7 +203,6 @@ function geoFindMe() {
     radio.volume(localStorage.radio);
     cannon.volume(localStorage.gun);
     airplane.volume(localStorage.plane);
-    // status.innerText = 'r:' +   localStorage.radio + 'g:' + localStorage.gun + 'p:' + localStorage.plane;
     status.innerText = '';
 
     if(localStorage.radio > 0.8 && radioScan){
@@ -260,19 +251,12 @@ Number.prototype.toRad = function() {
 
 function regulateVolume(dist) {
   var v;
-  // distance.textContent = '';
-  // distance.textContent +='dist: ' + dist;
-
   if (dist > 100) {
-    // distance.textContent += 'dist > 100';
     v = 0.1;
   } else if (dist < 0) {
-    // distance.textContent += 'dist < 0';
     v = 1;
   } else {
-    // distance.textContent += 'else:';
     v = 1 - (dist / 100);
-    // distance.textContent +='vol set to:' + v;
   }
   return v;
 }
