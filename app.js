@@ -131,26 +131,31 @@ nextB.addEventListener('click', () => {
     radio.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
-    typewriter.typeString('').start();
-    bigTypeWriter.typeString('').start();
+    // typewriter.typeString('').start();
+    // bigTypeWriter.typeString('').start();
     info.style.backgroundColor = "transparent";
     nextB.innerText = 'New poi';
-    nextB.style.display = "block";
+    nextB.style.display = "none";
   }else if(visited==7){
-    nextB.style.display = "block";
-    info.style.backgroundColor = "transparent";
     radio.stop();
     cannon.play();
+    typewriter.deleteAll(0.2);
+    bigTypeWriter.deleteAll(0.2);
+    nextB.style.display = "none";
+    info.style.backgroundColor = "transparent";
   }else if(visited == 8){
     cannon.stop();
     airplane.play();
-    nextB.style.display = "block";
-    scene.removeChild(scene.lastChild);
-    removeAttribute(model);
+    typewriter.deleteAll(0.2);
+    bigTypeWriter.deleteAll(0.2);
+    nextB.style.display = "none";
+    info.style.backgroundColor = "transparent";
   }else if(visited == 9){
     nextB.style.display = "none";
     airplane.stop();
     info.style.backgroundColor = "#082761";
+    typewriter.deleteAll(0.2);
+    bigTypeWriter.deleteAll(0.2);
     typewriter.typeString('thanks for trying it out dude').start();
     bigTypeWriter.typeString('goood booii!').start();
   }
@@ -208,16 +213,19 @@ function geoFindMe() {
 
     if(localStorage.radio > 0.8 && radioScan){
         nextB.style.display = "block";
+        info.style.backgroundColor = "#082761";
         radioScan = false;
         gunScan = true;
     }
     else if(localStorage.gun > 0.8 && gunScan){
         nextB.style.display = "block";
+        info.style.backgroundColor = "#082761";
         gunScan = false;
         planeScan = true;
     }
     else if(localStorage.plane > 0.8 && planeScan){
         nextB.style.display = "block";
+        info.style.backgroundColor = "#082761";
         planeScan = false;
         radioScan = true;
     }
