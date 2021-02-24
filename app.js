@@ -138,6 +138,7 @@ nextB.addEventListener('click', () => {
     nextB.style.display = "block";
   }else if(visited==7){
     nextB.style.display = "block";
+    info.style.backgroundColor = "transparent";
     radio.stop();
     cannon.play();
   }else if(visited == 8){
@@ -147,6 +148,7 @@ nextB.addEventListener('click', () => {
     scene.removeChild(scene.lastChild);
     removeAttribute(model);
   }else if(visited == 9){
+    nextB.style.display = "none";
     airplane.stop();
     info.style.backgroundColor = "#082761";
     typewriter.typeString('thanks for trying it out dude').start();
@@ -202,7 +204,7 @@ function geoFindMe() {
     radio.volume(localStorage.radio);
     cannon.volume(localStorage.gun);
     airplane.volume(localStorage.plane);
-    status.innerText = '';
+  
 
     if(localStorage.radio > 0.8 && radioScan){
         nextB.style.display = "block";
@@ -276,7 +278,7 @@ var bigTypeWriter = new Typewriter(bigText, {
   cursor: ''
 });
 
-typewriter.typeString('this is a tutorial')
+typewriter.typeString('This is a small introducition in order for you to start exploring the areas history with the help of augmented reality')
 .start();
-bigTypeWriter.typeString('Welcome!')
+bigTypeWriter.typeString('Lets get you started')
 .start();
