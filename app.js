@@ -204,7 +204,7 @@ function geoFindMe() {
     radio.volume(localStorage.radio);
     cannon.volume(localStorage.gun);
     airplane.volume(localStorage.plane);
-  
+
 
     if(localStorage.radio > 0.8 && radioScan){
         nextB.style.display = "block";
@@ -253,9 +253,7 @@ Number.prototype.toRad = function() {
 function regulateVolume(dist) {
   status.innerText = dist;
   var v;
-  if (dist > 100) {
-    v = 0.1;
-  } else if (dist < 0) {
+  if (dist < 0) {
     v = 1;
   } else {
     v = 1 - (dist / 100);
