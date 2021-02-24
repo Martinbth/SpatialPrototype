@@ -108,7 +108,6 @@ function mission2Completed() {
   start();
 }
 
-
 nextB.addEventListener('click', () => {
   visited++;
   if(visited == 1){
@@ -150,7 +149,7 @@ nextB.addEventListener('click', () => {
   }else if(visited == 9){
     airplane.stop();
     info.style.backgroundColor = "#082761";
-    typewriter.typeString('thanks for trying it out dude).start();
+    typewriter.typeString('thanks for trying it out dude').start();
     bigTypeWriter.typeString('goood booii!').start();
   }
 });
@@ -250,6 +249,7 @@ Number.prototype.toRad = function() {
 }
 
 function regulateVolume(dist) {
+  status.innerText = dist;
   var v;
   if (dist > 100) {
     v = 0.1;
