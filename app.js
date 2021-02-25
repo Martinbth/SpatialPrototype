@@ -209,7 +209,7 @@ function geoFindMe() {
     radio.volume(localStorage.radio);
     cannon.volume(localStorage.gun);
     airplane.volume(localStorage.plane);
-
+    status.textContent = '';
 
     if(localStorage.radio > 0.8 && radioScan){
         nextB.style.display = "block";
