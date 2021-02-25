@@ -46,7 +46,7 @@ var models = [
   },
   {
     url: './assets/gun/scene.gltf',
-    scale: '0.15 0.15 0.15',
+    scale: '0.11 0.11 0.11',
     info: 'Good Job!',
     rotation: '0 0 0',
   },
@@ -99,7 +99,7 @@ function render() {
     }
     //gun
     else if (nrOfClicks == 5){
-      if(localStorage.gun > 0.6 && modelNr == 1){
+      if(localStorage.gun > 0.4 && modelNr == 1){
         try{
           setModel(models[3],model,latitude4,longitude4);
         }
@@ -117,7 +117,7 @@ function render() {
         }
         finally{
           scene.appendChild(model);
-          modelNr = 0;
+          modelNr++;
         }
       }
     }

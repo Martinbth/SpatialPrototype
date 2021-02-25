@@ -45,7 +45,7 @@ const nextB = document.getElementById("nextB");
 const info = document.getElementById("info");
 const status = document.getElementById("status");
 nextB.style.display = "block";
-nextB.innerText = 'Lets begin:)';
+nextB.innerText = 'Start';
 
 function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
@@ -88,23 +88,23 @@ function mission1Completed() {
   typewriter.typeString('')
   .start();
   bigTypeWriter.deleteAll(0.2);
-  bigTypeWriter.typeString('Good Job!')
+  bigTypeWriter.typeString('You found it!')
   .start();
-  typewriter.typeString('')
+  typewriter.typeString('The camera works like a lense between the real world and digital.')
   start();
 }
 
 function mission2Completed() {
-  nextB.innerText = 'lets go';
+  nextB.innerText = 'Next';
   changeImage("img/invisible.png");
   nextB.style.display = "block";
   typewriter.deleteAll(0.2);
   typewriter.typeString('')
   .start();
   bigTypeWriter.deleteAll(0.2);
-  bigTypeWriter.typeString('Quack!')
+  bigTypeWriter.typeString('Woff!')
   .start();
-  typewriter.typeString('You can navigate to objects by follow their sound')
+  typewriter.typeString('You navigate to objects by following their sound')
   start();
 }
 
@@ -118,29 +118,31 @@ nextB.addEventListener('click', () => {
   changeImage("img/soundDone.png");
   typewriter.deleteAll(0.2);
   bigTypeWriter.deleteAll(0.2);
-  typewriter.typeString('Move your phone to the direction that the sound is coming from.').start();
+  typewriter.typeString('Move your phone to the direction that the sound is coming from').start();
   bigTypeWriter.typeString('Sound').start();
 }else if(visited == 5){
     dog.stop();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
     typewriter.typeString('You can now explore the area on your own').start();
-    bigTypeWriter.typeString('Done').start();
-    nextB.innerText = 'Done';
+    bigTypeWriter.typeString('Done!').start();
+    nextB.innerText = 'Explore';
   }else if(visited == 6){
     radio.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
-    // typewriter.typeString('').start();
-    // bigTypeWriter.typeString('').start();
+    typewriter.typeString('').start();
+    bigTypeWriter.typeString('').start();
     info.style.backgroundColor = "transparent";
-    nextB.innerText = 'New poi';
+    nextB.innerText = 'Next object';
     nextB.style.display = "none";
   }else if(visited==7){
     radio.stop();
     cannon.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
+    typewriter.typeString('').start();
+    bigTypeWriter.typeString('').start();
     nextB.style.display = "none";
     info.style.backgroundColor = "transparent";
   }else if(visited == 8){
@@ -214,18 +216,24 @@ function geoFindMe() {
     if(localStorage.radio > 0.8 && radioScan){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
+        typewriter.typeString('info on radio').start();
+        bigTypeWriter.typeString('radio').start();
         radioScan = false;
         gunScan = true;
     }
     else if(localStorage.gun > 0.8 && gunScan){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
+        typewriter.typeString('info on gun').start();
+        bigTypeWriter.typeString('gun').start();
         gunScan = false;
         planeScan = true;
     }
     else if(localStorage.plane > 0.8 && planeScan){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
+        typewriter.typeString('info on plane').start();
+        bigTypeWriter.typeString('plane').start();
         planeScan = false;
         radioScan = true;
     }
@@ -284,7 +292,7 @@ var bigTypeWriter = new Typewriter(bigText, {
   cursor: ''
 });
 
-typewriter.typeString('This is a small introducition in order for you to start exploring the areas history with the help of augmented reality')
+typewriter.typeString('Lets get you started into exploring the world of augmented reality')
 .start();
-bigTypeWriter.typeString('Lets get you started')
+bigTypeWriter.typeString('Hello!')
 .start();
