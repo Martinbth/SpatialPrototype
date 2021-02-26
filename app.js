@@ -120,7 +120,7 @@ nextB.addEventListener('click', () => {
   typewriter.deleteAll(0.2);
   bigTypeWriter.deleteAll(0.2);
   typewriter.typeString('Move your camera in the direction from where the sound is coming from').start();
-  bigTypeWriter.typeString('Did you hear somthing?').start();
+  bigTypeWriter.typeString('Can you hear it?').start();
 }else if(visited == 5){
     dog.stop();
     typewriter.deleteAll(0.2);
@@ -219,7 +219,7 @@ function geoFindMe() {
     if(localStorage.radio > 0.8 && radioScan){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
-        typewriter.typeString('VHF receiver used in armored vehicles for communications with aircrafs during WWII').start();
+        typewriter.typeString('Radio receiver used in armored vehicles for communications with aircrafs during WWII').start();
         bigTypeWriter.typeString('Ukw.E.d1').start();
         radioScan = false;
         gunScan = true;

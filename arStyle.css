@@ -23,7 +23,7 @@
   /* background: rgba(1, 1, 1, 1); */
   background:#082761;
   color:#E8F0C5;
-  font-size: 1.3em;
+  font-size: 1.25em;
   z-index: 1;
   font-weight: 200;
 }
@@ -35,7 +35,7 @@ width:88%;
 h1{
   font-size: 1.8em;
   margin:inherit;
-  line-height: 2em;
+
 
 }
 
@@ -95,14 +95,14 @@ justify-content: center;
 .instructions {
     position: fixed;
     top: 5%;
-    font-size: 1.25em;
+    font-size: 1.1em;
     color: white;
     z-index: 999999;
 }
 .position {
     position: fixed;
     top: 10%;
-    font-size: 1.25em;
+    font-size: 1.1em;
     color: white;
     z-index: 999999;
 }
