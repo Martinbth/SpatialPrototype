@@ -227,7 +227,7 @@ function geoFindMe() {
     else if(localStorage.gun > 0.8 && gunScan){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
-        typewriter.typeString('Swedish modified anti-aircraft machine gun based on the wildy used M1919 Browning during WWII'').start();
+        typewriter.typeString('Swedish modified anti-aircraft machine gun based on the wildy used M1919 Browning during WWII').start();
         bigTypeWriter.typeString('Ksp m/42').start();
         gunScan = false;
         planeScan = true;
