@@ -75,27 +75,28 @@ function mission1() {
   typewriter.typeString('')
   .start();
   bigTypeWriter.deleteAll(0.2);
-  bigTypeWriter.typeString('Rotate')
+  bigTypeWriter.typeString('Find the ballon')
   .start();
-  typewriter.typeString('Move the camera to find the balloon.')
+  typewriter.typeString('Rotate the camera to find the balloon.')
   start();
 }
 
 function mission1Completed() {
   changeImage("img/invisible.png");
   nextB.style.display = "block";
+  nextB.innerText = 'Next';
   typewriter.deleteAll(0.2);
   typewriter.typeString('')
   .start();
   bigTypeWriter.deleteAll(0.2);
   bigTypeWriter.typeString('You found it!')
   .start();
-  typewriter.typeString('The camera works like a lense between the real world and digital.')
+  typewriter.typeString('The camera works like a lense between the real world and present.')
   start();
 }
 
 function mission2Completed() {
-  nextB.innerText = 'Next';
+  nextB.innerText = 'Got it';
   changeImage("img/invisible.png");
   nextB.style.display = "block";
   typewriter.deleteAll(0.2);
@@ -118,15 +119,15 @@ nextB.addEventListener('click', () => {
   changeImage("img/soundDone.png");
   typewriter.deleteAll(0.2);
   bigTypeWriter.deleteAll(0.2);
-  typewriter.typeString('Move your phone to the direction that the sound is coming from').start();
-  bigTypeWriter.typeString('Sound').start();
+  typewriter.typeString('Move your camera in the direction from where the sound is coming from').start();
+  bigTypeWriter.typeString('Did you hear somthing?').start();
 }else if(visited == 5){
     dog.stop();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
-    typewriter.typeString('You can now explore the area on your own').start();
-    bigTypeWriter.typeString('Done!').start();
-    nextB.innerText = 'Explore';
+    typewriter.typeString('You can now explore your surrounding on your own').start();
+    bigTypeWriter.typeString('Done').start();
+    nextB.innerText = 'Start explore';
   }else if(visited == 6){
     radio.play();
     typewriter.deleteAll(0.2);
@@ -150,6 +151,8 @@ nextB.addEventListener('click', () => {
     airplane.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
+    typewriter.typeString('').start();
+    bigTypeWriter.typeString('').start();
     nextB.style.display = "none";
     info.style.backgroundColor = "transparent";
   }else if(visited == 9){
@@ -216,24 +219,24 @@ function geoFindMe() {
     if(localStorage.radio > 0.8 && radioScan){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
-        typewriter.typeString('info on radio').start();
-        bigTypeWriter.typeString('radio').start();
+        typewriter.typeString('VHF receiver used in armored vehicles for communications with aircrafs during WWII').start();
+        bigTypeWriter.typeString('Ukw.E.d1').start();
         radioScan = false;
         gunScan = true;
     }
     else if(localStorage.gun > 0.8 && gunScan){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
-        typewriter.typeString('info on gun').start();
-        bigTypeWriter.typeString('gun').start();
+        typewriter.typeString('Swedish modified anti-aircraft machine gun based on the wildy used M1919 Browning during WWII'').start();
+        bigTypeWriter.typeString('Ksp m/42').start();
         gunScan = false;
         planeScan = true;
     }
     else if(localStorage.plane > 0.8 && planeScan){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
-        typewriter.typeString('info on plane').start();
-        bigTypeWriter.typeString('plane').start();
+        typewriter.typeString('Swedish single-engine fighter aircraft developed for the Swedish Air Force during WWII').start();
+        bigTypeWriter.typeString('FFVS J 22').start();
         planeScan = false;
         radioScan = true;
     }
@@ -269,9 +272,9 @@ Number.prototype.toRad = function() {
 function regulateVolume(dist) {
   // status.innerText = dist;
   var v;
-  if (dist < 0) {
-    v = 1;
-  } else {
+  if(dist > 90){
+    v = 0.1
+  }else{
     v = 1 - (dist / 100);
   }
   return v;
@@ -294,5 +297,5 @@ var bigTypeWriter = new Typewriter(bigText, {
 
 typewriter.typeString('Lets get you started into exploring the world of augmented reality')
 .start();
-bigTypeWriter.typeString('Hello!')
+bigTypeWriter.typeString('Hi!')
 .start();

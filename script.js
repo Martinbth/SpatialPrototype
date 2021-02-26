@@ -99,7 +99,7 @@ function render() {
     }
     //gun
     else if (nrOfClicks == 5){
-      if(localStorage.gun > 0.4 && modelNr == 1){
+      if(modelNr == 1){
         try{
           setModel(models[3],model,latitude4,longitude4);
         }
