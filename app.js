@@ -161,8 +161,8 @@ nextB.addEventListener('click', () => {
     info.style.backgroundColor = "#082761";
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
-    typewriter.typeString('thanks for trying it out dude').start();
-    bigTypeWriter.typeString('goood booii!').start();
+    typewriter.typeString('Thanks for participating in this small tour, you can now give the pgone to martin.').start();
+    bigTypeWriter.typeString('Completed').start();
   }
 });
 
