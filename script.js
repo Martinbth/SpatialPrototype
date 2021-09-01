@@ -6,20 +6,20 @@ window.onload = () => {
 };
 
 //Balloon
-let latitude1 = 59.574378;
-let longitude1 = 17.840573;
+let latitude1 = 59.304307;
+let longitude1 = 18.108125;
 //dog
-let latitude2 = 59.574514;
-let longitude2 = 17.840085;
+let latitude2 = 59.304432;
+let longitude2 = 18.108093;
 //radio
-let latitude3 = 59.574970;
-let longitude3 = 17.841451;
+let latitude3 = 59.304311;
+let longitude3 = 18.108947;
 //gun
-let latitude4 = 59.573698;
-let longitude4 = 17.841516;
+let latitude4 = 59.304021;
+let longitude4 = 18.108840;
 //plane
-let latitude5 = 59.573300;
-let longitude5 = 17.839512;
+let latitude5 = 59.304158;
+let longitude5 = 18.107928;
 let nrOfClicks = 0;
 let modelNr = 0;
 const info = document.getElementById("statusScript");

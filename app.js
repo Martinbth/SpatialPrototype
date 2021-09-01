@@ -188,14 +188,14 @@ function geoFindMe() {
   var cannon2V;
   var planeV;
   //radio
-  let latitude3 = 59.574970;
-  let longitude3 = 17.841451;
+  let latitude3 = 59.304311;
+  let longitude3 = 18.108947;
   //gun
-  let latitude4 = 59.573698;
-  let longitude4 = 17.841516;
+  let latitude4 = 59.304021;
+  let longitude4 = 18.108840;
   //plane
-  let latitude5 = 59.573300;
-  let longitude5 = 17.839512;
+  let latitude5 = 59.304158;
+  let longitude5 = 18.107928;
 
   var radioScan = true;
   var gunScan = false;
