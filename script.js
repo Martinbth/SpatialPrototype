@@ -9,17 +9,17 @@ window.onload = () => {
 let latitude1 = 59.304307;
 let longitude1 = 18.108125;
 //dog
-let latitude2 = 59.304432;
-let longitude2 = 18.108093;
+let latitude2 = 59.304635;
+let longitude2 = 18.107562;
 //radio
-let latitude3 = 59.304311;
-let longitude3 = 18.108947;
+let latitude3 = 59.304462;
+let longitude3 = 18.109537;
 //gun
-let latitude4 = 59.304021;
-let longitude4 = 18.108840;
+let latitude4 = 59.303394;
+let longitude4 = 18.108903;
 //plane
-let latitude5 = 59.304158;
-let longitude5 = 18.107928;
+let latitude5 = 59.303660;
+let longitude5 = 18.106692;
 let nrOfClicks = 0;
 let modelNr = 0;
 const info = document.getElementById("statusScript");
