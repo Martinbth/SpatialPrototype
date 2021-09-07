@@ -133,7 +133,7 @@ nextB.addEventListener('click', () => {
     radio.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
-    typewriter.typeString('').start();
+    typewriter.typeString('Follow the sound').start();
     bigTypeWriter.typeString('').start();
     info.style.backgroundColor = "transparent";
     nextB.innerText = 'Next object';
@@ -217,7 +217,7 @@ function geoFindMe() {
     airplane.volume(localStorage.plane);
     status.textContent = '';
 
-    if(localStorage.radio > 0.4 && radioScan){
+    if(localStorage.radio > 0.9 && radioScan){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
         typewriter.typeString('Radio receiver used in armored vehicles for communications with aircrafs during WWII').start();
@@ -225,7 +225,7 @@ function geoFindMe() {
         radioScan = false;
         gunScan = true;
     }
-    else if(localStorage.gun > 0.4 && gunScan){
+    else if(localStorage.gun > 0.9 && gunScan){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
         typewriter.typeString('Swedish modified anti-aircraft machine gun based on the wildy used M1919 Browning during WWII').start();
@@ -233,7 +233,7 @@ function geoFindMe() {
         gunScan = false;
         planeScan = true;
     }
-    else if(localStorage.plane > 0.4 && planeScan){
+    else if(localStorage.plane > 0.9 && planeScan){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
         typewriter.typeString('Swedish single-engine fighter aircraft developed for the Swedish Air Force during WWII').start();

@@ -87,7 +87,7 @@ function render() {
 
   setInterval(function() {
     if (nrOfClicks == 4){
-      if(localStorage.radio > 0.6 && modelNr == 0){
+      if(localStorage.radio > 0.7 && modelNr == 0){
         try{
           setModel(models[2],model,latitude3,longitude3);
         }
@@ -99,7 +99,7 @@ function render() {
     }
     //gun
     else if (nrOfClicks == 5){
-      if(localStorage.radio > 0.3 && modelNr == 1){
+      if(localStorage.radio > 0.7 && modelNr == 1){
         try{
           setModel(models[3],model,latitude4,longitude4);
         }
@@ -111,7 +111,7 @@ function render() {
     }
     //plane
     else if (nrOfClicks == 6){
-      if(localStorage.plane > 0.6 && modelNr == 2){
+      if(localStorage.plane > 0.7 && modelNr == 2){
         try{
           setModel(models[4],model,latitude5,longitude5);
         }
