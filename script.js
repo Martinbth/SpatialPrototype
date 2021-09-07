@@ -121,7 +121,7 @@ function render() {
         }
       }
     }
-  }, 5000);
+  }, 10000);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     nrOfClicks++;

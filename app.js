@@ -16,7 +16,7 @@ var radio = new Howl({
   src: ['./sounds/radioMorse.mp3'],
   loop: true,
   autoplay: false,
-  // html5: true,
+  html5: true,
   volume: 1,
 });
 
@@ -24,6 +24,7 @@ var cannon = new Howl({
   src: ['./sounds/gun.mp3'],
   loop: true,
   autoplay: false,
+  html5: true,
   volume: 1,
 });
 
@@ -31,6 +32,7 @@ var airplane = new Howl({
   src: ['./sounds/plane.mp3'],
   loop: true,
   autoplay: false,
+  html5: true,
   volume: 1,
 });
 
@@ -200,45 +202,52 @@ var planeScan = false;
 var visiting = 1;
 
 function geoFindMe() {
-
-
   function success(position) {
     userLat = position.coords.latitude;
     userLong = position.coords.longitude;
-    radioDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
-    cannon2Distance = calculateDistance(latitude4, longitude4, userLat, userLong);
-    planeDistance = calculateDistance(latitude5, longitude5, userLat, userLong);
-    localStorage.radio = regulateVolume(radioDistance);
-    localStorage.gun = regulateVolume(cannon2Distance);
-    localStorage.plane = regulateVolume(planeDistance);
-    radio.volume(localStorage.radio);
-    cannon.volume(localStorage.gun);
-    airplane.volume(localStorage.plane);
     status.textContent = '';
 
-    if(localStorage.radio > 0.9 && radioScan){
-        nextB.style.display = "block";
-        info.style.backgroundColor = "#082761";
-        typewriter.typeString('Radio receiver used in armored vehicles for communications with aircrafs during WWII').start();
-        bigTypeWriter.typeString('Ukw.E.d1').start();
-        radioScan = false;
-        gunScan = true;
+    if(radioScan){
+      radioDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
+      localStorage.radio = regulateVolume(radioDistance);
+      radio.volume(localStorage.radio);
+
+      if(localStorage.radio > 0.9){
+          nextB.style.display = "block";
+          info.style.backgroundColor = "#082761";
+          typewriter.typeString('Radio receiver used in armored vehicles for communications with aircrafs during WWII').start();
+          bigTypeWriter.typeString('Ukw.E.d1').start();
+          radioScan = false;
+          gunScan = true;
+      }
     }
-    else if(localStorage.gun > 0.9 && gunScan){
+    else if(gunScan){
+      cannon2Distance = calculateDistance(latitude4, longitude4, userLat, userLong);
+      localStorage.gun = regulateVolume(cannon2Distance);
+      cannon.volume(localStorage.gun);
+
+      if(localStorage.gun > 0.9){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
         typewriter.typeString('Swedish modified anti-aircraft machine gun based on the wildy used M1919 Browning during WWII').start();
         bigTypeWriter.typeString('Ksp m/42').start();
         gunScan = false;
         planeScan = true;
+      }
     }
-    else if(localStorage.plane > 0.9 && planeScan){
+    else if(planeScan){
+      planeDistance = calculateDistance(latitude5, longitude5, userLat, userLong);
+      localStorage.plane = regulateVolume(planeDistance);
+      airplane.volume(localStorage.plane);
+
+      if(localStorage.plane > 0.9){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
         typewriter.typeString('Swedish single-engine fighter aircraft developed for the Swedish Air Force during WWII').start();
         bigTypeWriter.typeString('FFVS J 22').start();
         planeScan = false;
         radioScan = true;
+      }
     }
   }
 
