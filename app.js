@@ -37,7 +37,7 @@ var airplane = new Howl({
 // ++ -+
 // +- --
 dog.pos(45, 0, 45);
-radio.pos(-30, 0, 30);
+radio.pos(-20, 0, 30);
 cannon.pos(5, 0, -40);
 airplane.pos(40, 20, -5);
 
@@ -143,7 +143,7 @@ nextB.addEventListener('click', () => {
     cannon.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
-    typewriter.typeString('').start();
+    typewriter.typeString('Follow the sound').start();
     bigTypeWriter.typeString('').start();
     nextB.style.display = "none";
     info.style.backgroundColor = "transparent";
@@ -152,7 +152,7 @@ nextB.addEventListener('click', () => {
     airplane.play();
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
-    typewriter.typeString('').start();
+    typewriter.typeString('Follow the sound').start();
     bigTypeWriter.typeString('').start();
     nextB.style.display = "none";
     info.style.backgroundColor = "transparent";
@@ -162,7 +162,7 @@ nextB.addEventListener('click', () => {
     info.style.backgroundColor = "#082761";
     typewriter.deleteAll(0.2);
     bigTypeWriter.deleteAll(0.2);
-    typewriter.typeString('Thanks for participating in this small tour, you can now give the pgone to martin.').start();
+    typewriter.typeString('Thanks for participating in this small tour, you can now give the phone to martin.').start();
     bigTypeWriter.typeString('Completed').start();
   }
 });
