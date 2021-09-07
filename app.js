@@ -24,7 +24,6 @@ var cannon = new Howl({
   src: ['./sounds/gun.mp3'],
   loop: true,
   autoplay: false,
-    // html5: true,
   volume: 1,
 });
 
@@ -34,12 +33,6 @@ var airplane = new Howl({
   autoplay: false,
   volume: 1,
 });
-// ++ -+
-// +- --
-dog.pos(45, 0, 45);
-radio.pos(-20, 0, 30);
-cannon.pos(5, 0, -40);
-airplane.pos(40, 20, -5);
 
 var visited = 0;
 const nextB = document.getElementById("nextB");
@@ -47,6 +40,13 @@ const info = document.getElementById("info");
 const status = document.getElementById("status");
 nextB.style.display = "block";
 nextB.innerText = 'Start';
+
+// ++ -+
+// +- --
+dog.pos(45, 0, 45);
+radio.pos(-80, 0, 30);
+cannon.pos(5, 0, -40);
+airplane.pos(40, 20, -5);
 
 function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
@@ -92,8 +92,7 @@ function mission1Completed() {
   bigTypeWriter.deleteAll(0.2);
   bigTypeWriter.typeString('You found it!')
   .start();
-  typewriter.typeString('The camera works like a lense between the real world and present.')
-  start();
+  typewriter.typeString('The camera works like a lense between the real world and present.').start();
 }
 
 function mission2Completed() {
@@ -106,8 +105,7 @@ function mission2Completed() {
   bigTypeWriter.deleteAll(0.2);
   bigTypeWriter.typeString('Woff!')
   .start();
-  typewriter.typeString('You navigate to objects by following their sound')
-  start();
+  typewriter.typeString('You navigate to objects by following their sound').start();
 }
 
 nextB.addEventListener('click', () => {
@@ -180,28 +178,29 @@ function degreesToRadians(degrees) {
 // Geolocation / distance
 window.addEventListener('DOMContentLoaded', geoFindMe);
 
+var userLat;
+var userLong;
+var cannon2Distance;
+var planeDistance;
+var cannon2V;
+var planeV;
+//radio
+let latitude3 = 59.304462;
+let longitude3 = 18.109537;
+//gun
+let latitude4 = 59.303394;
+let longitude4 = 18.108903;
+//plane
+let latitude5 = 59.303660;
+let longitude5 = 18.106692;
+
+var radioScan = true;
+var gunScan = false;
+var planeScan = false;
+var visiting = 1;
 
 function geoFindMe() {
-  var userLat;
-  var userLong;
-  var cannon2Distance;
-  var planeDistance;
-  var cannon2V;
-  var planeV;
-  //radio
-  let latitude3 = 59.304462;
-  let longitude3 = 18.109537;
-  //gun
-  let latitude4 = 59.303394;
-  let longitude4 = 18.108903;
-  //plane
-  let latitude5 = 59.303660;
-  let longitude5 = 18.106692;
 
-  var radioScan = true;
-  var gunScan = false;
-  var planeScan = false;
-  var visiting = 1;
 
   function success(position) {
     userLat = position.coords.latitude;
