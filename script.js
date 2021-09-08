@@ -1,5 +1,5 @@
 
-import localStorage from './app.js';
+import * as app from './app.js';
 window.onload = () => {
   const button = document.querySelector('button[data-action="change"]');
   render();
@@ -66,7 +66,7 @@ function removeAttribute(entity){
 }
 
 var setModel = function (model,entity,lat,long) {
-    entity.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude:' + long + ';');
+    entity.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude:' + long + ';'); 
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
