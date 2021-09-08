@@ -77,8 +77,7 @@ function mission1() {
   bigTypeWriter.deleteAll(0.2);
   bigTypeWriter.typeString('Find the ballon')
   .start();
-  typewriter.typeString('Rotate the camera to find the balloon.')
-  start();
+  typewriter.typeString('Rotate the camera to find the balloon.').start();
 }
 
 function mission1Completed() {
