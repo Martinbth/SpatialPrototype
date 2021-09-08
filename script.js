@@ -1,7 +1,10 @@
-
-import * as app from './app.js';
+import localStorage from './app.js';
 window.onload = () => {
   const button = document.querySelector('button[data-action="change"]');
+  const scene = document.querySelector('a-scene');
+  const info = document.getElementById("statusScript");
+  var model = document.createElement('a-entity');
+
   render();
 };
 
@@ -20,10 +23,14 @@ let longitude4 = 18.108903;
 //plane
 let latitude5 = 59.303660;
 let longitude5 = 18.106692;
+
 let nrOfClicks = 0;
 let modelNr = 0;
-const info = document.getElementById("statusScript");
 var modelIndex = 0;
+
+var debugcount=0;
+
+
 
 var models = [
   {
@@ -65,7 +72,7 @@ function removeAttribute(entity){
 }
 
 var setModel = function (model,entity,lat,long) {
-    entity.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude:' + long + ';');  //Unsure
+    entity.setAttribute('gps-entity-place', 'latitude:' + lat + '; longitude:' + long + ';');
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
@@ -81,10 +88,8 @@ var setModel = function (model,entity,lat,long) {
 
 
 function render() {
-  //balloon
-  const scene = document.querySelector('a-scene');
-  var model = document.createElement('a-entity');
-
+  debugcount++;
+  status.textContent = debugcount;
   setInterval(function() {
     if (nrOfClicks == 4){
       if(localStorage.radio > 0.75 && modelNr == 0){
@@ -121,7 +126,7 @@ function render() {
         }
       }
     }
-  }, 10000);
+  }, 1000);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     nrOfClicks++;
