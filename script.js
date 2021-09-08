@@ -1,10 +1,7 @@
+
 import localStorage from './app.js';
 window.onload = () => {
   const button = document.querySelector('button[data-action="change"]');
-  const scene = document.querySelector('a-scene');
-  const info = document.getElementById("statusScript");
-  var model = document.createElement('a-entity');
-
   render();
 };
 
@@ -23,14 +20,11 @@ let longitude4 = 18.108903;
 //plane
 let latitude5 = 59.303660;
 let longitude5 = 18.106692;
-
 let nrOfClicks = 0;
 let modelNr = 0;
 var modelIndex = 0;
 
-var debugcount=0;
-
-
+const info = document.getElementById("statusScript");
 
 var models = [
   {
@@ -88,8 +82,10 @@ var setModel = function (model,entity,lat,long) {
 
 
 function render() {
-  debugcount++;
-  status.textContent = debugcount;
+  //balloon
+  const scene = document.querySelector('a-scene');
+  var model = document.createElement('a-entity');
+
   setInterval(function() {
     if (nrOfClicks == 4){
       if(localStorage.radio > 0.75 && modelNr == 0){
@@ -126,7 +122,7 @@ function render() {
         }
       }
     }
-  }, 1000);
+  }, 10000);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     nrOfClicks++;
