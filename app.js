@@ -196,13 +196,14 @@ var radioScan = true;
 var gunScan = false;
 var planeScan = false;
 var visiting = 1;
+var countNR = 0;
 
 function geoFindMe() {
   function success(position) {
     userLat = position.coords.latitude;
     userLong = position.coords.longitude;
-    // status.textContent = '';
-      status.textContent = '' + ;
+    countNR++;
+    status.textContent = countNR;
     if(radioScan){
       radioDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
       localStorage.radio = regulateVolume(radioDistance);
