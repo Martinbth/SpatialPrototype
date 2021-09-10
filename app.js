@@ -51,7 +51,7 @@ function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
   var y = degreesToRadians(event.gamma);
   var z = degreesToRadians(event.alpha);
-  Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
+  // Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
   if (visited == 1) {
     if (event.alpha > 170 && event.alpha < 250) {
       visited++;
@@ -176,8 +176,7 @@ function degreesToRadians(degrees) {
 // Geolocation / distance
 window.addEventListener('DOMContentLoaded', geoFindMe);
 
-var userLat;
-var userLong;
+
 var cannon2Distance;
 var planeDistance;
 var cannon2V;
@@ -204,11 +203,11 @@ function geoFindMe() {
     userLong = position.coords.longitude;
     countNR++;
     status.textContent = countNR;
+
     if(radioScan){
-      radioDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
+      radioDistance = calculateDistance(latitude3, longitude3, position.coords.latitude, position.coords.longitude);
       localStorage.radio = regulateVolume(radioDistance);
       radio.volume(localStorage.radio);
-
       if(localStorage.radio > 0.9){
           nextB.style.display = "block";
           info.style.backgroundColor = "#082761";
@@ -219,7 +218,7 @@ function geoFindMe() {
       }
     }
     else if(gunScan){
-      cannon2Distance = calculateDistance(latitude4, longitude4, userLat, userLong);
+      cannon2Distance = calculateDistance(latitude4, longitude4, position.coords.latitude, position.coords.longitude);
       localStorage.gun = regulateVolume(cannon2Distance);
       cannon.volume(localStorage.gun);
 
@@ -233,7 +232,7 @@ function geoFindMe() {
       }
     }
     else if(planeScan){
-      planeDistance = calculateDistance(latitude5, longitude5, userLat, userLong);
+      planeDistance = calculateDistance(latitude5, longitude5, position.coords.latitude, position.coords.longitude);
       localStorage.plane = regulateVolume(planeDistance);
       airplane.volume(localStorage.plane);
 

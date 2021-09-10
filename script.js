@@ -25,7 +25,7 @@ let nrOfClicks = 0;
 let modelNr = 0;
 var modelIndex = 0;
 
-const bugTxt = document.getElementById("statusScript");
+
 
 
 var models = [
