@@ -201,13 +201,13 @@ function geoFindMe() {
   function success(position) {
     userLat = position.coords.latitude;
     userLong = position.coords.longitude;
-    status.textContent = '';
+    // status.textContent = '';
 
     if(radioScan){
       radioDistance = calculateDistance(latitude3, longitude3, userLat, userLong);
       localStorage.radio = regulateVolume(radioDistance);
       radio.volume(localStorage.radio);
-
+      status.textContent = 'In radioscan';
       if(localStorage.radio > 0.9){
           nextB.style.display = "block";
           info.style.backgroundColor = "#082761";
