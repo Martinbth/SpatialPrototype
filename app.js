@@ -104,9 +104,11 @@ function mission2Completed() {
   bigTypeWriter.typeString('Woff!')
   .start();
   typewriter.typeString('You navigate to objects by following their sound').start();
+
   setInterval(function() {
-  Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
-}5000);
+    Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
+  }, 5000);
+
 }
 
 nextB.addEventListener('click', () => {
