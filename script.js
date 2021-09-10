@@ -2,6 +2,7 @@
 // import * as app from './app.js';
 window.onload = () => {
   const button = document.querySelector('button[data-action="change"]');
+  const scene = document.querySelector('a-scene');
   render();
 };
 
@@ -24,7 +25,8 @@ let nrOfClicks = 0;
 let modelNr = 0;
 var modelIndex = 0;
 
-const info = document.getElementById("statusScript");
+const bugTxt = document.getElementById("statusScript");
+
 
 var models = [
   {
@@ -83,7 +85,7 @@ var setModel = function (model,entity,lat,long) {
 
 function render() {
   //balloon
-  const scene = document.querySelector('a-scene');
+
   var model = document.createElement('a-entity');
 
   setInterval(function() {
@@ -100,8 +102,9 @@ function render() {
     }
     //gun
     else if (nrOfClicks == 5){
-      if(localStorage.radio > 0.75 && modelNr == 1){
+      if(localStorage.gun > 0.75 && modelNr == 1){
         try{
+
           setModel(models[3],model,latitude4,longitude4);
         }
         finally{
@@ -122,7 +125,7 @@ function render() {
         }
       }
     }
-  }, 10000);
+  }, 5000);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     nrOfClicks++;
