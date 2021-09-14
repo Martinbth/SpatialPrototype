@@ -216,8 +216,8 @@ var countNR = 0;
 
 function geoFindMe() {
   function success(position) {
-    userLat = position.coords.latitude;
-    userLong = position.coords.longitude;
+    // userLat = position.coords.latitude;
+    // userLong = position.coords.longitude;
     countNR++;
     status.textContent = countNR;
 

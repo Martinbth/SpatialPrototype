@@ -2,7 +2,7 @@
 // import * as app from './app.js';
 window.onload = () => {
   const button = document.querySelector('button[data-action="change"]');
-  const scene = document.querySelector('a-scene');
+
   render();
 };
 
@@ -103,7 +103,7 @@ var setModel = function (model,entity,lat,long) {
 
 function render() {
   //balloon
-
+  const scene = document.querySelector('a-scene');
   var model = document.createElement('a-entity');
 
   setInterval(function() {
