@@ -6,21 +6,39 @@ window.onload = () => {
   render();
 };
 
+//Hammarby sjöstad
+// //Balloon
+// let latitude1 = 59.304307;
+// let longitude1 = 18.108125;
+// //dog
+// let latitude2 = 59.304635;
+// let longitude2 = 18.107562;
+// //radio
+// let latitude3 = 59.304462;
+// let longitude3 = 18.109537;
+// //gun
+// let latitude4 = 59.303394;
+// let longitude4 = 18.108903;
+// //plane
+// let latitude5 = 59.303660;
+// let longitude5 = 18.106692;
+
+//Stugan
 //Balloon
-let latitude1 = 59.304307;
-let longitude1 = 18.108125;
+let latitude1 = 59.310680;
+let longitude1 = 18.634948;
 //dog
-let latitude2 = 59.304635;
-let longitude2 = 18.107562;
+let latitude2 = 59.310815;
+let longitude2 = 18.634787;
 //radio
-let latitude3 = 59.304462;
-let longitude3 = 18.109537;
+let latitude3 = 59.310809;
+let longitude3 = 18.635398;
 //gun
-let latitude4 = 59.303394;
-let longitude4 = 18.108903;
+let latitude4 = 59.310568;
+let longitude4 = 18.635575;
 //plane
-let latitude5 = 59.303660;
-let longitude5 = 18.106692;
+let latitude5 = 59.310620;
+let longitude5 = 18.634824;
 let nrOfClicks = 0;
 let modelNr = 0;
 var modelIndex = 0;
