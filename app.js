@@ -67,6 +67,10 @@ function handleOrientation(event) {
   }
 }
 
+setInterval(function() {
+  Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
+}, 5000);
+
 function mission1() {
   changeImage("img/rotateDone.png");
   nextB.style.display = "none";
@@ -91,6 +95,7 @@ function mission1Completed() {
   bigTypeWriter.typeString('You found it!')
   .start();
   typewriter.typeString('The camera works like a lense between the real world and present.').start();
+
 }
 
 function mission2Completed() {
@@ -105,9 +110,7 @@ function mission2Completed() {
   .start();
   typewriter.typeString('You navigate to objects by following their sound').start();
 
-  setInterval(function() {
-    Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
-  }, 5000);
+
 
 }
 
