@@ -25,26 +25,23 @@ window.onload = () => {
 
 //Stugan
 //Balloon
-let latitude1 = 59.310628;
-let longitude1 = 18.635000;
+let latitude1 = 59.303213;
+let longitude1 = 18.629632;
 //dog
-let latitude2 = 59.310834;
-let longitude2 = 18.634742;
+let latitude2 = 59.303452;
+let longitude2 = 18.629391;
 //radio
-let latitude3 = 59.310954;
-let longitude3 = 18.636138;
+let latitude3 = 59.302677;
+let longitude3 = 18.629949;
 //gun
-let latitude4 = 59.310483;
-let longitude4 = 18.635442;
+let latitude4 = 59.302255
+let longitude4 = 18.629552;
 //plane
-let latitude5 = 59.310669;
-let longitude5 = 18.634723;
+let latitude5 = 59.302745;
+let longitude5 = 18.629213;
 let nrOfClicks = 0;
 let modelNr = 0;
 var modelIndex = 0;
-
-
-
 
 var models = [
   {
@@ -143,7 +140,7 @@ function render() {
         }
       }
     }
-  }, 5000);
+  }, 2000);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     nrOfClicks++;

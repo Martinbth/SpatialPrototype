@@ -42,10 +42,13 @@ nextB.innerText = 'Start';
 
 // ++ -+
 // +- --
+
+// ++ +-
+// -+ --
 dog.pos(45, 0, 45);
-radio.pos(-80, 0, 30);
-cannon.pos(5, 0, -40);
-airplane.pos(40, 20, -5);
+radio.pos(-30, 0, -80);
+cannon.pos(-30, 0, 80);
+airplane.pos(30, 20, 80);
 
 function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
@@ -199,15 +202,15 @@ var planeV;
 // let longitude5 = 18.106692;
 
 //stugan
-//radio
-let latitude3 = 59.310954;
-let longitude3 = 18.636138;
+///radio
+let latitude3 = 59.302677;
+let longitude3 = 18.629949;
 //gun
-let latitude4 = 59.310483;
-let longitude4 = 18.635442;
+let latitude4 = 59.302255
+let longitude4 = 18.629552;
 //plane
-let latitude5 = 59.310669;
-let longitude5 = 18.634723;
+let latitude5 = 59.302745;
+let longitude5 = 18.629213;
 
 var radioScan = true;
 var gunScan = false;
