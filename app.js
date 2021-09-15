@@ -51,7 +51,7 @@ function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
   var y = degreesToRadians(event.gamma);
   var z = degreesToRadians(event.alpha);
-  // Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
+  Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
   if (visited == 1) {
     if (event.alpha > 170 && event.alpha < 250) {
       visited++;
@@ -67,9 +67,7 @@ function handleOrientation(event) {
   }
 }
 
-setInterval(function() {
-  Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
-}, 5000);
+
 
 function mission1() {
   changeImage("img/rotateDone.png");
@@ -202,14 +200,14 @@ var planeV;
 
 //stugan
 //radio
-let latitude3 = 59.310809;
-let longitude3 = 18.635398;
+let latitude3 = 59.310954;
+let longitude3 = 18.636138;
 //gun
-let latitude4 = 59.310568;
-let longitude4 = 18.635575;
+let latitude4 = 59.310483;
+let longitude4 = 18.635442;
 //plane
-let latitude5 = 59.310620;
-let longitude5 = 18.634824;
+let latitude5 = 59.310669;
+let longitude5 = 18.634723;
 
 var radioScan = true;
 var gunScan = false;

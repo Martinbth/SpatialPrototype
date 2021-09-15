@@ -25,20 +25,20 @@ window.onload = () => {
 
 //Stugan
 //Balloon
-let latitude1 = 59.310680;
-let longitude1 = 18.634948;
+let latitude1 = 59.310628;
+let longitude1 = 18.635000;
 //dog
-let latitude2 = 59.310815;
-let longitude2 = 18.634787;
+let latitude2 = 59.310834;
+let longitude2 = 18.634742;
 //radio
-let latitude3 = 59.310809;
-let longitude3 = 18.635398;
+let latitude3 = 59.310954;
+let longitude3 = 18.636138;
 //gun
-let latitude4 = 59.310568;
-let longitude4 = 18.635575;
+let latitude4 = 59.310483;
+let longitude4 = 18.635442;
 //plane
-let latitude5 = 59.310620;
-let longitude5 = 18.634824;
+let latitude5 = 59.310669;
+let longitude5 = 18.634723;
 let nrOfClicks = 0;
 let modelNr = 0;
 var modelIndex = 0;
