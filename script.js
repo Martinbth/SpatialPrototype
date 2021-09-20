@@ -2,43 +2,42 @@
 // import * as app from './app.js';
 window.onload = () => {
   const button = document.querySelector('button[data-action="change"]');
-
   render();
 };
 
 //Hammarby sjöstad
-// //Balloon
-// let latitude1 = 59.304307;
-// let longitude1 = 18.108125;
-// //dog
-// let latitude2 = 59.304635;
-// let longitude2 = 18.107562;
-// //radio
-// let latitude3 = 59.304462;
-// let longitude3 = 18.109537;
-// //gun
-// let latitude4 = 59.303394;
-// let longitude4 = 18.108903;
-// //plane
-// let latitude5 = 59.303660;
-// let longitude5 = 18.106692;
+//Balloon
+let latitude1 = 59.304307;
+let longitude1 = 18.108125;
+//dog
+let latitude2 = 59.304635;
+let longitude2 = 18.107562;
+//radio
+let latitude3 = 59.304462;
+let longitude3 = 18.109537;
+//gun
+let latitude4 = 59.303394;
+let longitude4 = 18.108903;
+//plane
+let latitude5 = 59.303660;
+let longitude5 = 18.106692;
 
 //Stugan
-//Balloon
-let latitude1 = 59.310595;
-let longitude1 = 18.634996;
-//dog
-let latitude2 = 59.310861;
-let longitude2 = 18.634588;
-//radio
-let latitude3 = 59.310700;
-let longitude3 = 18.635742;
-//gun
-let latitude4 = 59.310511;
-let longitude4 = 18.635495;
-//plane
-let latitude5 = 59.310634;
-let longitude5 = 18.634846;
+// //Balloon
+// let latitude1 = 59.310595;
+// let longitude1 = 18.634996;
+// //dog
+// let latitude2 = 59.310861;
+// let longitude2 = 18.634588;
+// //radio
+// let latitude3 = 59.310700;
+// let longitude3 = 18.635742;
+// //gun
+// let latitude4 = 59.310511;
+// let longitude4 = 18.635495;
+// //plane
+// let latitude5 = 59.310634;
+// let longitude5 = 18.634846;
 
 let nrOfClicks = 0;
 let modelNr = 0;
@@ -120,7 +119,6 @@ function render() {
     else if (nrOfClicks == 5){
       if(localStorage.gun > 0.75 && modelNr == 1){
         try{
-
           setModel(models[3],model,latitude4,longitude4);
         }
         finally{

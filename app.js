@@ -44,15 +44,15 @@ nextB.innerText = 'Start';
 // +- --
 
 dog.pos(45, 0, 45);
-radio.pos(-30, 0, -80);
-cannon.pos(5, 0, -40);
+radio.pos(-30, 0, 80);
+cannon.pos(-5, 0, -40);
 airplane.pos(40, 20, -5);
 
 function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
   var y = degreesToRadians(event.gamma);
   var z = degreesToRadians(event.alpha);
-  Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
+  //Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
   if (visited == 1) {
     if (event.alpha > 170 && event.alpha < 250) {
       visited++;
@@ -189,26 +189,26 @@ var planeDistance;
 var cannon2V;
 var planeV;
 //sickla kanalgata
-// //radio
-// let latitude3 = 59.304462;
-// let longitude3 = 18.109537;
-// //gun
-// let latitude4 = 59.303394;
-// let longitude4 = 18.108903;
-// //plane
-// let latitude5 = 59.303660;
-// let longitude5 = 18.106692;
+//radio
+let latitude3 = 59.304462;
+let longitude3 = 18.109537;
+//gun
+let latitude4 = 59.303394;
+let longitude4 = 18.108903;
+//plane
+let latitude5 = 59.303660;
+let longitude5 = 18.106692;
 
 //stugan
 //radio
-let latitude3 = 59.310700;
-let longitude3 = 18.635742;
-//gun
-let latitude4 = 59.310511;
-let longitude4 = 18.635495;
-//plane
-let latitude5 = 59.310634;
-let longitude5 = 18.634846;
+// let latitude3 = 59.310700;
+// let longitude3 = 18.635742;
+// //gun
+// let latitude4 = 59.310511;
+// let longitude4 = 18.635495;
+// //plane
+// let latitude5 = 59.310634;
+// let longitude5 = 18.634846;
 
 var radioScan = true;
 var gunScan = false;
@@ -220,8 +220,7 @@ function geoFindMe() {
   function success(position) {
     // userLat = position.coords.latitude;
     // userLong = position.coords.longitude;
-    countNR++;
-    status.textContent = countNR;
+
 
     if(radioScan){
       radioDistance = calculateDistance(latitude3, longitude3, position.coords.latitude, position.coords.longitude);
@@ -237,10 +236,13 @@ function geoFindMe() {
       }
     }
     else if(gunScan){
+      countNR++;
+      status.textContent = countNR;
       cannon2Distance = calculateDistance(latitude4, longitude4, position.coords.latitude, position.coords.longitude);
       localStorage.gun = regulateVolume(cannon2Distance);
       cannon.volume(localStorage.gun);
-
+      countNR++;
+      status.textContent = 'in gun scan' + countNR 'times';
       if(localStorage.gun > 0.9){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
