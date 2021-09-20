@@ -102,8 +102,7 @@ function render() {
   //balloon
   const scene = document.querySelector('a-scene');
   var model = document.createElement('a-entity');
-  bugNr++;
-  status2.innerText = 'render:' + bugNr;
+
   setInterval(function() {
     if (nrOfClicks == 4){
       if(localStorage.radio > 0.75 && modelNr == 0){
