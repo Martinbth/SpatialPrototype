@@ -42,7 +42,7 @@ let longitude5 = 18.107465;
 let nrOfClicks = 0;
 let modelNr = 0;
 var modelIndex = 0;
-
+var bugNr = 0;
 var models = [
   {
     url: './assets/balloon/scene.gltf',
@@ -107,6 +107,8 @@ function render() {
     if (nrOfClicks == 4){
       if(localStorage.radio > 0.75 && modelNr == 0){
         try{
+          bugNr++;
+          status2.textContent = 'try setmodel radio' + bugNr+ 'times';
           setModel(models[2],model,latitude3,longitude3);
         }
         finally{
@@ -145,14 +147,11 @@ function render() {
     nrOfClicks++;
     if (nrOfClicks == 1){
       try{
-
-
         setModel(models[0],model,latitude1,longitude1);
       }
       finally{
         setTimeout(() => {
           scene.appendChild(model);
-          status2.textContent = 'scene  balloon';
         }, 3000);
       }
     }else if(nrOfClicks == 2){
