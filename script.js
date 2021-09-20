@@ -4,7 +4,7 @@ window.onload = () => {
   const button = document.querySelector('button[data-action="change"]');
   render();
 };
-
+const status2 = document.getElementById("status");
 //Hammarby sjöstad
 //Balloon
 let latitude1 = 59.304270;
@@ -145,11 +145,14 @@ function render() {
     nrOfClicks++;
     if (nrOfClicks == 1){
       try{
+
+
         setModel(models[0],model,latitude1,longitude1);
       }
       finally{
         setTimeout(() => {
           scene.appendChild(model);
+          status2.textContent = 'scene  balloon';
         }, 3000);
       }
     }else if(nrOfClicks == 2){

@@ -68,8 +68,6 @@ function handleOrientation(event) {
   }
 }
 
-
-
 function mission1() {
   changeImage("img/rotateDone.png");
   nextB.style.display = "none";
@@ -94,7 +92,6 @@ function mission1Completed() {
   bigTypeWriter.typeString('You found it!')
   .start();
   typewriter.typeString('The camera works like a lense between the real world and present.').start();
-
 }
 
 function mission2Completed() {
@@ -108,9 +105,6 @@ function mission2Completed() {
   bigTypeWriter.typeString('Woff!')
   .start();
   typewriter.typeString('You navigate to objects by following their sound').start();
-
-
-
 }
 
 nextB.addEventListener('click', () => {
@@ -241,8 +235,7 @@ function geoFindMe() {
       cannon2Distance = calculateDistance(latitude4, longitude4, position.coords.latitude, position.coords.longitude);
       localStorage.gun = regulateVolume(cannon2Distance);
       cannon.volume(localStorage.gun);
-      countNR++;
-      status.textContent = 'in gun scan' + countNR +'times';
+
       if(localStorage.gun > 0.9){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
