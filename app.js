@@ -52,7 +52,7 @@ function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
   var y = degreesToRadians(event.gamma);
   var z = degreesToRadians(event.alpha);
-  Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
+  //Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
   if (visited == 1) {
     if (event.alpha > 170 && event.alpha < 250) {
       visited++;

@@ -107,8 +107,6 @@ function render() {
     if (nrOfClicks == 4){
       if(localStorage.radio > 0.75 && modelNr == 0){
         try{
-          bugNr++;
-          status2.textContent = 'try setmodel radio' + bugNr+ 'times';
           setModel(models[2],model,latitude3,longitude3);
         }
         finally{
