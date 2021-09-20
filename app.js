@@ -184,14 +184,15 @@ var cannon2V;
 var planeV;
 //sickla kanalgata
 //radio
-let latitude3 = 59.304462;
-let longitude3 = 18.108044;
+let latitude3 = 59.304002;
+let longitude3 = 18.107127;
 //gun
-let latitude4 = 59.303903;
-let longitude4 = 18.107395;
+let latitude4 = 59.303813;
+let longitude4 = 18.107690;
 //plane
-let latitude5 = 59.304262;
-let longitude5 = 18.107465;
+let latitude5 = 59.304002;
+let longitude5 = 18.107127;
+
 
 //stugan
 //radio

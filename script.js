@@ -7,20 +7,20 @@ window.onload = () => {
 const status2 = document.getElementById("status");
 //Hammarby sjöstad
 //Balloon
-let latitude1 = 59.304270;
-let longitude1 = 18.107486;
+let latitude1 = 59.304177;
+let longitude1 = 18.107556;
 //dog
-let latitude2 = 59.304435;
-let longitude2 = 18.107314;
+let latitude2 = 59.304577;
+let longitude2 = 18.107299;
 //radio
-let latitude3 = 59.304462;
-let longitude3 = 18.108044;
+let latitude3 = 59.304002;
+let longitude3 = 18.107127;
 //gun
-let latitude4 = 59.303903;
-let longitude4 = 18.107395;
+let latitude4 = 59.303813;
+let longitude4 = 18.107690;
 //plane
-let latitude5 = 59.304262;
-let longitude5 = 18.107465;
+let latitude5 = 59.304002;
+let longitude5 = 18.107127;
 
 //Stugan
 // //Balloon
@@ -102,7 +102,8 @@ function render() {
   //balloon
   const scene = document.querySelector('a-scene');
   var model = document.createElement('a-entity');
-
+  bugNr++;
+  status2.innerText = 'render:' + bugNr;
   setInterval(function() {
     if (nrOfClicks == 4){
       if(localStorage.radio > 0.75 && modelNr == 0){
