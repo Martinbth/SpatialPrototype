@@ -53,6 +53,9 @@ var bugNr =0;
 function handleOrientation(event) {
   bugNr++;
   status.innerText = 'handleOrientation:' + bugNr;
+  setTimeout(() => {
+    scene.appendChild(model);
+
   Howler.orientation(Math.sin(event.alpha), 0, Math.cos(event.alpha), 0, 1, 0);
   if (visited == 1) {
     if (event.alpha > 170 && event.alpha < 250) {
@@ -67,6 +70,7 @@ function handleOrientation(event) {
       mission2Completed();
     }
   }
+  }, 3000);
 }
 
 function mission1() {
