@@ -48,7 +48,7 @@ radio.pos(-30, 0, 80);
 cannon.pos(-5, 0, -40);
 airplane.pos(40, 20, -5);
 
-
+var bugNr =0;
 
 function handleOrientation(event) {
   bugNr++;

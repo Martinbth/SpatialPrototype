@@ -42,7 +42,7 @@ let longitude5 = 18.107127;
 let nrOfClicks = 0;
 let modelNr = 0;
 var modelIndex = 0;
-var bugNr = 0;
+
 var models = [
   {
     url: './assets/balloon/scene.gltf',
