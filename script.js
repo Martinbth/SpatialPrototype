@@ -7,20 +7,20 @@ window.onload = () => {
 
 //Hammarby sjöstad
 //Balloon
-let latitude1 = 59.304307;
-let longitude1 = 18.108125;
+let latitude1 = 59.304270;
+let longitude1 = 18.107486;
 //dog
-let latitude2 = 59.304635;
-let longitude2 = 18.107562;
+let latitude2 = 59.304435;
+let longitude2 = 18.107314;
 //radio
 let latitude3 = 59.304462;
-let longitude3 = 18.109537;
+let longitude3 = 18.108044;
 //gun
-let latitude4 = 59.303394;
-let longitude4 = 18.108903;
+let latitude4 = 59.303903;
+let longitude4 = 18.107395;
 //plane
-let latitude5 = 59.303660;
-let longitude5 = 18.106692;
+let latitude5 = 59.304262;
+let longitude5 = 18.107465;
 
 //Stugan
 // //Balloon

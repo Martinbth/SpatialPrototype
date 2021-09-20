@@ -52,7 +52,7 @@ function handleOrientation(event) {
   var x = degreesToRadians(event.beta);
   var y = degreesToRadians(event.gamma);
   var z = degreesToRadians(event.alpha);
-  //Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
+  Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
   if (visited == 1) {
     if (event.alpha > 170 && event.alpha < 250) {
       visited++;
@@ -191,13 +191,13 @@ var planeV;
 //sickla kanalgata
 //radio
 let latitude3 = 59.304462;
-let longitude3 = 18.109537;
+let longitude3 = 18.108044;
 //gun
-let latitude4 = 59.303394;
-let longitude4 = 18.108903;
+let latitude4 = 59.303903;
+let longitude4 = 18.107395;
 //plane
-let latitude5 = 59.303660;
-let longitude5 = 18.106692;
+let latitude5 = 59.304262;
+let longitude5 = 18.107465;
 
 //stugan
 //radio
@@ -242,7 +242,7 @@ function geoFindMe() {
       localStorage.gun = regulateVolume(cannon2Distance);
       cannon.volume(localStorage.gun);
       countNR++;
-      status.textContent = 'in gun scan' + countNR 'times';
+      status.textContent = 'in gun scan' + countNR +'times';
       if(localStorage.gun > 0.9){
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
