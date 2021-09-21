@@ -44,9 +44,9 @@ nextB.innerText = 'Start';
 // +- --
 
 dog.pos(45, 0, 45);
-radio.pos(-30, 0, 80);
-cannon.pos(-5, 0, -40);
-airplane.pos(40, 20, -5);
+radio.pos(-30, 0, -80);
+cannon.pos(5, 0, -40);
+airplane.pos(-45, 20, 0);
 
 var bugNr=0;
 var loadNr=0;
@@ -58,7 +58,7 @@ function handleOrientation(event) {
   // //Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
 
 loadNr++;
-  if(loadNr = 50){
+  if(loadNr = 60){
     loadNr = 0;
     var z = degreesToRadians(event.alpha);
     Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
@@ -194,15 +194,25 @@ var planeDistance;
 var cannon2V;
 var planeV;
 //sickla kanalgata
+// //radio
+// let latitude3 = 59.304002;
+// let longitude3 = 18.107127;
+// //gun
+// let latitude4 = 59.303813;
+// let longitude4 = 18.107690;
+// //plane
+// let latitude5 = 59.304002;
+// let longitude5 = 18.107127;
+
 //radio
-let latitude3 = 59.304002;
-let longitude3 = 18.107127;
+let latitude3 = 59.303912;
+let longitude3 = 18.110437;
 //gun
-let latitude4 = 59.303813;
-let longitude4 = 18.107690;
+let latitude4 = 59.303613;
+let longitude4 = 18.110019;
 //plane
 let latitude5 = 59.304002;
-let longitude5 = 18.107127;
+let longitude5 = 18.111570;
 
 
 //stugan

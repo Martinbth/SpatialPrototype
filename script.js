@@ -7,20 +7,36 @@ window.onload = () => {
 const status2 = document.getElementById("status");
 //Hammarby sjöstad
 //Balloon
-let latitude1 = 59.304177;
-let longitude1 = 18.107556;
+// let latitude1 = 59.304177;
+// let longitude1 = 18.107556;
+// //dog
+// let latitude2 = 59.304577;
+// let longitude2 = 18.107299;
+// //radio
+// let latitude3 = 59.304002;
+// let longitude3 = 18.107127;
+// //gun
+// let latitude4 = 59.303813;
+// let longitude4 = 18.107690;
+// //plane
+// let latitude5 = 59.304002;
+// let longitude5 = 18.107127;
+
+//Balloon
+let latitude1 = 59.304383;
+let longitude1 = 18.109852;
 //dog
-let latitude2 = 59.304577;
-let longitude2 = 18.107299;
+let latitude2 = 59.304607;
+let longitude2 = 18.109509;
 //radio
-let latitude3 = 59.304002;
-let longitude3 = 18.107127;
+let latitude3 = 59.303912;
+let longitude3 = 18.110437;
 //gun
-let latitude4 = 59.303813;
-let longitude4 = 18.107690;
+let latitude4 = 59.303613;
+let longitude4 = 18.110019;
 //plane
 let latitude5 = 59.304002;
-let longitude5 = 18.107127;
+let longitude5 = 18.111570;
 
 //Stugan
 // //Balloon
@@ -46,7 +62,7 @@ var modelIndex = 0;
 var models = [
   {
     url: './assets/balloon/scene.gltf',
-    scale: '0.05 0.05 0.05',
+    scale: '0.04 0.04 0.04',
     info: 'Good Job!',
     rotation: '0 0 0',
   },
@@ -64,7 +80,7 @@ var models = [
   },
   {
     url: './assets/gun/scene.gltf',
-    scale: '0.1 0.1 0.1',
+    scale: '0.09 0.09 0.09',
     info: 'Good Job!',
     rotation: '0 0 0',
   },
