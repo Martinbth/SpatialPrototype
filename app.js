@@ -58,7 +58,8 @@ function handleOrientation(event) {
   // //Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
 
 loadNr++;
-  if(loadNr = 100){
+  if(loadNr = 50){
+    loadNr = 0;
     var z = degreesToRadians(event.alpha);
     Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
     if (visited == 1) {
@@ -74,7 +75,7 @@ loadNr++;
         mission2Completed();
       }
     }
-    loadNr = 0;
+
   }
 }
 
