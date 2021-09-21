@@ -58,19 +58,19 @@ var models = [
   },
   {
     url: './assets/radio/scene.gltf',
-    scale: '0.15 0.15 0.15',
+    scale: '0.1 0.1 0.1',
     info: 'Good Job!',
     rotation: '0 0 0',
   },
   {
     url: './assets/gun/scene.gltf',
-    scale: '0.11 0.11 0.11',
+    scale: '0.1 0.1 0.1',
     info: 'Good Job!',
     rotation: '0 0 0',
   },
   {
     url: './assets/plane/scene.gltf',
-    scale: '0.4 0.4 0.4',
+    scale: '0.2 0.2 0.2',
     info: 'Good Job!',
     rotation: '0 0 0',
   },
@@ -105,7 +105,7 @@ function render() {
 
   setInterval(function() {
     if (nrOfClicks == 4){
-      if(localStorage.radio > 0.75 && modelNr == 0){
+      if(localStorage.radio > 0.8 && modelNr == 0){
         try{
           setModel(models[2],model,latitude3,longitude3);
         }
@@ -117,7 +117,7 @@ function render() {
     }
     //gun
     else if (nrOfClicks == 5){
-      if(localStorage.gun > 0.75 && modelNr == 1){
+      if(localStorage.gun > 0.8 && modelNr == 1){
         try{
           setModel(models[3],model,latitude4,longitude4);
         }
@@ -129,7 +129,7 @@ function render() {
     }
     //plane
     else if (nrOfClicks == 6){
-      if(localStorage.plane > 0.75 && modelNr == 2){
+      if(localStorage.plane > 0.8 && modelNr == 2){
         try{
           setModel(models[4],model,latitude5,longitude5);
         }

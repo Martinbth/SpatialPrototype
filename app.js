@@ -58,7 +58,7 @@ function handleOrientation(event) {
   // //Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
 
 loadNr++;
-  if(loadNr = 20){
+  if(loadNr = 100){
     var z = degreesToRadians(event.alpha);
     Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
     if (visited == 1) {
@@ -223,21 +223,18 @@ var countNR = 0;
 
 function geoFindMe() {
   function success(position) {
-    // userLat = position.coords.latitude;
-    // userLong = position.coords.longitude;
-
-
     if(radioScan){
       radioDistance = calculateDistance(latitude3, longitude3, position.coords.latitude, position.coords.longitude);
       localStorage.radio = regulateVolume(radioDistance);
       radio.volume(localStorage.radio);
       if(localStorage.radio > 0.9){
-          nextB.style.display = "block";
-          info.style.backgroundColor = "#082761";
-          typewriter.typeString('Radio receiver used in armored vehicles for communications with aircrafs during WWII').start();
-          bigTypeWriter.typeString('Ukw.E.d1').start();
-          radioScan = false;
-          gunScan = true;
+        typewriter.deleteAll(0.2);
+        nextB.style.display = "block";
+        info.style.backgroundColor = "#082761";
+        typewriter.typeString('Radio receiver used in armored vehicles for communications with aircrafs during WWII').start();
+        bigTypeWriter.typeString('Ukw.E.d1').start();
+        radioScan = false;
+        gunScan = true;
       }
     }
     else if(gunScan){
@@ -248,6 +245,7 @@ function geoFindMe() {
       cannon.volume(localStorage.gun);
 
       if(localStorage.gun > 0.9){
+        typewriter.deleteAll(0.2);
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
         typewriter.typeString('Swedish modified anti-aircraft machine gun based on the wildy used M1919 Browning during WWII').start();
@@ -262,6 +260,7 @@ function geoFindMe() {
       airplane.volume(localStorage.plane);
 
       if(localStorage.plane > 0.9){
+        typewriter.deleteAll(0.2);
         nextB.style.display = "block";
         info.style.backgroundColor = "#082761";
         typewriter.typeString('Swedish single-engine fighter aircraft developed for the Swedish Air Force during WWII').start();
