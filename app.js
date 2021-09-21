@@ -49,26 +49,27 @@ cannon.pos(-5, 0, -40);
 airplane.pos(40, 20, -5);
 
 var bugNr=0;
+var loadNr=0;
 
 function handleOrientation(event) {
-  bugNr++;
-  status.innerText = 'handleOrientation:' + bugNr;
-  setTimeout(() => {
-  Howler.orientation(Math.sin(event.alpha), 0, Math.cos(event.alpha), 0, 1, 0);
-  if (visited == 1) {
-    if (event.alpha > 170 && event.alpha < 250) {
-      visited++;
-      party.play();
-      mission1Completed();
+loadNr++;
+  if(loadNr = 20){
+    Howler.orientation(Math.sin(event.alpha), 0, Math.cos(event.alpha), 0, 1, 0);
+    if (visited == 1) {
+      if (event.alpha > 170 && event.alpha < 250) {
+        visited++;
+        party.play();
+        mission1Completed();
+      }
     }
-  }
-  else if (visited == 3) {
-    if (event.alpha > 0 && event.alpha < 60) {
-      visited++;
-      mission2Completed();
+    else if (visited == 3) {
+      if (event.alpha > 0 && event.alpha < 60) {
+        visited++;
+        mission2Completed();
+      }
     }
+    loadNr = 0;
   }
-}, 1000);
 }
 
 function mission1() {
