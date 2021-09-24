@@ -58,7 +58,7 @@ function handleOrientation(event) {
   // //Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
 
 loadNr++;
-  if(loadNr == 60){
+  if(loadNr == 20){
     loadNr = 0;
     var z = degreesToRadians(event.alpha);
     Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
@@ -249,8 +249,8 @@ function geoFindMe() {
       }
     }
     else if(gunScan){
-      countNR++;
-      status.textContent = countNR;
+      // countNR++;
+      // status.textContent = countNR;
       cannon2Distance = calculateDistance(latitude4, longitude4, position.coords.latitude, position.coords.longitude);
       localStorage.gun = regulateVolume(cannon2Distance);
       cannon.volume(localStorage.gun);
@@ -289,7 +289,7 @@ function geoFindMe() {
   if (!navigator.geolocation) {
     status.textContent = 'Geolocation is not supported by your browser';
   } else {
-    status.textContent = 'Locating…';
+    // status.textContent = 'Locating…';
     navigator.geolocation.watchPosition(success, error);
   }
 }
@@ -313,7 +313,7 @@ function regulateVolume(dist) {
   // status.innerText = dist;
   var v;
   if(dist > 90){
-    v = 0.1
+    v = 0.3
   }else{
     v = 1 - (dist / 100);
   }

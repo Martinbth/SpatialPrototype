@@ -80,7 +80,7 @@ var models = [
   },
   {
     url: './assets/gun/scene.gltf',
-    scale: '0.09 0.09 0.09',
+    scale: '0.05 0.05 0.05',
     info: 'Good Job!',
     rotation: '0 0 0',
   },
