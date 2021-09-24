@@ -45,8 +45,8 @@ nextB.innerText = 'Start';
 
 dog.pos(45, 0, 45);
 radio.pos(-30, 0, -80);
-cannon.pos(5, 0, -40);
-airplane.pos(45, 20, 40);
+cannon.pos(0, 0, -40);
+airplane.pos(45, -40, 40);
 
 var bugNr=0;
 var loadNr=0;
@@ -313,7 +313,7 @@ function regulateVolume(dist) {
   // status.innerText = dist;
   var v;
   if(dist > 90){
-    v = 0.3
+    v = 0.5
   }else{
     v = 1 - (dist / 100);
   }
