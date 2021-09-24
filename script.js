@@ -155,7 +155,7 @@ function render() {
         }
       }
     }
-  }, 2000);
+  }, 1000);
 
   document.querySelector('button[data-action="change"]').addEventListener('click', function () {
     nrOfClicks++;
@@ -166,7 +166,7 @@ function render() {
       finally{
         setTimeout(() => {
           scene.appendChild(model);
-        }, 3000);
+        }, 1000);
       }
     }else if(nrOfClicks == 2){
       try{
@@ -177,7 +177,7 @@ function render() {
       finally{
         setTimeout(() => {
           scene.appendChild(model);
-        }, 3000);
+        }, 1000);
       }
     }else if(nrOfClicks > 3){
       scene.removeChild(scene.lastChild);
