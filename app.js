@@ -46,7 +46,7 @@ nextB.innerText = 'Start';
 dog.pos(45, 0, 45);
 radio.pos(-30, 0, -80);
 cannon.pos(5, 0, -40);
-airplane.pos(-45, 20, 0);
+airplane.pos(45, 20, 40);
 
 var bugNr=0;
 var loadNr=0;
@@ -58,7 +58,7 @@ function handleOrientation(event) {
   // //Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
 
 loadNr++;
-  if(loadNr = 60){
+  if(loadNr == 60){
     loadNr = 0;
     var z = degreesToRadians(event.alpha);
     Howler.orientation(Math.sin(z), 0, Math.cos(z), 0, 1, 0);
@@ -208,11 +208,11 @@ var planeV;
 let latitude3 = 59.303912;
 let longitude3 = 18.110437;
 //gun
-let latitude4 = 59.303613;
-let longitude4 = 18.110019;
+let latitude4 = 59.303621;
+let longitude4 = 18.110030;
 //plane
-let latitude5 = 59.304002;
-let longitude5 = 18.111570;
+let latitude5 = 59.304035;
+let longitude5 = 18.108832;
 
 
 //stugan

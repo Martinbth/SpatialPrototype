@@ -32,11 +32,11 @@ let longitude2 = 18.109509;
 let latitude3 = 59.303912;
 let longitude3 = 18.110437;
 //gun
-let latitude4 = 59.303613;
-let longitude4 = 18.110019;
+let latitude4 = 59.303621;
+let longitude4 = 18.110030;
 //plane
-let latitude5 = 59.304002;
-let longitude5 = 18.111570;
+let latitude5 = 59.304035;
+let longitude5 = 18.108832;
 
 //Stugan
 // //Balloon
